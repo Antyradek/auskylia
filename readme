@@ -1,1 +1,36 @@
-Po konsultacjach. Wpiszcie nasze ustalenia:
+PSZT Projekt JP.AE2
+
+------------------
+ TEMAT
+------------------
+Program ma wyznaczać przy pomocy algorytmu ewolucyjnego najlepszą trasę między określonymi punktami na podstawie zadanych przez użytkownika kryteriów.
+
+----------------------
+ USTALENIA WSTĘPNE
+----------------------
+1. Program otrzyuje niezbędne dane dotyczące połączeń między miastami w pliku tekstowym.
+2. Użytkownik wprowadza swoje preferencje ustalając wagi dla dostępnych kryteriów wyboru optymalnej trasy.
+3. Program na wyjściu podaje najlepszą trasę lub n najlepszych tras, z możliwością zapisu do pliku.
+4. Komunikacja z programem jest realizowana poprzez GUI.
+
+----------------------
+ USTALENIA PROJEKTOWE
+----------------------
+MODEL
+
+Środowisko:
+C++14 (GCC 4.9.3) + boost 1.59
+
+Założenia:
+1. Połączenia między miastami są opisane w zewnętrznym pliku tekstowym w postaci grafu.
+2. Trasa jest wyznaczana za pomocą algorytmu ewolucyjnego.
+    2a. Osobnikami są trasy.
+    2b. Cechami osobników są kolejne wierzchołki grafu przez które prowadzi trasa.
+    2c. Krzyżowanie odbywa się na zasadzie losowego podziału cech rodziców między potomków.
+    2d. Osobniki o różnej liczbie cech są normalizowane poprzez dodanie do listy cech krótszej trasy w losowych miejscach pustych wierzchołków, usuwanych po przeprowadzeniu krzyżowania.
+    2e. Mutacje pozwalają losowo zmienić wierzchołek na inny, usunąć go, lub wstawić nowy wierzchołek między już istniejące.
+    2f. Trasy są ściezkami prostymi i nie mogą zawierać nieistniejących krawędzi. Osobniki nie spełniające tych wymagań automatycznie kwalifikują sie do odrzucenia.
+    2g. Program pozwala na wybór kryterium zakończenia algorytmu: czas wykonania, liczba iteracji, akceptowalność rozwiązania.
+3. Przed uruchomieniem algorytmu ewolucyjnego graf jest sprawdzany pod kątem obecności wierzchołka początkowego i końcowego w tej samej składowej.
+4. Składowe niezaweirające wierzchołka początkowego i końcowego są odrzucane.
+5. Model dostarcza funkcję zwracającą n-tą najlepszą trasę z obecnej iteracji, funkcję pozwalajacą zapisać obecną populację do wskazanego pliku oraz funkcję pozwalającą wstrzymać wykonywanie algorytmu.
