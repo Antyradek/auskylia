@@ -68,5 +68,24 @@ Ustalenia komunikacji MVC:
 •	Dane do widoku będą wysyłane jednym ze standardów AJAXa np. json lub xml. Co i jak dokładnie będzie wy tych danch wymaga dodatkowych ustaleń już bardziej związanch z implementacją.
  2.	Komunikacja z modelem będzie znacznie prostrza niż z widokiem. Należy ustalić, czy kontroler po prostu wywołuje metody modelu, czy raczej kontroler tylko uruchomi proces modelu i dalej będzie się komunikował przez kolejkę blokującą.
  
-----------------------------
-TU SIĘ POWINNY ZNALEŹĆ USTALENIA ODNOŚNIE WIDOKU
+------------------------------
+ Ustalenia projektowe - Widok
+------------------------------
+
+Osoba odpowiedzialna
+RŚ (Antyradek)
+
+Środowisko:
+HTML5 + Javascript + AJAX + jQuery + CSS3
+
+Założenia:
+1. Widok będzie działać w przeglądarce jako klient i traktować Kontroler jako serwer.
+2. Komunikacja odbywać się będzie za pomocą Javascript i narzędzi „websocket”.
+3. Użytkownik będzie miał do ustawień:
+	a) Weryfikację i modyfikację danych.
+	b) Ustalenie parametrów działania.
+	c) Opcję rozpoczęcia kalkulacji.
+	d) Opcję przerwania kalkulacji.
+4. Dane będą wysyłane i odbierane za pomocą XML (lub JSON).
+5. Widok będzie pełnił funkcje pomocnicze do obsługi programu.
+
