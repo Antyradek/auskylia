@@ -80,12 +80,11 @@ HTML5 + Javascript + AJAX + jQuery + CSS3
 
 Założenia:
 1. Widok będzie działać w przeglądarce jako klient i traktować Kontroler jako serwer.
-2. Komunikacja odbywać się będzie za pomocą Javascript i narzędzi „websocket”.
+2. Komunikacja odbywać się będzie za pomocą Javascript i AJAX implementowanej przez jQuery.
 3. Użytkownik będzie miał do ustawień:
 	a) Weryfikację i modyfikację danych.
 	b) Ustalenie parametrów działania.
 	c) Opcję rozpoczęcia kalkulacji.
 	d) Opcję przerwania kalkulacji.
-4. Dane będą wysyłane i odbierane za pomocą XML (lub JSON).
+4. Dane będą asynchronicznie wysyłane i odbierane za pomocą XML (lub JSON).
 5. Widok będzie pełnił funkcje pomocnicze do obsługi programu.
-
