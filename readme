@@ -37,36 +37,36 @@ ZaÅ‚oÅ¼enia:
 5. Model dostarcza funkcjÄ™ zwracajÄ…cÄ… n-tÄ… najlepszÄ… trasÄ™ z obecnej iteracji, funkcjÄ™ pozwalajÄ…cÄ… zapisaÄ‡ obecnÄ… populacjÄ™ do wskazanego pliku oraz funkcjÄ™ pozwalajÄ…cÄ… wstrzymaÄ‡ wykonywanie algorytmu.
 
 ----------------------------
-Ustalenia projektowe – Kontroler
+Ustalenia projektowe â€“ Kontroler
 
 Osoba odpowiedzialna:
 TJ (sigrond)
 
-Œrodowisko:
+Åšrodowisko:
 C++11 + sockets + pthread / thread z C++11
 
-Za³o¿enia:
- 1.	Kontroler powinien zostaæ uruchomiony zanim u¿ytkownik zacznie wprowadzaæ polecenia do GUI (lub innymi s³owy: zanim widok zacznie wysy³aæ zapytania).
- 2.	Kontroler po uruchomieniu tworzy gniazdo (socket) w nowym w¹tku (lub w¹tkach – fork server) i nas³uchuje na porcie. Po nawi¹zaniu po³¹czenia mo¿e obs³ugiwaæ polecenia (data):
- a)	Wprowadzanie lub modyfikowanie danych i ustawieñ.
- b)	Uruchomienie obliczeñ (algorytm ewolucyjny w modelu).
- c)	Zwracanie stanu obliczeñ lub wyniku.
- d)	Zatrzymywanie obliczeñ
+ZaÅ‚oÅ¼enia:
+ 1.	Kontroler powinien zostaÄ‡ uruchomiony zanim uÅ¼ytkownik zacznie wprowadzaÄ‡ polecenia do GUI (lub innymi sÅ‚owy: zanim widok zacznie wysyÅ‚aÄ‡ zapytania).
+ 2.	Kontroler po uruchomieniu tworzy gniazdo (socket) w nowym wÄ…tku (lub wÄ…tkach â€“ fork server) i nasÅ‚uchuje na porcie. Po nawiÄ…zaniu poÅ‚Ä…czenia moÅ¼e obsÅ‚ugiwaÄ‡ polecenia (data):
+ a)	Wprowadzanie lub modyfikowanie danych i ustawieÅ„.
+ b)	Uruchomienie obliczeÅ„ (algorytm ewolucyjny w modelu).
+ c)	Zwracanie stanu obliczeÅ„ lub wyniku.
+ d)	Zatrzymywanie obliczeÅ„
  3.	Kontroler przekazuje dane i ustawienia do modelu, oraz pobiera z niego stan i wyniki.
- 4.	Kontroler za¿¹dza ¿yciem modelu, uruchamia go w osobnym w¹tku (lub w¹tkach). Mo¿e te¿ za¿¹dziæ zatrzymywanie w¹tków modelu.
+ 4.	Kontroler zaÅ¼Ä…dza Å¼yciem modelu, uruchamia go w osobnym wÄ…tku (lub wÄ…tkach). MoÅ¼e teÅ¼ zaÅ¼Ä…dziÄ‡ zatrzymywanie wÄ…tkÃ³w modelu.
 
 Ustalenia komunikacji MVC:
  1.	Komunikacja z widokiem
-•	Kontroler NIE serwuje pliku widoku, ewentualnie mo¿e go uruchomiæ przez shella lub kontroler i widok mog¹ zostaæ uruchomione skryptem.
-•	Spodziewam siê, ¿e widok bêdzie plikiem HTML otwieranym w przegl¹darce i bêdzie u¿ywa³ JavaScript/jQuery/AJAX get do wysy³ania (prostych) zapytañ HTMLowych do kontrolera. Aczkolwiek dziêki zastosowaniu wzorca MVC i wyko¿ystaniu socketów do komunikacji mo¿na widok wymieniæ na zupe³nie inny w innej technologii o ile bêdzie siê stosowa³ do ustaleñ protoko³u komunikacji.
-•	Do komunikacji bêdzie potrzebne czêœciowe zaimplementowanie HTTP/1.1 - RFC 2616. Chodzi g³ównie oczywiœcie o sam nag³ówek.
-•	Odpowiedzi i dza³ania kontrolera bêd¹ zale¿a³y od sekcji data w get. Niech na chwilê obecn¹ bêdzie
-{polecenie: 'dane', nazwa_parametru: 'wartoœæ_parametru'}
+â€¢	Kontroler NIE serwuje pliku widoku, ewentualnie moÅ¼e go uruchomiÄ‡ przez shella lub kontroler i widok mogÄ… zostaÄ‡ uruchomione skryptem.
+â€¢	Spodziewam siÄ™, Å¼e widok bÄ™dzie plikiem HTML otwieranym w przeglÄ…darce i bÄ™dzie uÅ¼ywaÅ‚ JavaScript/jQuery/AJAX get do wysyÅ‚ania (prostych) zapytaÅ„ HTMLowych do kontrolera. Aczkolwiek dziÄ™ki zastosowaniu wzorca MVC i wykoÅ¼ystaniu socketÃ³w do komunikacji moÅ¼na widok wymieniÄ‡ na zupeÅ‚nie inny w innej technologii o ile bÄ™dzie siÄ™ stosowaÅ‚ do ustaleÅ„ protokoÅ‚u komunikacji.
+â€¢	Do komunikacji bÄ™dzie potrzebne czÄ™Å›ciowe zaimplementowanie HTTP/1.1 - RFC 2616. Chodzi gÅ‚Ã³wnie oczywiÅ›cie o sam nagÅ‚Ã³wek.
+â€¢	Odpowiedzi i dzaÅ‚ania kontrolera bÄ™dÄ… zaleÅ¼aÅ‚y od sekcji data w get. Niech na chwilÄ™ obecnÄ… bÄ™dzie
+{polecenie: 'dane', nazwa_parametru: 'wartoÅ›Ä‡_parametru'}
 {polecenie: 'licz'}
 {polecenie: 'wynik'}
 {polecenie: 'stop'}
-•	Dane do widoku bêd¹ wysy³ane jednym ze standardów AJAXa np. json lub xml. Co i jak dok³adnie bêdzie wy tych danch wymaga dodatkowych ustaleñ ju¿ bardziej zwi¹zanch z implementacj¹.
- 2.	Komunikacja z modelem bêdzie znacznie prostrza ni¿ z widokiem. Nale¿y ustaliæ, czy kontroler po prostu wywo³uje metody modelu, czy raczej kontroler tylko uruchomi proces modelu i dalej bêdzie siê komunikowa³ przez kolejkê blokuj¹c¹.
-
+â€¢	Dane do widoku bÄ™dÄ… wysyÅ‚ane jednym ze standardÃ³w AJAXa np. json lub xml. Co i jak dokÅ‚adnie bÄ™dzie wy tych danch wymaga dodatkowych ustaleÅ„ juÅ¼ bardziej zwiÄ…zanch z implementacjÄ….
+ 2.	Komunikacja z modelem bÄ™dzie znacznie prostrza niÅ¼ z widokiem. NaleÅ¼y ustaliÄ‡, czy kontroler po prostu wywoÅ‚uje metody modelu, czy raczej kontroler tylko uruchomi proces modelu i dalej bÄ™dzie siÄ™ komunikowaÅ‚ przez kolejkÄ™ blokujÄ…cÄ….
+ 
 ----------------------------
-TU SIÄ˜ POWINNY ZNALEÅ¹Ä† USTALENIA ODNOÅšNIE KONTROLERA I WIDOKU
+TU SIÄ˜ POWINNY ZNALEÅ¹Ä† USTALENIA ODNOÅšNIE WIDOKU
