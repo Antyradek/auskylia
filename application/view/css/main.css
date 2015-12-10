@@ -12,13 +12,72 @@ body
 	src: url(uni05.ttf)
 }
 
-.title
-{
-    font-size: 200%;
-}
-
-.logo
+#logo
 {
     margin: auto;
     display: block;
+}
+
+#mainWindow
+{
+    width: 80%;
+    margin: auto;
+    background: rgba(0,0,0,0.4);
+    display: block;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#instruction
+{
+    margin: 0px;
+}
+
+#mainForm
+{
+    margin: 0px;
+}
+
+.citySelect
+{
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: pixel;
+    font-size: 100%;
+    border: none;
+    transition: background-color 0.5s;
+}
+
+.citySelect:hover
+{
+    background-color: cyan;
+}
+
+.inputFieldset
+{
+    border-radius: 10px;
+    border: solid 5px red;
+}
+
+.parameterSelect
+{
+    width: 100%;
+    background: red;
+}
+
+#submitForm
+{
+    width: 100%;
+    border-radius: 10px;
+    height: 50px;
+    border: none;
+    font-family: pixel;
+    font-size: 100%;
+    transition: background-color 0.5s;
+}
+
+#submitForm:hover
+{
+    background-color: cyan;
 }
