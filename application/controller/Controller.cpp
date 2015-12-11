@@ -4,6 +4,7 @@
  *
  */
 
+#include "Controller.hpp"
 #include <thread>
 
 Controller::Controller() : shutDown(false)
@@ -31,9 +32,9 @@ void Controller::start()
 	/**< \todo nadrzędna pętla do wielokrotnego uruchamiania obliczeń */
 	while(!shutDown)
 	{
-		std::thread viewServerThread(viewServer->listenAndRespond());
+		std::thread viewServerThread(&ViewServer::listenAndRespond, viewServer);
 		/**< \todo odebrać polecenie rozpoczęcia obliczeń z ich parametrami */
-		std::thread modelMainThread(model->doMainJob(auto parametry));/**< \todo potrzebna znajomość
+		std::thread modelMainThread(&Model::doMainJob, model);/**< \todo potrzebna znajomość
 		interfejsu publicznego modelu */
 		/**< \todo pętla do przetwarzania zapytań, komunikatów i zdarzeń */
 		while(!shutDown)

@@ -7,6 +7,8 @@
 #include "Controller.hpp"
 #include <iostream>
 #include <string>
+#include <exception>
+#include <cstdlib>
 
 using namespace std;
 
@@ -17,14 +19,18 @@ int main(int argc, char* argv[])
 	{
 		if(argc>=2)
 		{
-			portNo=stoi(string(argv[1]));
+			portNo=strtol(argv[1],0,10);
 		}
 		Controller* controller=new Controller();
 		controller->setModel(new Model());
 		controller->setViewServer(new ViewServer(portNo));
 		controller->start();
 	}
-	catch(..)/**< \todo napisać lepszą obsługę wyjątków */
+	catch(exception &e)
+	{
+		cout<<e.what()<<endl;
+	}
+	catch(...)/**< \todo napisać lepszą obsługę wyjątków */
 	{
 		cerr<<"Jakiś wyjątek!"<<endl;
 	}
