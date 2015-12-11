@@ -1,11 +1,17 @@
 $(document).ready(function(){
     setHourglass(true);
-    $.post("controller", {command : "get_cities"}, function(data)
+    //DEBUG
+    data = "<data><response>list</response><airports><airport><name>Sydney</name><iata>SYD</iata></airport><airport><name>Warszawa</name><iata>WAW</iata></airport><airport><name>Gdańsk</name><iata>GDA</iata></airport></airports></data>";
+    parseResult(data);
+    //DEBUG
+    $.post("controller", {data : "<data><command>list</command></data>"}, function(data)
     {
         alert("Odebrano: " + data);
+        //TODO tymczasowo
+        data = "<data><response>list</response><airports><airport><name>Sydney</name><iata>SYD</iata></airport><airport><name>Warszawa</name><iata>WAW</iata></airport><airport><name>Gdańsk</name><iata>GDA</iata></airport></airports></data>";
+        //TODO
+        parseResult(data);
     });
-    var cities = ["Gdańsk", "Warszawa", "Kraków", "Radom", "Poznań", "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide"];
-    updateCitySelections(cities);
     setHourglass(false);
 
     $("#mainForm").submit(function(event)
@@ -16,13 +22,15 @@ $(document).ready(function(){
 });
 
 ///aktualiazcja wyboru miast
-function updateCitySelections(cities)
+function updateCitySelections($xml)
 {
-    for(var i = 0; i < cities.length; i++)
+    $xml.find("airports").find("airport").each(function(index)
     {
-        var text = "<option>" + cities[i] + "</option>";
+        var name = $(this).find("name").html();
+        var iata = $(this).find("iata").html();
+        var text = "<option>" + name + " (" + iata + ")" + "</option>";
         $(".citySelect").append(text);
-    }
+    });
 }
 
 function setHourglass(setOn)
@@ -34,5 +42,23 @@ function setHourglass(setOn)
     else
     {
         $("#waitWindow").slideUp();
+    }
+}
+
+///wczytaj początek rezultatu i wykonaj odpowiednią dla niego akcję
+function parseResult(data)
+{
+    var $xml = $($.parseXML(data));
+    var $data = $xml.find("data");
+    var $command = $data.find("response");
+    switch($command.html())
+    {
+        case "list":
+            updateCitySelections($data);
+            break;
+        //...
+        default:
+            //TODO informacja o błędnej komendzie
+            alert("Błędna komenda: " + $command.html());
     }
 }

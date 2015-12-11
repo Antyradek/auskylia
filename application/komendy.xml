@@ -1,0 +1,90 @@
+<!--Plik komend, jakie są wymieniane między widokiem, a kontrolerem. Przeglądarka wysyła zapytanie POST,
+a serwer powinien odpowdziedzieć podobnie.
+
+Zapytanie:
+{
+	data: "<tutaj XML>"
+}
+-->
+
+<!--Wczytanie listy -->
+<data>
+    <command>list</command>
+</data>
+
+<!--Odpowiedź z listą lotnisk-->
+<data>
+    <response>list</response>
+    <airports>
+        <airport>
+            <name>Sydney</name>
+            <iata>SYD</iata>
+        </airport>
+        <airport>
+            <name>Warszawa</name>
+            <iata>WAW</iata>
+        </airport>
+        <airport>
+            <name>Gdańsk</name>
+            <iata>GDA</iata>
+        </airport>
+		<!-- itd.. -->
+    </airports>
+</data>
+
+<!--Polecenie obliczeń. Współczynniki są procentami, czyli liczbami całkowitymi <0,100>, odpowiedzią jest status.-->
+<data>
+    <command>calculate</command>
+    <start>Lotnisko początkowe</start>
+    <end>Lotnisko końcowe</end>
+	<price>Wsp. ceny</price>
+	<safety>Wsp. bezpieczeństwa</safety>
+	<class>Wsp. Wygody</class>
+	<time>Wsp. Czasu</time>
+</data>
+
+<!--Zapytanie o wynik-->
+<data>
+	<command>status</command>
+</data>
+
+<!--Odpowiedzi na polecenie obliczeń i zapytanie o wynik-->
+<data>
+	<response>progress</response>
+	<progress>Procent liczenia</progress>
+</data>
+
+<!--Odpowiedź, gdy obliczenia się spierdoliły-->
+<data>
+	<response>failture</response>
+	<cause>Dlaczego coś nie teges</cause>
+</data>
+
+<!--Odpowiedź, gdy udało się policzyć-->
+<data>
+	<response>success</response>
+	<airports>
+        <airport>
+            <name>Sydney</name>
+            <iata>SYD</iata>
+        </airport>
+        <airport>
+            <name>Warszawa</name>
+            <iata>WAW</iata>
+        </airport>
+        <airport>
+            <name>Gdańsk</name>
+            <iata>GDA</iata>
+        </airport>
+		<!-- itd.. -->
+    </airports>
+	<price>Cena</price>
+	<safety>Bezpieczeństwo</safety>
+	<class>Wygoda</class>
+	<time>Czas</time>
+</data>
+
+<!--Polecenie przerwania obliczeń, jako odpowiedź powinien być błąd, że przerwano obliczenia-->
+<data>
+	<command>stop</command>
+</data>
