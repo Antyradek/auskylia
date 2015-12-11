@@ -9,7 +9,10 @@
     </head>
     <body>
         <img id="logo" src="img/logo.svg" width="512px" height="256px" />
-        <dev id="mainWindow" >
+        <div id="waitWindow">
+            <img id="hourglass" src="img/hourglass.svg" width="512" height="512" />
+        </div>
+        <div id="mainWindow" >
             <p id="instruction">
                 Aby rozpocząć, wybierz miasto początowe i końcowe, oraz parametry.
             </p>
@@ -37,6 +40,6 @@
                 </fieldset>
                 <input type="submit" id="submitForm" value="Policz trasę" />
             </form>
-        </dev>
+        </div>
     </body>
 </html>
