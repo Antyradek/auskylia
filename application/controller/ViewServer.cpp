@@ -13,6 +13,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <iostream>
+#include <string>
 
 ViewServer::ViewServer(int pNo) : portNo(pNo)
 {
@@ -24,6 +26,12 @@ ViewServer::ViewServer() : portNo(8080)
 
 }
 
+/** \brief Metoda odpowiedzialna za komunikację sieciową z widokiem.
+ * Możliwe podobieństwa do https://en.wikipedia.org/wiki/Berkeley_sockets
+ *
+ * \return void
+ *
+ */
 void ViewServer::listenAndRespond()
 {
 	struct sockaddr_in sa;
@@ -34,6 +42,9 @@ void ViewServer::listenAndRespond()
       perror("cannot create socket");
       exit(EXIT_FAILURE);
     }
+    #ifdef _DEBUG
+    std::cout<<"socket utworzony\n";
+    #endif // _DEBUG
 
     memset(&sa, 0, sizeof sa);
 
@@ -47,6 +58,9 @@ void ViewServer::listenAndRespond()
       close(SocketFD);
       exit(EXIT_FAILURE);
     }
+    #ifdef _DEBUG
+    std::cout<<"socket zbindowany\n";
+    #endif // _DEBUG
 
     if (-1 == listen(SocketFD, 10))
 	{
@@ -54,6 +68,9 @@ void ViewServer::listenAndRespond()
       close(SocketFD);
       exit(EXIT_FAILURE);
     }
+    #ifdef _DEBUG
+    std::cout<<"nasłuchiwanie\n";
+    #endif // _DEBUG
 
     for (;;)/**< \todo ustalić czas życia gniazda w naszej aplikacji */
 	{
@@ -65,12 +82,24 @@ void ViewServer::listenAndRespond()
 			close(SocketFD);
 			exit(EXIT_FAILURE);
 		}
+		#ifdef _DEBUG
+		std::cout<<"połączenie zaakceptowane\n";
+		#endif // _DEBUG
 
 		/**< \todo zczytać zapytanie od widoku */
 		/**< \todo odesłać odpowiedź z nagłówkiem HTTP */
 		/* perform read write operations ...
 		read(ConnectFD, buff, size)
 		*/
+		int siz=1024;
+		char* buf=new char[siz];
+		read(ConnectFD, buf, siz);
+		#ifdef _DEBUG
+		std::cout<<buf<<std::endl;
+		#endif // _DEBUG
+		buf="HTTP/1.0 200 OK\n\ntest";
+		//buf=(char*)str.c_str();
+		write(ConnectFD,buf,siz);
 
 		if (-1 == shutdown(ConnectFD, SHUT_RDWR))
 		{
@@ -80,6 +109,10 @@ void ViewServer::listenAndRespond()
 			exit(EXIT_FAILURE);
 		}
 		close(ConnectFD);
+		#ifdef _DEBUG
+		std::cout<<"połączenie zakończone\n";
+		#endif // _DEBUG
+
 	}
 
     close(SocketFD);

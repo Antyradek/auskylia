@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1449849905 source:d:\moje dokumenty\pszt\auskylia\application\controller\controller.cpp
+	"Controller.hpp"
+	<thread>
+
+1449576645 d:\moje dokumenty\pszt\auskylia\application\controller\controller.hpp
+	"../model/Model.hpp"
+	"ViewServer.hpp"
+
+1449849424 d:\moje dokumenty\pszt\auskylia\application\model\model.hpp
+
+1449575273 d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.hpp
+
+1449850424 source:d:\moje dokumenty\pszt\auskylia\application\controller\controllermain.cpp
+	"Controller.hpp"
+	<iostream>
+	<string>
+	<exception>
+	<cstdlib>
+
+1449852606 source:d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.cpp
+	"ViewServer.hpp"
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<arpa/inet.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<iostream>
+	<string>
+
