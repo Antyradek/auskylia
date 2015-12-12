@@ -6,15 +6,43 @@
 
 #include "Controller.hpp"
 #include <thread>
+#include <exception>
+#include <string>
 
-Controller::Controller() : shutDown(false)
+/** \brief Klasa opakowująca exception dla Controller
+ */
+struct ControllerException : std::exception
+{
+private:
+	std::string m;
+public:
+    /** \brief Wygodny kostruktor wyjątku
+     * \param std::string s komunikat do wyświetlenia
+     */
+	ControllerException(std::string s)
+	{
+		m="ControllerException: "+s+"\n";
+	}
+    /** \brief przeciążona metoda wyświetla nasz komunikat
+     * \return const char* komunikat
+     */
+	const char* what() const noexcept
+	{
+		return m.c_str();
+	}
+};
+
+Controller::Controller() : shutDown(false), controllerBlockingQueue(nullptr)
 {
 
 }
 
 Controller::~Controller()
 {
-
+	if(controllerBlockingQueue!=nullptr)
+	{
+		delete controllerBlockingQueue;
+	}
 }
 
 void Controller::setModel(Model* m)
@@ -43,6 +71,40 @@ void Controller::start()
 		}
 	}
 }
+
+void Controller::setup()
+{
+	if(controllerBlockingQueue!=nullptr)
+	{
+		throw ControllerException("controllerBlockingQueue!=nullptr");
+	}
+	controllerBlockingQueue=new BlockingQueue<Event*>;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

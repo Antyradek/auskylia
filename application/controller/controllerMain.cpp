@@ -24,6 +24,7 @@ int main(int argc, char* argv[])
 		Controller* controller=new Controller();
 		controller->setModel(new Model());
 		controller->setViewServer(new ViewServer(portNo));
+		controller->setup();
 		controller->start();
 	}
 	catch(exception &e)

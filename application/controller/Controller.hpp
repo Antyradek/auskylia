@@ -8,6 +8,8 @@
 
 #include "../model/Model.hpp"
 #include "ViewServer.hpp"
+#include "BlockingQueue.hpp"
+#include "Event.hpp"
 
 class Controller
 {
@@ -17,9 +19,12 @@ public:
 	void setModel(Model* m);
 	void setViewServer(ViewServer* v);
 	void start();
+	void setup();/**< ustawienie kolejki blokującej */
 private:
 	Model* model;
 	ViewServer* viewServer;
 	bool shutDown;
-	/**< \todo być może będzie tu BlockingQueue */
+    /** \brief kolejka zdażeń przetwarzana przez kontroler
+     */
+	BlockingQueue<Event*>* controllerBlockingQueue;
 };
