@@ -97,7 +97,7 @@ void ViewServer::listenAndRespond()
 		#ifdef _DEBUG
 		std::cout<<buf<<std::endl;
 		#endif // _DEBUG
-		buf="HTTP/1.0 200 OK\n\ntest";
+		buf=(char*)"HTTP/1.0 200 OK\n\ntest\0";
 		//buf=(char*)str.c_str();
 		write(ConnectFD,buf,siz);
 

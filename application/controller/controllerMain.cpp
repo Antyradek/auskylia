@@ -17,6 +17,7 @@ int main(int argc, char* argv[])
 	int portNo=8080;
 	try
 	{
+		cout<<"auskylia server is running..."<<endl;
 		if(argc>=2)
 		{
 			portNo=strtol(argv[1],0,10);
