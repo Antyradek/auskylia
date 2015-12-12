@@ -35,11 +35,11 @@ Zapytanie:
 <!--Polecenie obliczeń. Współczynniki są procentami, czyli liczbami całkowitymi <0,100>, odpowiedzią jest status.-->
 <data>
     <command>calculate</command>
-    <start>Lotnisko początkowe</start>
-    <end>Lotnisko końcowe</end>
+    <start>IATA początku</start>
+    <end>IATA końcowego</end>
 	<price>Wsp. ceny</price>
 	<safety>Wsp. bezpieczeństwa</safety>
-	<class>Wsp. Wygody</class>
+	<comfort>Wsp. Wygody</comfort>
 	<time>Wsp. Czasu</time>
 </data>
 
@@ -54,7 +54,7 @@ Zapytanie:
 	<progress>Procent liczenia</progress>
 </data>
 
-<!--Odpowiedź, gdy obliczenia się spierdoliły-->
+<!--Odpowiedź, gdy obliczenia się spierdoliły, niepoprawne dane, albo zatrzymane przez użytkownika-->
 <data>
 	<response>failture</response>
 	<cause>Dlaczego coś nie teges</cause>
@@ -80,7 +80,7 @@ Zapytanie:
     </airports>
 	<price>Cena</price>
 	<safety>Bezpieczeństwo</safety>
-	<class>Wygoda</class>
+	<comfort>Wygoda</comfort>
 	<time>Czas</time>
 </data>
 

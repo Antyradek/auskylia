@@ -12,6 +12,15 @@
         <div id="waitWindow">
             <img id="hourglass" src="img/hourglass.svg" width="512" height="512" />
         </div>
+        <div id="errorWindow">
+            <p id="errorTitle">
+                Coś się spierdoliło.
+            </p>
+            <p id="errorText">
+
+            </p>
+            <input type="button" id="errorClose" value="Dobra"/>
+        </div>
         <div id="mainWindow" >
             <p id="instruction">
                 Aby rozpocząć, wybierz miasto początowe i końcowe, oraz parametry.
@@ -34,7 +43,7 @@
                     Bezpieczeństwo:<br/>
                     <input type="range" id="safetyRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
                     Wygoda:<br/>
-                    <input type="range" id="classRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
+                    <input type="range" id="comfortRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
                     Czas:<br/>
                     <input type="range" id="timeRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
                 </fieldset>

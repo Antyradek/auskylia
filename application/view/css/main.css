@@ -22,7 +22,7 @@ body
 {
     width: 80%;
     margin: auto;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.5);
     display: block;
     border-radius: 20px;
     padding: 10px;
@@ -51,7 +51,7 @@ body
 
 .citySelect:hover
 {
-    background-color: cyan;
+    background-color: #fc6f71;
 }
 
 .inputFieldset
@@ -94,6 +94,7 @@ body
     left: 50%;
     margin-top: -256px;
     margin-left: -256px;
+    box-shadow: 0px 0px 50px black;
 }
 
 #hourglass
@@ -106,6 +107,46 @@ body
     animation-name: rotate;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+}
+
+#errorWindow
+{
+    display: none;
+    width: 512px;
+    height: 512px;
+    background: rgba(255,0,0,0.8);
+    border-radius: 20px;
+    position: absolute;
+    /* Wyśrodkowanie elementu */
+    top: 50%;
+    left: 50%;
+    margin-top: -256px;
+    margin-left: -256px;
+    box-shadow: 0px 0px 50px 10px red;
+}
+
+#errorTitle
+{
+    text-align: center;
+    font-size: 200%;
+}
+
+#errorClose
+{
+    width: 100%;
+    border-radius: 10px;
+    height: 50px;
+    border: none;
+    font-family: pixel;
+    font-size: 100%;
+    transition: background-color 0.5s;
+    position: absolute;
+    bottom: 0px;
+}
+
+#errorClose:hover
+{
+    background-color: red;
 }
 
 @keyframes rotate
