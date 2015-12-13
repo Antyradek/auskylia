@@ -97,9 +97,17 @@ void ViewServer::listenAndRespond()
 		#ifdef _DEBUG
 		std::cout<<buf<<std::endl;
 		#endif // _DEBUG
-		buf=(char*)"HTTP/1.0 200 OK\n\ntest\0";
+
+		//CROSS_ORIGIN Jest niebezpieczny
+		//TODO użyć więcej dobroci c++11 itp a do tego wymyślić naturalny sposób, aby kontroler odpowiadał stroną
+		//buf=(char*)"HTTP/1.0 200 OK\n\ntest\0";
+		std::string response = "HTTP/1.0 200 OK\nAccess-Control-Allow-Origin: *\n\n<data><response>failture</response><cause>Tymczasowy błąd serwera</cause></data>\0";
+		const char* data = response.c_str();
+		int len = response.size();
+		write(ConnectFD,data,len);
+		
 		//buf=(char*)str.c_str();
-		write(ConnectFD,buf,siz);
+		//write(ConnectFD,buf,siz);
 
 		if (-1 == shutdown(ConnectFD, SHUT_RDWR))
 		{
