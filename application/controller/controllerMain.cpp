@@ -14,10 +14,10 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	int portNo=8080;
+	int portNo=5005;
 	try
 	{
-		cout<<"auskylia server is running..."<<endl;
+		cout<<"Serwer Auskylia wystartował..."<<endl;
 		if(argc>=2)
 		{
 			portNo=strtol(argv[1],0,10);

@@ -1,5 +1,5 @@
 var url = "http://localhost";
-var port = 3000;
+var port = 5005;
 
 ///Punkt startowy
 $(document).ready(function()
