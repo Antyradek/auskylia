@@ -85,6 +85,10 @@ void Controller::start()
             {
 			case Test:
 				break;
+			case SHUT_DOWN:
+				coutMutex.lock();
+				cout<<"Zamykanie serwera Auskylia..."<<endl;
+				coutMutex.unlock();
 			case MESSAGE_FROM_VIEW_SERVER:
 				break;
 			case MESSAGE_FROM_MODEL:
@@ -111,6 +115,16 @@ void Controller::setup()
 		throw ControllerException("viewServer==nullptr");
 	}
 	viewServer->setControllerBlockingQueue(controllerBlockingQueue);
+}
+
+void Controller::triggerShutDown()
+{
+	shutDown=true;
+	if(controllerBlockingQueue==nullptr)
+	{
+		throw ControllerException("Controller::triggerShutDown() controllerBlockingQueue==nullptr");
+	}
+	controllerBlockingQueue->push_back(new Event(SHUT_DOWN));
 }
 
 

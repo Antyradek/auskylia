@@ -162,7 +162,7 @@ void ViewServer::listenAndRespond()
 
 		//TODO użyć więcej dobroci c++11 itp a do tego wymyślić naturalny sposób, aby kontroler odpowiadał stroną i nie był podatny na cofanie się w ścieżce (wpisywanie /../)
 		//buf=(char*)"HTTP/1.0 200 OK\n\ntest\0";
-		std::string response = "HTTP/1.0 200 OK\nAccess-Control-Allow-Origin: *\n\n<data><response>failture</response><cause>Ta funkcja jeszcze nie jest gotowa.</cause></data>\0";
+		std::string response = "HTTP/1.1 200 OK\nAccess-Control-Allow-Origin: *\n\n<data><response>failture</response><cause>Ta funkcja jeszcze nie jest gotowa.</cause></data>\0";
 		const char* data = response.c_str();
 		int len = response.size();
 		write(ConnectFD,data,len);

@@ -20,6 +20,7 @@ public:
 	void setViewServer(ViewServer* v);
 	void start();
 	void setup();/**< ustawienie kolejki blokującej */
+	void triggerShutDown();
 private:
 	Model* model;
 	ViewServer* viewServer;

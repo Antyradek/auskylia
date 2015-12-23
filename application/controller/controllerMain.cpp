@@ -9,6 +9,7 @@
 #include <string>
 #include <exception>
 #include <cstdlib>
+#include <thread>
 
 #include <mutex>
 std::mutex coutMutex;/**< mutex do zapewniania niepodzielności cout między wątkami */
@@ -31,7 +32,18 @@ int main(int argc, char* argv[])
 		controller->setModel(new Model());
 		controller->setViewServer(new ViewServer(portNo));
 		controller->setup();
-		controller->start();
+		//controller->start();
+		thread controllerThread(&Controller::start,controller);
+		string s;
+		while(cin>>s)//bżydkie ale wygodne
+		{
+			if(s.compare("exit")==0)
+			{
+				controller->triggerShutDown();
+				break;
+			}
+		}
+		controllerThread.join();
 	}
 	catch(exception &e)
 	{

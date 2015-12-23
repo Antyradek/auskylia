@@ -26,7 +26,7 @@
 	<cstdlib>
 	<mutex>
 
-1450895868 source:d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.cpp
+1450898966 source:d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.cpp
 	"ViewServer.hpp"
 	"XMLParser.hpp"
 	<sys/types.h>
