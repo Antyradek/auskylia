@@ -1,3 +1,6 @@
+var url = "http://localhost";
+var port = 5005;
+
 ///Punkt startowy
 $(document).ready(function()
 {
@@ -66,6 +69,9 @@ function parseResult(data)
         case "list":
             updateCitySelections($data);
             break;
+        case "failture":
+            showServerError($data);
+            break;
         //...
         default:
             //TODO informacja o błędnej komendzie
@@ -89,23 +95,35 @@ function calculate()
 }
 
 ///wywal oczojebny błąd na ekran
-function showError(text)
+function showError(title, text)
 {
-    $("#errorText").text(text);
+    $("#errorTitle").html(title);
+    $("#errorText").html(text);
     $("#errorWindow").slideDown();
 }
 
 ///wysyła rządanie i przetwarza wynik, lub pokazuje błąd
 function sendData(data, errorText)
 {
-    $.post("controller", {data : data})
-    .done(function(data)
+    $.ajax({
+        type: "POST",
+        url: url + ":" + port.toString(),
+        data: data,
+        crossDomain: true
+    })
+    .done(function(resp)
     {
-        alert("Odebrano: " + data);
-        parseResult(data);
+        alert("Odebrano: \"" + resp + "\"");
+        parseResult(resp);
     })
     .fail(function()
     {
-        showError(errorText);
+        showError("Błąd wysyłania",errorText);
     });
+}
+
+//pokazuje błąd serwera
+function showServerError($xml)
+{
+    showError("Błąd serwera" ,$xml.find("cause").html());
 }

@@ -21,7 +21,8 @@ ViewServer::ViewServer(int pNo) : portNo(pNo)
 
 }
 
-ViewServer::ViewServer() : portNo(8080)
+//TODO ten konstruktor chyba się nigdy nie wywyołuje, bo domyślny port jest zapsany w main i wywyołuje powyższy. Można to chyba usunąć.
+ViewServer::ViewServer() : portNo(5005)
 {
 
 }
@@ -39,11 +40,11 @@ void ViewServer::listenAndRespond()
 
     if (-1 == SocketFD)
 	{
-      perror("cannot create socket");
+      perror("Nie udało się utworzyć gniazda");
       exit(EXIT_FAILURE);
     }
     #ifdef _DEBUG
-    std::cout<<"socket utworzony\n";
+    std::cout<<"Gniazdo utworzone\n";
     #endif // _DEBUG
 
     memset(&sa, 0, sizeof sa);
@@ -54,22 +55,22 @@ void ViewServer::listenAndRespond()
 
     if (-1 == bind(SocketFD,(struct sockaddr *)&sa, sizeof sa))
 	{
-      perror("bind failed");
+      perror("Połączenie nieudane");
       close(SocketFD);
       exit(EXIT_FAILURE);
     }
     #ifdef _DEBUG
-    std::cout<<"socket zbindowany\n";
+    std::cout<<"Połączenie sukcesywne\n";
     #endif // _DEBUG
 
     if (-1 == listen(SocketFD, 10))
 	{
-      perror("listen failed");
+      perror("Nasłuchiwanie nieudane");
       close(SocketFD);
       exit(EXIT_FAILURE);
     }
     #ifdef _DEBUG
-    std::cout<<"nasłuchiwanie\n";
+    std::cout<<"Nasłuchiwanie...\n";
     #endif // _DEBUG
 
     for (;;)/**< \todo ustalić czas życia gniazda w naszej aplikacji */
@@ -78,12 +79,12 @@ void ViewServer::listenAndRespond()
 
 		if (0 > ConnectFD)
 		{
-			perror("accept failed");
+			perror("Akceptacja nieudana");
 			close(SocketFD);
 			exit(EXIT_FAILURE);
 		}
 		#ifdef _DEBUG
-		std::cout<<"połączenie zaakceptowane\n";
+		std::cout<<"Połączenie zaakceptowane\n";
 		#endif // _DEBUG
 
 		/**< \todo zczytać zapytanie od widoku */
@@ -95,22 +96,29 @@ void ViewServer::listenAndRespond()
 		char* buf=new char[siz];
 		read(ConnectFD, buf, siz);
 		#ifdef _DEBUG
-		std::cout<<buf<<std::endl;
+		std::cout<< "Odebrano dane:" << std::endl << buf << std::endl;
 		#endif // _DEBUG
-		buf=(char*)"HTTP/1.0 200 OK\n\ntest\0";
+
+		//TODO użyć więcej dobroci c++11 itp a do tego wymyślić naturalny sposób, aby kontroler odpowiadał stroną i nie był podatny na cofanie się w ścieżce (wpisywanie /../)
+		//buf=(char*)"HTTP/1.0 200 OK\n\ntest\0";
+		std::string response = "HTTP/1.0 200 OK\nAccess-Control-Allow-Origin: *\n\n<data><response>failture</response><cause>Ta funkcja jeszcze nie jest gotowa.</cause></data>\0";
+		const char* data = response.c_str();
+		int len = response.size();
+		write(ConnectFD,data,len);
+		
 		//buf=(char*)str.c_str();
-		write(ConnectFD,buf,siz);
+		//write(ConnectFD,buf,siz);
 
 		if (-1 == shutdown(ConnectFD, SHUT_RDWR))
 		{
-			perror("shutdown failed");
+			perror("Nie udało się zakończyć");
 			close(ConnectFD);
 			close(SocketFD);
 			exit(EXIT_FAILURE);
 		}
 		close(ConnectFD);
 		#ifdef _DEBUG
-		std::cout<<"połączenie zakończone\n";
+		std::cout<<"Połączenie zakończone\n";
 		#endif // _DEBUG
 
 	}

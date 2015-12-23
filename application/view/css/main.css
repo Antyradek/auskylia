@@ -131,6 +131,11 @@ body
     font-size: 200%;
 }
 
+#errorText
+{
+    text-align: center;
+}
+
 #errorClose
 {
     width: 100%;
