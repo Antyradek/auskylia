@@ -44,13 +44,19 @@ public:
 	}
 };
 
-ViewServer::ViewServer(int pNo) : portNo(pNo), controllerBlockingQueue(nullptr)
+ViewServer::ViewServer(int pNo) :
+	portNo(pNo),
+	controllerBlockingQueue(nullptr),
+	shutDown(false)
 {
 
 }
 
 //TODO ten konstruktor chyba się nigdy nie wywyołuje, bo domyślny port jest zapsany w main i wywyołuje powyższy. Można to chyba usunąć.
-ViewServer::ViewServer() : portNo(5005), controllerBlockingQueue(nullptr)
+ViewServer::ViewServer() :
+	portNo(5005),
+	controllerBlockingQueue(nullptr),
+	shutDown(false)
 {
 
 }
@@ -69,6 +75,8 @@ void ViewServer::listenAndRespond()
 	{
 		throw ViewServerException("controllerBlockingQueue==nullptr");
 	}
+
+	shutDown=false;
 
 	struct sockaddr_in sa;
     int SocketFD = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -98,7 +106,7 @@ void ViewServer::listenAndRespond()
     }
     #ifdef _DEBUG
     coutMutex.lock();
-    std::cout<<"Połączenie sukcesywne\n";
+    std::cout<<"Połączenie sukcesywne\n";//bind to nie to samo co połączenie
     coutMutex.unlock();
     #endif // _DEBUG
 
@@ -116,7 +124,7 @@ void ViewServer::listenAndRespond()
 
     XMLParser xmlParser;
 
-    for (;;)/**< \todo ustalić czas życia gniazda w naszej aplikacji */
+    while(!shutDown)/**< \todo ustalić czas życia gniazda w naszej aplikacji */
 	{
 		int ConnectFD = accept(SocketFD, NULL, NULL);
 
@@ -152,9 +160,10 @@ void ViewServer::listenAndRespond()
 		cout<<"Dane mają rozmiar: "<<msg.size()<<endl;
 		coutMutex.unlock();
 		#endif // _DEBUG
-		if(msg.size()==0)//z jakiegoś powodu zdażają się puste połączenia
+		//jakieś dziwne rzeczy się działy z poniższym if'em
+		if(true/*msg.size()==0*/)//z jakiegoś powodu zdażają się puste połączenia
 		{
-			Message* message;
+			Message* message=nullptr;
 			message=xmlParser(msg);
 			Event* e=new Event(MESSAGE_FROM_VIEW_SERVER,(void*)message);
 			controllerBlockingQueue->push_back(e);
@@ -195,6 +204,16 @@ void ViewServer::setControllerBlockingQueue(BlockingQueue<Event*>* q)
 	controllerBlockingQueue=q;
 }
 
+void ViewServer::triggerShutDown()
+{
+	shutDown=true;
+	/**< \todo rozwiązać problem z blokującym accept przy zamykaniu */
+	#ifdef _DEBUG
+	coutMutex.lock();
+	std::cout<<"ViewServer::triggerShutDown()\n";
+	coutMutex.unlock();
+	#endif // _DEBUG
+}
 
 
 

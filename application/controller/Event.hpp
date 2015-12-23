@@ -28,15 +28,27 @@ class Event
 public:
     Event() : type(Test), data(nullptr)
     {
-
+		#ifdef _DEBUG
+		coutMutex.lock();
+		std::cout<<"Event() "<<type<<" "<<data<<"\n";
+		coutMutex.unlock();
+		#endif // _DEBUG
     }
     Event(EventType t) : type(t), data(nullptr)
     {
-
+		#ifdef _DEBUG
+		coutMutex.lock();
+		std::cout<<"Event(EventType t) "<<type<<" "<<data<<"\n";
+		coutMutex.unlock();
+		#endif // _DEBUG
     }
     Event(EventType t, void* d) : type(t), data(d)
     {
-
+		#ifdef _DEBUG
+		coutMutex.lock();
+		std::cout<<"Event(EventType t, void* d) "<<type<<" "<<data<<"\n";
+		coutMutex.unlock();
+		#endif // _DEBUG
     }
     ~Event()
     {

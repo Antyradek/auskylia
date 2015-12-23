@@ -5,6 +5,7 @@
  */
 
 #include "Controller.hpp"
+#include "Message.hpp"
 #include <thread>
 #include <exception>
 #include <string>
@@ -66,6 +67,7 @@ void Controller::setViewServer(ViewServer* v)
 void Controller::start()
 {
 	using namespace std;
+	shutDown=false;
 	/**< \todo nadrzędna pętla do wielokrotnego uruchamiania obliczeń */
 	while(!shutDown)
 	{
@@ -89,9 +91,18 @@ void Controller::start()
 				coutMutex.lock();
 				cout<<"Zamykanie serwera Auskylia..."<<endl;
 				coutMutex.unlock();
+				viewServer->triggerShutDown();
+				//viewServerThread.join();
+				modelMainThread.join();/**< \todo model powinien przyjmować polecenie zamknięcia */
 			case MESSAGE_FROM_VIEW_SERVER:
+				coutMutex.lock();
+				cout<<"Wiadomość z widoku: "<<((Message*)e->data)->msg<<endl;
+				coutMutex.unlock();
 				break;
 			case MESSAGE_FROM_MODEL:
+				coutMutex.lock();
+				cout<<"Wiadomość z modelu: "<<endl;
+				coutMutex.unlock();
 				break;
 			default:
 				coutMutex.lock();

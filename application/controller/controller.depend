@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1450895720 source:d:\moje dokumenty\pszt\auskylia\application\controller\controller.cpp
+1450908189 source:d:\moje dokumenty\pszt\auskylia\application\controller\controller.cpp
 	"Controller.hpp"
+	"Message.hpp"
 	<thread>
 	<exception>
 	<string>
 	<mutex>
 
-1449929749 d:\moje dokumenty\pszt\auskylia\application\controller\controller.hpp
+1450899643 d:\moje dokumenty\pszt\auskylia\application\controller\controller.hpp
 	"../model/Model.hpp"
 	"ViewServer.hpp"
 	"BlockingQueue.hpp"
@@ -14,19 +15,20 @@
 
 1449849424 d:\moje dokumenty\pszt\auskylia\application\model\model.hpp
 
-1450887534 d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.hpp
+1450903939 d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.hpp
 	"BlockingQueue.hpp"
 	"Event.hpp"
 
-1450895601 source:d:\moje dokumenty\pszt\auskylia\application\controller\controllermain.cpp
+1450899954 source:d:\moje dokumenty\pszt\auskylia\application\controller\controllermain.cpp
 	"Controller.hpp"
 	<iostream>
 	<string>
 	<exception>
 	<cstdlib>
+	<thread>
 	<mutex>
 
-1450898966 source:d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.cpp
+1450908382 source:d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.cpp
 	"ViewServer.hpp"
 	"XMLParser.hpp"
 	<sys/types.h>
@@ -52,16 +54,18 @@
 	"BlockingQueue.hpp"
 	<iostream>
 
-1450896108 d:\moje dokumenty\pszt\auskylia\application\controller\event.hpp
+1450907776 d:\moje dokumenty\pszt\auskylia\application\controller\event.hpp
 	<mutex>
 
-1450888583 source:d:\moje dokumenty\pszt\auskylia\application\controller\message.cpp
+1450908829 source:d:\moje dokumenty\pszt\auskylia\application\controller\message.cpp
 	"Message.hpp"
+	<iostream>
+	<mutex>
 
 1450888798 d:\moje dokumenty\pszt\auskylia\application\controller\message.hpp
 	<string>
 
-1450895919 source:d:\moje dokumenty\pszt\auskylia\application\controller\xmlparser.cpp
+1450906843 source:d:\moje dokumenty\pszt\auskylia\application\controller\xmlparser.cpp
 	"XMLParser.hpp"
 	<exception>
 	<iostream>
