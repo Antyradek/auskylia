@@ -6,6 +6,9 @@
 
 #pragma once
 
+#include "BlockingQueue.hpp"
+#include "Event.hpp"
+
 class ViewServer
 {
 public:

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1449930011 source:d:\moje dokumenty\pszt\auskylia\application\controller\controller.cpp
+1450887137 source:d:\moje dokumenty\pszt\auskylia\application\controller\controller.cpp
 	"Controller.hpp"
 	<thread>
 	<exception>
@@ -13,17 +13,20 @@
 
 1449849424 d:\moje dokumenty\pszt\auskylia\application\model\model.hpp
 
-1449575273 d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.hpp
+1450887534 d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.hpp
+	"BlockingQueue.hpp"
+	"Event.hpp"
 
-1449937661 source:d:\moje dokumenty\pszt\auskylia\application\controller\controllermain.cpp
+1450883985 source:d:\moje dokumenty\pszt\auskylia\application\controller\controllermain.cpp
 	"Controller.hpp"
 	<iostream>
 	<string>
 	<exception>
 	<cstdlib>
 
-1449938161 source:d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.cpp
+1450887108 source:d:\moje dokumenty\pszt\auskylia\application\controller\viewserver.cpp
 	"ViewServer.hpp"
+	"XMLParser.hpp"
 	<sys/types.h>
 	<sys/socket.h>
 	<netinet/in.h>
@@ -34,6 +37,7 @@
 	<unistd.h>
 	<iostream>
 	<string>
+	<exception>
 
 1449242261 d:\moje dokumenty\pszt\auskylia\application\controller\blockingqueue.hpp
 	<queue>
@@ -50,7 +54,8 @@
 1449932036 source:d:\moje dokumenty\pszt\auskylia\application\controller\message.cpp
 	"Message.hpp"
 
-1449932434 d:\moje dokumenty\pszt\auskylia\application\controller\message.hpp
+1450888798 d:\moje dokumenty\pszt\auskylia\application\controller\message.hpp
+	<string>
 
 1449932342 source:d:\moje dokumenty\pszt\auskylia\application\controller\xmlparser.cpp
 	"XMLParser.hpp"

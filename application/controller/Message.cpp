@@ -10,3 +10,8 @@ Message::Message()
 {
 	//ctor
 }
+
+Message::Message(std::string &m)
+{
+	msg=m;
+}
