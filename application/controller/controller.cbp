@@ -13,6 +13,7 @@
 				<Option compiler="cygwin" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-D_DEBUG" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -26,16 +27,26 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-Weffc++" />
 			<Add option="-std=c++11" />
-			<Add option="-Wextra" />
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="BlockingQueue.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="BlockingQueue.hpp" />
 		<Unit filename="Controller.cpp" />
 		<Unit filename="Controller.hpp" />
+		<Unit filename="Event.hpp" />
+		<Unit filename="Message.cpp" />
+		<Unit filename="Message.hpp" />
 		<Unit filename="ViewServer.cpp" />
 		<Unit filename="ViewServer.hpp" />
-		<Unit filename="controllerMain.cpp" />
+		<Unit filename="XMLParser.cpp" />
+		<Unit filename="XMLParser.hpp" />
+		<Unit filename="controllerMain.cpp">
+			<Option weight="51" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
