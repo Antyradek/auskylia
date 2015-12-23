@@ -6,6 +6,9 @@
 
 #pragma once
 
+#include <mutex>
+extern std::mutex coutMutex;
+
 /** \brief typy zdarzeń
  */
 enum EventType
@@ -38,7 +41,9 @@ public:
     ~Event()
     {
 		#ifdef _DEBUG
+		coutMutex.lock();
 		std::cout<<"~Event "<<type<<" "<<data<<"\n";
+		coutMutex.unlock();
 		#endif // _DEBUG
     }
     EventType type;/**< typ zdarzenia pozwala wybrać właściwą metodę do jego obsługi */

@@ -9,6 +9,10 @@
 #include <exception>
 #include <string>
 
+#include <mutex>
+extern std::mutex coutMutex;
+
+
 /** \brief Klasa opakowująca exception dla Controller
  */
 struct ControllerException : std::exception
@@ -86,7 +90,9 @@ void Controller::start()
 			case MESSAGE_FROM_MODEL:
 				break;
 			default:
+				coutMutex.lock();
 				clog<<"nieznane zdarzenie"<<endl;
+				coutMutex.unlock();
             }
             delete e;
 		}

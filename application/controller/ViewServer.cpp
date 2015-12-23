@@ -18,6 +18,9 @@
 #include <string>
 #include <exception>
 
+#include <mutex>
+extern std::mutex coutMutex;
+
 /** \brief Klasa opakowująca exception dla ViewServer
  */
 struct ViewServerException : std::exception
@@ -76,7 +79,9 @@ void ViewServer::listenAndRespond()
       exit(EXIT_FAILURE);
     }
     #ifdef _DEBUG
+    coutMutex.lock();
     std::cout<<"Gniazdo utworzone\n";
+    coutMutex.unlock();
     #endif // _DEBUG
 
     memset(&sa, 0, sizeof sa);
@@ -92,7 +97,9 @@ void ViewServer::listenAndRespond()
       exit(EXIT_FAILURE);
     }
     #ifdef _DEBUG
+    coutMutex.lock();
     std::cout<<"Połączenie sukcesywne\n";
+    coutMutex.unlock();
     #endif // _DEBUG
 
     if (-1 == listen(SocketFD, 10))
@@ -102,7 +109,9 @@ void ViewServer::listenAndRespond()
       exit(EXIT_FAILURE);
     }
     #ifdef _DEBUG
+    coutMutex.lock();
     std::cout<<"Nasłuchiwanie...\n";
+    coutMutex.unlock();
     #endif // _DEBUG
 
     XMLParser xmlParser;
@@ -118,7 +127,9 @@ void ViewServer::listenAndRespond()
 			exit(EXIT_FAILURE);
 		}
 		#ifdef _DEBUG
+		coutMutex.lock();
 		std::cout<<"Połączenie zaakceptowane\n";
+		coutMutex.unlock();
 		#endif // _DEBUG
 
 		/**< \todo zczytać zapytanie od widoku */
@@ -130,14 +141,24 @@ void ViewServer::listenAndRespond()
 		char* buf=new char[siz];
 		read(ConnectFD, buf, siz);
 		#ifdef _DEBUG
+		coutMutex.lock();
 		std::cout<< "Odebrano dane:" << std::endl << buf << std::endl;
+		coutMutex.unlock();
 		#endif // _DEBUG
 
 		string msg(buf);
-		Message* message;
-		message=xmlParser(msg);
-		Event* e=new Event(MESSAGE_FROM_VIEW_SERVER,(void*)message);
-		controllerBlockingQueue->push_back(e);
+		#ifdef _DEBUG
+		coutMutex.lock();
+		cout<<"Dane mają rozmiar: "<<msg.size()<<endl;
+		coutMutex.unlock();
+		#endif // _DEBUG
+		if(msg.size()==0)//z jakiegoś powodu zdażają się puste połączenia
+		{
+			Message* message;
+			message=xmlParser(msg);
+			Event* e=new Event(MESSAGE_FROM_VIEW_SERVER,(void*)message);
+			controllerBlockingQueue->push_back(e);
+		}
 
 		//TODO użyć więcej dobroci c++11 itp a do tego wymyślić naturalny sposób, aby kontroler odpowiadał stroną i nie był podatny na cofanie się w ścieżce (wpisywanie /../)
 		//buf=(char*)"HTTP/1.0 200 OK\n\ntest\0";
@@ -158,7 +179,9 @@ void ViewServer::listenAndRespond()
 		}
 		close(ConnectFD);
 		#ifdef _DEBUG
+		coutMutex.lock();
 		std::cout<<"Połączenie zakończone\n";
+		coutMutex.unlock();
 		#endif // _DEBUG
 
 	}
