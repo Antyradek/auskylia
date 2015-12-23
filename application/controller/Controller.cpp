@@ -32,7 +32,11 @@ public:
 	}
 };
 
-Controller::Controller() : shutDown(false), controllerBlockingQueue(nullptr)
+Controller::Controller() :
+	model(nullptr),
+	viewServer(nullptr),
+	shutDown(false),
+	controllerBlockingQueue(nullptr)
 {
 
 }
@@ -57,6 +61,7 @@ void Controller::setViewServer(ViewServer* v)
 
 void Controller::start()
 {
+	using namespace std;
 	/**< \todo nadrzędna pętla do wielokrotnego uruchamiania obliczeń */
 	while(!shutDown)
 	{
@@ -67,7 +72,23 @@ void Controller::start()
 		/**< \todo pętla do przetwarzania zapytań, komunikatów i zdarzeń */
 		while(!shutDown)
 		{
-			/**< \todo dopuki model liczy odpowiadać */
+			/**< \todo dopóki model liczy odpowiadać */
+			Event* e=nullptr;
+			e=controllerBlockingQueue->pop_front();//pobieramy zdarzenie
+			/** \todo jeśli komuś się będzie bardzo nudziło,
+			 * to może przerobić tego switcha na mapę strategii */
+            switch (e->type)
+            {
+			case Test:
+				break;
+			case MESSAGE_FROM_VIEW_SERVER:
+				break;
+			case MESSAGE_FROM_MODEL:
+				break;
+			default:
+				clog<<"nieznane zdarzenie"<<endl;
+            }
+            delete e;
 		}
 	}
 }
@@ -79,6 +100,11 @@ void Controller::setup()
 		throw ControllerException("controllerBlockingQueue!=nullptr");
 	}
 	controllerBlockingQueue=new BlockingQueue<Event*>;
+	if(viewServer==nullptr)
+	{
+		throw ControllerException("viewServer==nullptr");
+	}
+	viewServer->setControllerBlockingQueue(controllerBlockingQueue);
 }
 
 

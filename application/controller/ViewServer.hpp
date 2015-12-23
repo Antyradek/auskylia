@@ -18,9 +18,11 @@ public:
      * \return void
      */
 	void listenAndRespond();
+	void setControllerBlockingQueue(BlockingQueue<Event*>* q);
 private:
 	int portNo;
 	/** \todo ustalić najwygodniejszy sposób na uzyskiwanie odpowiedzi z kontrolera
 	 * i modelu. może to będzie condition z jakimś timeoutem, czy co
 	 */
+	 BlockingQueue<Event*>* controllerBlockingQueue;
 };

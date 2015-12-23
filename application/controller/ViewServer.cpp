@@ -4,7 +4,8 @@
  *
  */
 
-#include"ViewServer.hpp"
+#include "ViewServer.hpp"
+#include "XMLParser.hpp"
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -15,14 +16,38 @@
 #include <unistd.h>
 #include <iostream>
 #include <string>
+#include <exception>
 
-ViewServer::ViewServer(int pNo) : portNo(pNo)
+/** \brief Klasa opakowująca exception dla ViewServer
+ */
+struct ViewServerException : std::exception
+{
+private:
+	std::string m;
+public:
+    /** \brief Wygodny kostruktor wyjątku
+     * \param std::string s komunikat do wyświetlenia
+     */
+	ViewServerException(std::string s)
+	{
+		m="ViewServerException: "+s+"\n";
+	}
+    /** \brief przeciążona metoda wyświetla nasz komunikat
+     * \return const char* komunikat
+     */
+	const char* what() const noexcept
+	{
+		return m.c_str();
+	}
+};
+
+ViewServer::ViewServer(int pNo) : portNo(pNo), controllerBlockingQueue(nullptr)
 {
 
 }
 
 //TODO ten konstruktor chyba się nigdy nie wywyołuje, bo domyślny port jest zapsany w main i wywyołuje powyższy. Można to chyba usunąć.
-ViewServer::ViewServer() : portNo(5005)
+ViewServer::ViewServer() : portNo(5005), controllerBlockingQueue(nullptr)
 {
 
 }
@@ -35,6 +60,13 @@ ViewServer::ViewServer() : portNo(5005)
  */
 void ViewServer::listenAndRespond()
 {
+	using namespace std;/**< \todo ujednolicić std namespace */
+
+	if(controllerBlockingQueue==nullptr)
+	{
+		throw ViewServerException("controllerBlockingQueue==nullptr");
+	}
+
 	struct sockaddr_in sa;
     int SocketFD = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
 
@@ -73,6 +105,8 @@ void ViewServer::listenAndRespond()
     std::cout<<"Nasłuchiwanie...\n";
     #endif // _DEBUG
 
+    XMLParser xmlParser;
+
     for (;;)/**< \todo ustalić czas życia gniazda w naszej aplikacji */
 	{
 		int ConnectFD = accept(SocketFD, NULL, NULL);
@@ -99,13 +133,19 @@ void ViewServer::listenAndRespond()
 		std::cout<< "Odebrano dane:" << std::endl << buf << std::endl;
 		#endif // _DEBUG
 
+		string msg(buf);
+		Message* message;
+		message=xmlParser(msg);
+		Event* e=new Event(MESSAGE_FROM_VIEW_SERVER,(void*)message);
+		controllerBlockingQueue->push_back(e);
+
 		//TODO użyć więcej dobroci c++11 itp a do tego wymyślić naturalny sposób, aby kontroler odpowiadał stroną i nie był podatny na cofanie się w ścieżce (wpisywanie /../)
 		//buf=(char*)"HTTP/1.0 200 OK\n\ntest\0";
 		std::string response = "HTTP/1.0 200 OK\nAccess-Control-Allow-Origin: *\n\n<data><response>failture</response><cause>Ta funkcja jeszcze nie jest gotowa.</cause></data>\0";
 		const char* data = response.c_str();
 		int len = response.size();
 		write(ConnectFD,data,len);
-		
+
 		//buf=(char*)str.c_str();
 		//write(ConnectFD,buf,siz);
 
@@ -126,3 +166,26 @@ void ViewServer::listenAndRespond()
     close(SocketFD);
 
 }
+
+void ViewServer::setControllerBlockingQueue(BlockingQueue<Event*>* q)
+{
+	controllerBlockingQueue=q;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
