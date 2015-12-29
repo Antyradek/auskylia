@@ -28,7 +28,13 @@ void Model::saveGraph( const std::string & file, Graph * graph ) const
 
 }
 
-Path * Model::findBestPath( const std::array<unsigned short, (unsigned)Parameters::Count> & weights, unsigned start, unsigned end )
+void Model::setTargetPath( const std::array<unsigned short, (unsigned)Parameters::Count> & weights, unsigned start, unsigned end ){}
+
+void Model::createPopulation( unsigned size ){}
+
+void Model::evolve( unsigned times, Strategy strategy ){}
+
+Population * Model::getPopulation()
 {
         return nullptr;
 }
