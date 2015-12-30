@@ -13,13 +13,24 @@
  * \brief Lista strategii.
  */
 
-enum class Strategy
+class Strategy
 {
-        RANDOM_UNIFORM,   // dobór losowy z rozkładem jednostajnym dyskretnym
-                          // osobnik ma równe szanse na sparowanie z dowolnym osobnikiem
-        RANDOM_NORMAL,    // dobór losowy z rozkładem dwumianowym skupionym wokół osobnika
-                          // wysoka szansa doboru podobnego osobnika, mała szansa na dużo gorszego/lepszego
-        CLOSEST,          // sztywny dobór według schematu 1+2, 3+4, 5+6...
+
+};
+
+class StrategyRandUniform : public Strategy
+{
+
+};
+
+class StrategyRandBinomial public Strategy
+{
+
+};
+
+class StrategyClosest : public Strategy
+{
+
 };
 
 #endif // STRATEGY_HPP
