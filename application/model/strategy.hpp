@@ -23,7 +23,7 @@ class StrategyRandUniform : public Strategy
 
 };
 
-class StrategyRandBinomial public Strategy
+class StrategyRandBinomial : public Strategy
 {
 
 };

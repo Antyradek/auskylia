@@ -39,19 +39,17 @@ void Model::createPopulation( unsigned size )
 
 }
 
-void Model::evolve( unsigned times, const Strategy & strategy )
+void Model::evolve( unsigned times )
 {
 
 }
 
-void setStrategy( Strategy strategy )
+void setStrategy( const Strategy * strategy )
 {
-	this->strategy = strategy;
 }
 
-void setMutation( Mutation mutation )
+void setMutation( const Mutation * mutation )
 {
-	this->mutation = mutation;
 }
 
 Population * Model::getPopulation()

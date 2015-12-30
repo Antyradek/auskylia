@@ -5,6 +5,9 @@
  *  \brief  Plik nagłówkowy z klasami mutacji
  */
 
+#ifndef MUTATION_HPP
+#define MUTATION_HPP
+
 #include "roll.hpp"
 
 /**
@@ -27,7 +30,7 @@ public:
 	 *        Przykładowo: chance = 200 oznacza 2% szans na mutację
 	 */
 	unsigned chance;
-}
+};
 
 class MutationUniform final : public Mutation
 {
@@ -36,7 +39,7 @@ class MutationUniform final : public Mutation
 		if( rollUniform( 1, chance ) == 1 )
 			return rollUniform( min, max );
 	}
-}
+};
 
 class MutationBinomial final : public Mutation
 {
@@ -45,4 +48,6 @@ class MutationBinomial final : public Mutation
 		if( rollUniform( 1, chance ) == 1 )
 			return rollBinomial( value, min, max );
 	}
-}
+};
+
+#endif // MUTATION_HPP

@@ -79,13 +79,13 @@ public:
 	 * \brief               Ustawia strategię krzyżowania populacji.
 	 * \param[in] strategy  wskaźnik na strategię krzyżowania
 	 */
-	void setStrategy( Strategy strategy );
+	void setStrategy( const Strategy * strategy );
 
 	/**
 	 * \brief               Ustawia sposób działania mutacji.
 	 * \param[in] mutation  wskaźnik na mutację
 	 */
-	void setMutation( Mutation mutation );
+	void setMutation( const Mutation * mutation );
 
 	/** 
 	 * \brief  Zwraca wskaźnik do populacji.
@@ -105,4 +105,4 @@ private:
 	Mutation * mutation;
 };
 
-#endif
+#endif // MODEL_HPP

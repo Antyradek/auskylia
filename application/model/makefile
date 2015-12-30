@@ -4,7 +4,10 @@ LFLAGS = -lboost_system -lpthread
 
 CMD = $(CXX) $(CXXFLAGS) $(LFLAGS) $^ -o $@
 
-OBJS = Model.o 
+OBJS = Model.o roll.o Path.o 
+
+run: all
+	./test
 
 all: test
 
