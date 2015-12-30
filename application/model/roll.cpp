@@ -13,7 +13,7 @@ unsigned rollUniform( unsigned min, unsigned max )
 	return d(e);
 }
 
-unsigned rollBinomial( unsigned value, unsigned min, unsigned max )
+unsigned rollB( unsigned value, unsigned min, unsigned max, unsigned width )
 {
 	if( max < min || max < value || value < min)
 		exit(-1);                              // TODO zamienić na wyjątek
@@ -27,14 +27,14 @@ unsigned rollBinomial( unsigned value, unsigned min, unsigned max )
 
 	if( max - value > value - min )
 	{
-		maxRoll = 2 * (max - value);
-		shift = 2 * value - max;
+		maxRoll = 2 * width * (max - value);
+		shift = (width + 1) * value - width * max;
 	}
 
 	else
 	{
-		maxRoll = 2 * (value - min);
-		shift = min;
+		maxRoll = 2 * width * (value - min);
+		shift = (width - 1) * -value + width * min;
 	}
 
 	std::binomial_distribution<unsigned> d( maxRoll, 0.5);
@@ -48,4 +48,17 @@ unsigned rollBinomial( unsigned value, unsigned min, unsigned max )
 	return result;
 }
 
+unsigned rollBinomial( unsigned value, unsigned min, unsigned max )
+{
+	return rollB( value, min, max, 1 );
+}
 
+unsigned rollBinomialWide( unsigned value, unsigned min, unsigned max )
+{
+	return rollB( value, min, max, 3 );
+}
+
+unsigned rollBinomialUltraWide( unsigned value, unsigned min, unsigned max )
+{
+	return rollB( value, min, max, 5 );
+}

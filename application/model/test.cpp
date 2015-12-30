@@ -33,19 +33,22 @@ int main()
 	unsigned uniform[ SIZE ];
 	unsigned binomial[ SIZE ];
 	unsigned binomial2[ SIZE ];
+	unsigned binomial3[ SIZE ];
 
 	for( int i = 0; i < SIZE; i++ )
 	{
 		uniform[ i ] = 0;
 		binomial[ i ] = 0;
 		binomial2[ i ] = 0;
+		binomial3[ i ] = 0;
 	}
 
 	for( int i = 0; i < ROLLS_SMALL; i++ )
 	{
 		++uniform[ rollUniform( 0, SIZE-1 ) ];
 		++binomial[ rollBinomial( SIZE/2, 0, SIZE-1 ) ];
-		++binomial2[ rollBinomial( SIZE/8, 0, SIZE-1 ) ];
+		++binomial2[ rollBinomialWide( SIZE/2, 0, SIZE-1 ) ];
+		++binomial3[ rollBinomialUltraWide( SIZE/2, 0, SIZE-1 ) ];
 	}
 
 
@@ -81,16 +84,28 @@ int main()
 
 	for( int i = 0; i < SIZE; i++ )
 	{
+		std::cout << i << ": ";
+
+		for( int j = 0; j < binomial3[ i ]; j++ )
+			std::cout << '#';
+		
+		std::cout << std::endl;
+	}
+
+	for( int i = 0; i < SIZE; i++ )
+	{
 		uniform[ i ] = 0;
 		binomial[ i ] = 0;
 		binomial2[ i ] = 0;
+		binomial3[ i ] = 0;
 	}
 
 	for( int i = 0; i < ROLLS_BIG; i++ )
 	{
 		++uniform[ rollUniform( 0, SIZE-1 ) ];
 		++binomial[ rollBinomial( SIZE/2, 0, SIZE-1 ) ];
-		++binomial2[ rollBinomial( SIZE/8, 0, SIZE-1 ) ];
+		++binomial2[ rollBinomialWide( SIZE/2, 0, SIZE-1 ) ];
+		++binomial3[ rollBinomialUltraWide( SIZE/2, 0, SIZE-1 ) ];
 	}
 
 
@@ -102,7 +117,11 @@ int main()
 
 	for( int i = 0; i < SIZE; i++ )
 		std::cout << i << ": " << binomial2[ i ] << std::endl;
-        Model model;
+
+	for( int i = 0; i < SIZE; i++ )
+		std::cout << i << ": " << binomial3[ i ] << std::endl;
+        
+	Model model;
 
         std::cout << "It doesn't do much project-related yet, but it can spawn dragons:" << std::endl << std::endl << dragon << std::endl;
 
