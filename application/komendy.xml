@@ -1,5 +1,6 @@
 <!--Plik komend, jakie są wymieniane między widokiem, a kontrolerem. Przeglądarka wysyła zapytanie POST,
-a serwer powinien odpowdziedzieć podobnie.
+a serwer powinien odpowiedzieć podobnie. Zapytanie do obliczeń odbywa się do dokumentu "server",
+wszystko inne traktuwane jest, jak zapytanie o zasoby. Czyli widok wysyła XML do http://jakis.serwer:5005/server.
 
 Zapytanie:
 {
@@ -77,7 +78,7 @@ Zapytanie:
             <iata>GDA</iata>
         </airport>
 		<!-- itd.. -->
-    </airports>
+	</airports>
 	<price>Cena</price>
 	<safety>Bezpieczeństwo</safety>
 	<comfort>Wygoda</comfort>

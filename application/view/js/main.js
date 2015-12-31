@@ -1,5 +1,4 @@
-var url = "http://localhost";
-var port = 5005;
+var url = "server";
 
 ///Punkt startowy
 $(document).ready(function()
@@ -107,9 +106,8 @@ function sendData(data, errorText)
 {
     $.ajax({
         type: "POST",
-        url: url + ":" + port.toString(),
-        data: data,
-        crossDomain: true
+        url: url,
+        data: data
     })
     .done(function(resp)
     {

@@ -160,24 +160,41 @@ void ViewServer::listenAndRespond()
 		cout<<"Dane mają rozmiar: "<<msg.size()<<endl;
 		coutMutex.unlock();
 		#endif // _DEBUG
-		//jakieś dziwne rzeczy się działy z poniższym if'em
-		if(true/*msg.size()==0*/)//z jakiegoś powodu zdażają się puste połączenia
+
+		string reqDoc = getPageRequest(msg);
+		#ifdef _DEBUG
+		coutMutex.lock();
+		cout << "Zapytano się o stronę: " << reqDoc << endl;
+		coutMutex.unlock();
+		#endif // _DEBUG
+
+		string body = "";
+		string header = "HTTP/1.1 200 OK\n\n";
+		if(reqDoc == "/server")
 		{
-			Message* message=nullptr;
-			message=xmlParser(msg);
-			Event* e=new Event(MESSAGE_FROM_VIEW_SERVER,(void*)message);
-			controllerBlockingQueue->push_back(e);
+			//to zapytanie do serwera, parsujemy XML i generujemy odpowiedź
+
+			//TODO Testowo
+			body = "<data><response>failture</response><cause>Ta funkcja jeszcze nie jest gotowa.</cause></data>";
+			//jakieś dziwne rzeczy się działy z poniższym if'em
+			if(true/*msg.size()==0*/)//z jakiegoś powodu zdażają się puste połączenia
+			{
+				Message* message=nullptr;
+				message=xmlParser(msg);
+				Event* e=new Event(MESSAGE_FROM_VIEW_SERVER,(void*)message);
+				controllerBlockingQueue->push_back(e);
+			}
+		}
+		else
+		{
+			//zapytanie o zasoby, musimy zwrócić stronę internetową
+			body = getPage(reqDoc);
 		}
 
-		//TODO użyć więcej dobroci c++11 itp a do tego wymyślić naturalny sposób, aby kontroler odpowiadał stroną i nie był podatny na cofanie się w ścieżce (wpisywanie /../)
-		//buf=(char*)"HTTP/1.0 200 OK\n\ntest\0";
-		std::string response = "HTTP/1.1 200 OK\nAccess-Control-Allow-Origin: *\n\n<data><response>failture</response><cause>Ta funkcja jeszcze nie jest gotowa.</cause></data>\0";
+		string response = header + body;
 		const char* data = response.c_str();
 		int len = response.size();
 		write(ConnectFD,data,len);
-
-		//buf=(char*)str.c_str();
-		//write(ConnectFD,buf,siz);
 
 		if (-1 == shutdown(ConnectFD, SHUT_RDWR))
 		{
@@ -215,19 +232,73 @@ void ViewServer::triggerShutDown()
 	#endif // _DEBUG
 }
 
+std::string ViewServer::getPageRequest(const std::string& message)
+{
+	//pierwszy wiersz ma 3 wyrazy, a środkowy jest zasobem.
+	int firstSpace = message.find(' ');
+	int secondSpace = message.find(' ', firstSpace + 1);
+	std::string request = message.substr(firstSpace + 1, secondSpace - firstSpace - 1);
+	return request;
+}
 
+std::string ViewServer::getPage(std::string resource)
+{
+	std::string viewDir = "../view";
 
+	if(resource == "/")
+	{
+		resource = "/index.html";
+	}
 
+	//hiperbezpieczna i hiperniewygodna metoda
+	std::vector<std::string> whitelist;
+	whitelist.push_back("index.html");
+	whitelist.push_back("favicon.ico");
+	whitelist.push_back("css/main.css");
+	whitelist.push_back("css/uni05.ttf");
+	whitelist.push_back("img/hourglass.svg");
+	whitelist.push_back("img/logo.svg");
+	whitelist.push_back("js/main.js");
 
+	bool allowed = false;
+	for(std::string page : whitelist)
+	{
+		if("/" + page == resource)
+		{
+			allowed = true;
+		}
+	}
+	if(allowed)
+	{
+		return openFile(viewDir + resource);
+	}
+	else
+	{
+		#ifdef _DEBUG
+		coutMutex.lock();
+		std::cout << "Próba otwarcia nieautoryzowanego pliku: " << resource << std::endl;
+		coutMutex.unlock();
+		#endif // _DEBUG
+		return "";
+	}
+}
 
-
-
-
-
-
-
-
-
-
-
-
+std::string ViewServer::openFile(const std::string& filename)
+{
+	using namespace std;
+	ifstream reqFile(filename, ifstream::in);
+    if(!reqFile.good())
+    {
+        //TODO A może wyjątek tutaj?
+		#ifdef _DEBUG
+		coutMutex.lock();
+		std::cout << "Nie udało się uzyskać zasobu: " << filename << std::endl;
+		coutMutex.unlock();
+		#endif // _DEBUG
+		return "";
+    }
+    stringstream ss; //Heil Hitler :)
+    ss << reqFile.rdbuf();
+    reqFile.close();
+    return ss.str();
+}
