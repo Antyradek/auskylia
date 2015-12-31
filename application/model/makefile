@@ -4,10 +4,13 @@ LFLAGS = -lboost_system -lpthread
 
 CMD = $(CXX) $(CXXFLAGS) $(LFLAGS) $^ -o $@
 
-OBJS = Model.o roll.o Path.o 
+OBJS = Model.o roll.o Path.o Graph.o GraphGenerator.o 
 
 run: all
 	./test
+
+fuck: all
+	gdb ./test
 
 all: test
 

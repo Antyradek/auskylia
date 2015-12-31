@@ -9,7 +9,7 @@
 
 #include "Model.hpp"
 
-Graph * Model::generateGraph( unsigned nodes, bool dense ) const
+Graph * Model::generateGraph( unsigned nodes ) const
 {
 	return nullptr;
 }
