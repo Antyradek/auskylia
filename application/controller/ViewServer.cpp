@@ -52,15 +52,6 @@ ViewServer::ViewServer(int pNo) :
 
 }
 
-//TODO ten konstruktor chyba się nigdy nie wywyołuje, bo domyślny port jest zapsany w main i wywyołuje powyższy. Można to chyba usunąć.
-ViewServer::ViewServer() :
-	portNo(5005),
-	controllerBlockingQueue(nullptr),
-	shutDown(false)
-{
-
-}
-
 /** \brief Metoda odpowiedzialna za komunikację sieciową z widokiem.
  * Możliwe podobieństwa do https://en.wikipedia.org/wiki/Berkeley_sockets
  *
@@ -169,13 +160,16 @@ void ViewServer::listenAndRespond()
 		#endif // _DEBUG
 
 		string body = "";
-		string header = "HTTP/1.1 200 OK\n\n";
+		string mime = "";
 		if(reqDoc == "/server")
 		{
 			//to zapytanie do serwera, parsujemy XML i generujemy odpowiedź
 
 			//TODO Testowo
 			body = "<data><response>failture</response><cause>Ta funkcja jeszcze nie jest gotowa.</cause></data>";
+
+			mime = "text";
+
 			//jakieś dziwne rzeczy się działy z poniższym if'em
 			if(true/*msg.size()==0*/)//z jakiegoś powodu zdażają się puste połączenia
 			{
@@ -188,10 +182,15 @@ void ViewServer::listenAndRespond()
 		else
 		{
 			//zapytanie o zasoby, musimy zwrócić stronę internetową
-			body = getPage(reqDoc);
+			body = getPage(reqDoc, mime);
 		}
 
-		string response = header + body;
+		string response = "HTTP/1.1 200 OK\nContent-Type: " + mime + "\n\n" + body;
+		#ifdef _DEBUG
+		coutMutex.lock();
+		cout << "Zwracamy stronę: " << endl << response << endl;
+		coutMutex.unlock();
+		#endif // _DEBUG
 		const char* data = response.c_str();
 		int len = response.size();
 		write(ConnectFD,data,len);
@@ -241,8 +240,9 @@ std::string ViewServer::getPageRequest(const std::string& message)
 	return request;
 }
 
-std::string ViewServer::getPage(std::string resource)
+std::string ViewServer::getPage(std::string resource, std::string& type)
 {
+	using namespace std;
 	std::string viewDir = "../view";
 
 	if(resource == "/")
@@ -250,26 +250,30 @@ std::string ViewServer::getPage(std::string resource)
 		resource = "/index.html";
 	}
 
+	typedef pair<string, string> PagePair;
 	//hiperbezpieczna i hiperniewygodna metoda
-	std::vector<std::string> whitelist;
-	whitelist.push_back("index.html");
-	whitelist.push_back("favicon.ico");
-	whitelist.push_back("css/main.css");
-	whitelist.push_back("css/uni05.ttf");
-	whitelist.push_back("img/hourglass.svg");
-	whitelist.push_back("img/logo.svg");
-	whitelist.push_back("js/main.js");
+	std::vector<PagePair> whitelist;
+	whitelist.push_back(PagePair("index.html", "text/html"));
+	whitelist.push_back(PagePair("favicon.ico", "image/x-icon"));
+	whitelist.push_back(PagePair("css/main.css", "text/css"));
+	whitelist.push_back(PagePair("css/uni05.ttf","application/x-font-ttf"));
+	whitelist.push_back(PagePair("img/hourglass.svg", "image/svg+xml"));
+	whitelist.push_back(PagePair("img/logo.svg", "image/svg+xml"));
+	whitelist.push_back(PagePair("js/main.js", "text/javascript"));
 
 	bool allowed = false;
-	for(std::string page : whitelist)
+	string mime = "";
+	for(PagePair page : whitelist)
 	{
-		if("/" + page == resource)
+		if("/" + page.first == resource)
 		{
 			allowed = true;
+			mime = page.second;
 		}
 	}
 	if(allowed)
 	{
+		type = mime;
 		return openFile(viewDir + resource);
 	}
 	else
