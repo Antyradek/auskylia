@@ -18,27 +18,48 @@ const unsigned NULL_NODE = std::numeric_limits<int>::max();
 
 Path::Path( unsigned start, unsigned end, unsigned maxLength, unsigned nodes )
 {
-	if( maxLength > nodes - 2 )
+	if( maxLength > nodes )
 	{
-		std::cerr << "[ERR] Path(): maxLength > nodes - 2; maxLength = " << maxLength << ", nodes = " << nodes << std::endl;
+		std::cerr << "[ERR] Path(): maxLength > nodes; maxLength = " << maxLength << ", nodes = " << nodes << std::endl;
 		std::cerr << "Commiting sudoku." << std::endl;
 		exit(-1);		// TODO - zastąpić wyjątkiem
 	}
 
-	length = rollUniform( 1, maxLength );
+	if( maxLength < 2 )
+	{
+		std::cerr << "[ERR] Path(): length < 2; maxLength = " << maxLength << std::endl;
+		std::cerr << "Commiting sudoku." << std::endl;
+		exit(-1);		// TODO - zastąpić wyjątkiem
+	}
+
+	if( start == end )
+	{
+		std::cerr << "[ERR] Path(): start == end; start = " << start << ", end = " << end << std::endl;
+		exit(-1);
+	}
+
+	length = rollUniform( 2, maxLength );
 
 	path = new unsigned [ length ];
 
 	bool used[ nodes ];
 
-	for( unsigned i = 0; i < length; ++i )
+	unsigned len = length - 1;
+
+	for( unsigned i = 1; i < len; ++i )
 		used[ i ] = false;
 
-	for( unsigned i = 0; i < length; ++i )
+	path[ 0 ] = start;
+	path[ len ] = end;
+
+	used[ start ] = true;
+	used[ end ] = true;
+
+	for( unsigned i = 1; i < len; ++i )
 	{
 		path[ i ] = rollUniform( 0, nodes );
 
-		if( path[ i ] == end || path[ i ] == start || used[ path[ i ] ] == true)
+		if( used[ path[ i ] ] == true)
 			--i;
 		
 		else
@@ -65,4 +86,16 @@ unsigned Path::operator[]( unsigned n )
 unsigned Path::getLength()
 {
 	return length;
+}
+
+void Path::print()
+{
+	std::cout << "Path: [" << length << "] " << std::endl;
+
+	std::cout << "   ";
+
+	for( int i = 0; i < length; i++)
+		std::cout << " "<< path[ i ];
+
+	std::cout << std::endl;
 }
