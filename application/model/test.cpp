@@ -148,6 +148,14 @@ void graph_test( std::array<unsigned short, (unsigned)Parameters::Count> a )
 	graph3.printRates();
 }
 
+void pathTest( unsigned start, unsigned end, unsigned maxl, unsigned nodes)
+{
+
+	Path path(start, end, maxl, nodes);
+
+	path.print();
+}
+
 int main(int argc, char ** argv)
 {
 
@@ -158,7 +166,8 @@ int main(int argc, char ** argv)
 		for(int i = 1; i<5; i++)
 			arg[i-1] = std::stoi(std::string(argv[i]));
 
-		graph_test( std::array<unsigned short, (unsigned)Parameters::Count>{ arg[0], arg[1], arg[2], arg[3] } );
+		pathTest( arg[0], arg[1], arg[2], arg[3]);
+		//graph_test( std::array<unsigned short, (unsigned)Parameters::Count>{ arg[0], arg[1], arg[2], arg[3] } );
 	}
 
 	Model model;

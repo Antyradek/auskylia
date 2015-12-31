@@ -25,6 +25,8 @@ public:
 
 	unsigned getLength();
 
+	void print();
+
 private:
 	unsigned * path;
 	unsigned length;
