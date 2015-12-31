@@ -6,6 +6,10 @@
 
 #pragma once
 
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <vector>
 #include "BlockingQueue.hpp"
 #include "Event.hpp"
 
@@ -30,4 +34,14 @@ private:
 	 */
 	 BlockingQueue<Event*>* controllerBlockingQueue;
 	 bool shutDown;
+	 /** \brief Czy podane zapytanie jest zapytaniem serwera, czy zapytaniem o stronę internetową.
+	  * \return Strona podana w nagłówku
+	  */
+	 std::string getPageRequest(const std::string& message);
+	 /** \brief Zwraca żądaną stronę internetową, jeśli jest dozwolona, lub pustkę, jeśli nie jest
+	  */
+	 std::string getPage(std::string resource);
+	 /** \brief Otwiera i zwraca zawartość pliku. Bez żadnej kontroli
+	 */
+	 std::string openFile(const std::string& filename);
 };
