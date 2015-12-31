@@ -125,7 +125,7 @@ void roll_test()
 
 }
 
-void graph_test()
+void graph_test( std::array<unsigned short, (unsigned)Parameters::Count> a )
 {
 	DBG("Starting graph test:");
 
@@ -135,16 +135,32 @@ void graph_test()
 	Graph graph2 = Graph( GRAPH_SIZE, new OtherGenerator() );
 	Graph graph3 = Graph( GRAPH_SIZE, new SmartGenerator() );
 
+	graph1.rate(a);
+	graph2.rate(a);
+	graph3.rate(a);
+
 	graph1.print();
 	graph2.print();
 	graph3.print();
 
+	graph1.printRates();
+	graph2.printRates();
+	graph3.printRates();
 }
 
-int main()
+int main(int argc, char ** argv)
 {
-	graph_test();
-        
+
+	if(argc > 4)
+	{
+		unsigned arg[4];
+
+		for(int i = 1; i<5; i++)
+			arg[i-1] = std::stoi(std::string(argv[i]));
+
+		graph_test( std::array<unsigned short, (unsigned)Parameters::Count>{ arg[0], arg[1], arg[2], arg[3] } );
+	}
+
 	Model model;
 
         std::cout << "It doesn't do much project-related yet, but it can spawn dragons:" << std::endl << std::endl << dragon << std::endl;

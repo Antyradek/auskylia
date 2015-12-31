@@ -20,9 +20,7 @@ Graph::Graph( const unsigned nodes, const GraphGenerator * generator ) : nodes(n
 
 	generator->generate( nodes, adjacencyMatrix );
 
-	for (auto i : ratingMatrix)
-		for (unsigned rating : i)
-			rating = 0;
+	ratingMatrix = std::vector< std::vector< unsigned > > (nodes, std::vector< unsigned > (nodes) );
 }
 
 Graph::~Graph()
@@ -71,4 +69,19 @@ void Graph::print()
 
 		std::cout << std::endl;
 	}
+}
+
+
+void Graph::printRates()
+{
+	for ( unsigned i = 0; i < nodes; ++i)
+	{
+		std::cout << i << ": ";
+
+		for ( unsigned j = i+1; j < nodes; ++j )
+			std::cout << j << "[ " << ratingMatrix[ i ][ j ] << " ] ";
+
+		std::cout << std::endl;
+	}
+
 }

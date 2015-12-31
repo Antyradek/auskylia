@@ -32,6 +32,8 @@ public:
 
 	void print();
 
+	void printRates();
+
 private:
 	unsigned nodes;
 
