@@ -28,10 +28,9 @@ public:
 	/*
 	 * \breif            Generuje graf i zwraca do niego wskaźnik.
 	 * \param[in] nodes  liczba węzłów
-	 * \param[in] dense  czy ma być gęsty
 	 * \return           wskaźnik do wygenerowanego grafu   
 	 */
-	Graph * generateGraph( unsigned nodes, bool dense ) const;
+	Graph * generateGraph( unsigned nodes ) const;
 
 	/*  
 	 * \brief            Wczytuje graf z pamięci.

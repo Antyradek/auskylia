@@ -11,15 +11,16 @@
  */
 enum class Parameters 
 {
-        // nazwa        // indeks tablicy 
-        COST,           // 0
-        TIME,           // 1
-        SECURITY,       // 2
+	// nazwa        // indeks tablicy 
+	COST,           // 0
+	TIME,           // 1
+	SECURITY,       // 2
+	COMFORT,        // 3
 
-        // liczba parametrów (rozmiar tablicy)
-        Count           // 3 (proszę pamiętać o tym, jak kompilator numeruje wartości;
-                        //    jeśli ostatni parametr ma inną wartość niż indeks,
-                        //    trzeba podać liczbę wprost)
+	// liczba parametrów (rozmiar tablicy)
+	Count           // 4 (proszę pamiętać o tym, jak kompilator numeruje wartości;
+	                //    jeśli ostatni parametr ma inną wartość niż indeks,
+	                //    trzeba podać liczbę wprost)
 };
 
 #endif // PARAMETERS_HPP

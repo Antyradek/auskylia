@@ -3,6 +3,7 @@
 
 #include "Model.hpp"
 
+#include "debug.hpp"
 
 const std::string dragon =
 "  .     _///_,                      \n"
@@ -24,18 +25,19 @@ const std::string dragon =
 "                   '\"./_._._-'      \n"
 ;
 
-const unsigned SIZE = 50;
-const unsigned ROLLS_SMALL = 1500;
 
-const unsigned ROLLS_BIG = 150000;
-int main()
+void roll_test()
 {
+	const unsigned SIZE = 50;
+	const unsigned ROLLS_SMALL = 1500;
+	const unsigned ROLLS_BIG = 150000;
+
 	unsigned uniform[ SIZE ];
 	unsigned binomial[ SIZE ];
 	unsigned binomial2[ SIZE ];
 	unsigned binomial3[ SIZE ];
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 	{
 		uniform[ i ] = 0;
 		binomial[ i ] = 0;
@@ -43,7 +45,7 @@ int main()
 		binomial3[ i ] = 0;
 	}
 
-	for( int i = 0; i < ROLLS_SMALL; i++ )
+	for( unsigned i = 0; i < ROLLS_SMALL; i++ )
 	{
 		++uniform[ rollUniform( 0, SIZE-1 ) ];
 		++binomial[ rollBinomial( SIZE/2, 0, SIZE-1 ) ];
@@ -52,47 +54,47 @@ int main()
 	}
 
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 	{
 		std::cout << i << ": ";
 
-		for( int j = 0; j < uniform[ i ]; j++ )
+		for( unsigned j = 0; j < uniform[ i ]; j++ )
 			std::cout << '#';
 		
 		std::cout << std::endl;
 	}
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 	{
 		std::cout << i << ": ";
 
-		for( int j = 0; j < binomial[ i ]; j++ )
+		for( unsigned j = 0; j < binomial[ i ]; j++ )
 			std::cout << '#';
 		
 		std::cout << std::endl;
 	}
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 	{
 		std::cout << i << ": ";
 
-		for( int j = 0; j < binomial2[ i ]; j++ )
+		for( unsigned j = 0; j < binomial2[ i ]; j++ )
 			std::cout << '#';
 		
 		std::cout << std::endl;
 	}
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 	{
 		std::cout << i << ": ";
 
-		for( int j = 0; j < binomial3[ i ]; j++ )
+		for( unsigned j = 0; j < binomial3[ i ]; j++ )
 			std::cout << '#';
 		
 		std::cout << std::endl;
 	}
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 	{
 		uniform[ i ] = 0;
 		binomial[ i ] = 0;
@@ -100,7 +102,7 @@ int main()
 		binomial3[ i ] = 0;
 	}
 
-	for( int i = 0; i < ROLLS_BIG; i++ )
+	for( unsigned i = 0; i < ROLLS_BIG; i++ )
 	{
 		++uniform[ rollUniform( 0, SIZE-1 ) ];
 		++binomial[ rollBinomial( SIZE/2, 0, SIZE-1 ) ];
@@ -109,17 +111,39 @@ int main()
 	}
 
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 		std::cout << i << ": " << uniform[ i ] << std::endl;
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 		std::cout << i << ": " << binomial[ i ] << std::endl;
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 		std::cout << i << ": " << binomial2[ i ] << std::endl;
 
-	for( int i = 0; i < SIZE; i++ )
+	for( unsigned i = 0; i < SIZE; i++ )
 		std::cout << i << ": " << binomial3[ i ] << std::endl;
+
+}
+
+void graph_test()
+{
+	DBG("Starting graph test:");
+
+	const unsigned GRAPH_SIZE = 10;
+
+	Graph graph1 = Graph( GRAPH_SIZE, new UniformIntervals() );
+	Graph graph2 = Graph( GRAPH_SIZE, new OtherGenerator() );
+	Graph graph3 = Graph( GRAPH_SIZE, new SmartGenerator() );
+
+	graph1.print();
+	graph2.print();
+	graph3.print();
+
+}
+
+int main()
+{
+	graph_test();
         
 	Model model;
 
