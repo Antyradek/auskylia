@@ -24,10 +24,6 @@ $(document).ready(function()
 function loadAirports()
 {
     setHourglass(true);
-    //DEBUG
-    data = "<data><response>list</response><airports><airport><name>Sydney</name><iata>SYD</iata></airport><airport><name>Warszawa</name><iata>WAW</iata></airport><airport><name>Gdańsk</name><iata>GDA</iata></airport></airports></data>";
-    parseResult(data);
-    //DEBUG
     sendData("<data><command>list</command></data>", "Nie udało się pobrać listy lotnisk");
     setHourglass(false);
 }
