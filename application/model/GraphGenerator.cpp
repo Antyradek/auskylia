@@ -10,13 +10,17 @@
 #include "roll.hpp"
 #include "GraphGenerator.hpp"
 
+#include "debug.hpp"
+
 void UniformIntervals::generate( const unsigned nodes, AdjacencyMatrix & matrix ) const
 {
+	DBG("generate 0");
 	unsigned intervalStart;
 	unsigned intervalSize;
 
 	matrix = AdjacencyMatrix(nodes, std::vector<std::array< unsigned, (unsigned)Parameters::Count > >(nodes));
 
+	DBG("generate 1");
 
 
 	for( unsigned i = 0; i < nodes; i++ )
@@ -34,6 +38,9 @@ void UniformIntervals::generate( const unsigned nodes, AdjacencyMatrix & matrix 
 				matrix[ j ][ i ][ k ] = matrix[ i ][ j ][ k ];
 			}
 		}
+
+	
+	DBG("generate 2");
 }
 
 void OtherGenerator::generate( const unsigned nodes, AdjacencyMatrix & matrix ) const

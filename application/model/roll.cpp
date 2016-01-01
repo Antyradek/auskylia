@@ -1,5 +1,15 @@
 #include "roll.hpp"
 
+bool rollBinary()
+{
+
+	static std::random_device rdev{};
+	static std::default_random_engine e{rdev()};
+	static std::bernoulli_distribution d(0.5);
+
+	return d(e);
+}
+
 unsigned rollUniform( unsigned min, unsigned max )
 {
 	if( max < min)

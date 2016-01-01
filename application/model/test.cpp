@@ -148,26 +148,51 @@ void graph_test( std::array<unsigned short, (unsigned)Parameters::Count> a )
 	graph3.printRates();
 }
 
-void pathTest( unsigned start, unsigned end, unsigned maxl, unsigned nodes)
+void pathTest( unsigned start, unsigned end, unsigned maxl, unsigned size)
 {
+	const unsigned GRAPH_SIZE = size;
 
-	Path path(start, end, maxl, nodes);
+	Graph graph1 = Graph( GRAPH_SIZE, new UniformIntervals() );
+	
+	graph1.rate( std::array<unsigned short, (unsigned)Parameters::Count>{ 20, 20, 20, 20 }  );
 
-	path.print();
+	unsigned a [20] = {0,1,2,3,4,5, NULL_NODE ,7,8,9,10,11, NULL_NODE ,13,14,15,16,17,18,19};
+
+	Path p = Path(a, 20, &graph1 );
+}
+
+void populationTest( unsigned gSize, unsigned pSize )
+{
+	Graph graph = Graph( gSize, new UniformIntervals() );
+	graph.rate( std::array<unsigned short, (unsigned)Parameters::Count>{ 20, 20, 20, 20 }  );
+
+	Population pop( 3, 7, &graph, pSize);
+
+	StrategyClosest str = StrategyClosest();
+
+	MutationUniform mut;
+
+	pop.print();
+
+	pop.evolve( &str, &mut );
+
+	pop.print();
 }
 
 int main(int argc, char ** argv)
 {
 
-	if(argc > 4)
-	{
-		unsigned arg[4];
+	const unsigned NUM_ARGS = 2;
 
-		for(int i = 1; i<5; i++)
+	if(argc > NUM_ARGS)
+	{
+		unsigned arg[ NUM_ARGS ];
+
+		for(int i = 1; i<NUM_ARGS + 1; i++)
 			arg[i-1] = std::stoi(std::string(argv[i]));
 
-		pathTest( arg[0], arg[1], arg[2], arg[3]);
-		//graph_test( std::array<unsigned short, (unsigned)Parameters::Count>{ arg[0], arg[1], arg[2], arg[3] } );
+		populationTest( arg[0], arg[1] );
+		//pathTest( arg[0], arg[1], arg[2], arg[3]);
 	}
 
 	Model model;

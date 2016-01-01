@@ -28,7 +28,9 @@ public:
 
 	void rate( const std::array<unsigned short, (unsigned)Parameters::Count> & weights );
 
-	unsigned getRating( unsigned first, unsigned second );
+	unsigned getRating( const unsigned first, const unsigned second ) const;
+
+	unsigned getNodes() const;
 
 	void print();
 

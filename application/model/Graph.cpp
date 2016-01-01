@@ -43,7 +43,12 @@ void Graph::rate( const std::array<unsigned short, (unsigned)Parameters::Count> 
 
 }
 
-unsigned Graph::getRating( unsigned first, unsigned second )
+unsigned Graph::getNodes() const
+{
+	return nodes;
+}
+
+unsigned Graph::getRating( const unsigned first, const unsigned second ) const
 {
 	return ratingMatrix[ first ][ second ];
 }

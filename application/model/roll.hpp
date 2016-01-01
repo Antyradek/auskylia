@@ -11,6 +11,9 @@
 #include <random>
 #include <algorithm>
 
+bool rollBinary();
+
+
 unsigned rollUniform( unsigned min, unsigned max );
 
 

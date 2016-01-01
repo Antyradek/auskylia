@@ -34,7 +34,7 @@ public:
 
 class MutationUniform final : public Mutation
 {
-	virtual unsigned mutate( unsigned max, unsigned min = 0, unsigned value = 0 )
+	virtual unsigned mutate( unsigned max, unsigned min = 0, unsigned value = 0 ) const
 	{
 		if( rollUniform( 1, chance ) == 1 )
 			return rollUniform( min, max );
@@ -43,7 +43,7 @@ class MutationUniform final : public Mutation
 
 class MutationBinomial final : public Mutation
 {
-	virtual unsigned mutate( unsigned max, unsigned min = 0, unsigned value = 0 )
+	virtual unsigned mutate( unsigned max, unsigned min = 0, unsigned value = 0 ) const
 	{
 		if( rollUniform( 1, chance ) == 1 )
 			return rollBinomial( value, min, max );
