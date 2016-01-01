@@ -166,15 +166,15 @@ void populationTest( unsigned gSize, unsigned pSize )
 	Graph graph = Graph( gSize, new UniformIntervals() );
 	graph.rate( std::array<unsigned short, (unsigned)Parameters::Count>{ 20, 20, 20, 20 }  );
 
-	Population pop( 3, 7, &graph, pSize);
-
 	StrategyClosest str = StrategyClosest();
-
 	MutationUniform mut;
+
+	Population pop( 3, 7, &graph, &mut, &str, pSize);
 
 	pop.print();
 
-	pop.evolve( &str, &mut );
+	for(int i = 0; i < 100; ++i)
+		pop.evolve( );
 
 	pop.print();
 }

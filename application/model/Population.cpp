@@ -21,12 +21,16 @@ struct pathPtrCompr
 	}
 };
 
-Population::Population( const unsigned start, const unsigned end, const Graph * const graph, const unsigned size )
-	: size(size), start(start), end(end), graph(graph)
+Population::Population( 
+		const unsigned start, 
+		const unsigned end, 
+		const Graph * const graph, 
+		Mutation * mutation, 
+		Strategy * strategy, 
+		const unsigned size )
+	: size(size), start(start), end(end), strategy(strategy), mutation(mutation), graph(graph), nodes( graph->getNodes() )
 {
 	DBG("Population()");
-
-	unsigned nodes = graph->getNodes();
 
 	paths = std::vector<Path*> (size);
 
@@ -36,7 +40,7 @@ Population::Population( const unsigned start, const unsigned end, const Graph * 
 	std::sort( paths.begin(), paths.end(), pathPtrCompr() );
 }
 
-void Population::evolve( const Strategy * strategy, const Mutation * mutation )
+void Population::evolve()
 {
 	DBG("Population::evolve()");
 
@@ -80,19 +84,26 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 		out2 = new Path(length, graph);
 
 		bool choice;
-		for( int i = 0; i < length; ++i )
+		
+		(*out1)[0] = start;
+		(*out2)[0] = start;
+
+		(*out1)[length - 1] = end;
+		(*out2)[length - 1] = end;
+		
+		for( int i = 1; i < length - 1; ++i )
 		{
 			choice = rollBinary();
 			
 			if(choice)
 			{
-				(*out1)[i] = (*in1)[i];
-				(*out2)[i] = (*in2)[i];	
+				(*out1)[i] = mutation->mutate( start, end, nodes - 1, 0, (*in1)[i] );
+				(*out2)[i] = mutation->mutate( start, end, nodes - 1, 0, (*in2)[i] );	
 			}	
 			else
 			{
-				(*out1)[i] = (*in2)[i];
-				(*out2)[i] = (*in1)[i];	
+				(*out1)[i] = mutation->mutate( start, end, nodes - 1, 0, (*in2)[i] );
+				(*out2)[i] = mutation->mutate( start, end, nodes - 1, 0, (*in1)[i] );	
 			}
 		}
 
@@ -106,20 +117,21 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 		Path * shorter;
 		Path * longer;
 
-		if( in1 -> getLength() > in2 -> getLength() )
+		if( len1 > len2 )
 		{
-			length = in1 -> getLength();
-			difference = length - in2 -> getLength();
+			length = len1;
+			difference = length - len2;
 			longer = in1;
 			shorter = in2;
 		}
 		else
 		{
-			length = in2 -> getLength();
-			difference = length - in1 -> getLength();
+			length = len2;
+			difference = length - len1;
 			longer = in2;
 			shorter = in1;
 		}
+
 
 		unsigned newIn[length];
 
@@ -130,7 +142,7 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 
 		for(unsigned i = 0; i < difference; ++i)
 		{
-			n = rollUniform(0, length - 1);
+			n = rollUniform(1, length - 2);
 
 			if( newIn[ n ] == NULL_NODE )
 				--i;
@@ -146,23 +158,31 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 				newIn[ i ] = (*shorter)[ j ];
 		}
 
+
 		unsigned rawOut1 [length];
 		unsigned rawOut2 [length];
 
 		bool choice;
-		for( int i = 0; i < length; ++i )
+
+		rawOut1[0] = start;
+		rawOut2[0] = start;
+
+		rawOut1[length - 1] = end;
+		rawOut2[length - 1] = end;
+
+		for( int i = 1; i < length-1; ++i )
 			{
 				choice = rollBinary();
 				
 				if(choice)
 				{
-					rawOut1[i] = newIn[i];
-					rawOut2[i] = (*longer)[i];	
+					rawOut1[i] = mutation->mutate( start, end, nodes - 1, 0, newIn[i] );
+					rawOut2[i] = mutation->mutate( start, end, nodes - 1, 0, (*longer)[i] );	
 				}	
 				else
 				{
-					rawOut1[i] = (*longer)[i];
-					rawOut2[i] = newIn[i];	
+					rawOut1[i] = mutation->mutate( start, end, nodes - 1, 0, (*longer)[i] );
+					rawOut2[i] = mutation->mutate( start, end, nodes - 1, 0, newIn[i] );	
 				}
 			}
 		
@@ -171,6 +191,21 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 
 	}
 
+}
+
+Path * Population::getPath( unsigned n ) const
+{
+	return paths[n];
+}
+
+void Population::setStrategy( Strategy * strategy )
+{
+	this->strategy = strategy;
+}
+
+void Population::setMutation( Mutation * mutation )
+{
+	this->mutation = mutation;
 }
 
 void Population::print()

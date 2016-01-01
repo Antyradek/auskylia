@@ -71,7 +71,7 @@ Path::Path( unsigned start, unsigned end, unsigned maxLength, const Graph * cons
 			path[ i ] = pool [ i + ++j ];
 	}
 
-	print();
+	DBG_DO(	print() );
 	rate();	
 }
 
@@ -96,8 +96,8 @@ Path::Path( unsigned * nodes, unsigned len, const Graph * const graph ) : rating
 		else
 			path[ i - count ] = nodes[ i ];
 
-	print();
-       rate();	
+	DBG_DO(	print() );
+	rate();	
 }
 
 
