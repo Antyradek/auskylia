@@ -28,7 +28,7 @@ cleanDebug:
 	rm -f bin/Debug/*
 
 runDebug: bin/Debug/controller
-	./bin/Debug/controller
+	./bin/Debug/controller 80
 
 run: controllerMain
 	./controllerMain 8080

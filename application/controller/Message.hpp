@@ -8,6 +8,12 @@
 
 #include <string>
 
+enum MessageType
+{
+	LIST,
+	CALCULATE
+};
+
 /** \brief klasa wiadomości
  */
 class Message
@@ -16,6 +22,7 @@ public:
 	/** Default constructor */
 	Message();
 	Message(std::string &m);
+	MessageType messageType;
 	std::string msg;/**< \todo przemyśleć typ */
 protected:
 private:

@@ -45,12 +45,22 @@ public:
 };
 
 ViewServer::ViewServer(int pNo) :
+	viewServerBlockingQueue(nullptr),
 	portNo(pNo),
 	controllerBlockingQueue(nullptr),
 	shutDown(false)
 {
-
+	viewServerBlockingQueue=new BlockingQueue<std::string>;
 }
+
+ViewServer::~ViewServer()
+{
+	if(viewServerBlockingQueue!=nullptr)
+	{
+		delete viewServerBlockingQueue;
+	}
+}
+
 
 /** \brief Metoda odpowiedzialna za komunikację sieciową z widokiem.
  * Możliwe podobieństwa do https://en.wikipedia.org/wiki/Berkeley_sockets
@@ -139,7 +149,7 @@ void ViewServer::listenAndRespond()
 		int siz=1024;
 		char* buf=new char[siz];
 		read(ConnectFD, buf, siz);
-		#ifdef _DEBUG
+		#ifdef _DEBUG2
 		coutMutex.lock();
 		std::cout<< "Odebrano dane:" << std::endl << buf << std::endl;
 		coutMutex.unlock();
@@ -153,11 +163,11 @@ void ViewServer::listenAndRespond()
 		#endif // _DEBUG
 
 		string reqDoc = getPageRequest(msg);
-		#ifdef _DEBUG
+		#ifdef _DEBUG2
 		coutMutex.lock();
 		cout << "Zapytano się o stronę: " << reqDoc << endl;
 		coutMutex.unlock();
-		#endif // _DEBUG
+		#endif // _DEBUG2
 
 		string body = "";
 		string mime = "";
@@ -177,6 +187,12 @@ void ViewServer::listenAndRespond()
 				message=xmlParser(msg);
 				Event* e=new Event(MESSAGE_FROM_VIEW_SERVER,(void*)message);
 				controllerBlockingQueue->push_back(e);
+				body=viewServerBlockingQueue->pop_front();
+				#ifdef _DEBUG
+				coutMutex.lock();
+				cout<<"odebrano dane z kolejki"<<endl;
+				coutMutex.unlock();
+				#endif // _DEBUG
 			}
 		}
 		else
@@ -186,11 +202,11 @@ void ViewServer::listenAndRespond()
 		}
 
 		string response = "HTTP/1.1 200 OK\nContent-Type: " + mime + "\n\n" + body;
-		#ifdef _DEBUG
+		#ifdef _DEBUG2
 		coutMutex.lock();
 		cout << "Zwracamy stronę: " << endl << response << endl;
 		coutMutex.unlock();
-		#endif // _DEBUG
+		#endif // _DEBUG2
 		const char* data = response.c_str();
 		int len = response.size();
 		write(ConnectFD,data,len);

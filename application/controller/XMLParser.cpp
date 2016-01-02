@@ -99,11 +99,13 @@ Message* XMLParser::operator()(std::string xml)
 		string c=d.substr(i,j-i);//sekcja command
 		if(c.find("list")!=string::npos)
 		{
+			m->messageType=MessageType::LIST;
 			m->msg=c;
 			return m;
 		}
 		if(c.find("calculate")!=string::npos)
 		{
+			m->messageType=MessageType::CALCULATE;
 			m->msg=d;
 			return m;
 		}

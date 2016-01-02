@@ -27,6 +27,7 @@ public:
 	void listenAndRespond();
 	void setControllerBlockingQueue(BlockingQueue<Event*>* q);
 	void triggerShutDown();
+	BlockingQueue<std::string>* viewServerBlockingQueue;/**< kolejka z odpowiedziami do wysłania */
 private:
 	int portNo;
 	/** \todo ustalić najwygodniejszy sposób na uzyskiwanie odpowiedzi z kontrolera
