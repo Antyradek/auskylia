@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Auskylia: Dokumentacja klasy ViewServer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Auskylia
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;klas</span></a></li>
+      <li><a href="classes.html"><span>Indeks&#160;klas</span></a></li>
+      <li><a href="inherits.html"><span>Hierarchia&#160;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&#160;klas</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_view_server.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pub-attribs">Atrybuty publiczne</a> &#124;
+<a href="class_view_server-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy ViewServer</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_view_server_8hpp_source.html">ViewServer.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Diagram współpracy dla ViewServer:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_view_server__coll__graph.png" border="0" usemap="#_view_server_coll__map" alt="Collaboration graph"/></div>
+<map name="_view_server_coll__map" id="_view_server_coll__map">
+<area shape="rect" id="node2" href="class_blocking_queue.html" title="BlockingQueue\&lt; std\l::string \&gt;" alt="" coords="73,171,213,212"/><area shape="rect" id="node4" href="class_blocking_queue.html" title="Kolejka blokująca. Dziedziczy po queue. Żeby nie ryzykować użycia niezabezpieczonych wątkowo dziedzic..." alt="" coords="195,81,336,108"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ac8960d770d71cd564e470a946560df76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_server.html#ac8960d770d71cd564e470a946560df76">ViewServer</a> (int)</td></tr>
+<tr class="separator:ac8960d770d71cd564e470a946560df76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb076622cff045c8f7cb3475d8132347"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_server.html#adb076622cff045c8f7cb3475d8132347">~ViewServer</a> ()</td></tr>
+<tr class="separator:adb076622cff045c8f7cb3475d8132347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a265565e37e5051443b3f99f86f65575a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_server.html#a265565e37e5051443b3f99f86f65575a">listenAndRespond</a> ()</td></tr>
+<tr class="memdesc:a265565e37e5051443b3f99f86f65575a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda tworzy gniazdo, odbiera zapytanie i odsyła odpowiedź dane do odpowiedzi może dostawać różnie, jak będę się nad tym dokładniej zastanawiał, to ustalę jak to będzie działać  <a href="#a265565e37e5051443b3f99f86f65575a">Więcej...</a><br/></td></tr>
+<tr class="separator:a265565e37e5051443b3f99f86f65575a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fa4f5bde99218af1f85d52b33f6cb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_server.html#a93fa4f5bde99218af1f85d52b33f6cb6">setControllerBlockingQueue</a> (<a class="el" href="class_blocking_queue.html">BlockingQueue</a>&lt; <a class="el" href="class_event.html">Event</a> * &gt; *q)</td></tr>
+<tr class="separator:a93fa4f5bde99218af1f85d52b33f6cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83c3d6ce949e210ea8002561ef5ed13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_server.html#aa83c3d6ce949e210ea8002561ef5ed13">triggerShutDown</a> ()</td></tr>
+<tr class="separator:aa83c3d6ce949e210ea8002561ef5ed13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Atrybuty publiczne</h2></td></tr>
+<tr class="memitem:a4d85cb295c57a3528ed875e6afd7d5b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_blocking_queue.html">BlockingQueue</a>&lt; std::string &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_server.html#a4d85cb295c57a3528ed875e6afd7d5b8">viewServerBlockingQueue</a></td></tr>
+<tr class="separator:a4d85cb295c57a3528ed875e6afd7d5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock">
+<p>Definicja w linii <a class="el" href="_view_server_8hpp_source.html#l00017">17</a> pliku <a class="el" href="_view_server_8hpp_source.html">ViewServer.hpp</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" id="ac8960d770d71cd564e470a946560df76"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ViewServer::ViewServer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pNo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00047">47</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adb076622cff045c8f7cb3475d8132347"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ViewServer::~ViewServer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00056">56</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a class="anchor" id="a265565e37e5051443b3f99f86f65575a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewServer::listenAndRespond </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Metoda tworzy gniazdo, odbiera zapytanie i odsyła odpowiedź dane do odpowiedzi może dostawać różnie, jak będę się nad tym dokładniej zastanawiał, to ustalę jak to będzie działać </p>
+<p>Metoda odpowiedzialna za komunikację sieciową z widokiem. Możliwe podobieństwa do <a href="https://en.wikipedia.org/wiki/Berkeley_sockets">https://en.wikipedia.org/wiki/Berkeley_sockets</a>.</p>
+<dl class="section return"><dt>Zwraca</dt><dd>void </dd></dl>
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">Do zrobienia:</a></b></dt><dd>ujednolicić std namespace </dd></dl>
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Do zrobienia:</a></b></dt><dd>ustalić czas życia gniazda w naszej aplikacji </dd></dl>
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Do zrobienia:</a></b></dt><dd>zczytać zapytanie od widoku </dd></dl>
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000017">Do zrobienia:</a></b></dt><dd>odesłać odpowiedź z nagłówkiem HTTP </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00071">71</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_view_server_a265565e37e5051443b3f99f86f65575a_cgraph.png" border="0" usemap="#class_view_server_a265565e37e5051443b3f99f86f65575a_cgraph" alt=""/></div>
+<map name="class_view_server_a265565e37e5051443b3f99f86f65575a_cgraph" id="class_view_server_a265565e37e5051443b3f99f86f65575a_cgraph">
+<area shape="rect" id="node2" href="class_blocking_queue.html#a33e18f760365430cee38721dfd0abf5e" title="Zdejmuje pierwszy element z kolejki niepodzielnie i go zwraca. " alt="" coords="252,5,391,47"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_view_server_a265565e37e5051443b3f99f86f65575a_icgraph.png" border="0" usemap="#class_view_server_a265565e37e5051443b3f99f86f65575a_icgraph" alt=""/></div>
+<map name="class_view_server_a265565e37e5051443b3f99f86f65575a_icgraph" id="class_view_server_a265565e37e5051443b3f99f86f65575a_icgraph">
+<area shape="rect" id="node2" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8" title="Controller::start" alt="" coords="252,5,363,32"/><area shape="rect" id="node3" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="411,5,461,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a93fa4f5bde99218af1f85d52b33f6cb6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewServer::setControllerBlockingQueue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_blocking_queue.html">BlockingQueue</a>&lt; <a class="el" href="class_event.html">Event</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>q</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00234">234</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_view_server_a93fa4f5bde99218af1f85d52b33f6cb6_icgraph.png" border="0" usemap="#class_view_server_a93fa4f5bde99218af1f85d52b33f6cb6_icgraph" alt=""/></div>
+<map name="class_view_server_a93fa4f5bde99218af1f85d52b33f6cb6_icgraph" id="class_view_server_a93fa4f5bde99218af1f85d52b33f6cb6_icgraph">
+<area shape="rect" id="node2" href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b" title="Controller::setup" alt="" coords="220,13,337,39"/><area shape="rect" id="node3" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="385,13,436,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa83c3d6ce949e210ea8002561ef5ed13"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ViewServer::triggerShutDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">Do zrobienia:</a></b></dt><dd>rozwiązać problem z blokującym accept przy zamykaniu </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00239">239</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a class="anchor" id="a4d85cb295c57a3528ed875e6afd7d5b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_blocking_queue.html">BlockingQueue</a>&lt;std::string&gt;* ViewServer::viewServerBlockingQueue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>kolejka z odpowiedziami do wysłania </p>
+
+<p>Definicja w linii <a class="el" href="_view_server_8hpp_source.html#l00030">30</a> pliku <a class="el" href="_view_server_8hpp_source.html">ViewServer.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>D:/Moje dokumenty/PSZT/auskylia/application/controller/<a class="el" href="_view_server_8hpp_source.html">ViewServer.hpp</a></li>
+<li>D:/Moje dokumenty/PSZT/auskylia/application/controller/<a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_view_server.html">ViewServer</a></li>
+    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:20 dla Auskylia programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

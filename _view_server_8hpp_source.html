@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Auskylia: Plik źródłowy D:/Moje dokumenty/PSZT/auskylia/application/controller/ViewServer.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Auskylia
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_view_server_8hpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ViewServer.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_view_server_8hpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_blocking_queue_8hpp.html">BlockingQueue.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_event_8hpp.html">Event.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_view_server.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_view_server.html">ViewServer</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_view_server.html#ac8960d770d71cd564e470a946560df76">ViewServer</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_view_server.html#adb076622cff045c8f7cb3475d8132347">~ViewServer</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view_server.html#a265565e37e5051443b3f99f86f65575a">listenAndRespond</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view_server.html#a93fa4f5bde99218af1f85d52b33f6cb6">setControllerBlockingQueue</a>(<a class="code" href="class_blocking_queue.html">BlockingQueue&lt;Event*&gt;</a>* q);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view_server.html#aa83c3d6ce949e210ea8002561ef5ed13">triggerShutDown</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_view_server.html#a4d85cb295c57a3528ed875e6afd7d5b8">   30</a></span>&#160;    <a class="code" href="class_blocking_queue.html">BlockingQueue&lt;std::string&gt;</a>* <a class="code" href="class_view_server.html#a4d85cb295c57a3528ed875e6afd7d5b8">viewServerBlockingQueue</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> portNo;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;     <a class="code" href="class_blocking_queue.html">BlockingQueue&lt;Event*&gt;</a>* controllerBlockingQueue;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;     <span class="keywordtype">bool</span> shutDown;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;     std::string getPageRequest(<span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;     std::string getPage(std::string resource, std::string&amp; type);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;     std::string openFile(<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="ttc" id="class_view_server_html_a265565e37e5051443b3f99f86f65575a"><div class="ttname"><a href="class_view_server.html#a265565e37e5051443b3f99f86f65575a">ViewServer::listenAndRespond</a></div><div class="ttdeci">void listenAndRespond()</div><div class="ttdoc">Metoda tworzy gniazdo, odbiera zapytanie i odsyła odpowiedź dane do odpowiedzi może dostawać różnie...</div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8cpp_source.html#l00071">ViewServer.cpp:71</a></div></div>
+<div class="ttc" id="class_view_server_html"><div class="ttname"><a href="class_view_server.html">ViewServer</a></div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8hpp_source.html#l00017">ViewServer.hpp:17</a></div></div>
+<div class="ttc" id="_blocking_queue_8hpp_html"><div class="ttname"><a href="_blocking_queue_8hpp.html">BlockingQueue.hpp</a></div><div class="ttdoc">plik nagłówkowy klasy kolejki blokującej </div></div>
+<div class="ttc" id="class_view_server_html_a93fa4f5bde99218af1f85d52b33f6cb6"><div class="ttname"><a href="class_view_server.html#a93fa4f5bde99218af1f85d52b33f6cb6">ViewServer::setControllerBlockingQueue</a></div><div class="ttdeci">void setControllerBlockingQueue(BlockingQueue&lt; Event * &gt; *q)</div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8cpp_source.html#l00234">ViewServer.cpp:234</a></div></div>
+<div class="ttc" id="_event_8hpp_html"><div class="ttname"><a href="_event_8hpp.html">Event.hpp</a></div><div class="ttdoc">Plik nagłówkowy klasy Event. </div></div>
+<div class="ttc" id="class_view_server_html_adb076622cff045c8f7cb3475d8132347"><div class="ttname"><a href="class_view_server.html#adb076622cff045c8f7cb3475d8132347">ViewServer::~ViewServer</a></div><div class="ttdeci">~ViewServer()</div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8cpp_source.html#l00056">ViewServer.cpp:56</a></div></div>
+<div class="ttc" id="class_view_server_html_aa83c3d6ce949e210ea8002561ef5ed13"><div class="ttname"><a href="class_view_server.html#aa83c3d6ce949e210ea8002561ef5ed13">ViewServer::triggerShutDown</a></div><div class="ttdeci">void triggerShutDown()</div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8cpp_source.html#l00239">ViewServer.cpp:239</a></div></div>
+<div class="ttc" id="class_blocking_queue_html"><div class="ttname"><a href="class_blocking_queue.html">BlockingQueue&lt; Event * &gt;</a></div></div>
+<div class="ttc" id="class_view_server_html_ac8960d770d71cd564e470a946560df76"><div class="ttname"><a href="class_view_server.html#ac8960d770d71cd564e470a946560df76">ViewServer::ViewServer</a></div><div class="ttdeci">ViewServer(int)</div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8cpp_source.html#l00047">ViewServer.cpp:47</a></div></div>
+<div class="ttc" id="class_view_server_html_a4d85cb295c57a3528ed875e6afd7d5b8"><div class="ttname"><a href="class_view_server.html#a4d85cb295c57a3528ed875e6afd7d5b8">ViewServer::viewServerBlockingQueue</a></div><div class="ttdeci">BlockingQueue&lt; std::string &gt; * viewServerBlockingQueue</div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8hpp_source.html#l00030">ViewServer.hpp:30</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d4705990998dc57c6886494362019069.html">controller</a></li><li class="navelem"><a class="el" href="_view_server_8hpp.html">ViewServer.hpp</a></li>
+    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:14 dla Auskylia programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Auskylia: Plik źródłowy D:/Moje dokumenty/PSZT/auskylia/application/controller/controllerMain.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Auskylia
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('controller_main_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">controllerMain.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="controller_main_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_controller_8hpp.html">Controller.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="version_8h.html">version.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">   16</a></span>&#160;std::mutex <a class="code" href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   20</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> portNo=5005;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Serwer Auskylia wystartował...&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Build Version:&quot;</span>&lt;&lt;endl&lt;&lt;AutoVersion::FULLVERSION_STRING&lt;&lt;endl;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Build Date: &quot;</span>&lt;&lt;endl&lt;&lt;AutoVersion::DATE&lt;&lt;<span class="stringliteral">&quot;.&quot;</span>&lt;&lt;AutoVersion::MONTH&lt;&lt;<span class="stringliteral">&quot;.&quot;</span>&lt;&lt;AutoVersion::YEAR&lt;&lt;endl;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span>(argc&gt;=2)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            portNo=strtol(argv[1],0,10);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="class_controller.html">Controller</a>* controller=<span class="keyword">new</span> <a class="code" href="class_controller.html">Controller</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        controller-&gt;<a class="code" href="class_controller.html#a31ceadbf56639439aed34f7b1a588f45">setModel</a>(<span class="keyword">new</span> <a class="code" href="class_model.html">Model</a>());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        controller-&gt;<a class="code" href="class_controller.html#a8957808a8ed46bed83d2444c4fef0e22">setViewServer</a>(<span class="keyword">new</span> <a class="code" href="class_view_server.html">ViewServer</a>(portNo));</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        controller-&gt;<a class="code" href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b">setup</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">//controller-&gt;start();</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        thread controllerThread(&amp;<a class="code" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8">Controller::start</a>,controller);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">string</span> s;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">while</span>(cin&gt;&gt;s)<span class="comment">//bżydkie ale wygodne</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span>(s.compare(<span class="stringliteral">&quot;exit&quot;</span>)==0)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                controller-&gt;<a class="code" href="class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610">triggerShutDown</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        controllerThread.join();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">catch</span>(exception &amp;e)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        cout&lt;&lt;e.what()&lt;&lt;endl;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">catch</span>(...)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        cerr&lt;&lt;<span class="stringliteral">&quot;Jakiś wyjątek!&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="ttc" id="class_controller_html_a8957808a8ed46bed83d2444c4fef0e22"><div class="ttname"><a href="class_controller.html#a8957808a8ed46bed83d2444c4fef0e22">Controller::setViewServer</a></div><div class="ttdeci">void setViewServer(ViewServer *v)</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00067">Controller.cpp:67</a></div></div>
+<div class="ttc" id="class_model_html"><div class="ttname"><a href="class_model.html">Model</a></div><div class="ttdoc">Na razie pusta/zaślepkowa klasa Modelu. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00029">Model.hpp:29</a></div></div>
+<div class="ttc" id="class_view_server_html"><div class="ttname"><a href="class_view_server.html">ViewServer</a></div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8hpp_source.html#l00017">ViewServer.hpp:17</a></div></div>
+<div class="ttc" id="_controller_8hpp_html"><div class="ttname"><a href="_controller_8hpp.html">Controller.hpp</a></div><div class="ttdoc">Plik nagłówkowy klasy kontrolera. </div></div>
+<div class="ttc" id="controller_main_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="controller_main_8cpp_source.html#l00020">controllerMain.cpp:20</a></div></div>
+<div class="ttc" id="class_controller_html_ad535ad74055e645b7f44b7feeb4e82a8"><div class="ttname"><a href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8">Controller::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00072">Controller.cpp:72</a></div></div>
+<div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> <a href="_controller_8hpp_source.html#l00014">Controller.hpp:14</a></div></div>
+<div class="ttc" id="version_8h_html"><div class="ttname"><a href="version_8h.html">version.h</a></div></div>
+<div class="ttc" id="class_controller_html_a31ceadbf56639439aed34f7b1a588f45"><div class="ttname"><a href="class_controller.html#a31ceadbf56639439aed34f7b1a588f45">Controller::setModel</a></div><div class="ttdeci">void setModel(Model *m)</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00062">Controller.cpp:62</a></div></div>
+<div class="ttc" id="controller_main_8cpp_html_a905a79f9a43243b3e3d967dc1f52b612"><div class="ttname"><a href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a></div><div class="ttdeci">std::mutex coutMutex</div><div class="ttdef"><b>Definition:</b> <a href="controller_main_8cpp_source.html#l00016">controllerMain.cpp:16</a></div></div>
+<div class="ttc" id="class_controller_html_aaff2c0ac01c4d7a6b78718ac8a411c4b"><div class="ttname"><a href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b">Controller::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00208">Controller.cpp:208</a></div></div>
+<div class="ttc" id="class_controller_html_a516427a8bb2fc0e0f46f94c318dd1610"><div class="ttname"><a href="class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610">Controller::triggerShutDown</a></div><div class="ttdeci">void triggerShutDown()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00223">Controller.cpp:223</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d4705990998dc57c6886494362019069.html">controller</a></li><li class="navelem"><a class="el" href="controller_main_8cpp.html">controllerMain.cpp</a></li>
+    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:14 dla Auskylia programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

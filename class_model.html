@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Auskylia: Dokumentacja klasy Model</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Auskylia
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;klas</span></a></li>
+      <li><a href="classes.html"><span>Indeks&#160;klas</span></a></li>
+      <li><a href="inherits.html"><span>Hierarchia&#160;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&#160;klas</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_model.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="class_model-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy Model</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Na razie pusta/zaślepkowa klasa Modelu.  
+ <a href="class_model.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_model_8hpp_source.html">Model.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:ae3b375de5f6df4faf74a95d64748e048"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae3b375de5f6df4faf74a95d64748e048">Model</a> ()</td></tr>
+<tr class="separator:ae3b375de5f6df4faf74a95d64748e048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac855229db2fb85d309fdcfae2d7a121e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_graph.html">Graph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac855229db2fb85d309fdcfae2d7a121e">generateGraph</a> (unsigned nodes) const </td></tr>
+<tr class="separator:ac855229db2fb85d309fdcfae2d7a121e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac772eee5fb2c8ab258b4ca74157d80a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0">useGraph</a> (<a class="el" href="class_graph.html">Graph</a> *const graph)</td></tr>
+<tr class="separator:ac772eee5fb2c8ab258b4ca74157d80a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59481c877686bc0dad06857be1448995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a59481c877686bc0dad06857be1448995">useGraph</a> (const std::string &amp;file)</td></tr>
+<tr class="separator:a59481c877686bc0dad06857be1448995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad0895ed8c3106ae02f6e1af24c85302"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aad0895ed8c3106ae02f6e1af24c85302">saveGraph</a> (const std::string &amp;file, <a class="el" href="class_graph.html">Graph</a> *graph=nullptr) const </td></tr>
+<tr class="separator:aad0895ed8c3106ae02f6e1af24c85302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab06679570406075e66cc5557597c700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aab06679570406075e66cc5557597c700">setTargetPath</a> (const std::array&lt; unsigned short,(unsigned) <a class="el" href="parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93ae93f994f01c537c4e2f7d8528c3eb5e9">Parameters::Count</a> &gt; &amp;weights, unsigned start, unsigned end)</td></tr>
+<tr class="memdesc:aab06679570406075e66cc5557597c700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia parametry trasy do wiliczenia.  <a href="#aab06679570406075e66cc5557597c700">Więcej...</a><br/></td></tr>
+<tr class="separator:aab06679570406075e66cc5557597c700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce16aeb0ca138527f5afbe508062ca4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a0ce16aeb0ca138527f5afbe508062ca4">createPopulation</a> (unsigned size)</td></tr>
+<tr class="memdesc:a0ce16aeb0ca138527f5afbe508062ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy populację o zadanym rozmiarze.  <a href="#a0ce16aeb0ca138527f5afbe508062ca4">Więcej...</a><br/></td></tr>
+<tr class="separator:a0ce16aeb0ca138527f5afbe508062ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2ac5823a1e318bb4bdeeecb68081fbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ab2ac5823a1e318bb4bdeeecb68081fbe">evolve</a> (unsigned times)</td></tr>
+<tr class="memdesc:ab2ac5823a1e318bb4bdeeecb68081fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Krzyżuje osobniki.  <a href="#ab2ac5823a1e318bb4bdeeecb68081fbe">Więcej...</a><br/></td></tr>
+<tr class="separator:ab2ac5823a1e318bb4bdeeecb68081fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeae6f6093317808733eeeccc9b8e9c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aeae6f6093317808733eeeccc9b8e9c28">setStrategy</a> (const <a class="el" href="class_strategy.html">Strategy</a> *strategy)</td></tr>
+<tr class="memdesc:aeae6f6093317808733eeeccc9b8e9c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia strategię krzyżowania populacji.  <a href="#aeae6f6093317808733eeeccc9b8e9c28">Więcej...</a><br/></td></tr>
+<tr class="separator:aeae6f6093317808733eeeccc9b8e9c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb4907f3d57273942c28f642ce5fd802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#abb4907f3d57273942c28f642ce5fd802">setMutation</a> (const <a class="el" href="class_mutation.html">Mutation</a> *mutation)</td></tr>
+<tr class="memdesc:abb4907f3d57273942c28f642ce5fd802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia sposób działania mutacji.  <a href="#abb4907f3d57273942c28f642ce5fd802">Więcej...</a><br/></td></tr>
+<tr class="separator:abb4907f3d57273942c28f642ce5fd802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0c9c135934f4022b8b634a4173147b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_population.html">Population</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ada0c9c135934f4022b8b634a4173147b">getPopulation</a> ()</td></tr>
+<tr class="memdesc:ada0c9c135934f4022b8b634a4173147b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca wskaźnik do populacji.  <a href="#ada0c9c135934f4022b8b634a4173147b">Więcej...</a><br/></td></tr>
+<tr class="separator:ada0c9c135934f4022b8b634a4173147b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcdee6ea56bce205fd21c30562258c9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#afcdee6ea56bce205fd21c30562258c9a">doMainJob</a> ()</td></tr>
+<tr class="memdesc:afcdee6ea56bce205fd21c30562258c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zadanie główne modelu. Jeszcze nie wiem, czy ta metoda będzie potrzebna.  <a href="#afcdee6ea56bce205fd21c30562258c9a">Więcej...</a><br/></td></tr>
+<tr class="separator:afcdee6ea56bce205fd21c30562258c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae02b696f5db29504783cf99f96b65274"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae02b696f5db29504783cf99f96b65274">setControllerBlockingQueue</a> (<a class="el" href="class_blocking_queue.html">BlockingQueue</a>&lt; <a class="el" href="class_event.html">Event</a> * &gt; *q)</td></tr>
+<tr class="memdesc:ae02b696f5db29504783cf99f96b65274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia wskaźnik na kolejkę kontrolera.  <a href="#ae02b696f5db29504783cf99f96b65274">Więcej...</a><br/></td></tr>
+<tr class="separator:ae02b696f5db29504783cf99f96b65274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Na razie pusta/zaślepkowa klasa Modelu. </p>
+
+<p>Definicja w linii <a class="el" href="_model_8hpp_source.html#l00029">29</a> pliku <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" id="ae3b375de5f6df4faf74a95d64748e048"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Model::Model </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00062">62</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a class="anchor" id="a0ce16aeb0ca138527f5afbe508062ca4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::createPopulation </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tworzy populację o zadanym rozmiarze. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>rozmiar populacji (liczba parzysta; jeśli jest nieparzysta, model używa size + 1) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00039">39</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afcdee6ea56bce205fd21c30562258c9a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::doMainJob </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zadanie główne modelu. Jeszcze nie wiem, czy ta metoda będzie potrzebna. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>void </dd></dl>
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Do zrobienia:</a></b></dt><dd>rzucić odpowiedni wyjątek, jak już powstanie </dd></dl>
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Do zrobienia:</a></b></dt><dd>wziąć dane z polecenia i uruchomić algorytm </dd></dl>
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Do zrobienia:</a></b></dt><dd>zatrzymać algorytm </dd></dl>
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">Do zrobienia:</a></b></dt><dd>zwrócić stan wykonania algorytmu </dd></dl>
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Do zrobienia:</a></b></dt><dd>wymyślić wygodny sposób zwracania stanu </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00074">74</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_afcdee6ea56bce205fd21c30562258c9a_cgraph.png" border="0" usemap="#class_model_afcdee6ea56bce205fd21c30562258c9a_cgraph" alt=""/></div>
+<map name="class_model_afcdee6ea56bce205fd21c30562258c9a_cgraph" id="class_model_afcdee6ea56bce205fd21c30562258c9a_cgraph">
+<area shape="rect" id="node2" href="class_blocking_queue.html#a33e18f760365430cee38721dfd0abf5e" title="Zdejmuje pierwszy element z kolejki niepodzielnie i go zwraca. " alt="" coords="201,5,340,47"/><area shape="rect" id="node3" href="class_blocking_queue.html#aba9a92a9e6a732cd720c609d7e706c47" title="Dodanie niepodzielnie elementu na koniec kolejki. " alt="" coords="180,71,361,98"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_afcdee6ea56bce205fd21c30562258c9a_icgraph.png" border="0" usemap="#class_model_afcdee6ea56bce205fd21c30562258c9a_icgraph" alt=""/></div>
+<map name="class_model_afcdee6ea56bce205fd21c30562258c9a_icgraph" id="class_model_afcdee6ea56bce205fd21c30562258c9a_icgraph">
+<area shape="rect" id="node2" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8" title="Controller::start" alt="" coords="180,5,291,32"/><area shape="rect" id="node3" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="339,5,389,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab2ac5823a1e318bb4bdeeecb68081fbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::evolve </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>times</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Krzyżuje osobniki. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">times</td><td>liczba iteracji </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">strategy</td><td>sposób krzyżowania </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00044">44</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac855229db2fb85d309fdcfae2d7a121e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_graph.html">Graph</a> * Model::generateGraph </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>nodes</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>&lt;</p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Do zrobienia:</a></b></dt><dd>przydały by się jakieś wyjątki do modelu </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00014">14</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada0c9c135934f4022b8b634a4173147b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_population.html">Population</a> * Model::getPopulation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwraca wskaźnik do populacji. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>wskaźnik do populacji </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00057">57</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aad0895ed8c3106ae02f6e1af24c85302"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::saveGraph </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_graph.html">Graph</a> *&#160;</td>
+          <td class="paramname"><em>graph</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00029">29</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae02b696f5db29504783cf99f96b65274"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::setControllerBlockingQueue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_blocking_queue.html">BlockingQueue</a>&lt; <a class="el" href="class_event.html">Event</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>q</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia wskaźnik na kolejkę kontrolera. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td><a class="el" href="class_blocking_queue.html">BlockingQueue&lt;Event*&gt;</a>* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>void </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00111">111</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_ae02b696f5db29504783cf99f96b65274_icgraph.png" border="0" usemap="#class_model_ae02b696f5db29504783cf99f96b65274_icgraph" alt=""/></div>
+<map name="class_model_ae02b696f5db29504783cf99f96b65274_icgraph" id="class_model_ae02b696f5db29504783cf99f96b65274_icgraph">
+<area shape="rect" id="node2" href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b" title="Controller::setup" alt="" coords="241,13,359,39"/><area shape="rect" id="node3" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="407,13,457,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abb4907f3d57273942c28f642ce5fd802"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::setMutation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_mutation.html">Mutation</a> *&#160;</td>
+          <td class="paramname"><em>mutation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia sposób działania mutacji. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mutation</td><td>wskaźnik na mutację </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aeae6f6093317808733eeeccc9b8e9c28"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::setStrategy </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_strategy.html">Strategy</a> *&#160;</td>
+          <td class="paramname"><em>strategy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia strategię krzyżowania populacji. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">strategy</td><td>wskaźnik na strategię krzyżowania </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aab06679570406075e66cc5557597c700"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::setTargetPath </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; unsigned short,(unsigned) <a class="el" href="parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93ae93f994f01c537c4e2f7d8528c3eb5e9">Parameters::Count</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>weights</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustawia parametry trasy do wiliczenia. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">weights</td><td>Tablica wag przypisanych parametrom trasy </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">in[</td><td>start Numer wierzchołka początkowego </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>Numer wierzchołka końcowego </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00034">34</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac772eee5fb2c8ab258b4ca74157d80a0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::useGraph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_graph.html">Graph</a> *const&#160;</td>
+          <td class="paramname"><em>graph</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00019">19</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59481c877686bc0dad06857be1448995"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::useGraph </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00024">24</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>D:/Moje dokumenty/PSZT/auskylia/application/model/<a class="el" href="_model_8hpp_source.html">Model.hpp</a></li>
+<li>D:/Moje dokumenty/PSZT/auskylia/application/model/<a class="el" href="_model_8cpp_source.html">Model.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_model.html">Model</a></li>
+    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:18 dla Auskylia programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

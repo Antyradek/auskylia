@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Auskylia: Dokumentacja klasy Path</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Auskylia
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Klasy</span></a></li>
+      <li><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Lista&#160;klas</span></a></li>
+      <li><a href="classes.html"><span>Indeks&#160;klas</span></a></li>
+      <li><a href="inherits.html"><span>Hierarchia&#160;klas</span></a></li>
+      <li><a href="functions.html"><span>Składowe&#160;klas</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_path.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="class_path-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy Path</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa reprezentujaca ścieżkę w grafie.  
+ <a href="class_path.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_path_8hpp_source.html">Path.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:a4b2ec24d74e9d8328a139f03ba3edc64"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#a4b2ec24d74e9d8328a139f03ba3edc64">Path</a> (unsigned start, unsigned end, unsigned maxLength, const <a class="el" href="class_graph.html">Graph</a> *const graph)</td></tr>
+<tr class="separator:a4b2ec24d74e9d8328a139f03ba3edc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac737bbd847bc3cb872ae34b06e3493d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#ac737bbd847bc3cb872ae34b06e3493d5">Path</a> (unsigned *nodes, unsigned length, const <a class="el" href="class_graph.html">Graph</a> *const graph)</td></tr>
+<tr class="separator:ac737bbd847bc3cb872ae34b06e3493d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a083983638e110c878b764465696a1d9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#a083983638e110c878b764465696a1d9b">Path</a> (unsigned length, const <a class="el" href="class_graph.html">Graph</a> *const graph)</td></tr>
+<tr class="separator:a083983638e110c878b764465696a1d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a141da9ff89c85e0ba410b5a73864c267"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#a141da9ff89c85e0ba410b5a73864c267">~Path</a> ()</td></tr>
+<tr class="separator:a141da9ff89c85e0ba410b5a73864c267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada96e667fd6c89f40a779f0f422def63"><td class="memItemLeft" align="right" valign="top">unsigned &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#ada96e667fd6c89f40a779f0f422def63">operator[]</a> (unsigned n) const </td></tr>
+<tr class="separator:ada96e667fd6c89f40a779f0f422def63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88e34d4bd0371af46f1a7f0f57ab8c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#ad88e34d4bd0371af46f1a7f0f57ab8c0">operator&lt;</a> (const <a class="el" href="class_path.html">Path</a> &amp;that) const </td></tr>
+<tr class="separator:ad88e34d4bd0371af46f1a7f0f57ab8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5879141baeb4154e709a216aa6d50f4e"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#a5879141baeb4154e709a216aa6d50f4e">getLength</a> () const </td></tr>
+<tr class="separator:a5879141baeb4154e709a216aa6d50f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2f9e6bc56de35a6f62069fbcb9f8cc8"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#aa2f9e6bc56de35a6f62069fbcb9f8cc8">getRating</a> () const </td></tr>
+<tr class="separator:aa2f9e6bc56de35a6f62069fbcb9f8cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb54b2efe4f26f8d57d5076766d1a3cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#acb54b2efe4f26f8d57d5076766d1a3cb">rate</a> ()</td></tr>
+<tr class="separator:acb54b2efe4f26f8d57d5076766d1a3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c9805986fd9779d526c580887b83160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_path.html#a4c9805986fd9779d526c580887b83160">print</a> () const </td></tr>
+<tr class="separator:a4c9805986fd9779d526c580887b83160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Klasa reprezentujaca ścieżkę w grafie. </p>
+
+<p>Definicja w linii <a class="el" href="_path_8hpp_source.html#l00020">20</a> pliku <a class="el" href="_path_8hpp_source.html">Path.hpp</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a class="anchor" id="a4b2ec24d74e9d8328a139f03ba3edc64"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Path::Path </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>maxLength</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_graph.html">Graph</a> *const&#160;</td>
+          <td class="paramname"><em>graph</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00018">18</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_path_a4b2ec24d74e9d8328a139f03ba3edc64_cgraph.png" border="0" usemap="#class_path_a4b2ec24d74e9d8328a139f03ba3edc64_cgraph" alt=""/></div>
+<map name="class_path_a4b2ec24d74e9d8328a139f03ba3edc64_cgraph" id="class_path_a4b2ec24d74e9d8328a139f03ba3edc64_cgraph">
+<area shape="rect" id="node2" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992" title="rollUniform" alt="" coords="137,5,220,32"/><area shape="rect" id="node3" href="class_path.html#a4c9805986fd9779d526c580887b83160" title="Path::print" alt="" coords="137,56,220,83"/><area shape="rect" id="node4" href="class_path.html#acb54b2efe4f26f8d57d5076766d1a3cb" title="Path::rate" alt="" coords="139,107,218,133"/><area shape="rect" id="node5" href="class_graph.html#a9c519d155a4fd302317b68d10da1c3ba" title="Graph::getRating" alt="" coords="268,107,388,133"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac737bbd847bc3cb872ae34b06e3493d5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Path::Path </td>
+          <td>(</td>
+          <td class="paramtype">unsigned *&#160;</td>
+          <td class="paramname"><em>nodes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_graph.html">Graph</a> *const&#160;</td>
+          <td class="paramname"><em>graph</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00078">78</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_path_ac737bbd847bc3cb872ae34b06e3493d5_cgraph.png" border="0" usemap="#class_path_ac737bbd847bc3cb872ae34b06e3493d5_cgraph" alt=""/></div>
+<map name="class_path_ac737bbd847bc3cb872ae34b06e3493d5_cgraph" id="class_path_ac737bbd847bc3cb872ae34b06e3493d5_cgraph">
+<area shape="rect" id="node2" href="class_path.html#a4c9805986fd9779d526c580887b83160" title="Path::print" alt="" coords="137,5,220,32"/><area shape="rect" id="node3" href="class_path.html#acb54b2efe4f26f8d57d5076766d1a3cb" title="Path::rate" alt="" coords="139,56,218,83"/><area shape="rect" id="node4" href="class_graph.html#a9c519d155a4fd302317b68d10da1c3ba" title="Graph::getRating" alt="" coords="268,56,388,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a083983638e110c878b764465696a1d9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Path::Path </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_graph.html">Graph</a> *const&#160;</td>
+          <td class="paramname"><em>graph</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00104">104</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a141da9ff89c85e0ba410b5a73864c267"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Path::~Path </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00110">110</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a class="anchor" id="a5879141baeb4154e709a216aa6d50f4e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Path::getLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00127">127</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa2f9e6bc56de35a6f62069fbcb9f8cc8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Path::getRating </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00132">132</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_path_aa2f9e6bc56de35a6f62069fbcb9f8cc8_icgraph.png" border="0" usemap="#class_path_aa2f9e6bc56de35a6f62069fbcb9f8cc8_icgraph" alt=""/></div>
+<map name="class_path_aa2f9e6bc56de35a6f62069fbcb9f8cc8_icgraph" id="class_path_aa2f9e6bc56de35a6f62069fbcb9f8cc8_icgraph">
+<area shape="rect" id="node2" href="class_path.html#ad88e34d4bd0371af46f1a7f0f57ab8c0" title="Path::operator\&lt;" alt="" coords="165,5,277,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad88e34d4bd0371af46f1a7f0f57ab8c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Path::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_path.html">Path</a> &amp;&#160;</td>
+          <td class="paramname"><em>that</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00122">122</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_path_ad88e34d4bd0371af46f1a7f0f57ab8c0_cgraph.png" border="0" usemap="#class_path_ad88e34d4bd0371af46f1a7f0f57ab8c0_cgraph" alt=""/></div>
+<map name="class_path_ad88e34d4bd0371af46f1a7f0f57ab8c0_cgraph" id="class_path_ad88e34d4bd0371af46f1a7f0f57ab8c0_cgraph">
+<area shape="rect" id="node2" href="class_path.html#aa2f9e6bc56de35a6f62069fbcb9f8cc8" title="Path::getRating" alt="" coords="165,5,277,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ada96e667fd6c89f40a779f0f422def63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned &amp; Path::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00116">116</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4c9805986fd9779d526c580887b83160"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Path::print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00145">145</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_path_a4c9805986fd9779d526c580887b83160_icgraph.png" border="0" usemap="#class_path_a4c9805986fd9779d526c580887b83160_icgraph" alt=""/></div>
+<map name="class_path_a4c9805986fd9779d526c580887b83160_icgraph" id="class_path_a4c9805986fd9779d526c580887b83160_icgraph">
+<area shape="rect" id="node2" href="class_path.html#a4b2ec24d74e9d8328a139f03ba3edc64" title="Path::Path" alt="" coords="168,5,252,32"/><area shape="rect" id="node3" href="class_population.html#af44af1623ec86b2be635b74c6aa621d1" title="Population::newPaths" alt="" coords="136,56,284,83"/><area shape="rect" id="node4" href="class_population.html#a693bd0dd63bab14a13a7b6ed578dddd5" title="Jedna iteracja krzyżowania. [in] strategy wskaźnik na strategię doboru osobników w pary..." alt="" coords="332,56,457,83"/><area shape="rect" id="node5" href="test_8cpp.html#a65d5838f7442ae49d59d4eebbe08a9db" title="populationTest" alt="" coords="505,56,612,83"/><area shape="rect" id="node6" href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="660,56,711,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="acb54b2efe4f26f8d57d5076766d1a3cb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Path::rate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_path_8cpp_source.html#l00137">137</a> pliku <a class="el" href="_path_8cpp_source.html">Path.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_path_acb54b2efe4f26f8d57d5076766d1a3cb_cgraph.png" border="0" usemap="#class_path_acb54b2efe4f26f8d57d5076766d1a3cb_cgraph" alt=""/></div>
+<map name="class_path_acb54b2efe4f26f8d57d5076766d1a3cb_cgraph" id="class_path_acb54b2efe4f26f8d57d5076766d1a3cb_cgraph">
+<area shape="rect" id="node2" href="class_graph.html#a9c519d155a4fd302317b68d10da1c3ba" title="Graph::getRating" alt="" coords="132,5,252,32"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_path_acb54b2efe4f26f8d57d5076766d1a3cb_icgraph.png" border="0" usemap="#class_path_acb54b2efe4f26f8d57d5076766d1a3cb_icgraph" alt=""/></div>
+<map name="class_path_acb54b2efe4f26f8d57d5076766d1a3cb_icgraph" id="class_path_acb54b2efe4f26f8d57d5076766d1a3cb_icgraph">
+<area shape="rect" id="node2" href="class_path.html#a4b2ec24d74e9d8328a139f03ba3edc64" title="Path::Path" alt="" coords="132,5,216,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
+<li>D:/Moje dokumenty/PSZT/auskylia/application/model/<a class="el" href="_path_8hpp_source.html">Path.hpp</a></li>
+<li>D:/Moje dokumenty/PSZT/auskylia/application/model/<a class="el" href="_path_8cpp_source.html">Path.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_path.html">Path</a></li>
+    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:19 dla Auskylia programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

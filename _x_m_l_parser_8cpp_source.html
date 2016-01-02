@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Auskylia: Plik źródłowy D:/Moje dokumenty/PSZT/auskylia/application/controller/XMLParser.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Auskylia
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_x_m_l_parser_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">XMLParser.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_x_m_l_parser_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_x_m_l_parser_8hpp.html">XMLParser.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">extern</span> std::mutex <a class="code" href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_x_m_l_parser_exception.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a> : std::exception</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string m;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_x_m_l_parser_exception.html#adbff88c972fff629d05d3b1bd1bf0f9e">   24</a></span>&#160;    <a class="code" href="struct_x_m_l_parser_exception.html#adbff88c972fff629d05d3b1bd1bf0f9e">XMLParserException</a>(std::string s)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        m=<span class="stringliteral">&quot;XMLParserException: &quot;</span>+s+<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct_x_m_l_parser_exception.html#a9e3ecfc65fee05dad29fafc0b38a03dd">   31</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="struct_x_m_l_parser_exception.html#a9e3ecfc65fee05dad29fafc0b38a03dd">what</a>() const noexcept</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> m.c_str();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_x_m_l_parser.html#a60004d4b50ef242bbd191a494fd750f1">   37</a></span>&#160;<a class="code" href="class_x_m_l_parser.html#a60004d4b50ef242bbd191a494fd750f1">XMLParser::XMLParser</a>()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//ctor</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_x_m_l_parser.html#af833ecdb0e07ead08dfda925b4af86ad">   42</a></span>&#160;<a class="code" href="class_x_m_l_parser.html#af833ecdb0e07ead08dfda925b4af86ad">XMLParser::~XMLParser</a>()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//dtor</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663">   47</a></span>&#160;<a class="code" href="class_message.html">Message</a>* <a class="code" href="class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663">XMLParser::operator()</a>(std::string xml)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">    #ifdef _DEBUG</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span>    <a class="code" href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;XMLParser::operator() xml: &quot;</span>&lt;&lt;xml&lt;&lt;endl;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">    #endif // _DEBUG</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="class_message.html">Message</a>* m=<span class="keyword">new</span> <a class="code" href="class_message.html">Message</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span>(xml.size()==0)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;xml.size()==0&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        m-&gt;msg=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i,j,k,l;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">string</span> data(<span class="stringliteral">&quot;&lt;data&gt;&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">string</span> dataEnd(<span class="stringliteral">&quot;&lt;/data&gt;&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    i=xml.find(data);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(i==string::npos)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;i==string::npos&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        m-&gt;msg=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">//throw XMLParserException(&quot;i==string::npos&quot;);/**&lt; \todo odrzucać wiadomości z niepasującą składnią bez zabijania serwera */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    j=xml.find(dataEnd);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span>(j==string::npos)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;j==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">string</span> d=xml.substr(i,j-i);<span class="comment">//sekcja data</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">string</span> command(<span class="stringliteral">&quot;&lt;command&gt;&quot;</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">string</span> commandEnd(<span class="stringliteral">&quot;&lt;/command&gt;&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    i=d.find(command);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span>(i!=string::npos)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        j=d.find(commandEnd);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span>(j==string::npos)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;j==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">string</span> c=d.substr(i,j-i);<span class="comment">//sekcja command</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span>(c.find(<span class="stringliteral">&quot;list&quot;</span>)!=string::npos)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            m-&gt;messageType=<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a25688e799536738ea469158ef15fd1c0">MessageType::LIST</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            m-&gt;msg=c;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span>(c.find(<span class="stringliteral">&quot;calculate&quot;</span>)!=string::npos)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            m-&gt;messageType=<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013abe9fad258c7b9f786a15e3bddd7bbc4d">MessageType::CALCULATE</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            m-&gt;msg=d;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            k=d.find(<span class="stringliteral">&quot;&lt;start&gt;&quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span>(k==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;start&gt;k==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            k+=7;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            l=d.find(<span class="stringliteral">&quot;&lt;/start&gt;&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">if</span>(l==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;/start&gt;l==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            m-&gt;start=d.substr(k,l-k);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            k=d.find(<span class="stringliteral">&quot;&lt;end&gt;&quot;</span>);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">if</span>(k==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;end&gt;k==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            k+=5;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            l=d.find(<span class="stringliteral">&quot;&lt;/end&gt;&quot;</span>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span>(l==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;/end&gt;l==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            m-&gt;end=d.substr(k,l-k);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            k=d.find(<span class="stringliteral">&quot;&lt;price&gt;&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">if</span>(k==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;price&gt;k==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            k+=7;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            l=d.find(<span class="stringliteral">&quot;&lt;/price&gt;&quot;</span>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span>(l==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;/price&gt;l==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            m-&gt;price=d.substr(k,l-k);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            k=d.find(<span class="stringliteral">&quot;&lt;safety&gt;&quot;</span>);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">if</span>(k==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;safety&gt;k==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            k+=8;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            l=d.find(<span class="stringliteral">&quot;&lt;/safety&gt;&quot;</span>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            <span class="keywordflow">if</span>(l==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;/safety&gt;l==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            m-&gt;safety=d.substr(k,l-k);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            k=d.find(<span class="stringliteral">&quot;&lt;comfort&gt;&quot;</span>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="keywordflow">if</span>(k==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;comfort&gt;k==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            k+=9;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            l=d.find(<span class="stringliteral">&quot;&lt;/comfort&gt;&quot;</span>);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">if</span>(l==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;/comfort&gt;l==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            m-&gt;comfort=d.substr(k,l-k);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            k=d.find(<span class="stringliteral">&quot;&lt;time&gt;&quot;</span>);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">if</span>(k==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;time&gt;k==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            k+=9;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            l=d.find(<span class="stringliteral">&quot;&lt;/time&gt;&quot;</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keywordflow">if</span>(l==string::npos) <span class="keywordflow">throw</span> <a class="code" href="struct_x_m_l_parser_exception.html">XMLParserException</a>(<span class="stringliteral">&quot;&lt;/time&gt;l==string::npos&quot;</span>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            m-&gt;time=d.substr(k,l-k);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">if</span>(c.find(<span class="stringliteral">&quot;status&quot;</span>)!=string::npos)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            m-&gt;msg=c;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            m-&gt;messageType=<a class="code" href="_command_8hpp.html#a21e038f5b8958e203d28bc4f18472352ab15379688176677d49474245a6178d97">MessageType::STATUS</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">if</span>(c.find(<span class="stringliteral">&quot;stop&quot;</span>)!=string::npos)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            m-&gt;msg=c;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            m-&gt;messageType=<a class="code" href="_command_8hpp.html#a21e038f5b8958e203d28bc4f18472352a679ee5320d66c8322e310daeb2ee99b8">MessageType::STOP</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    m-&gt;msg=d;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
+<div class="ttc" id="_message_8hpp_html_ac6606ebe91c8ac66a2c314c79f5ab013a25688e799536738ea469158ef15fd1c0"><div class="ttname"><a href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a25688e799536738ea469158ef15fd1c0">LIST</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_8hpp_source.html#l00014">Message.hpp:14</a></div></div>
+<div class="ttc" id="_command_8hpp_html_a21e038f5b8958e203d28bc4f18472352a679ee5320d66c8322e310daeb2ee99b8"><div class="ttname"><a href="_command_8hpp.html#a21e038f5b8958e203d28bc4f18472352a679ee5320d66c8322e310daeb2ee99b8">STOP</a></div><div class="ttdef"><b>Definition:</b> <a href="_command_8hpp_source.html#l00012">Command.hpp:12</a></div></div>
+<div class="ttc" id="_x_m_l_parser_8hpp_html"><div class="ttname"><a href="_x_m_l_parser_8hpp.html">XMLParser.hpp</a></div><div class="ttdoc">Plik nagłówkowy klasy parsera komunikatów XML dla auskylia. </div></div>
+<div class="ttc" id="struct_x_m_l_parser_exception_html_a9e3ecfc65fee05dad29fafc0b38a03dd"><div class="ttname"><a href="struct_x_m_l_parser_exception.html#a9e3ecfc65fee05dad29fafc0b38a03dd">XMLParserException::what</a></div><div class="ttdeci">const char * what() const noexcept</div><div class="ttdoc">przeciążona metoda wyświetla nasz komunikat </div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00031">XMLParser.cpp:31</a></div></div>
+<div class="ttc" id="class_x_m_l_parser_html_aca4d9a51c17053c7bafa6c5f420ef663"><div class="ttname"><a href="class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663">XMLParser::operator()</a></div><div class="ttdeci">Message * operator()(std::string xml)</div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00047">XMLParser.cpp:47</a></div></div>
+<div class="ttc" id="_x_m_l_parser_8cpp_html_a905a79f9a43243b3e3d967dc1f52b612"><div class="ttname"><a href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a></div><div class="ttdeci">std::mutex coutMutex</div><div class="ttdef"><b>Definition:</b> <a href="controller_main_8cpp_source.html#l00016">controllerMain.cpp:16</a></div></div>
+<div class="ttc" id="struct_x_m_l_parser_exception_html"><div class="ttname"><a href="struct_x_m_l_parser_exception.html">XMLParserException</a></div><div class="ttdoc">Klasa opakowująca exception dla XMLParser. </div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00016">XMLParser.cpp:16</a></div></div>
+<div class="ttc" id="class_message_html"><div class="ttname"><a href="class_message.html">Message</a></div><div class="ttdoc">klasa wiadomości </div><div class="ttdef"><b>Definition:</b> <a href="_message_8hpp_source.html#l00022">Message.hpp:22</a></div></div>
+<div class="ttc" id="class_x_m_l_parser_html_a60004d4b50ef242bbd191a494fd750f1"><div class="ttname"><a href="class_x_m_l_parser.html#a60004d4b50ef242bbd191a494fd750f1">XMLParser::XMLParser</a></div><div class="ttdeci">XMLParser()</div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00037">XMLParser.cpp:37</a></div></div>
+<div class="ttc" id="_command_8hpp_html_a21e038f5b8958e203d28bc4f18472352ab15379688176677d49474245a6178d97"><div class="ttname"><a href="_command_8hpp.html#a21e038f5b8958e203d28bc4f18472352ab15379688176677d49474245a6178d97">STATUS</a></div><div class="ttdef"><b>Definition:</b> <a href="_command_8hpp_source.html#l00013">Command.hpp:13</a></div></div>
+<div class="ttc" id="struct_x_m_l_parser_exception_html_adbff88c972fff629d05d3b1bd1bf0f9e"><div class="ttname"><a href="struct_x_m_l_parser_exception.html#adbff88c972fff629d05d3b1bd1bf0f9e">XMLParserException::XMLParserException</a></div><div class="ttdeci">XMLParserException(std::string s)</div><div class="ttdoc">Wygodny kostruktor wyjątku. </div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00024">XMLParser.cpp:24</a></div></div>
+<div class="ttc" id="_message_8hpp_html_ac6606ebe91c8ac66a2c314c79f5ab013abe9fad258c7b9f786a15e3bddd7bbc4d"><div class="ttname"><a href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013abe9fad258c7b9f786a15e3bddd7bbc4d">CALCULATE</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_8hpp_source.html#l00015">Message.hpp:15</a></div></div>
+<div class="ttc" id="class_x_m_l_parser_html_af833ecdb0e07ead08dfda925b4af86ad"><div class="ttname"><a href="class_x_m_l_parser.html#af833ecdb0e07ead08dfda925b4af86ad">XMLParser::~XMLParser</a></div><div class="ttdeci">virtual ~XMLParser()</div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00042">XMLParser.cpp:42</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d4705990998dc57c6886494362019069.html">controller</a></li><li class="navelem"><a class="el" href="_x_m_l_parser_8cpp.html">XMLParser.cpp</a></li>
+    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:14 dla Auskylia programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>
