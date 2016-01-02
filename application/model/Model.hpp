@@ -1,4 +1,4 @@
-/** 
+/**
  *  \file Model.hpp
  *  \authors Tomasz Jakubczyk, Andrzej Roguski
  *  \brief Plik nagłówkowy klasy Model.
@@ -19,20 +19,24 @@
 #include "parameters.hpp"
 #include "strategy.hpp"
 
-/** 
+#include "../controller/Event.hpp"
+#include "../controller/BlockingQueue.hpp"
+
+/**
  * \brief Na razie pusta/zaślepkowa klasa Modelu
  */
 class Model
 {
 public:
+	Model();
 	/*
 	 * \breif            Generuje graf i zwraca do niego wskaźnik.
 	 * \param[in] nodes  liczba węzłów
-	 * \return           wskaźnik do wygenerowanego grafu   
+	 * \return           wskaźnik do wygenerowanego grafu
 	 */
 	Graph * generateGraph( unsigned nodes ) const;
 
-	/*  
+	/*
 	 * \brief            Wczytuje graf z pamięci.
 	 * \param[in] graph  graf do załadowania
 	 */
@@ -63,7 +67,7 @@ public:
 
 	/**
 	 * \brief           Tworzy populację o zadanym rozmiarze.
-	 * \param[in] size  rozmiar populacji (liczba parzysta; jeśli jest nieparzysta, model używa size + 1) 
+	 * \param[in] size  rozmiar populacji (liczba parzysta; jeśli jest nieparzysta, model używa size + 1)
 	 */
 	void createPopulation( unsigned size );
 
@@ -86,22 +90,34 @@ public:
 	 */
 	void setMutation( const Mutation * mutation );
 
-	/** 
+	/**
 	 * \brief  Zwraca wskaźnik do populacji.
 	 * \return wskaźnik do populacji
 	 */
 	Population * getPopulation();
 
-	void doMainJob(){};
+    /** \brief Zadanie główne modelu.
+     * Jeszcze nie wiem, czy ta metoda będzie potrzebna.
+     * \return void
+     */
+	void doMainJob();
+
+    /** \brief Ustawia wskaźnik na kolejkę kontrolera.
+     * \param q BlockingQueue<Event*>*
+     * \return void
+     */
+	void setControllerBlockingQueue(BlockingQueue<Event*>* q);
 
 private:
 	Graph * graph;
-	
+
 	Population * population;
 
 	Strategy * strategy;
 
 	Mutation * mutation;
+
+	BlockingQueue<Event*>* controllerBlockingQueue;/**< na tą kolejkę wrzucamy zgłoszenia do kontrolera */
 };
 
 #endif // MODEL_HPP

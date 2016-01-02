@@ -1,13 +1,15 @@
-/** 
+/**
  *  \file   Model.cpp
  *
- *  \author Andrzej Roguski
- *  
+ *  \authors Andrzej Roguski, Tomasz Jakubczyk
+ *
  *  \brief  Definicja klasy Model.
  *
  */
 
 #include "Model.hpp"
+
+/**< \todo przydały by się jakieś wyjątki do modelu */
 
 Graph * Model::generateGraph( unsigned nodes ) const
 {
@@ -56,3 +58,44 @@ Population * Model::getPopulation()
 {
 	return nullptr;
 }
+
+Model::Model() :graph(nullptr),
+				population(nullptr),
+				strategy(nullptr),
+				mutation(nullptr),
+				controllerBlockingQueue(nullptr)
+{
+
+}
+
+
+void Model::doMainJob()
+{
+	if(controllerBlockingQueue==nullptr)
+	{
+		throw "tu powinien być odpowiedni wyjątek";/**< \todo rzucić odpowiedni wyjątek, jak już powstanie */
+	}
+	/**< \todo jeszcze nie wiem, czy ta metoda na pewno będzie potrzebna */
+}
+
+void Model::setControllerBlockingQueue(BlockingQueue<Event*>* q)
+{
+	controllerBlockingQueue=q;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,10 +9,13 @@
 #include <thread>
 #include <exception>
 #include <string>
-
 #include <mutex>
+#include <condition_variable>
+#include <chrono>
+
 extern std::mutex coutMutex;
 
+using namespace std;
 
 /** \brief Klasa opakowująca exception dla Controller
  */
@@ -68,6 +71,9 @@ void Controller::start()
 {
 	using namespace std;
 	shutDown=false;
+	mutex m;
+	unique_lock<mutex> timerLock(m);
+	condition_variable c;
 	/**< \todo nadrzędna pętla do wielokrotnego uruchamiania obliczeń */
 	while(!shutDown)
 	{
@@ -94,6 +100,15 @@ void Controller::start()
 				viewServer->triggerShutDown();
 				//viewServerThread.join();
 				modelMainThread.join();/**< \todo model powinien przyjmować polecenie zamknięcia */
+				cout<<"Oczekuję na zamknięcie ViewServer: ";
+				cout.flush();
+				for(int i=10;i>=0;i--)
+				{
+					cout<<i<<", ";
+					cout.flush();
+					c.wait_for(timerLock,chrono::seconds(1));
+				}
+				break;
 			case MESSAGE_FROM_VIEW_SERVER:
 				coutMutex.lock();
 				cout<<"Wiadomość z widoku: "<<((Message*)e->data)->msg<<endl;
@@ -126,6 +141,7 @@ void Controller::setup()
 		throw ControllerException("viewServer==nullptr");
 	}
 	viewServer->setControllerBlockingQueue(controllerBlockingQueue);
+	model->setControllerBlockingQueue(controllerBlockingQueue);
 }
 
 void Controller::triggerShutDown()
