@@ -12,7 +12,9 @@ enum MessageType
 {
 	NOT_SET,
 	LIST,
-	CALCULATE
+	CALCULATE,
+	STATUS,
+	STOP
 };
 
 /** \brief klasa wiadomości

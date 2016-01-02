@@ -155,11 +155,13 @@ Message* XMLParser::operator()(std::string xml)
 		if(c.find("status")!=string::npos)
 		{
 			m->msg=c;
+			m->messageType=MessageType::STATUS;
 			return m;
 		}
 		if(c.find("stop")!=string::npos)
 		{
 			m->msg=c;
+			m->messageType=MessageType::STOP;
 			return m;
 		}
 	}

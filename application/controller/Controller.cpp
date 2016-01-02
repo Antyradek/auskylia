@@ -81,6 +81,8 @@ void Controller::start()
 	fstream f;
 	int len;
 	char* buf=nullptr;
+	int status;
+	ostringstream ss;
 	/**< \todo nadrzędna pętla do wielokrotnego uruchamiania obliczeń */
 	while(!shutDown)
 	{
@@ -165,7 +167,27 @@ void Controller::start()
 				{
 					str="<data><response>progress</response><progress>0</progress></data>";
 					viewServer->viewServerBlockingQueue->push_back(str);
+					/**< \todo uruchomić zadanie w modelu */
 					//model
+				}
+				else if(msg->messageType==MessageType::STATUS)
+				{
+					status=0;
+					/**< \todo sprawdzić postępy w modelu */
+					#ifdef __CYGWIN__
+					ss << status;
+					str = ss.str();
+					#else
+					str="<data><response>progress</response><progress>"+to_string(status)+"</progress></data>";
+					#endif // __CYGWIN__
+					/**< \todo możliwe są jeszcze odpowiedzi o zakończeniu lub porażce */
+					viewServer->viewServerBlockingQueue->push_back(str);
+				}
+				else if(msg->messageType==MessageType::STOP)
+				{
+					str="<data><response>failture</response><cause>Przerwano obliczenia.</cause></data>";
+					viewServer->viewServerBlockingQueue->push_back(str);
+					/**< \todo w modelu przerwać obliczenia */
 				}
 				break;
 			case MESSAGE_FROM_MODEL:
