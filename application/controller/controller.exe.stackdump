@@ -1,6 +1,6 @@
-Exception: STATUS_ACCESS_VIOLATION at eip=60D3C197
-eax=00000000 ebx=00000000 ecx=00000000 edx=60D59928 esi=00403CB0 edi=00000000
-ebp=7FFACD58 esp=7FFACCE0 program=D:\Moje dokumenty\PSZT\auskylia\application\controller\bin\Debug\controller.exe, pid 3784, thread unknown (0x12F4)
+Exception: STATUS_ACCESS_VIOLATION at eip=004049D0
+eax=60D4CCE0 ebx=20075E68 ecx=00000000 edx=60D59928 esi=20055658 edi=00000000
+ebp=7FFACDC8 esp=7FFACD30 program=D:\Moje dokumenty\PSZT\auskylia\application\controller\bin\Debug\controller.exe, pid 5464, thread unknown (0x178C)
 cs=001B ds=0023 es=0023 fs=003B gs=0000 ss=0023
 Stack trace:
 Frame     Function  Args

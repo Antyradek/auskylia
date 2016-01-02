@@ -217,3 +217,12 @@ pip-log.txt
 
 .~lock
 .~lock.
+
+*.o
+*.d
+*.exe
+*.stackdump
+*.depend
+
+*/bin
+*/obj

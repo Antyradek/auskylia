@@ -7,6 +7,8 @@
 #pragma once
 
 #include <mutex>
+#include <iostream>
+
 extern std::mutex coutMutex;
 
 /** \brief typy zdarzeń

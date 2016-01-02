@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 #include "Model.hpp"
 
@@ -60,7 +61,7 @@ void roll_test()
 
 		for( unsigned j = 0; j < uniform[ i ]; j++ )
 			std::cout << '#';
-		
+
 		std::cout << std::endl;
 	}
 
@@ -70,7 +71,7 @@ void roll_test()
 
 		for( unsigned j = 0; j < binomial[ i ]; j++ )
 			std::cout << '#';
-		
+
 		std::cout << std::endl;
 	}
 
@@ -80,7 +81,7 @@ void roll_test()
 
 		for( unsigned j = 0; j < binomial2[ i ]; j++ )
 			std::cout << '#';
-		
+
 		std::cout << std::endl;
 	}
 
@@ -90,7 +91,7 @@ void roll_test()
 
 		for( unsigned j = 0; j < binomial3[ i ]; j++ )
 			std::cout << '#';
-		
+
 		std::cout << std::endl;
 	}
 
@@ -153,7 +154,7 @@ void pathTest( unsigned start, unsigned end, unsigned maxl, unsigned size)
 	const unsigned GRAPH_SIZE = size;
 
 	Graph graph1 = Graph( GRAPH_SIZE, new UniformIntervals() );
-	
+
 	graph1.rate( std::array<unsigned short, (unsigned)Parameters::Count>{ 20, 20, 20, 20 }  );
 
 	unsigned a [20] = {0,1,2,3,4,5, NULL_NODE ,7,8,9,10,11, NULL_NODE ,13,14,15,16,17,18,19};
@@ -189,7 +190,13 @@ int main(int argc, char ** argv)
 		unsigned arg[ NUM_ARGS ];
 
 		for(int i = 1; i<NUM_ARGS + 1; i++)
+		{
+			#ifdef __CYGWIN__
+			arg[i-1] = std::strtol(argv[i],0,10);
+			#else
 			arg[i-1] = std::stoi(std::string(argv[i]));
+			#endif // __CYGWIN__
+		}
 
 		populationTest( arg[0], arg[1] );
 		//pathTest( arg[0], arg[1], arg[2], arg[3]);
