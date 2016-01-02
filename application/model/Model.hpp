@@ -21,6 +21,7 @@
 
 #include "../controller/Event.hpp"
 #include "../controller/BlockingQueue.hpp"
+#include "../controller/Command.hpp"
 
 /**
  * \brief Na razie pusta/zaślepkowa klasa Modelu
@@ -118,6 +119,10 @@ private:
 	Mutation * mutation;
 
 	BlockingQueue<Event*>* controllerBlockingQueue;/**< na tą kolejkę wrzucamy zgłoszenia do kontrolera */
+
+	BlockingQueue<Command*>* modelBlockingQueue;/**< kolejka na którą mają przychodzić polecenia z kontrolera */
+
+	bool shutDown;/**< czy nie zamykamy aplikacji */
 };
 
 #endif // MODEL_HPP
