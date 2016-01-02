@@ -10,6 +10,7 @@
 
 enum MessageType
 {
+	NOT_SET,
 	LIST,
 	CALCULATE
 };
@@ -24,6 +25,13 @@ public:
 	Message(std::string &m);
 	MessageType messageType;
 	std::string msg;/**< \todo przemyśleć typ */
+	//pola dla calculate
+	std::string start;
+	std::string end;
+	std::string price;
+	std::string safety;
+	std::string comfort;
+	std::string time;
 protected:
 private:
 };

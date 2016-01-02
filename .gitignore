@@ -226,3 +226,5 @@ pip-log.txt
 
 */bin
 */obj
+
+/doxygen

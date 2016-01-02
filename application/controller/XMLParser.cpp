@@ -66,7 +66,7 @@ Message* XMLParser::operator()(std::string xml)
 		return m;
 	}
 
-	unsigned int i,j;
+	unsigned int i,j,k,l;
 	string data("<data>");
 	string dataEnd("</data>");
 	i=xml.find(data);
@@ -107,6 +107,49 @@ Message* XMLParser::operator()(std::string xml)
 		{
 			m->messageType=MessageType::CALCULATE;
 			m->msg=d;
+
+			k=d.find("<start>");
+			if(k==string::npos) throw XMLParserException("<start>k==string::npos");
+			k+=7;
+			l=d.find("</start>");
+			if(l==string::npos) throw XMLParserException("</start>l==string::npos");
+            m->start=d.substr(k,l-k);
+
+            k=d.find("<end>");
+			if(k==string::npos) throw XMLParserException("<end>k==string::npos");
+			k+=5;
+			l=d.find("</end>");
+			if(l==string::npos) throw XMLParserException("</end>l==string::npos");
+            m->end=d.substr(k,l-k);
+
+            k=d.find("<price>");
+			if(k==string::npos) throw XMLParserException("<price>k==string::npos");
+			k+=7;
+			l=d.find("</price>");
+			if(l==string::npos) throw XMLParserException("</price>l==string::npos");
+            m->price=d.substr(k,l-k);
+
+            k=d.find("<safety>");
+			if(k==string::npos) throw XMLParserException("<safety>k==string::npos");
+			k+=8;
+			l=d.find("</safety>");
+			if(l==string::npos) throw XMLParserException("</safety>l==string::npos");
+            m->safety=d.substr(k,l-k);
+
+            k=d.find("<comfort>");
+			if(k==string::npos) throw XMLParserException("<comfort>k==string::npos");
+			k+=9;
+			l=d.find("</comfort>");
+			if(l==string::npos) throw XMLParserException("</comfort>l==string::npos");
+            m->comfort=d.substr(k,l-k);
+
+            k=d.find("<time>");
+			if(k==string::npos) throw XMLParserException("<time>k==string::npos");
+			k+=9;
+			l=d.find("</time>");
+			if(l==string::npos) throw XMLParserException("</time>l==string::npos");
+            m->time=d.substr(k,l-k);
+
 			return m;
 		}
 		if(c.find("status")!=string::npos)

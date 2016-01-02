@@ -21,7 +21,7 @@ Message::Message()
 	#endif // _DEBUG
 }
 
-Message::Message(std::string &m)
+Message::Message(std::string &m) : messageType(NOT_SET)
 {
 	msg=m;
 	#ifdef _DEBUG

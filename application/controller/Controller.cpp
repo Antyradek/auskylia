@@ -163,7 +163,9 @@ void Controller::start()
 				}
 				else if(msg->messageType==MessageType::CALCULATE)
 				{
-
+					str="<data><response>progress</response><progress>0</progress></data>";
+					viewServer->viewServerBlockingQueue->push_back(str);
+					//model
 				}
 				break;
 			case MESSAGE_FROM_MODEL:
