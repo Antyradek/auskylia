@@ -47,7 +47,7 @@ void Model::evolve( unsigned times )
 {
 	if( population != nullptr )
 		for( unsigned i = 0; i < times; ++i )
-			population->evolve();	
+			population->evolve();
 }
 
 void Model::setStrategy( Strategy * strategy )
@@ -76,6 +76,30 @@ Model::Model() : graph(nullptr),
 	modelBlockingQueue=new BlockingQueue<Command*>;
 }
 
+void modelTest( unsigned gSize, unsigned pSize, Model* model)
+{
+	std::cout << std::endl << "Starting model test:" << std::endl;
+
+	Model* m=model;
+	StrategyClosest s;
+	MutationUniform mut;
+	GeneratorUniform gen;
+	Weights w = { 100, 100, 100, 100};
+
+	Graph * g = m->generateGraph( gSize, &gen );
+
+	m->useGraph(g);
+
+	m->createPopulation( pSize, &s, &mut );
+
+	m->setWeights( w );
+
+	m->getPopulation()->print();
+
+	m->evolve(1000);
+
+	m->getPopulation()->print();
+}
 
 void Model::doMainJob()
 {
@@ -94,6 +118,7 @@ void Model::doMainJob()
 		if(c->commandType==CommandType::START)
 		{
 			/**< \todo wziąć dane z polecenia i uruchomić algorytm */
+			modelTest(10,10,this);
 			//można opcjonalnie zwrócić, że działa
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL));
 		}

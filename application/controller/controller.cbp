@@ -32,13 +32,27 @@
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../model/Graph.cpp" />
+		<Unit filename="../model/Graph.hpp" />
+		<Unit filename="../model/GraphGenerator.cpp" />
+		<Unit filename="../model/GraphGenerator.hpp" />
 		<Unit filename="../model/Model.cpp" />
 		<Unit filename="../model/Model.hpp" />
+		<Unit filename="../model/Mutation.hpp" />
+		<Unit filename="../model/Path.cpp" />
+		<Unit filename="../model/Path.hpp" />
+		<Unit filename="../model/Population.cpp" />
+		<Unit filename="../model/Population.hpp" />
+		<Unit filename="../model/parameters.hpp" />
+		<Unit filename="../model/roll.cpp" />
+		<Unit filename="../model/roll.hpp" />
 		<Unit filename="BlockingQueue.cpp">
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
 		<Unit filename="BlockingQueue.hpp" />
+		<Unit filename="Command.cpp" />
+		<Unit filename="Command.hpp" />
 		<Unit filename="Controller.cpp" />
 		<Unit filename="Controller.hpp" />
 		<Unit filename="Event.hpp" />

@@ -6,7 +6,9 @@
 
 #include "Command.hpp"
 
-Command::Command(CommandType t) : commandType(t)
+//using namespace CommandType;
+
+Command::Command(CommandType::CommandType t) : commandType(t)
 {
 
 }
