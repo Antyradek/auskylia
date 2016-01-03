@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ratingmatrix',['RatingMatrix',['../_graph_generator_8hpp.html#afbf0ac3d538cf068a39a49c55fc333a5',1,'GraphGenerator.hpp']]]
+  ['weights',['Weights',['../types_8hpp.html#af230a7e4b05b50c1162d7652222e091f',1,'types.hpp']]]
 ];

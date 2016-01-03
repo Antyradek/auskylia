@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('class_graph_generator.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Strony</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -121,20 +121,20 @@ Diagram dziedziczenia dla GraphGenerator</div>
 <div class="dyncontent">
 <div class="center"><img src="class_graph_generator__inherit__graph.png" border="0" usemap="#_graph_generator_inherit__map" alt="Inheritance graph"/></div>
 <map name="_graph_generator_inherit__map" id="_graph_generator_inherit__map">
-<area shape="rect" id="node2" href="class_other_generator.html" title="losuje wartości parametrów krawędzi, powiększa je o taką samą liczbę i mnoży przez taką samą liczbę ..." alt="" coords="5,80,116,107"/><area shape="rect" id="node3" href="class_smart_generator.html" title="Uzależnia parametry od siebie. " alt="" coords="141,80,255,107"/><area shape="rect" id="node4" href="class_uniform_intervals.html" title="Losuje jednostajnie przedział losowania parametrów. " alt="" coords="280,80,393,107"/></map>
+<area shape="rect" id="node2" href="class_generator_uniform.html" title="GeneratorUniform" alt="" coords="5,80,128,107"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
-<tr class="memitem:a3ccb7acff03809fb4525b759b83bfbc2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_generator.html#a3ccb7acff03809fb4525b759b83bfbc2">generate</a> (const unsigned nodes, <a class="el" href="_graph_generator_8hpp.html#aed7a428876e4fac71e47e88c8c4329f3">AdjacencyMatrix</a> &amp;matrix) const =0</td></tr>
-<tr class="separator:a3ccb7acff03809fb4525b759b83bfbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6efa4a2aa461d252f3cb821a436a113"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graph_generator.html#aa6efa4a2aa461d252f3cb821a436a113">generate</a> (std::vector&lt; <a class="el" href="class_node.html">Node</a> &gt; &amp;nodes, <a class="el" href="types_8hpp.html#a78802c92d620a6492e3bdc2a5ef5d7ca">Matrix</a> &amp;matrix) const =0</td></tr>
+<tr class="separator:aa6efa4a2aa461d252f3cb821a436a113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Abstrakcyjna Klasa bazowa klas generujących grafy. </p>
 
-<p>Definicja w linii <a class="el" href="_graph_generator_8hpp_source.html#l00020">20</a> pliku <a class="el" href="_graph_generator_8hpp_source.html">GraphGenerator.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_graph_generator_8hpp_source.html#l00026">26</a> pliku <a class="el" href="_graph_generator_8hpp_source.html">GraphGenerator.hpp</a>.</p>
 </div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
-<a class="anchor" id="a3ccb7acff03809fb4525b759b83bfbc2"></a>
+<a class="anchor" id="aa6efa4a2aa461d252f3cb821a436a113"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -144,13 +144,13 @@ Metody publiczne</h2></td></tr>
         <tr>
           <td class="memname">virtual void GraphGenerator::generate </td>
           <td>(</td>
-          <td class="paramtype">const unsigned&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_node.html">Node</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>nodes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="_graph_generator_8hpp.html#aed7a428876e4fac71e47e88c8c4329f3">AdjacencyMatrix</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a78802c92d620a6492e3bdc2a5ef5d7ca">Matrix</a> &amp;&#160;</td>
           <td class="paramname"><em>matrix</em>&#160;</td>
         </tr>
         <tr>
@@ -166,13 +166,13 @@ Metody publiczne</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implementowany w <a class="el" href="class_smart_generator.html#ab47b15c0a496903404100891780d4434">SmartGenerator</a>, <a class="el" href="class_other_generator.html#a99fd621fd3a0159d8baaa19c4d3182d9">OtherGenerator</a> i <a class="el" href="class_uniform_intervals.html#a62f8284e19fa045910ae4e88f1b93683">UniformIntervals</a>.</p>
+<p>Implementowany w <a class="el" href="class_generator_uniform.html#a138d198f6c61dfbb495cbacce967204f">GeneratorUniform</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_graph_generator_a3ccb7acff03809fb4525b759b83bfbc2_icgraph.png" border="0" usemap="#class_graph_generator_a3ccb7acff03809fb4525b759b83bfbc2_icgraph" alt=""/></div>
-<map name="class_graph_generator_a3ccb7acff03809fb4525b759b83bfbc2_icgraph" id="class_graph_generator_a3ccb7acff03809fb4525b759b83bfbc2_icgraph">
+<div class="center"><img src="class_graph_generator_aa6efa4a2aa461d252f3cb821a436a113_icgraph.png" border="0" usemap="#class_graph_generator_aa6efa4a2aa461d252f3cb821a436a113_icgraph" alt=""/></div>
+<map name="class_graph_generator_aa6efa4a2aa461d252f3cb821a436a113_icgraph" id="class_graph_generator_aa6efa4a2aa461d252f3cb821a436a113_icgraph">
 <area shape="rect" id="node2" href="class_graph.html#a2cf4006a82bc97278bea607b1182d7ab" title="Graph::Graph" alt="" coords="225,5,325,32"/></map>
 </div>
 </p>
@@ -188,7 +188,7 @@ Oto graf wywoływań tej funkcji:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_graph_generator.html">GraphGenerator</a></li>
-    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:18 dla Auskylia programem
+    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:40 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

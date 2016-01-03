@@ -5,7 +5,7 @@ var dir_d94a2eaab10ab5ab1cb03e49b9b14fd1 =
     [ "Graph.hpp", "_graph_8hpp.html", [
       [ "Graph", "class_graph.html", "class_graph" ]
     ] ],
-    [ "GraphGenerator.cpp", "_graph_generator_8cpp.html", null ],
+    [ "GraphGenerator.cpp", "_graph_generator_8cpp.html", "_graph_generator_8cpp" ],
     [ "GraphGenerator.hpp", "_graph_generator_8hpp.html", "_graph_generator_8hpp" ],
     [ "Model.cpp", "_model_8cpp.html", "_model_8cpp" ],
     [ "Model.hpp", "_model_8hpp.html", [
@@ -14,7 +14,11 @@ var dir_d94a2eaab10ab5ab1cb03e49b9b14fd1 =
     [ "Mutation.hpp", "_mutation_8hpp.html", [
       [ "Mutation", "class_mutation.html", "class_mutation" ],
       [ "MutationUniform", "class_mutation_uniform.html", "class_mutation_uniform" ],
-      [ "MutationBinomial", "class_mutation_binomial.html", "class_mutation_binomial" ]
+      [ "MutationBinomial", "class_mutation_binomial.html", null ]
+    ] ],
+    [ "Node.cpp", "_node_8cpp.html", null ],
+    [ "Node.hpp", "_node_8hpp.html", [
+      [ "Node", "class_node.html", "class_node" ]
     ] ],
     [ "parameters.hpp", "parameters_8hpp.html", "parameters_8hpp" ],
     [ "Path.cpp", "_path_8cpp.html", null ],
@@ -34,5 +38,6 @@ var dir_d94a2eaab10ab5ab1cb03e49b9b14fd1 =
       [ "StrategyRandBinomial", "class_strategy_rand_binomial.html", "class_strategy_rand_binomial" ],
       [ "StrategyClosest", "class_strategy_closest.html", "class_strategy_closest" ]
     ] ],
-    [ "test.cpp", "test_8cpp.html", "test_8cpp" ]
+    [ "test.cpp", "test_8cpp.html", "test_8cpp" ],
+    [ "types.hpp", "types_8hpp.html", "types_8hpp" ]
 ];

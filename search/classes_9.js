@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['viewserver',['ViewServer',['../class_view_server.html',1,'']]],
-  ['viewserverexception',['ViewServerException',['../struct_view_server_exception.html',1,'']]]
+  ['xmlparser',['XMLParser',['../class_x_m_l_parser.html',1,'']]],
+  ['xmlparserexception',['XMLParserException',['../struct_x_m_l_parser_exception.html',1,'']]]
 ];

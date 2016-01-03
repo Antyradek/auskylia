@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['xmlparser_2ecpp',['XMLParser.cpp',['../_x_m_l_parser_8cpp.html',1,'']]],
-  ['xmlparser_2ehpp',['XMLParser.hpp',['../_x_m_l_parser_8hpp.html',1,'']]]
+  ['version_2eh',['version.h',['../version_8h.html',1,'']]],
+  ['viewserver_2ecpp',['ViewServer.cpp',['../_view_server_8cpp.html',1,'']]],
+  ['viewserver_2ehpp',['ViewServer.hpp',['../_view_server_8hpp.html',1,'']]]
 ];

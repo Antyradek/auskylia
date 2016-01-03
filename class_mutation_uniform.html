@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('class_mutation_uniform.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Strony</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -130,11 +130,10 @@ Diagram współpracy dla MutationUniform:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
-<tr class="memitem:a9f293045fdc34203e2bbf084ac10451c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutation_uniform.html#a9f293045fdc34203e2bbf084ac10451c">MutationUniform</a> (unsigned <a class="el" href="class_mutation.html#a9cadaadc598e85c30263d674a809be7f">chance</a>=250)</td></tr>
-<tr class="separator:a9f293045fdc34203e2bbf084ac10451c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeade4b3d81cf774e1470166fc632239"><td class="memItemLeft" align="right" valign="top">virtual unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutation_uniform.html#aeeade4b3d81cf774e1470166fc632239">mutate</a> (unsigned start, unsigned end, unsigned max, unsigned min, unsigned value) const </td></tr>
-<tr class="memdesc:aeeade4b3d81cf774e1470166fc632239"><td class="mdescLeft">&#160;</td><td class="mdescRight">operacja mutacji  <a href="#aeeade4b3d81cf774e1470166fc632239">Więcej...</a><br/></td></tr>
-<tr class="separator:aeeade4b3d81cf774e1470166fc632239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a235df15228bd0a30192ca9273bf31373"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutation_uniform.html#a235df15228bd0a30192ca9273bf31373">MutationUniform</a> (unsigned <a class="el" href="class_mutation.html#a9cadaadc598e85c30263d674a809be7f">chance</a>=1000)</td></tr>
+<tr class="separator:a235df15228bd0a30192ca9273bf31373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34c15de2beb9d702a94e875f83a7b273"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutation_uniform.html#a34c15de2beb9d702a94e875f83a7b273">mutate</a> (const <a class="el" href="class_path.html">Path</a> &amp;path, std::list&lt; unsigned &gt; &amp;list, unsigned nodes) const </td></tr>
+<tr class="separator:a34c15de2beb9d702a94e875f83a7b273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_mutation"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_mutation')"><img src="closed.png" alt="-"/>&#160;Metody publiczne dziedziczone z <a class="el" href="class_mutation.html">Mutation</a></td></tr>
 <tr class="memitem:a8bf0f4ff5f5238a9d04233cf9a71cd55 inherit pub_methods_class_mutation"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mutation.html#a8bf0f4ff5f5238a9d04233cf9a71cd55">Mutation</a> (unsigned <a class="el" href="class_mutation.html#a9cadaadc598e85c30263d674a809be7f">chance</a>=250)</td></tr>
 <tr class="separator:a8bf0f4ff5f5238a9d04233cf9a71cd55 inherit pub_methods_class_mutation"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,9 +147,9 @@ Dodatkowe Dziedziczone Składowe</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock">
-<p>Definicja w linii <a class="el" href="_mutation_8hpp_source.html#l00037">37</a> pliku <a class="el" href="_mutation_8hpp_source.html">Mutation.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_mutation_8hpp_source.html#l00035">35</a> pliku <a class="el" href="_mutation_8hpp_source.html">Mutation.hpp</a>.</p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
-<a class="anchor" id="a9f293045fdc34203e2bbf084ac10451c"></a>
+<a class="anchor" id="a235df15228bd0a30192ca9273bf31373"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -161,7 +160,7 @@ Dodatkowe Dziedziczone Składowe</h2></td></tr>
           <td class="memname">MutationUniform::MutationUniform </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>chance</em> = <code>250</code></td><td>)</td>
+          <td class="paramname"><em>chance</em> = <code>1000</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -172,12 +171,12 @@ Dodatkowe Dziedziczone Składowe</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="_mutation_8hpp_source.html#l00040">40</a> pliku <a class="el" href="_mutation_8hpp_source.html">Mutation.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_mutation_8hpp_source.html#l00038">38</a> pliku <a class="el" href="_mutation_8hpp_source.html">Mutation.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
-<a class="anchor" id="aeeade4b3d81cf774e1470166fc632239"></a>
+<a class="anchor" id="a34c15de2beb9d702a94e875f83a7b273"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -185,34 +184,22 @@ Dodatkowe Dziedziczone Składowe</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual unsigned MutationUniform::mutate </td>
+          <td class="memname">virtual void MutationUniform::mutate </td>
           <td>(</td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>start</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_path.html">Path</a> &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; unsigned &gt; &amp;&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>end</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>max</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>min</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
+          <td class="paramname"><em>nodes</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -227,27 +214,16 @@ Dodatkowe Dziedziczone Składowe</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>operacja mutacji </p>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>maksymalna dopuszczalan wartość </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>minimalna dopuszczalna wartość </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>wartość modyfikowana </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Zwraca</dt><dd>wartośc po mutacji </dd></dl>
+<p>Implementuje <a class="el" href="class_mutation.html#ae52427b76450d3b3883ebd10192c43b7">Mutation</a>.</p>
 
-<p>Implementuje <a class="el" href="class_mutation.html#af065aeeec695ac998055cbcddf74148a">Mutation</a>.</p>
-
-<p>Definicja w linii <a class="el" href="_mutation_8hpp_source.html#l00042">42</a> pliku <a class="el" href="_mutation_8hpp_source.html">Mutation.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_mutation_8hpp_source.html#l00040">40</a> pliku <a class="el" href="_mutation_8hpp_source.html">Mutation.hpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_mutation_uniform_aeeade4b3d81cf774e1470166fc632239_cgraph.png" border="0" usemap="#class_mutation_uniform_aeeade4b3d81cf774e1470166fc632239_cgraph" alt=""/></div>
-<map name="class_mutation_uniform_aeeade4b3d81cf774e1470166fc632239_cgraph" id="class_mutation_uniform_aeeade4b3d81cf774e1470166fc632239_cgraph">
-<area shape="rect" id="node2" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992" title="rollUniform" alt="" coords="217,5,300,32"/></map>
+<div class="center"><img src="class_mutation_uniform_a34c15de2beb9d702a94e875f83a7b273_cgraph.png" border="0" usemap="#class_mutation_uniform_a34c15de2beb9d702a94e875f83a7b273_cgraph" alt=""/></div>
+<map name="class_mutation_uniform_a34c15de2beb9d702a94e875f83a7b273_cgraph" id="class_mutation_uniform_a34c15de2beb9d702a94e875f83a7b273_cgraph">
+<area shape="rect" id="node2" href="class_path.html#a5879141baeb4154e709a216aa6d50f4e" title="Path::getLength" alt="" coords="217,5,332,32"/><area shape="rect" id="node3" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992" title="rollUniform" alt="" coords="233,56,316,83"/></map>
 </div>
 </p>
 
@@ -262,7 +238,7 @@ Oto graf wywołań dla tej funkcji:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_mutation_uniform.html">MutationUniform</a></li>
-    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:19 dla Auskylia programem
+    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:40 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

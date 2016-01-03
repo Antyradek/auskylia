@@ -79,6 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Funkcje</span></a></li>
       <li><a href="functions_vars.html"><span>Zmienne</span></a></li>
+      <li><a href="functions_rela.html"><span>Funkcje&#160;powiązane</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -88,7 +89,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
-      <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_n"><span>n</span></a></li>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Strony</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -148,22 +148,27 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_mutation.html#a9cadaadc598e85c30263d674a809be7f">Mutation</a>
 </li>
 <li>comfort
-: <a class="el" href="class_message.html#a9f1eeca07ac93ac70c74a0f18ddffbed">Message</a>
+: <a class="el" href="class_command.html#ac7706e8f156598f010edf4eff4938af5">Command</a>
+, <a class="el" href="class_message.html#a9f1eeca07ac93ac70c74a0f18ddffbed">Message</a>
 </li>
 <li>Command()
-: <a class="el" href="class_command.html#a17f32951e3d60a2816ace4ac3c521aac">Command</a>
+: <a class="el" href="class_command.html#a7f54a526435e6566bdebe09b96746103">Command</a>
 </li>
 <li>commandType
-: <a class="el" href="class_command.html#a263243414bfa4ce35815352450647149">Command</a>
+: <a class="el" href="class_command.html#a23dc8d12b471654aa73a96b4a1942ad3">Command</a>
 </li>
 <li>Controller()
 : <a class="el" href="class_controller.html#a95c56822d667e94b031451729ce069a9">Controller</a>
+, <a class="el" href="class_model.html#ac3456fd331a58b288082abca310c7a99">Model</a>
 </li>
 <li>ControllerException()
 : <a class="el" href="struct_controller_exception.html#a0774acacdc442aeb037940a59e44c274">ControllerException</a>
 </li>
+<li>copyCalculateMessageData()
+: <a class="el" href="class_command.html#a1d622225cf25ae2e9c71f9ef5e6bc8ed">Command</a>
+</li>
 <li>createPopulation()
-: <a class="el" href="class_model.html#a0ce16aeb0ca138527f5afbe508062ca4">Model</a>
+: <a class="el" href="class_model.html#ae9a99c96ce7a6806abb6d2c8eee9507c">Model</a>
 </li>
 </ul>
 
@@ -180,7 +185,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>end
-: <a class="el" href="class_message.html#a44d4f6587c9b18ab2c69a2a6eb3bfeef">Message</a>
+: <a class="el" href="class_command.html#add5bf6bff703ad149ef7818b8aa87eac">Command</a>
+, <a class="el" href="class_message.html#a44d4f6587c9b18ab2c69a2a6eb3bfeef">Message</a>
 </li>
 <li>Event()
 : <a class="el" href="class_event.html#a5a40dd4708297f7031e29b39e039ae10">Event</a>
@@ -194,19 +200,20 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>generate()
-: <a class="el" href="class_graph_generator.html#a3ccb7acff03809fb4525b759b83bfbc2">GraphGenerator</a>
-, <a class="el" href="class_other_generator.html#a99fd621fd3a0159d8baaa19c4d3182d9">OtherGenerator</a>
-, <a class="el" href="class_smart_generator.html#ab47b15c0a496903404100891780d4434">SmartGenerator</a>
-, <a class="el" href="class_uniform_intervals.html#a62f8284e19fa045910ae4e88f1b93683">UniformIntervals</a>
+: <a class="el" href="class_generator_uniform.html#a138d198f6c61dfbb495cbacce967204f">GeneratorUniform</a>
+, <a class="el" href="class_graph_generator.html#aa6efa4a2aa461d252f3cb821a436a113">GraphGenerator</a>
 </li>
 <li>generateGraph()
-: <a class="el" href="class_model.html#ac855229db2fb85d309fdcfae2d7a121e">Model</a>
+: <a class="el" href="class_model.html#a02d8cb6c679e1590bdbc162e0703e1ac">Model</a>
 </li>
 <li>getLength()
 : <a class="el" href="class_path.html#a5879141baeb4154e709a216aa6d50f4e">Path</a>
 </li>
 <li>getNodes()
 : <a class="el" href="class_graph.html#a7f2fcc32bdf8d9006b801a3d6375bf41">Graph</a>
+</li>
+<li>getParam()
+: <a class="el" href="class_graph.html#a7c309663acf0f7a6805097b11600a8e5">Graph</a>
 </li>
 <li>getPath()
 : <a class="el" href="class_population.html#a308c2fde1698100e890efa11dff26c49">Population</a>
@@ -215,33 +222,19 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_model.html#ada0c9c135934f4022b8b634a4173147b">Model</a>
 </li>
 <li>getRating()
-: <a class="el" href="class_graph.html#a9c519d155a4fd302317b68d10da1c3ba">Graph</a>
-, <a class="el" href="class_path.html#aa2f9e6bc56de35a6f62069fbcb9f8cc8">Path</a>
+: <a class="el" href="class_path.html#adb15c977e342af030fe1e2f23d5adcc3">Path</a>
+</li>
+<li>getSafety()
+: <a class="el" href="class_node.html#a2d51c63074b55efdc02d0db16dcee254">Node</a>
+</li>
+<li>getX()
+: <a class="el" href="class_node.html#a9bb7fe26812aeca817761d00a89a4f6b">Node</a>
+</li>
+<li>getY()
+: <a class="el" href="class_node.html#a5885dfcc963ce6ec4195e4c02a49b580">Node</a>
 </li>
 <li>Graph()
 : <a class="el" href="class_graph.html#afaf8a52c1d0700b0660364822ee5f592">Graph</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>INCREASE_MAX
-: <a class="el" href="class_other_generator.html#af79b8f0be010db8d0e769952e563caf7">OtherGenerator</a>
-</li>
-<li>INCREASE_MIN
-: <a class="el" href="class_other_generator.html#ae583ff95d5f0f28f8c99e3a9a16963f4">OtherGenerator</a>
-</li>
-<li>INTERVALS_SIZE_MAX
-: <a class="el" href="class_uniform_intervals.html#a1544e32dbc741169d7c01dda5a4cf218">UniformIntervals</a>
-</li>
-<li>INTERVALS_SIZE_MIN
-: <a class="el" href="class_uniform_intervals.html#ada9549aff6ecd1a4afcbce2918298fd8">UniformIntervals</a>
-</li>
-<li>INTERVALS_START_MAX
-: <a class="el" href="class_uniform_intervals.html#abbe38363b3ed5223335a219deae94957">UniformIntervals</a>
-</li>
-<li>INTERVALS_START_MIN
-: <a class="el" href="class_uniform_intervals.html#aad476afe5225bac57f27b24860f66476">UniformIntervals</a>
 </li>
 </ul>
 
@@ -272,25 +265,15 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>msg
 : <a class="el" href="class_message.html#adbe98f7e813775fe7e809f1a08899733">Message</a>
 </li>
-<li>MULTIPLIER_MAX
-: <a class="el" href="class_other_generator.html#a64612182d0c4ad5a18c09965df259e0b">OtherGenerator</a>
-</li>
-<li>MULTIPLIER_MIN
-: <a class="el" href="class_other_generator.html#a4d2d5d6c4223f6a10f23cf1ae19253ce">OtherGenerator</a>
-</li>
 <li>mutate()
-: <a class="el" href="class_mutation.html#af065aeeec695ac998055cbcddf74148a">Mutation</a>
-, <a class="el" href="class_mutation_binomial.html#af04981b4c9f11fe6352ec35ecdf73f8e">MutationBinomial</a>
-, <a class="el" href="class_mutation_uniform.html#aeeade4b3d81cf774e1470166fc632239">MutationUniform</a>
+: <a class="el" href="class_mutation.html#ae52427b76450d3b3883ebd10192c43b7">Mutation</a>
+, <a class="el" href="class_mutation_uniform.html#a34c15de2beb9d702a94e875f83a7b273">MutationUniform</a>
 </li>
 <li>Mutation()
 : <a class="el" href="class_mutation.html#a8bf0f4ff5f5238a9d04233cf9a71cd55">Mutation</a>
 </li>
-<li>MutationBinomial()
-: <a class="el" href="class_mutation_binomial.html#a3af68ca870173df62811f3e1dc1e858e">MutationBinomial</a>
-</li>
 <li>MutationUniform()
-: <a class="el" href="class_mutation_uniform.html#a9f293045fdc34203e2bbf084ac10451c">MutationUniform</a>
+: <a class="el" href="class_mutation_uniform.html#a235df15228bd0a30192ca9273bf31373">MutationUniform</a>
 </li>
 </ul>
 
@@ -298,6 +281,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
 <li>newPaths()
 : <a class="el" href="class_population.html#af44af1623ec86b2be635b74c6aa621d1">Population</a>
+</li>
+<li>Node()
+: <a class="el" href="class_node.html#ad7a34779cad45d997bfd6d3d8043c75f">Node</a>
 </li>
 </ul>
 
@@ -318,24 +304,26 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>Path()
-: <a class="el" href="class_path.html#a4b2ec24d74e9d8328a139f03ba3edc64">Path</a>
+: <a class="el" href="class_path.html#ad1322c44be71069902ce5c2b07351a91">Path</a>
 </li>
 <li>pop_front()
 : <a class="el" href="class_blocking_queue.html#a33e18f760365430cee38721dfd0abf5e">BlockingQueue&lt; T &gt;</a>
 </li>
 <li>Population()
-: <a class="el" href="class_population.html#a10366f5a48d6ddc9be03b1c138d80e4f">Population</a>
+: <a class="el" href="class_population.html#a044e52e37d816ae05142594e9515c807">Population</a>
 </li>
 <li>price
-: <a class="el" href="class_message.html#a4b10d7e0f0ec524768e7ae043020f48d">Message</a>
+: <a class="el" href="class_command.html#a4163c20fbb273d2e24a9b6d28d63808a">Command</a>
+, <a class="el" href="class_message.html#a4b10d7e0f0ec524768e7ae043020f48d">Message</a>
 </li>
 <li>print()
-: <a class="el" href="class_graph.html#a2ecf3dd3c4897aa924da8e5c221a8509">Graph</a>
+: <a class="el" href="class_graph.html#a78b4118a60b079781b37e2b456124a2f">Graph</a>
+, <a class="el" href="class_node.html#a391e7163709229848ca02ba5316cf0aa">Node</a>
 , <a class="el" href="class_path.html#a4c9805986fd9779d526c580887b83160">Path</a>
 , <a class="el" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">Population</a>
 </li>
-<li>printRates()
-: <a class="el" href="class_graph.html#a445846b566ae253de938ab833689db5c">Graph</a>
+<li>printNodes()
+: <a class="el" href="class_graph.html#ad342ffe267027720499bc75377eab674">Graph</a>
 </li>
 <li>push_back()
 : <a class="el" href="class_blocking_queue.html#aba9a92a9e6a732cd720c609d7e706c47">BlockingQueue&lt; T &gt;</a>
@@ -345,15 +333,21 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>rate()
-: <a class="el" href="class_graph.html#aebe6fbc93d735edc266d876c56e26bc8">Graph</a>
-, <a class="el" href="class_path.html#acb54b2efe4f26f8d57d5076766d1a3cb">Path</a>
+: <a class="el" href="class_path.html#acb54b2efe4f26f8d57d5076766d1a3cb">Path</a>
+</li>
+<li>rateEdge()
+: <a class="el" href="class_path.html#a2a3ecb5391cb80e613ba161a5f1361fa">Path</a>
+</li>
+<li>roll()
+: <a class="el" href="class_node.html#a361e82589484bf10ce7fd7e686a459ba">Node</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>safety
-: <a class="el" href="class_message.html#a8e9f85ce3883f564328f31e2c5c07b58">Message</a>
+: <a class="el" href="class_command.html#a91eec09940d65ac411091c78e2c5c6c7">Command</a>
+, <a class="el" href="class_message.html#a8e9f85ce3883f564328f31e2c5c07b58">Message</a>
 </li>
 <li>saveGraph()
 : <a class="el" href="class_model.html#aad0895ed8c3106ae02f6e1af24c85302">Model</a>
@@ -366,15 +360,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_controller.html#a31ceadbf56639439aed34f7b1a588f45">Controller</a>
 </li>
 <li>setMutation()
-: <a class="el" href="class_model.html#abb4907f3d57273942c28f642ce5fd802">Model</a>
+: <a class="el" href="class_model.html#ab3ab30df0fa08245098adf42410a5ea0">Model</a>
 , <a class="el" href="class_population.html#ad8f749eaf2cb7b5d7d280a40d522d0ca">Population</a>
 </li>
 <li>setStrategy()
-: <a class="el" href="class_model.html#aeae6f6093317808733eeeccc9b8e9c28">Model</a>
+: <a class="el" href="class_model.html#a7d5356b89fd3aab471a3949f0057f618">Model</a>
 , <a class="el" href="class_population.html#af71bee3c7671fe405ec2a6b3a5664d9f">Population</a>
-</li>
-<li>setTargetPath()
-: <a class="el" href="class_model.html#aab06679570406075e66cc5557597c700">Model</a>
 </li>
 <li>setup()
 : <a class="el" href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b">Controller</a>
@@ -382,22 +373,22 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>setViewServer()
 : <a class="el" href="class_controller.html#a8957808a8ed46bed83d2444c4fef0e22">Controller</a>
 </li>
-<li>start()
-: <a class="el" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8">Controller</a>
+<li>setWeights()
+: <a class="el" href="class_model.html#aee469cba135c624edb85548922008e0e">Model</a>
+, <a class="el" href="class_population.html#a782c98a7515b64d8e0f61c4a39ed436c">Population</a>
+</li>
+<li>start
+: <a class="el" href="class_command.html#a8bdbb7931a95bd074090e9f80c11a422">Command</a>
+, <a class="el" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8">Controller</a>
 , <a class="el" href="class_message.html#a6b0e0e7b70c9eeabe19f416c7481ecca">Message</a>
-</li>
-<li>START_MAX
-: <a class="el" href="class_other_generator.html#a4bbf26ca2c6975b827068b107d1c2875">OtherGenerator</a>
-</li>
-<li>START_MIN
-: <a class="el" href="class_other_generator.html#ae0031dd4d73cca5d2c7dc4efc3dd5b7a">OtherGenerator</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>time
-: <a class="el" href="class_message.html#ae372af3cf12839f44346b03c54867ca0">Message</a>
+: <a class="el" href="class_command.html#a11e679d6e22d71e17ea0ebf9c266d7e9">Command</a>
+, <a class="el" href="class_message.html#ae372af3cf12839f44346b03c54867ca0">Message</a>
 </li>
 <li>triggerShutDown()
 : <a class="el" href="class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610">Controller</a>
@@ -417,12 +408,6 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
-<li>VALUE_MAX
-: <a class="el" href="class_smart_generator.html#a2fb818aae4d79181f0ea43ba85f6bbf9">SmartGenerator</a>
-</li>
-<li>VALUE_MIN
-: <a class="el" href="class_smart_generator.html#a391f234b003e65bf76db5a26be6b803d">SmartGenerator</a>
-</li>
 <li>ViewServer()
 : <a class="el" href="class_view_server.html#ac8960d770d71cd564e470a946560df76">ViewServer</a>
 </li>
@@ -467,6 +452,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>~Graph()
 : <a class="el" href="class_graph.html#a902c5b3eacb66d60752525ab23297a95">Graph</a>
 </li>
+<li>~Node()
+: <a class="el" href="class_node.html#aa0840c3cb5c7159be6d992adecd2097c">Node</a>
+</li>
 <li>~Path()
 : <a class="el" href="class_path.html#a141da9ff89c85e0ba410b5a73864c267">Path</a>
 </li>
@@ -482,7 +470,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:21 dla Auskylia programem
+    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:41 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

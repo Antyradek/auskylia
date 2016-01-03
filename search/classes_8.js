@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uniformintervals',['UniformIntervals',['../class_uniform_intervals.html',1,'']]]
+  ['viewserver',['ViewServer',['../class_view_server.html',1,'']]],
+  ['viewserverexception',['ViewServerException',['../struct_view_server_exception.html',1,'']]]
 ];

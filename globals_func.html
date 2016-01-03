@@ -88,6 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
@@ -116,7 +117,7 @@ $(document).ready(function(){initNavTree('globals_func.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Strony</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -143,8 +144,16 @@ $(document).ready(function(){initNavTree('globals_func.html','');});
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
-<li>graph_test()
-: <a class="el" href="test_8cpp.html#a82926d3675408fd87ab5a73622056cf6">test.cpp</a>
+<li>graphTest()
+: <a class="el" href="test_8cpp.html#a0b6f193783eb6ef252ec152fafac1a4a">test.cpp</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>isqrt()
+: <a class="el" href="_graph_generator_8cpp.html#a19c32dba9d0570e9d31e45abbba8e83a">GraphGenerator.cpp</a>
+, <a class="el" href="_graph_generator_8hpp.html#a19c32dba9d0570e9d31e45abbba8e83a">GraphGenerator.hpp</a>
 </li>
 </ul>
 
@@ -161,6 +170,10 @@ $(document).ready(function(){initNavTree('globals_func.html','');});
 : <a class="el" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">controllerMain.cpp</a>
 , <a class="el" href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">test.cpp</a>
 </li>
+<li>modelTest()
+: <a class="el" href="_model_8cpp.html#a344598cef5e5e40c7b3c3638cc63874e">Model.cpp</a>
+, <a class="el" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">test.cpp</a>
+</li>
 </ul>
 
 
@@ -169,7 +182,7 @@ $(document).ready(function(){initNavTree('globals_func.html','');});
 : <a class="el" href="main_8js.html#a8839033f514fd22566344670acdf9501">main.js</a>
 </li>
 <li>pathTest()
-: <a class="el" href="test_8cpp.html#aa59a9e69faef9174e9f1c6e48bc450dd">test.cpp</a>
+: <a class="el" href="test_8cpp.html#a7f930a0c85521fab6d9e9b533a14ad57">test.cpp</a>
 </li>
 <li>populationTest()
 : <a class="el" href="test_8cpp.html#a65d5838f7442ae49d59d4eebbe08a9db">test.cpp</a>
@@ -188,16 +201,16 @@ $(document).ready(function(){initNavTree('globals_func.html','');});
 : <a class="el" href="test_8cpp.html#a60acc67c4d4f8ee1fe42a79d7c86b881">test.cpp</a>
 </li>
 <li>rollB()
-: <a class="el" href="roll_8hpp.html#a44c0776ba659dcee168940aafcd41693">roll.hpp</a>
-, <a class="el" href="roll_8cpp.html#a44c0776ba659dcee168940aafcd41693">roll.cpp</a>
+: <a class="el" href="roll_8cpp.html#a44c0776ba659dcee168940aafcd41693">roll.cpp</a>
+, <a class="el" href="roll_8hpp.html#a44c0776ba659dcee168940aafcd41693">roll.hpp</a>
 </li>
 <li>rollBinary()
 : <a class="el" href="roll_8cpp.html#a79a6f63717eba14b291565034fca94df">roll.cpp</a>
 , <a class="el" href="roll_8hpp.html#a79a6f63717eba14b291565034fca94df">roll.hpp</a>
 </li>
 <li>rollBinomial()
-: <a class="el" href="roll_8hpp.html#a3b7c42b91f3db84769ff77668e69b64d">roll.hpp</a>
-, <a class="el" href="roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d">roll.cpp</a>
+: <a class="el" href="roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d">roll.cpp</a>
+, <a class="el" href="roll_8hpp.html#a3b7c42b91f3db84769ff77668e69b64d">roll.hpp</a>
 </li>
 <li>rollBinomialUltraWide()
 : <a class="el" href="roll_8cpp.html#a0c3de6605800e156e7034b0d4821fd50">roll.cpp</a>
@@ -208,8 +221,8 @@ $(document).ready(function(){initNavTree('globals_func.html','');});
 , <a class="el" href="roll_8hpp.html#aa38128fec7726ed6e040bce4a4a6ae12">roll.hpp</a>
 </li>
 <li>rollUniform()
-: <a class="el" href="roll_8hpp.html#a1484a30fe528656139c60cb52f254992">roll.hpp</a>
-, <a class="el" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">roll.cpp</a>
+: <a class="el" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">roll.cpp</a>
+, <a class="el" href="roll_8hpp.html#a1484a30fe528656139c60cb52f254992">roll.hpp</a>
 </li>
 </ul>
 
@@ -220,12 +233,6 @@ $(document).ready(function(){initNavTree('globals_func.html','');});
 </li>
 <li>setHourglass()
 : <a class="el" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">main.js</a>
-</li>
-<li>setMutation()
-: <a class="el" href="_model_8cpp.html#ad8e56c0e6ac1c35b8bdd9aaf011ab8a0">Model.cpp</a>
-</li>
-<li>setStrategy()
-: <a class="el" href="_model_8cpp.html#af50eb8632daff7acc3d4aaf15002e067">Model.cpp</a>
 </li>
 <li>showError()
 : <a class="el" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">main.js</a>
@@ -246,7 +253,7 @@ $(document).ready(function(){initNavTree('globals_func.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:24 dla Auskylia programem
+    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:41 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

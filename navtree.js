@@ -5,7 +5,12 @@ var NAVTREE =
     [ "Układ katalogów i plików", "md__d_1__moje_dokumenty__p_s_z_t_auskylia_application_readme.html", null ],
     [ "Lista rzeczy do zrobienia", "todo.html", null ],
     [ "Przestrzenie nazw", null, [
-      [ "Lista przestrzeni nazw", "namespaces.html", "namespaces" ]
+      [ "Lista przestrzeni nazw", "namespaces.html", "namespaces" ],
+      [ "Składowe przestrzeni nazw", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Wyliczenia", "namespacemembers_enum.html", null ],
+        [ "Wartości wyliczeń", "namespacemembers_eval.html", null ]
+      ] ]
     ] ],
     [ "Klasy", null, [
       [ "Lista klas", "annotated.html", "annotated" ],
@@ -14,7 +19,8 @@ var NAVTREE =
       [ "Składowe klas", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Funkcje", "functions_func.html", null ],
-        [ "Zmienne", "functions_vars.html", null ]
+        [ "Zmienne", "functions_vars.html", null ],
+        [ "Funkcje powiązane", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Pliki", null, [
@@ -35,7 +41,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_blocking_queue_8cpp.html",
-"namespace_auto_version.html"
+"main_8js.html#af90b2c220cb27941f5f067630ad40b91"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

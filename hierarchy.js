@@ -10,9 +10,7 @@ var hierarchy =
     ] ],
     [ "Graph", "class_graph.html", null ],
     [ "GraphGenerator", "class_graph_generator.html", [
-      [ "OtherGenerator", "class_other_generator.html", null ],
-      [ "SmartGenerator", "class_smart_generator.html", null ],
-      [ "UniformIntervals", "class_uniform_intervals.html", null ]
+      [ "GeneratorUniform", "class_generator_uniform.html", null ]
     ] ],
     [ "Message", "class_message.html", null ],
     [ "Model", "class_model.html", null ],
@@ -20,6 +18,7 @@ var hierarchy =
       [ "MutationBinomial", "class_mutation_binomial.html", null ],
       [ "MutationUniform", "class_mutation_uniform.html", null ]
     ] ],
+    [ "Node", "class_node.html", null ],
     [ "Path", "class_path.html", null ],
     [ "pathPtrCompr", "structpath_ptr_compr.html", null ],
     [ "Population", "class_population.html", null ],

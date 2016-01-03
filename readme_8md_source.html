@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('readme_8md.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Strony</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,102 +108,105 @@ $(document).ready(function(){initNavTree('readme_8md.html','');});
 <div class="contents">
 <a href="readme_8md.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;PSZT Projekt JP.AE2</div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;------------------------------</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;            TEMAT</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;------------------------------</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;Program ma wyznaczać przy pomocy algorytmu ewolucyjnego najlepszą trasę między określonymi punktami na podstawie zadanych przez użytkownika kryteriów.</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">### Dokumentacja Doxygen pod adresem:</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor"></span>http:<span class="comment">//antyradek.github.io/auskylia/</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;------------------------------</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;            TEMAT</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;------------------------------</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;      USTALENIA WSTĘPNE</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;------------------------------</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;1. Program otrzymuje niezbędne dane dotyczące połączeń między miastami w pliku tekstowym.</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;2. Użytkownik wprowadza swoje preferencje ustalając wagi dla dostępnych kryteriów wyboru optymalnej trasy.</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;3. Program na wyjściu podaje najlepszą trasę lub n najlepszych tras, z możliwością zapisu <span class="keywordflow">do</span> pliku.</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;4. Komunikacja z programem jest realizowana poprzez GUI.</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;------------------------------</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; USTALENIA PROJEKTOWE - MODEL</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;------------------------------</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;Osoba odpowiedzialna:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;AR</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;Środowisko:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;C++14 (GCC 4.9.3) + boost 1.59</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;Program ma wyznaczać przy pomocy algorytmu ewolucyjnego najlepszą trasę między określonymi punktami na podstawie zadanych przez użytkownika kryteriów.</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;------------------------------</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;      USTALENIA WSTĘPNE</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;------------------------------</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;1. Program otrzymuje niezbędne dane dotyczące połączeń między miastami w pliku tekstowym.</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;2. Użytkownik wprowadza swoje preferencje ustalając wagi dla dostępnych kryteriów wyboru optymalnej trasy.</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;3. Program na wyjściu podaje najlepszą trasę lub n najlepszych tras, z możliwością zapisu <span class="keywordflow">do</span> pliku.</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;4. Komunikacja z programem jest realizowana poprzez GUI.</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;------------------------------</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; USTALENIA PROJEKTOWE - MODEL</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;------------------------------</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;Osoba odpowiedzialna:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;AR</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;Założenia:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;1. Połączenia między miastami są opisane w zewnętrznym pliku tekstowym w postaci grafu.</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;2. Trasa jest wyznaczana za pomocą algorytmu ewolucyjnego.</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    2a. Osobnikami są trasy.</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    2b. Cechami osobników są kolejne wierzchołki grafu przez które prowadzi trasa.</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    2c. Krzyżowanie odbywa się na zasadzie losowego podziału cech rodziców między potomków.</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    2d. Osobniki o różnej liczbie cech są normalizowane poprzez dodanie <span class="keywordflow">do</span> listy cech krótszej trasy w losowych miejscach pustych wierzchołków, usuwanych po przeprowadzeniu krzyżowania.</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    2e. Mutacje pozwalają losowo zmienić wierzchołek na inny, usunąć go, lub wstawić nowy wierzchołek między już istniejące.</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    2f. Trasy są ścieżkami prostymi i nie mogą zawierać nieistniejących krawędzi. Osobniki nie spełniające tych wymagań automatycznie kwalifikują się <span class="keywordflow">do</span> odrzucenia.</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    2g. Program pozwala na wybór kryterium zakończenia algorytmu: czas wykonania, liczba iteracji, akceptowalność rozwiązania.</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;3. Przed uruchomieniem algorytmu ewolucyjnego graf jest sprawdzany pod kątem obecności wierzchołka początkowego i końcowego w tej samej składowej.</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;4. Składowe niezawierające wierzchołka początkowego i końcowego są odrzucane.</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;5. <a class="code" href="class_model.html">Model</a> dostarcza funkcję zwracającą n-tą najlepszą trasę z obecnej iteracji, funkcję pozwalającą zapisać obecną populację <span class="keywordflow">do</span> wskazanego pliku oraz funkcję pozwalającą wstrzymać wykonywanie algorytmu.</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;----------------------------</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;Ustalenia projektowe – Kontroler</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;Środowisko:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;C++14 (GCC 4.9.3) + boost 1.59</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;Założenia:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;1. Połączenia między miastami są opisane w zewnętrznym pliku tekstowym w postaci grafu.</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;2. Trasa jest wyznaczana za pomocą algorytmu ewolucyjnego.</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    2a. Osobnikami są trasy.</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    2b. Cechami osobników są kolejne wierzchołki grafu przez które prowadzi trasa.</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    2c. Krzyżowanie odbywa się na zasadzie losowego podziału cech rodziców między potomków.</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    2d. Osobniki o różnej liczbie cech są normalizowane poprzez dodanie <span class="keywordflow">do</span> listy cech krótszej trasy w losowych miejscach pustych wierzchołków, usuwanych po przeprowadzeniu krzyżowania.</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    2e. Mutacje pozwalają losowo zmienić wierzchołek na inny, usunąć go, lub wstawić nowy wierzchołek między już istniejące.</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    2f. Trasy są ścieżkami prostymi i nie mogą zawierać nieistniejących krawędzi. Osobniki nie spełniające tych wymagań automatycznie kwalifikują się <span class="keywordflow">do</span> odrzucenia.</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    2g. Program pozwala na wybór kryterium zakończenia algorytmu: czas wykonania, liczba iteracji, akceptowalność rozwiązania.</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;3. Przed uruchomieniem algorytmu ewolucyjnego graf jest sprawdzany pod kątem obecności wierzchołka początkowego i końcowego w tej samej składowej.</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;4. Składowe niezawierające wierzchołka początkowego i końcowego są odrzucane.</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;5. <a class="code" href="class_model.html">Model</a> dostarcza funkcję zwracającą n-tą najlepszą trasę z obecnej iteracji, funkcję pozwalającą zapisać obecną populację <span class="keywordflow">do</span> wskazanego pliku oraz funkcję pozwalającą wstrzymać wykonywanie algorytmu.</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;Osoba odpowiedzialna:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;TJ (sigrond)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;----------------------------</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;Ustalenia projektowe – Kontroler</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;Środowisko:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;C++11 + sockets + pthread / thread z C++11</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;Osoba odpowiedzialna:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;TJ (sigrond)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;Założenia:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; 1. Kontroler powinien zostać uruchomiony zanim użytkownik zacznie wprowadzać polecenia <span class="keywordflow">do</span> GUI (lub innymi słowy: zanim widok zacznie wysyłać zapytania).</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; 2. Kontroler po uruchomieniu tworzy gniazdo (socket) w nowym wątku (lub wątkach – fork server) i nasłuchuje na porcie. Po nawiązaniu połączenia może obsługiwać polecenia (data):</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; a) Wprowadzanie lub modyfikowanie danych i ustawień.</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; b) Uruchomienie obliczeń (algorytm ewolucyjny w modelu).</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; c) Zwracanie stanu obliczeń lub wyniku.</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; d) Zatrzymywanie obliczeń</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; 3. Kontroler przekazuje dane i ustawienia do modelu, oraz pobiera z niego stan i wyniki.</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; 4. Kontroler zażądza życiem modelu, uruchamia go w osobnym wątku (lub wątkach). Może też zażądzić zatrzymywanie wątków modelu.</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;Ustalenia komunikacji MVC:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; 1. Komunikacja z widokiem</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;•   Kontroler NIE serwuje pliku widoku, ewentualnie może go uruchomić przez shella lub kontroler i widok mogą zostać uruchomione skryptem.</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;•   Spodziewam się, że widok będzie plikiem HTML otwieranym w przeglądarce i będzie używał JavaScript/jQuery/AJAX get do wysyłania (prostych) zapytań HTMLowych do kontrolera. Aczkolwiek dzięki zastosowaniu wzorca MVC i wykożystaniu socketów do komunikacji można widok wymienić na zupełnie inny w innej technologii o ile będzie się stosował do ustaleń protokołu komunikacji.</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;•   Do komunikacji będzie potrzebne częściowe zaimplementowanie HTTP/1.1 - RFC 2616. Chodzi głównie oczywiście o sam nagłówek.</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;•   Odpowiedzi i dzałania kontrolera będą zależały od sekcji data w get. Niech na chwilę obecną będzie</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{polecenie: <span class="stringliteral">&#39;dane&#39;</span>, nazwa_parametru: <span class="stringliteral">&#39;wartość_parametru&#39;</span>}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{polecenie: <span class="stringliteral">&#39;licz&#39;</span>}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{polecenie: <span class="stringliteral">&#39;wynik&#39;</span>}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{polecenie: <span class="stringliteral">&#39;stop&#39;</span>}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;•   Dane <span class="keywordflow">do</span> widoku będą wysyłane jednym ze standardów AJAXa np. json lub xml. Co i jak dokładnie będzie wy tych danch wymaga dodatkowych ustaleń już bardziej związanch z implementacją.</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; 2. Komunikacja z modelem będzie znacznie prostrza niż z widokiem. Należy ustalić, czy kontroler po prostu wywołuje metody modelu, czy raczej kontroler tylko uruchomi proces modelu i dalej będzie się komunikował przez kolejkę blokującą.</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;------------------------------</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; Ustalenia projektowe - Widok</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;------------------------------</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;Osoba odpowiedzialna</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;RŚ (Antyradek)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;Środowisko:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;C++11 + sockets + pthread / thread z C++11</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;Założenia:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; 1. Kontroler powinien zostać uruchomiony zanim użytkownik zacznie wprowadzać polecenia <span class="keywordflow">do</span> GUI (lub innymi słowy: zanim widok zacznie wysyłać zapytania).</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; 2. Kontroler po uruchomieniu tworzy gniazdo (socket) w nowym wątku (lub wątkach – fork server) i nasłuchuje na porcie. Po nawiązaniu połączenia może obsługiwać polecenia (data):</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; a) Wprowadzanie lub modyfikowanie danych i ustawień.</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; b) Uruchomienie obliczeń (algorytm ewolucyjny w modelu).</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; c) Zwracanie stanu obliczeń lub wyniku.</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; d) Zatrzymywanie obliczeń</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; 3. Kontroler przekazuje dane i ustawienia do modelu, oraz pobiera z niego stan i wyniki.</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; 4. Kontroler zażądza życiem modelu, uruchamia go w osobnym wątku (lub wątkach). Może też zażądzić zatrzymywanie wątków modelu.</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;Ustalenia komunikacji MVC:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; 1. Komunikacja z widokiem</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;•   Kontroler NIE serwuje pliku widoku, ewentualnie może go uruchomić przez shella lub kontroler i widok mogą zostać uruchomione skryptem.</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;•   Spodziewam się, że widok będzie plikiem HTML otwieranym w przeglądarce i będzie używał JavaScript/jQuery/AJAX get do wysyłania (prostych) zapytań HTMLowych do kontrolera. Aczkolwiek dzięki zastosowaniu wzorca MVC i wykożystaniu socketów do komunikacji można widok wymienić na zupełnie inny w innej technologii o ile będzie się stosował do ustaleń protokołu komunikacji.</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;•   Do komunikacji będzie potrzebne częściowe zaimplementowanie HTTP/1.1 - RFC 2616. Chodzi głównie oczywiście o sam nagłówek.</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;•   Odpowiedzi i dzałania kontrolera będą zależały od sekcji data w get. Niech na chwilę obecną będzie</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{polecenie: <span class="stringliteral">&#39;dane&#39;</span>, nazwa_parametru: <span class="stringliteral">&#39;wartość_parametru&#39;</span>}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{polecenie: <span class="stringliteral">&#39;licz&#39;</span>}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{polecenie: <span class="stringliteral">&#39;wynik&#39;</span>}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{polecenie: <span class="stringliteral">&#39;stop&#39;</span>}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;•   Dane <span class="keywordflow">do</span> widoku będą wysyłane jednym ze standardów AJAXa np. json lub xml. Co i jak dokładnie będzie wy tych danch wymaga dodatkowych ustaleń już bardziej związanch z implementacją.</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; 2. Komunikacja z modelem będzie znacznie prostrza niż z widokiem. Należy ustalić, czy kontroler po prostu wywołuje metody modelu, czy raczej kontroler tylko uruchomi proces modelu i dalej będzie się komunikował przez kolejkę blokującą.</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;------------------------------</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; Ustalenia projektowe - Widok</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;------------------------------</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;Środowisko:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;HTML5 + Javascript + AJAX + jQuery + CSS3</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;Osoba odpowiedzialna</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;RŚ (Antyradek)</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;Założenia:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;1. Widok będzie działać w przeglądarce jako klient i traktować Kontroler jako serwer.</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;2. Komunikacja odbywać się będzie za pomocą Javascript i AJAX implementowanej przez jQuery.</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;3. Użytkownik będzie miał do ustawień:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    a) Weryfikację i modyfikację danych.</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    b) Ustalenie parametrów działania.</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    c) Opcję rozpoczęcia kalkulacji.</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    d) Opcję przerwania kalkulacji.</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;4. Dane będą asynchronicznie wysyłane i odbierane za pomocą XML (lub JSON).</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;5. Widok będzie pełnił funkcje pomocnicze do obsługi programu.</div>
-<div class="ttc" id="class_model_html"><div class="ttname"><a href="class_model.html">Model</a></div><div class="ttdoc">Na razie pusta/zaślepkowa klasa Modelu. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00029">Model.hpp:29</a></div></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;Środowisko:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;HTML5 + Javascript + AJAX + jQuery + CSS3</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;Założenia:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;1. Widok będzie działać w przeglądarce jako klient i traktować Kontroler jako serwer.</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;2. Komunikacja odbywać się będzie za pomocą Javascript i AJAX implementowanej przez jQuery.</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;3. Użytkownik będzie miał do ustawień:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    a) Weryfikację i modyfikację danych.</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    b) Ustalenie parametrów działania.</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    c) Opcję rozpoczęcia kalkulacji.</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    d) Opcję przerwania kalkulacji.</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;4. Dane będą asynchronicznie wysyłane i odbierane za pomocą XML (lub JSON).</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;5. Widok będzie pełnił funkcje pomocnicze do obsługi programu.</div>
+<div class="ttc" id="class_model_html"><div class="ttname"><a href="class_model.html">Model</a></div><div class="ttdoc">Na razie pusta/zaślepkowa klasa Modelu. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00030">Model.hpp:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="readme_8md.html">readme.md</a></li>
-    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:15 dla Auskylia programem
+    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:38 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

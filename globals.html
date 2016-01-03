@@ -85,12 +85,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
-      <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_n"><span>n</span></a></li>
@@ -99,7 +99,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
       <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
-      <li class="current"><a href="#index_u"><span>u</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
+      <li class="current"><a href="#index_w"><span>w</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -122,7 +123,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Strony</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -133,13 +134,6 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 <div class="contents">
 <div class="textblock">Tutaj znajduje się lista wszystkich składowych plików wraz z odnośnikami do plików, do których one należą:</div>
-
-<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
-<li>AdjacencyMatrix
-: <a class="el" href="_graph_generator_8hpp.html#aed7a428876e4fac71e47e88c8c4329f3">GraphGenerator.hpp</a>
-</li>
-</ul>
-
 
 <h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
 <li>BOOST_AUTO_TEST_CASE()
@@ -161,8 +155,14 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <li>COMFORT
 : <a class="el" href="parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93ade7684649e49c31023e33974995e81f2">parameters.hpp</a>
 </li>
-<li>CommandType
-: <a class="el" href="_command_8hpp.html#a21e038f5b8958e203d28bc4f18472352">Command.hpp</a>
+<li>COMFORT_MAX
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347ab0a8c39b9d736a1885632f32b1b82137">parameters.hpp</a>
+</li>
+<li>COMFORT_MIN
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347ab1b8e5402d6f516206c8341339863127">parameters.hpp</a>
+</li>
+<li>COMFORT_RANGE
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a0aedf130e068d69c044a61804ff5628a">parameters.hpp</a>
 </li>
 <li>COST
 : <a class="el" href="parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93aab9e914fdb40ef4b89248140f0082aa4">parameters.hpp</a>
@@ -171,11 +171,11 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93ae93f994f01c537c4e2f7d8528c3eb5e9">parameters.hpp</a>
 </li>
 <li>coutMutex
-: <a class="el" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">Controller.cpp</a>
+: <a class="el" href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">controllerMain.cpp</a>
 , <a class="el" href="_view_server_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">ViewServer.cpp</a>
 , <a class="el" href="_event_8hpp.html#a905a79f9a43243b3e3d967dc1f52b612">Event.hpp</a>
 , <a class="el" href="_message_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">Message.cpp</a>
-, <a class="el" href="controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">controllerMain.cpp</a>
+, <a class="el" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">Controller.cpp</a>
 , <a class="el" href="_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">XMLParser.cpp</a>
 </li>
 </ul>
@@ -202,13 +202,24 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
-<li>graph_test()
-: <a class="el" href="test_8cpp.html#a82926d3675408fd87ab5a73622056cf6">test.cpp</a>
+<li>graphTest()
+: <a class="el" href="test_8cpp.html#a0b6f193783eb6ef252ec152fafac1a4a">test.cpp</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>isqrt()
+: <a class="el" href="_graph_generator_8cpp.html#a19c32dba9d0570e9d31e45abbba8e83a">GraphGenerator.cpp</a>
+, <a class="el" href="_graph_generator_8hpp.html#a19c32dba9d0570e9d31e45abbba8e83a">GraphGenerator.hpp</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>Limits
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347">parameters.hpp</a>
+</li>
 <li>LIST
 : <a class="el" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a25688e799536738ea469158ef15fd1c0">Message.hpp</a>
 </li>
@@ -223,6 +234,12 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">controllerMain.cpp</a>
 , <a class="el" href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">test.cpp</a>
 </li>
+<li>MAP_SIZE
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a5d12e1649a5fd1afeda8ddcf4ae950af">parameters.hpp</a>
+</li>
+<li>Matrix
+: <a class="el" href="types_8hpp.html#a78802c92d620a6492e3bdc2a5ef5d7ca">types.hpp</a>
+</li>
 <li>MESSAGE_FROM_MODEL
 : <a class="el" href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa152f1a21c136f10bfd5469b87a2531a2">Event.hpp</a>
 </li>
@@ -232,10 +249,17 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <li>MessageType
 : <a class="el" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013">Message.hpp</a>
 </li>
+<li>modelTest()
+: <a class="el" href="_model_8cpp.html#a344598cef5e5e40c7b3c3638cc63874e">Model.cpp</a>
+, <a class="el" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">test.cpp</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>NODES_MAX
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347abd40b9c7f36103d1300f771e6e4d5e28">parameters.hpp</a>
+</li>
 <li>NOT_SET
 : <a class="el" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a759c34a99344306429e887634b2d688e">Message.hpp</a>
 </li>
@@ -253,7 +277,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="main_8js.html#a8839033f514fd22566344670acdf9501">main.js</a>
 </li>
 <li>pathTest()
-: <a class="el" href="test_8cpp.html#aa59a9e69faef9174e9f1c6e48bc450dd">test.cpp</a>
+: <a class="el" href="test_8cpp.html#a7f930a0c85521fab6d9e9b533a14ad57">test.cpp</a>
 </li>
 <li>populationTest()
 : <a class="el" href="test_8cpp.html#a65d5838f7442ae49d59d4eebbe08a9db">test.cpp</a>
@@ -272,9 +296,6 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>RatingMatrix
-: <a class="el" href="_graph_generator_8hpp.html#afbf0ac3d538cf068a39a49c55fc333a5">GraphGenerator.hpp</a>
-</li>
 <li>RC_FILEVERSION
 : <a class="el" href="version_8h.html#a0e86d046ea87587e402d375c6b0927c6">version.h</a>
 </li>
@@ -296,12 +317,12 @@ $(document).ready(function(){initNavTree('globals.html','');});
 , <a class="el" href="roll_8hpp.html#a79a6f63717eba14b291565034fca94df">roll.hpp</a>
 </li>
 <li>rollBinomial()
-: <a class="el" href="roll_8hpp.html#a3b7c42b91f3db84769ff77668e69b64d">roll.hpp</a>
-, <a class="el" href="roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d">roll.cpp</a>
+: <a class="el" href="roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d">roll.cpp</a>
+, <a class="el" href="roll_8hpp.html#a3b7c42b91f3db84769ff77668e69b64d">roll.hpp</a>
 </li>
 <li>rollBinomialUltraWide()
-: <a class="el" href="roll_8hpp.html#a0c3de6605800e156e7034b0d4821fd50">roll.hpp</a>
-, <a class="el" href="roll_8cpp.html#a0c3de6605800e156e7034b0d4821fd50">roll.cpp</a>
+: <a class="el" href="roll_8cpp.html#a0c3de6605800e156e7034b0d4821fd50">roll.cpp</a>
+, <a class="el" href="roll_8hpp.html#a0c3de6605800e156e7034b0d4821fd50">roll.hpp</a>
 </li>
 <li>rollBinomialWide()
 : <a class="el" href="roll_8cpp.html#aa38128fec7726ed6e040bce4a4a6ae12">roll.cpp</a>
@@ -315,20 +336,23 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
-<li>SECURITY
-: <a class="el" href="parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93a219ce424cc367fba8a5a0210792d4dc0">parameters.hpp</a>
+<li>SAFETY
+: <a class="el" href="parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93ae214e5ff1f1fbe05c9e11c5363915cbe">parameters.hpp</a>
+</li>
+<li>SAFETY_MAX
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a486a4ed4e187c8060edc5e1e5d78bb4a">parameters.hpp</a>
+</li>
+<li>SAFETY_MIN
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a3d8a8fd99c399bd3a88f54cd15f85885">parameters.hpp</a>
+</li>
+<li>SAFETY_RANGE
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347af7af41e2129002897308178448f1e55f">parameters.hpp</a>
 </li>
 <li>sendData()
 : <a class="el" href="main_8js.html#abc96b0960ec55a82553034efef1b0eed">main.js</a>
 </li>
 <li>setHourglass()
 : <a class="el" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">main.js</a>
-</li>
-<li>setMutation()
-: <a class="el" href="_model_8cpp.html#ad8e56c0e6ac1c35b8bdd9aaf011ab8a0">Model.cpp</a>
-</li>
-<li>setStrategy()
-: <a class="el" href="_model_8cpp.html#af50eb8632daff7acc3d4aaf15002e067">Model.cpp</a>
 </li>
 <li>showError()
 : <a class="el" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">main.js</a>
@@ -339,16 +363,20 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <li>SHUT_DOWN
 : <a class="el" href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa589c3ad647ceca3400a4bead6acdd94b">Event.hpp</a>
 </li>
-<li>START
-: <a class="el" href="_command_8hpp.html#a21e038f5b8958e203d28bc4f18472352a13d000b4d7dc70d90239b7430d1eb6b2">Command.hpp</a>
+<li>SPEED_MAX
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a5cfbed5c3b1f22681c01bbefdda11025">parameters.hpp</a>
+</li>
+<li>SPEED_MIN
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a665e5b9bf1145ed2cae5fd02bed6dcb1">parameters.hpp</a>
+</li>
+<li>SPEED_RANGE
+: <a class="el" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a9ed5d7cf6814f497ffaebc72d59e8aed">parameters.hpp</a>
 </li>
 <li>STATUS
 : <a class="el" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013ab15379688176677d49474245a6178d97">Message.hpp</a>
-, <a class="el" href="_command_8hpp.html#a21e038f5b8958e203d28bc4f18472352ab15379688176677d49474245a6178d97">Command.hpp</a>
 </li>
 <li>STOP
 : <a class="el" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a679ee5320d66c8322e310daeb2ee99b8">Message.hpp</a>
-, <a class="el" href="_command_8hpp.html#a21e038f5b8958e203d28bc4f18472352a679ee5320d66c8322e310daeb2ee99b8">Command.hpp</a>
 </li>
 </ul>
 
@@ -371,12 +399,19 @@ $(document).ready(function(){initNavTree('globals.html','');});
 : <a class="el" href="main_8js.html#a273346471dff7030093765f4e043d101">main.js</a>
 </li>
 </ul>
+
+
+<h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
+<li>Weights
+: <a class="el" href="types_8hpp.html#af230a7e4b05b50c1162d7652222e091f">types.hpp</a>
+</li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:23 dla Auskylia programem
+    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:41 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

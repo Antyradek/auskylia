@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('hierarchy.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Strony</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('hierarchy.html','');});
 </td></tr>
 <tr><td><img src="inherit_graph_6.png" border="0" alt="" usemap="#_graph_generator"/>
 <map name="_graph_generator" id="_graph_generator">
-<area shape="rect" id="node1" href="class_graph_generator.html" title="Abstrakcyjna Klasa bazowa klas generujących grafy. " alt="" coords="5,56,120,83"/><area shape="rect" id="node2" href="class_other_generator.html" title="losuje wartości parametrów krawędzi, powiększa je o taką samą liczbę i mnoży przez taką samą liczbę ..." alt="" coords="170,5,281,32"/><area shape="rect" id="node3" href="class_smart_generator.html" title="Uzależnia parametry od siebie. " alt="" coords="168,56,283,83"/><area shape="rect" id="node4" href="class_uniform_intervals.html" title="Losuje jednostajnie przedział losowania parametrów. " alt="" coords="169,107,282,133"/></map>
+<area shape="rect" id="node1" href="class_graph_generator.html" title="Abstrakcyjna Klasa bazowa klas generujących grafy. " alt="" coords="5,5,120,32"/><area shape="rect" id="node2" href="class_generator_uniform.html" title="GeneratorUniform" alt="" coords="168,5,291,32"/></map>
 </td></tr>
 <tr><td><img src="inherit_graph_7.png" border="0" alt="" usemap="#_message"/>
 <map name="_message" id="_message">
@@ -151,27 +151,31 @@ $(document).ready(function(){initNavTree('hierarchy.html','');});
 <map name="_mutation" id="_mutation">
 <area shape="rect" id="node1" href="class_mutation.html" title="Abstrakcyjna klasa bazowa dla klas określających metody mutacji. " alt="" coords="5,31,77,57"/><area shape="rect" id="node2" href="class_mutation_binomial.html" title="MutationBinomial" alt="" coords="125,5,248,32"/><area shape="rect" id="node3" href="class_mutation_uniform.html" title="MutationUniform" alt="" coords="129,56,245,83"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_10.png" border="0" alt="" usemap="#_path"/>
+<tr><td><img src="inherit_graph_10.png" border="0" alt="" usemap="#_node"/>
+<map name="_node" id="_node">
+<area shape="rect" id="node1" href="class_node.html" title="Node" alt="" coords="5,5,57,32"/></map>
+</td></tr>
+<tr><td><img src="inherit_graph_11.png" border="0" alt="" usemap="#_path"/>
 <map name="_path" id="_path">
 <area shape="rect" id="node1" href="class_path.html" title="Klasa reprezentujaca ścieżkę w grafie. " alt="" coords="5,5,55,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_11.png" border="0" alt="" usemap="#path_ptr_compr"/>
+<tr><td><img src="inherit_graph_12.png" border="0" alt="" usemap="#path_ptr_compr"/>
 <map name="path_ptr_compr" id="path_ptr_compr">
 <area shape="rect" id="node1" href="structpath_ptr_compr.html" title="pathPtrCompr" alt="" coords="5,5,108,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_12.png" border="0" alt="" usemap="#_population"/>
+<tr><td><img src="inherit_graph_13.png" border="0" alt="" usemap="#_population"/>
 <map name="_population" id="_population">
 <area shape="rect" id="node1" href="class_population.html" title="Klasa reprezentująca populację. Populacja jest związana z konkretnym grafem oraz wierzchołkami począt..." alt="" coords="5,5,88,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_13.png" border="0" alt="" usemap="#_strategy"/>
+<tr><td><img src="inherit_graph_14.png" border="0" alt="" usemap="#_strategy"/>
 <map name="_strategy" id="_strategy">
 <area shape="rect" id="node1" href="class_strategy.html" title="Klasy strategii. " alt="" coords="5,56,76,83"/><area shape="rect" id="node2" href="class_strategy_closest.html" title="StrategyClosest" alt="" coords="142,5,257,32"/><area shape="rect" id="node3" href="class_strategy_rand_binomial.html" title="StrategyRandBinomial" alt="" coords="124,56,275,83"/><area shape="rect" id="node4" href="class_strategy_rand_uniform.html" title="StrategyRandUniform" alt="" coords="127,107,272,133"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_14.png" border="0" alt="" usemap="#_view_server"/>
+<tr><td><img src="inherit_graph_15.png" border="0" alt="" usemap="#_view_server"/>
 <map name="_view_server" id="_view_server">
 <area shape="rect" id="node1" href="class_view_server.html" title="ViewServer" alt="" coords="5,5,92,32"/></map>
 </td></tr>
-<tr><td><img src="inherit_graph_15.png" border="0" alt="" usemap="#_x_m_l_parser"/>
+<tr><td><img src="inherit_graph_16.png" border="0" alt="" usemap="#_x_m_l_parser"/>
 <map name="_x_m_l_parser" id="_x_m_l_parser">
 <area shape="rect" id="node1" href="class_x_m_l_parser.html" title="Klasa parsera komunikatów XML dla auskylia. " alt="" coords="5,5,91,32"/></map>
 </td></tr>
@@ -181,7 +185,7 @@ $(document).ready(function(){initNavTree('hierarchy.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:21 dla Auskylia programem
+    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:41 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

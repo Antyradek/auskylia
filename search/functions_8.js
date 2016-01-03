@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['operator_28_29',['operator()',['../class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663',1,'XMLParser::operator()()'],['../structpath_ptr_compr.html#a3395040364b98d17316d41358492d47a',1,'pathPtrCompr::operator()()']]],
-  ['operator_3c',['operator&lt;',['../class_path.html#ad88e34d4bd0371af46f1a7f0f57ab8c0',1,'Path']]],
-  ['operator_5b_5d',['operator[]',['../class_path.html#ada96e667fd6c89f40a779f0f422def63',1,'Path']]]
+  ['newpaths',['newPaths',['../class_population.html#af44af1623ec86b2be635b74c6aa621d1',1,'Population']]],
+  ['node',['Node',['../class_node.html#ad7a34779cad45d997bfd6d3d8043c75f',1,'Node::Node()'],['../class_node.html#a47d468dadadc51ad265cb0370d027867',1,'Node::Node(unsigned x, unsigned y)']]]
 ];

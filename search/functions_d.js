@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['updatecityselections',['updateCitySelections',['../main_8js.html#a5303c598d7acd0f7956f304ae22eddcf',1,'main.js']]],
-  ['usegraph',['useGraph',['../class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0',1,'Model::useGraph(Graph *const graph)'],['../class_model.html#a59481c877686bc0dad06857be1448995',1,'Model::useGraph(const std::string &amp;file)']]]
+  ['triggershutdown',['triggerShutDown',['../class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610',1,'Controller::triggerShutDown()'],['../class_view_server.html#aa83c3d6ce949e210ea8002561ef5ed13',1,'ViewServer::triggerShutDown()']]]
 ];

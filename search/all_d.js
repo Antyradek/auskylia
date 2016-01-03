@@ -1,14 +1,15 @@
 var searchData=
 [
   ['readme',['readme',['../md__d_1__moje_dokumenty__p_s_z_t_auskylia_application_model_readme.html',1,'']]],
-  ['rate',['rate',['../class_graph.html#aebe6fbc93d735edc266d876c56e26bc8',1,'Graph::rate()'],['../class_path.html#acb54b2efe4f26f8d57d5076766d1a3cb',1,'Path::rate()']]],
-  ['ratingmatrix',['RatingMatrix',['../_graph_generator_8hpp.html#afbf0ac3d538cf068a39a49c55fc333a5',1,'GraphGenerator.hpp']]],
+  ['rate',['rate',['../class_path.html#acb54b2efe4f26f8d57d5076766d1a3cb',1,'Path']]],
+  ['rateedge',['rateEdge',['../class_path.html#a2a3ecb5391cb80e613ba161a5f1361fa',1,'Path']]],
   ['rc_5ffileversion',['RC_FILEVERSION',['../version_8h.html#a0e86d046ea87587e402d375c6b0927c6',1,'version.h']]],
   ['rc_5ffileversion_5fstring',['RC_FILEVERSION_STRING',['../version_8h.html#a4763e81d3c29ec0fab79225d3ec3f1a2',1,'version.h']]],
   ['readme_2emd',['readme.md',['../application_2readme_8md.html',1,'']]],
   ['readme_2emd',['readme.md',['../readme_8md.html',1,'']]],
   ['readme_2emd',['readme.md',['../application_2model_2readme_8md.html',1,'']]],
   ['ready',['ready',['../main_8js.html#a82571cea88dd49008c1617e5e7daed59',1,'main.js']]],
+  ['roll',['roll',['../class_node.html#a361e82589484bf10ce7fd7e686a459ba',1,'Node']]],
   ['roll_2ecpp',['roll.cpp',['../roll_8cpp.html',1,'']]],
   ['roll_2ehpp',['roll.hpp',['../roll_8hpp.html',1,'']]],
   ['roll_5ftest',['roll_test',['../test_8cpp.html#a60acc67c4d4f8ee1fe42a79d7c86b881',1,'test.cpp']]],

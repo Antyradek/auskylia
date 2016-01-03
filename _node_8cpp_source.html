@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Auskylia: Plik źródłowy D:/Moje dokumenty/PSZT/auskylia/application/model/Node.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Auskylia
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="pages.html"><span>Dodatkowe&#160;strony</span></a></li>
+      <li><a href="namespaces.html"><span>Przestrzenie&#160;nazw</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+      <li><a href="globals.html"><span>Składowe&#160;plików</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_node_8cpp_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Node.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_node_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_node_8hpp.html">Node.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="roll_8hpp.html">roll.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="parameters_8hpp.html">parameters.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_node.html#ad7a34779cad45d997bfd6d3d8043c75f">   16</a></span>&#160;<a class="code" href="class_node.html#ad7a34779cad45d997bfd6d3d8043c75f">Node::Node</a>()</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    safety = <a class="code" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a>( (<span class="keywordtype">unsigned</span>)<a class="code" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a3d8a8fd99c399bd3a88f54cd15f85885">Limits::SAFETY_MIN</a>, (<span class="keywordtype">unsigned</span>)<a class="code" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a486a4ed4e187c8060edc5e1e5d78bb4a">Limits::SAFETY_MAX</a> );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_node.html#a47d468dadadc51ad265cb0370d027867">   22</a></span>&#160;<a class="code" href="class_node.html#ad7a34779cad45d997bfd6d3d8043c75f">Node::Node</a>( <span class="keywordtype">unsigned</span> x, <span class="keywordtype">unsigned</span> y) : x(x), y(y)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{   </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    safety = <a class="code" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a>( (<span class="keywordtype">unsigned</span>)<a class="code" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a3d8a8fd99c399bd3a88f54cd15f85885">Limits::SAFETY_MIN</a>, (<span class="keywordtype">unsigned</span>)<a class="code" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a486a4ed4e187c8060edc5e1e5d78bb4a">Limits::SAFETY_MAX</a> );</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_node.html#aa0840c3cb5c7159be6d992adecd2097c">   27</a></span>&#160;<a class="code" href="class_node.html#aa0840c3cb5c7159be6d992adecd2097c">Node::~Node</a>()</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_node.html#a361e82589484bf10ce7fd7e686a459ba">   32</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_node.html#a361e82589484bf10ce7fd7e686a459ba">Node::roll</a>()</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    x = <a class="code" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a>( 1, (<span class="keywordtype">unsigned</span>)<a class="code" href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a5d12e1649a5fd1afeda8ddcf4ae950af">Limits::MAP_SIZE</a> );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    y = <a class="code" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a>( 1, (<span class="keywordtype">unsigned</span>)Limits::MAP_SIZE );</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_node.html#a9bb7fe26812aeca817761d00a89a4f6b">   39</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_node.html#a9bb7fe26812aeca817761d00a89a4f6b">Node::getX</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_node.html#a5885dfcc963ce6ec4195e4c02a49b580">   44</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_node.html#a5885dfcc963ce6ec4195e4c02a49b580">Node::getY</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> y;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_node.html#a2d51c63074b55efdc02d0db16dcee254">   49</a></span>&#160;<span class="keywordtype">unsigned</span> <a class="code" href="class_node.html#a2d51c63074b55efdc02d0db16dcee254">Node::getSafety</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> safety;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_node.html#a391e7163709229848ca02ba5316cf0aa">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_node.html#a391e7163709229848ca02ba5316cf0aa">Node::print</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="ttc" id="class_node_html_a391e7163709229848ca02ba5316cf0aa"><div class="ttname"><a href="class_node.html#a391e7163709229848ca02ba5316cf0aa">Node::print</a></div><div class="ttdeci">void print() const </div><div class="ttdef"><b>Definition:</b> <a href="_node_8cpp_source.html#l00054">Node.cpp:54</a></div></div>
+<div class="ttc" id="class_node_html_aa0840c3cb5c7159be6d992adecd2097c"><div class="ttname"><a href="class_node.html#aa0840c3cb5c7159be6d992adecd2097c">Node::~Node</a></div><div class="ttdeci">~Node()</div><div class="ttdef"><b>Definition:</b> <a href="_node_8cpp_source.html#l00027">Node.cpp:27</a></div></div>
+<div class="ttc" id="parameters_8hpp_html_a26034a996a7a7f9b502e408c9da64347a5d12e1649a5fd1afeda8ddcf4ae950af"><div class="ttname"><a href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a5d12e1649a5fd1afeda8ddcf4ae950af">Limits::MAP_SIZE</a></div></div>
+<div class="ttc" id="class_node_html_a5885dfcc963ce6ec4195e4c02a49b580"><div class="ttname"><a href="class_node.html#a5885dfcc963ce6ec4195e4c02a49b580">Node::getY</a></div><div class="ttdeci">unsigned getY() const </div><div class="ttdef"><b>Definition:</b> <a href="_node_8cpp_source.html#l00044">Node.cpp:44</a></div></div>
+<div class="ttc" id="class_node_html_a9bb7fe26812aeca817761d00a89a4f6b"><div class="ttname"><a href="class_node.html#a9bb7fe26812aeca817761d00a89a4f6b">Node::getX</a></div><div class="ttdeci">unsigned getX() const </div><div class="ttdef"><b>Definition:</b> <a href="_node_8cpp_source.html#l00039">Node.cpp:39</a></div></div>
+<div class="ttc" id="parameters_8hpp_html_a26034a996a7a7f9b502e408c9da64347a3d8a8fd99c399bd3a88f54cd15f85885"><div class="ttname"><a href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a3d8a8fd99c399bd3a88f54cd15f85885">Limits::SAFETY_MIN</a></div></div>
+<div class="ttc" id="roll_8hpp_html"><div class="ttname"><a href="roll_8hpp.html">roll.hpp</a></div></div>
+<div class="ttc" id="roll_8cpp_html_a1484a30fe528656139c60cb52f254992"><div class="ttname"><a href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a></div><div class="ttdeci">unsigned rollUniform(unsigned min, unsigned max)</div><div class="ttdef"><b>Definition:</b> <a href="roll_8cpp_source.html#l00013">roll.cpp:13</a></div></div>
+<div class="ttc" id="class_node_html_a361e82589484bf10ce7fd7e686a459ba"><div class="ttname"><a href="class_node.html#a361e82589484bf10ce7fd7e686a459ba">Node::roll</a></div><div class="ttdeci">void roll()</div><div class="ttdef"><b>Definition:</b> <a href="_node_8cpp_source.html#l00032">Node.cpp:32</a></div></div>
+<div class="ttc" id="class_node_html_a2d51c63074b55efdc02d0db16dcee254"><div class="ttname"><a href="class_node.html#a2d51c63074b55efdc02d0db16dcee254">Node::getSafety</a></div><div class="ttdeci">unsigned getSafety() const </div><div class="ttdef"><b>Definition:</b> <a href="_node_8cpp_source.html#l00049">Node.cpp:49</a></div></div>
+<div class="ttc" id="parameters_8hpp_html"><div class="ttname"><a href="parameters_8hpp.html">parameters.hpp</a></div></div>
+<div class="ttc" id="parameters_8hpp_html_a26034a996a7a7f9b502e408c9da64347a486a4ed4e187c8060edc5e1e5d78bb4a"><div class="ttname"><a href="parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347a486a4ed4e187c8060edc5e1e5d78bb4a">Limits::SAFETY_MAX</a></div></div>
+<div class="ttc" id="_node_8hpp_html"><div class="ttname"><a href="_node_8hpp.html">Node.hpp</a></div><div class="ttdoc">Plik nagłówkowy klasy Node. </div></div>
+<div class="ttc" id="class_node_html_ad7a34779cad45d997bfd6d3d8043c75f"><div class="ttname"><a href="class_node.html#ad7a34779cad45d997bfd6d3d8043c75f">Node::Node</a></div><div class="ttdeci">Node()</div><div class="ttdef"><b>Definition:</b> <a href="_node_8cpp_source.html#l00016">Node.cpp:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d94a2eaab10ab5ab1cb03e49b9b14fd1.html">model</a></li><li class="navelem"><a class="el" href="_node_8cpp.html">Node.cpp</a></li>
+    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:38 dla Auskylia programem
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

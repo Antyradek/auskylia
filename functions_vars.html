@@ -79,6 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
       <li><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Funkcje</span></a></li>
       <li class="current"><a href="functions_vars.html"><span>Zmienne</span></a></li>
+      <li><a href="functions_rela.html"><span>Funkcje&#160;powiązane</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -101,7 +102,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Strony</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Przestrzenie nazw</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pliki</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Zmienne</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Definicje typów</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Wyliczenia</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Wartości wyliczeń</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Przyjaciele</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Definicje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Strony</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -116,34 +117,18 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 : <a class="el" href="class_mutation.html#a9cadaadc598e85c30263d674a809be7f">Mutation</a>
 </li>
 <li>comfort
-: <a class="el" href="class_message.html#a9f1eeca07ac93ac70c74a0f18ddffbed">Message</a>
+: <a class="el" href="class_command.html#ac7706e8f156598f010edf4eff4938af5">Command</a>
+, <a class="el" href="class_message.html#a9f1eeca07ac93ac70c74a0f18ddffbed">Message</a>
 </li>
 <li>commandType
-: <a class="el" href="class_command.html#a263243414bfa4ce35815352450647149">Command</a>
+: <a class="el" href="class_command.html#a23dc8d12b471654aa73a96b4a1942ad3">Command</a>
 </li>
 <li>data
 : <a class="el" href="class_event.html#a3e8d45074315ea934d34c914b13a844e">Event</a>
 </li>
 <li>end
-: <a class="el" href="class_message.html#a44d4f6587c9b18ab2c69a2a6eb3bfeef">Message</a>
-</li>
-<li>INCREASE_MAX
-: <a class="el" href="class_other_generator.html#af79b8f0be010db8d0e769952e563caf7">OtherGenerator</a>
-</li>
-<li>INCREASE_MIN
-: <a class="el" href="class_other_generator.html#ae583ff95d5f0f28f8c99e3a9a16963f4">OtherGenerator</a>
-</li>
-<li>INTERVALS_SIZE_MAX
-: <a class="el" href="class_uniform_intervals.html#a1544e32dbc741169d7c01dda5a4cf218">UniformIntervals</a>
-</li>
-<li>INTERVALS_SIZE_MIN
-: <a class="el" href="class_uniform_intervals.html#ada9549aff6ecd1a4afcbce2918298fd8">UniformIntervals</a>
-</li>
-<li>INTERVALS_START_MAX
-: <a class="el" href="class_uniform_intervals.html#abbe38363b3ed5223335a219deae94957">UniformIntervals</a>
-</li>
-<li>INTERVALS_START_MIN
-: <a class="el" href="class_uniform_intervals.html#aad476afe5225bac57f27b24860f66476">UniformIntervals</a>
+: <a class="el" href="class_command.html#add5bf6bff703ad149ef7818b8aa87eac">Command</a>
+, <a class="el" href="class_message.html#a44d4f6587c9b18ab2c69a2a6eb3bfeef">Message</a>
 </li>
 <li>messageType
 : <a class="el" href="class_message.html#a02b18700029d7f172dac32849a8cb80c">Message</a>
@@ -151,38 +136,24 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <li>msg
 : <a class="el" href="class_message.html#adbe98f7e813775fe7e809f1a08899733">Message</a>
 </li>
-<li>MULTIPLIER_MAX
-: <a class="el" href="class_other_generator.html#a64612182d0c4ad5a18c09965df259e0b">OtherGenerator</a>
-</li>
-<li>MULTIPLIER_MIN
-: <a class="el" href="class_other_generator.html#a4d2d5d6c4223f6a10f23cf1ae19253ce">OtherGenerator</a>
-</li>
 <li>price
-: <a class="el" href="class_message.html#a4b10d7e0f0ec524768e7ae043020f48d">Message</a>
+: <a class="el" href="class_command.html#a4163c20fbb273d2e24a9b6d28d63808a">Command</a>
+, <a class="el" href="class_message.html#a4b10d7e0f0ec524768e7ae043020f48d">Message</a>
 </li>
 <li>safety
-: <a class="el" href="class_message.html#a8e9f85ce3883f564328f31e2c5c07b58">Message</a>
+: <a class="el" href="class_command.html#a91eec09940d65ac411091c78e2c5c6c7">Command</a>
+, <a class="el" href="class_message.html#a8e9f85ce3883f564328f31e2c5c07b58">Message</a>
 </li>
 <li>start
-: <a class="el" href="class_message.html#a6b0e0e7b70c9eeabe19f416c7481ecca">Message</a>
-</li>
-<li>START_MAX
-: <a class="el" href="class_other_generator.html#a4bbf26ca2c6975b827068b107d1c2875">OtherGenerator</a>
-</li>
-<li>START_MIN
-: <a class="el" href="class_other_generator.html#ae0031dd4d73cca5d2c7dc4efc3dd5b7a">OtherGenerator</a>
+: <a class="el" href="class_command.html#a8bdbb7931a95bd074090e9f80c11a422">Command</a>
+, <a class="el" href="class_message.html#a6b0e0e7b70c9eeabe19f416c7481ecca">Message</a>
 </li>
 <li>time
-: <a class="el" href="class_message.html#ae372af3cf12839f44346b03c54867ca0">Message</a>
+: <a class="el" href="class_command.html#a11e679d6e22d71e17ea0ebf9c266d7e9">Command</a>
+, <a class="el" href="class_message.html#ae372af3cf12839f44346b03c54867ca0">Message</a>
 </li>
 <li>type
 : <a class="el" href="class_event.html#ac721e4f34b3b9a1ae302165412221724">Event</a>
-</li>
-<li>VALUE_MAX
-: <a class="el" href="class_smart_generator.html#a2fb818aae4d79181f0ea43ba85f6bbf9">SmartGenerator</a>
-</li>
-<li>VALUE_MIN
-: <a class="el" href="class_smart_generator.html#a391f234b003e65bf76db5a26be6b803d">SmartGenerator</a>
 </li>
 <li>viewServerBlockingQueue
 : <a class="el" href="class_view_server.html#a4d85cb295c57a3528ed875e6afd7d5b8">ViewServer</a>
@@ -193,7 +164,7 @@ $(document).ready(function(){initNavTree('functions_vars.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Wygenerowano So, 2 sty 2016 21:11:22 dla Auskylia programem
+    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:41 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

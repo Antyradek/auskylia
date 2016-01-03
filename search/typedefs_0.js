@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['adjacencymatrix',['AdjacencyMatrix',['../_graph_generator_8hpp.html#aed7a428876e4fac71e47e88c8c4329f3',1,'GraphGenerator.hpp']]]
+  ['matrix',['Matrix',['../types_8hpp.html#a78802c92d620a6492e3bdc2a5ef5d7ca',1,'types.hpp']]]
 ];
