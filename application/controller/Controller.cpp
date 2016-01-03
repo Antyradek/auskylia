@@ -169,7 +169,9 @@ void Controller::start()
 					str="<data><response>progress</response><progress>0</progress></data>";
 					viewServer->viewServerBlockingQueue->push_back(str);
 					/**< \todo uruchomić zadanie w modelu */
-					model->modelBlockingQueue->push_back(new Command(CommandType::START));
+					Command* c=new Command(CommandType::START);
+					c->copyCalculateMessageData(msg);
+					model->modelBlockingQueue->push_back(c);
 				}
 				else if(msg->messageType==MessageType::STATUS)
 				{
