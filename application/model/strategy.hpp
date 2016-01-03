@@ -1,4 +1,4 @@
-/** 
+/**
  *  \file Strategy.hpp
  *
  *  \author Andrzej Roguski
@@ -11,7 +11,7 @@
 
 #include <vector>
 
-#include <Path.hpp>
+#include "Path.hpp"
 
 /**
  * \brief Klasy strategii.

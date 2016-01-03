@@ -1,5 +1,7 @@
+
 #include <iostream>
 #include <string>
+#include <cstdlib>>
 
 #include "Model.hpp"
 
@@ -125,47 +127,51 @@ void roll_test()
 
 }
 
-void graphTest( )
+void graph_test( std::array<unsigned short, (unsigned)Parameters::Count> a )
 {
-	DBG_DO(std::cout << std::endl);
 	DBG("Starting graph test:");
 
 	const unsigned GRAPH_SIZE = 10;
 
-	Graph graph1 = Graph( GRAPH_SIZE, new GeneratorUniform() );
+	Graph graph1 = Graph( GRAPH_SIZE, new UniformIntervals() );
+	Graph graph2 = Graph( GRAPH_SIZE, new OtherGenerator() );
+	Graph graph3 = Graph( GRAPH_SIZE, new SmartGenerator() );
 
-	graph1.printNodes();
+	graph1.rate(a);
+	graph2.rate(a);
+	graph3.rate(a);
+
 	graph1.print();
+	graph2.print();
+	graph3.print();
+
+	graph1.printRates();
+	graph2.printRates();
+	graph3.printRates();
 }
 
-void pathTest( unsigned size)
+void pathTest( unsigned start, unsigned end, unsigned maxl, unsigned size)
 {
-	DBG_DO(std::cout << std::endl);
-	DBG("Starting path test:");
-
 	const unsigned GRAPH_SIZE = size;
 
-	Graph graph1 = Graph( GRAPH_SIZE, new GeneratorUniform() );
+	Graph graph1 = Graph( GRAPH_SIZE, new UniformIntervals() );
 	
-	Weights w = { 100, 100, 100, 100};
+	graph1.rate( std::array<unsigned short, (unsigned)Parameters::Count>{ 20, 20, 20, 20 }  );
 
-	Path p = Path( &graph1, w );
+	unsigned a [20] = {0,1,2,3,4,5, NULL_NODE ,7,8,9,10,11, NULL_NODE ,13,14,15,16,17,18,19};
 
+	Path p = Path(a, 20, &graph1 );
 }
 
 void populationTest( unsigned gSize, unsigned pSize )
 {
-	DBG_DO(std::cout << std::endl);
-	DBG("Starting population test:");
-
-	Graph graph = Graph( gSize, new GeneratorUniform() );
+	Graph graph = Graph( gSize, new UniformIntervals() );
+	graph.rate( std::array<unsigned short, (unsigned)Parameters::Count>{ 20, 20, 20, 20 }  );
 
 	StrategyClosest str = StrategyClosest();
 	MutationUniform mut;
 
 	Population pop( 3, 7, &graph, &mut, &str, pSize);
-	Weights w = { 100, 100, 100, 100};
-	pop.setWeights( w );
 
 	pop.print();
 
@@ -187,11 +193,8 @@ int main(int argc, char ** argv)
 		for(int i = 1; i<NUM_ARGS + 1; i++)
 			arg[i-1] = std::stoi(std::string(argv[i]));
 
-		graphTest();
-
-		pathTest( arg[0] );
-
 		populationTest( arg[0], arg[1] );
+		//pathTest( arg[0], arg[1], arg[2], arg[3]);
 	}
 
 	Model model;
@@ -201,3 +204,4 @@ int main(int argc, char ** argv)
 
         return 0;
 }
+

@@ -12,11 +12,6 @@ extern std::mutex coutMutex;
 
 using namespace std;
 
-enum MessageType
-{
-
-};
-
 Message::Message()
 {
 	#ifdef _DEBUG
@@ -26,7 +21,7 @@ Message::Message()
 	#endif // _DEBUG
 }
 
-Message::Message(std::string &m)
+Message::Message(std::string &m) : messageType(NOT_SET)
 {
 	msg=m;
 	#ifdef _DEBUG

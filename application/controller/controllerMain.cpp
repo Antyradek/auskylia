@@ -5,6 +5,7 @@
  */
 
 #include "Controller.hpp"
+#include "version.h"
 #include <iostream>
 #include <string>
 #include <exception>
@@ -23,6 +24,8 @@ int main(int argc, char* argv[])
 	{
 		coutMutex.lock();
 		cout<<"Serwer Auskylia wystartował..."<<endl;
+		cout<<"Build Version:"<<endl<<AutoVersion::FULLVERSION_STRING<<endl;
+		cout<<"Build Date: "<<endl<<AutoVersion::DATE<<"."<<AutoVersion::MONTH<<"."<<AutoVersion::YEAR<<endl;
 		coutMutex.unlock();
 		if(argc>=2)
 		{

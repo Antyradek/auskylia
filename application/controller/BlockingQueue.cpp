@@ -5,6 +5,7 @@
  */
 
 #include "BlockingQueue.hpp"
+
 #include <iostream>
 
 template <class T>
@@ -45,6 +46,9 @@ T BlockingQueue<T>::pop_front()
     q.pop();
     return element;
 }
+
+
+
 
 
 
