@@ -195,7 +195,7 @@ void modelTest( unsigned gSize, unsigned pSize )
 
 	m.getPopulation()->print();
 
-	m.evolve(1000);
+	m.evolve(10);
 
 	m.getPopulation()->print();
 }

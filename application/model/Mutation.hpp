@@ -43,7 +43,7 @@ public:
 		unsigned tmp;
 
 		for(unsigned i = 0; i < path.getLength(); ++i )
-			list.push_back(i);
+			list.push_back( path[i] );
 
 		for(std::list<unsigned>::iterator i = list.begin(); i != list.end(); ++i )
 			if( rollUniform( 1, 10000 ) <= chance )
