@@ -146,7 +146,7 @@ void pathTest( unsigned size)
 
 	Graph graph1 = Graph( GRAPH_SIZE, new GeneratorUniform() );
 	
-	Weights w = { 100, 100, 100, 100};
+	Weights w = { 1.0, 1.0, 1.0, 1.0};
 
 	Path p = Path( &graph1, w );
 
@@ -158,13 +158,15 @@ void populationTest( unsigned gSize, unsigned pSize )
 {
 	std::cout << std::endl << "Starting population test:" << std::endl;
 
-	Graph graph = Graph( gSize, new GeneratorUniform() );
+	GeneratorUniform gen;
+
+	Graph graph = Graph( gSize, &gen );
 
 	StrategyClosest str = StrategyClosest();
 	MutationUniform mut;
 
 	Population pop( &graph, &mut, &str, pSize);
-	Weights w = { 100, 100, 100, 100};
+	Weights w = { 1.0, 1.0, 1.0, 1.0};
 	pop.setWeights( w );
 
 	pop.print();
@@ -175,7 +177,7 @@ void populationTest( unsigned gSize, unsigned pSize )
 	pop.print();
 }
 
-void modelTest( unsigned gSize, unsigned pSize )
+void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 {
 	std::cout << std::endl << "Starting model test:" << std::endl;
 
@@ -183,7 +185,8 @@ void modelTest( unsigned gSize, unsigned pSize )
 	StrategyClosest s;
 	MutationUniform mut;
 	GeneratorUniform gen;
-	Weights w = { 100, 100, 100, 100};
+	Weights w1 = { 1.0, 1.0, 1.0, 1.0};
+	Weights w2 = { 0.1, 2.0, 0.1, 0.1};
 
 	Graph * g = m.generateGraph( gSize, &gen );
 
@@ -191,11 +194,17 @@ void modelTest( unsigned gSize, unsigned pSize )
 
 	m.createPopulation( pSize, &s, &mut );
 
-	m.setWeights( w );
+	m.setWeights( w1 );
 
 	m.getPopulation()->print();
 
-	m.evolve(10);
+	m.evolve( iter );
+
+	m.getPopulation()->print();
+
+	m.setWeights( w2 );
+
+	m.evolve( iter );
 
 	m.getPopulation()->print();
 }
@@ -203,7 +212,7 @@ void modelTest( unsigned gSize, unsigned pSize )
 int main(int argc, char ** argv)
 {
 
-	const unsigned NUM_ARGS = 2;
+	const unsigned NUM_ARGS = 3;
 
 	if(argc > NUM_ARGS)
 	{
@@ -212,17 +221,22 @@ int main(int argc, char ** argv)
 		for(unsigned i = 1; i<NUM_ARGS + 1; i++)
 			arg[i-1] = std::stoi(std::string(argv[i]));
 
-		graphTest();
+		std::cout << arg[0] << std::endl;
+		std::cout << arg[1] << std::endl;
+		std::cout << arg[2] << std::endl;
 
-		pathTest( arg[0] );
 
-		populationTest( arg[0], arg[1] );
+		// graphTest();
 
-		modelTest( arg[0], arg[1] );
+		// pathTest( arg[0] );
+
+		//populationTest( arg[0], arg[1] );
+
+		modelTest( arg[0], arg[1], arg[2] );
 	}
 	else
 	{
-		std::cout << "Za mało argumentów; podaj liczbę wierzcholków i rozmiar populacji." << std::endl;
+		std::cout << "Za mało argumentów; podaj liczbę wierzcholków, rozmiar populacji i liczbę ewolucji." << std::endl;
 	}
 
         std::cout << "It doesn't do much project-related yet, but it can spawn dragons:" << std::endl << std::endl << dragon << std::endl;

@@ -38,15 +38,15 @@ public:
 	
 	unsigned getLength() const;
 
-	unsigned getRating() const;
+	double getRating() const;
 
 	void rate();
 
 	inline void rateEdge(
 		unsigned one,
 		unsigned two,
-		std::array<unsigned, (unsigned)Parameters::Count> & param,
-		std::array<unsigned, (unsigned)Parameters::Count> & tmpParam);
+		std::array<unsigned long, (unsigned)Parameters::Count> & param,
+		std::array<unsigned long, (unsigned)Parameters::Count> & tmpParam);
 
 
 	void print() const;
@@ -55,7 +55,7 @@ private:
 	unsigned * path;
 	unsigned length;
 
-	unsigned long rating;
+	double rating;
 
 	Weights & weights;
 

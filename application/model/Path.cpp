@@ -12,6 +12,7 @@
 
 #include "Path.hpp"
 #include "roll.hpp"
+#include "GraphGenerator.hpp"
 
 #include "debug.hpp"
 
@@ -21,7 +22,9 @@ Path::Path( const Graph * const graph, Weights & weights ) : rating(0), graph(gr
 
 	unsigned nodes = graph -> getNodes();
 
-	length = rollUniform( 0, nodes - 2 );
+	static unsigned nodesSqrt = isqrt( nodes );
+
+	length = rollBinomialUltraWide( nodesSqrt, 0, nodes - 2 );
 
 	DBG("Path(): length = " << length);
 
@@ -149,7 +152,7 @@ unsigned Path::getLength() const
 	return length;
 }
 
-unsigned Path::getRating() const
+double Path::getRating() const
 {
 	return rating;
 }
@@ -158,17 +161,17 @@ void Path::rate()
 {
 	DBG("Path::rate()");
 
-	std::array<unsigned, (unsigned)Parameters::Count> param = {0, 0, 0, 0};
-	std::array<unsigned, (unsigned)Parameters::Count> tmpParam;
+	std::array<unsigned long, (unsigned)Parameters::Count> param = {0, 0, 0, 0};
+	std::array<unsigned long, (unsigned)Parameters::Count> tmpParam;
 
-	unsigned & cost    = param[ (unsigned)Parameters::COST ];
-	unsigned & safety  = param[ (unsigned)Parameters::SAFETY ];
-	unsigned & comfort = param[ (unsigned)Parameters::COMFORT ];
-	unsigned & time    = param[ (unsigned)Parameters::TIME ];
+	unsigned long & cost    = param[ (unsigned)Parameters::COST ];
+	unsigned long & safety  = param[ (unsigned)Parameters::SAFETY ];
+	unsigned long & comfort = param[ (unsigned)Parameters::COMFORT ];
+	unsigned long & time    = param[ (unsigned)Parameters::TIME ];
 
-	unsigned & tmpTime    = tmpParam[ (unsigned)Parameters::TIME ];
-	unsigned & tmpSafety  = tmpParam[ (unsigned)Parameters::SAFETY ];
-	unsigned & tmpComfort = tmpParam[ (unsigned)Parameters::COMFORT ];
+	unsigned long & tmpTime    = tmpParam[ (unsigned)Parameters::TIME ];
+	unsigned long & tmpSafety  = tmpParam[ (unsigned)Parameters::SAFETY ];
+	unsigned long & tmpComfort = tmpParam[ (unsigned)Parameters::COMFORT ];
 
 	unsigned nodes = graph->getNodes();
 
@@ -183,27 +186,29 @@ void Path::rate()
 	else
 		rateEdge( 0, nodes - 1, param, tmpParam);
 
-	safety /= time;
-	comfort /= time;
-	unsigned distance = (unsigned)Limits::MAP_SIZE * 1.415;
-	unsigned speed = distance / time;
+	double saf = (double)safety / time;
+	double com = (double)comfort / time;
+	double distance = (unsigned)Limits::MAP_SIZE * 1.415;
+	double speed = distance / time;
 
+	DBG(" " << weights[0] << " " << weights[1] << " " << weights[2] << " " << weights[3]  );
+	
 	speed   *= weights[ (unsigned)Parameters::TIME ];
-	cost	*= (unsigned)Limits::WEIGHTS_MID;
-	cost	*= (unsigned)Limits::WEIGHTS_MID;
 	cost    *= weights[ (unsigned)Parameters::COST ];
-	comfort *= weights[ (unsigned)Parameters::COMFORT ];
-	safety  *= weights[ (unsigned)Parameters::SAFETY ];
+	com     *= weights[ (unsigned)Parameters::COMFORT ];
+	saf     *= weights[ (unsigned)Parameters::SAFETY ];
 
-	rating = ( distance * speed * comfort - cost ) * safety;
+	DBG("d " << distance << " s " << speed << " c " << com << " $ " << cost << " sa " << saf );
+
+	rating = ( distance * speed * com - cost ) * saf;
 
 }
 
 inline void Path::rateEdge(
 		unsigned one,
 		unsigned two,
-		std::array<unsigned, (unsigned)Parameters::Count> & param,
-		std::array<unsigned, (unsigned)Parameters::Count> & tmpParam)
+		std::array<unsigned long, (unsigned)Parameters::Count> & param,
+		std::array<unsigned long, (unsigned)Parameters::Count> & tmpParam)
 {
 	param[ (unsigned)Parameters::COST ] += graph->getParam( one, two, Parameters::COST );
 	
@@ -213,7 +218,7 @@ inline void Path::rateEdge(
 	tmpParam [ (unsigned)Parameters::SAFETY ]= graph->getParam( one, two, Parameters::SAFETY );
 	param[ (unsigned)Parameters::SAFETY ] += tmpParam[ (unsigned)Parameters::TIME ] * tmpParam[ (unsigned)Parameters::SAFETY ];
 
-	tmpParam [ (unsigned)Parameters::SAFETY ]= graph->getParam( one, two, Parameters::COMFORT );
+	tmpParam [ (unsigned)Parameters::COMFORT ]= graph->getParam( one, two, Parameters::COMFORT );
 	param[ (unsigned)Parameters::COMFORT ] += tmpParam[ (unsigned)Parameters::TIME ] * tmpParam[ (unsigned)Parameters::COMFORT ];	
 
 }

@@ -64,7 +64,7 @@ public:
 
 	void setMutation( Mutation * mutation );
 
-	void setWeights( Weights arr );
+	void setWeights( const Weights & arr );
 
 	/**
 	 * \brief  Wypisuje populację.

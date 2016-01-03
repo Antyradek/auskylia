@@ -18,6 +18,7 @@
 
 #include "parameters.hpp"
 #include "strategy.hpp"
+#include "types.hpp"
 
 #include "../controller/Event.hpp"
 #include "../controller/BlockingQueue.hpp"
@@ -62,7 +63,7 @@ public:
 	 * \brief              Ustawia wagi parametrów trasy.
 	 * \param[in]  weights Tablica wag przypisanych parametrom trasy
 	 */
-	void setWeights( const std::array<unsigned, (unsigned)Parameters::Count> & weights );
+	void setWeights( const Weights & weights );
 
 	/**
 	 * \brief               Tworzy populację o zadanym rozmiarze.

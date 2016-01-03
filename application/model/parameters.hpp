@@ -35,10 +35,6 @@ enum class Limits
 	SPEED_MIN      = 1,
 	SPEED_MAX      = 10,
 	SPEED_RANGE    = SPEED_MAX - SPEED_MIN,
-
-	WEIGHTS_MIN    = 50,
-	WEIGHTS_MAX    = 150,
-	WEIGHTS_MID    = (WEIGHTS_MIN + WEIGHTS_MAX)>>1,
 };
 
 #endif // PARAMETERS_HPP

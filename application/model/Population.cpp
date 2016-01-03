@@ -17,7 +17,7 @@ struct pathPtrCompr
 {
 	bool operator()(const Path * l, const Path * r)
 	{
-		return *l < *r;
+		return *r < *l;
 	}
 };
 
@@ -31,7 +31,7 @@ Population::Population(
 	DBG("Population()");
 
 	for(unsigned i : weights)
-		i = (unsigned)Limits::WEIGHTS_MID;
+		i = 1.0;
 
 	paths = std::vector<Path*> (size);
 
@@ -73,8 +73,8 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 
 	if( in1 -> getLength() < 2 || in2 -> getLength() < 2)
 	{
-		out1 = new Path(*in1);
-		out2 = new Path(*in2);
+		out1 = new Path( graph, weights );
+		out2 = new Path( graph, weights );
 	}
 
 	else
@@ -111,11 +111,16 @@ void Population::setMutation( Mutation * mutation )
 	this->mutation = mutation;
 }
 
-void Population::setWeights( std::array<unsigned, (unsigned)Parameters::Count> arr )
+void Population::setWeights( const Weights & arr )
 {
 	unsigned size = arr.size();
 	for(unsigned i = 0; i < size; ++i )
-		i = arr[i];
+		weights[i] = arr[i];
+
+	for( Path * p : paths )
+		p -> rate();
+
+	std::sort( paths.begin(), paths.end(), pathPtrCompr() );	
 }
 
 void Population::print()

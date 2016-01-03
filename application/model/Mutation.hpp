@@ -35,7 +35,7 @@ public:
 class MutationUniform final : public Mutation
 {
 public:
-	MutationUniform( unsigned chance = 500 ) : Mutation( chance ) {}
+	MutationUniform( unsigned chance = 1000 ) : Mutation( chance ) {}
 
 	virtual void mutate( const Path & path, std::list<unsigned> & list, unsigned nodes ) const
 	{
@@ -62,7 +62,7 @@ public:
 					case 2:
 						i = list.erase(i);
 						break;
-					case 3:
+					default:
 						tmp = rollUniform( 1, nodes - 2);
 
 						if( ! isInPath(path, tmp) )

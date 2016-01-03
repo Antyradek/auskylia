@@ -6,16 +6,13 @@
  *  \brief  Definicja klasy GraphGenerator.
  */
 
-#include <cmath>
-
 #include "parameters.hpp"
 #include "roll.hpp"
 #include "GraphGenerator.hpp"
 
 #include "debug.hpp"
 
-
-unsigned isqrt(unsigned long value)  
+unsigned isqrt(unsigned long value) 
 {  
 	unsigned result = static_cast<unsigned>(sqrt(static_cast<float>(value)));
 

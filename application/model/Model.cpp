@@ -31,8 +31,10 @@ void Model::saveGraph( const std::string & file, Graph * graph ) const
 
 }
 
-void Model::setWeights( const std::array<unsigned, (unsigned)Parameters::Count> & weights )
+void Model::setWeights( const Weights & weights )
 {
+	DBG(" Model::setWeights() ");
+	DBG(" " << weights[0] << " " << weights[1] << " " << weights[2] << " " << weights[3]  );
 	if( population != nullptr )
 		population->setWeights(weights);
 }
