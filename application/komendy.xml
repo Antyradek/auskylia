@@ -13,21 +13,27 @@ Zapytanie:
     <command>list</command>
 </data>
 
-<!--Odpowiedź z listą lotnisk-->
+<!--Odpowiedź z listą lotnisk. Podajemy nazwę lotniska, skrót lotniska, oraz współrzędne geograficzne względem Pn i Wsch (czyli ujemne, jeśli na Pd, lub Zach)-->
 <data>
     <response>list</response>
     <airports>
         <airport>
             <name>Sydney</name>
             <iata>SYD</iata>
+            <north>-33.87</north>
+            <east>151.2</east>
         </airport>
         <airport>
             <name>Warszawa</name>
             <iata>WAW</iata>
+            <north>52.26</north>
+            <east>21.02</east>
         </airport>
         <airport>
             <name>Gdańsk</name>
             <iata>GDA</iata>
+            <north>54.36</north>
+            <east>18.64</east>
         </airport>
 		<!-- itd.. -->
     </airports>
@@ -66,15 +72,12 @@ Zapytanie:
 	<response>success</response>
 	<airports>
         <airport>
-            <name>Sydney</name>
             <iata>SYD</iata>
         </airport>
         <airport>
-            <name>Warszawa</name>
             <iata>WAW</iata>
         </airport>
         <airport>
-            <name>Gdańsk</name>
             <iata>GDA</iata>
         </airport>
 		<!-- itd.. -->
