@@ -82,8 +82,17 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 		unsigned cut1 = rollUniform( 0, in1 -> getLength() - 2 );
 		unsigned cut2 = rollUniform( 0, in2 -> getLength() - 2 );
 
-		out1 = new Path( *in1, *in2, cut1, cut2 + 1, graph, weights );
-		out2 = new Path( *in2, *in1, cut2, cut1 + 1, graph, weights );
+		Path tmp1 ( *in1, *in2, cut1, cut2 + 1, graph, weights );
+		Path tmp2 ( *in2, *in1, cut2, cut1 + 1, graph, weights );
+
+		std::list<unsigned> list1;
+		std::list<unsigned> list2;
+
+		mutation->mutate( tmp1, list1, nodes );
+		mutation->mutate( tmp2, list2, nodes );
+		
+		out1 = new Path( list1, graph, weights );
+		out2 = new Path( list2, graph, weights );
 	}
 }
 

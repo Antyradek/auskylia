@@ -9,6 +9,7 @@
 #define PATH_HPP
 
 #include <limits>
+#include <list>
 
 #include "Graph.hpp"
 #include "types.hpp"
@@ -21,12 +22,14 @@ const unsigned NULL_NODE = std::numeric_limits<int>::max();
 class Path
 {
 public:
-	Path( const Graph * const graph, const Weights & weights );
+	Path( const Graph * const graph, Weights & weights );
 
-	Path( const Path & first, const Path & second, unsigned end1, unsigned start2, const Graph * const graph, const Weights & weights );
+	Path( const Path & first, const Path & second, unsigned end1, unsigned start2, const Graph * const graph, Weights & weights );
 
 	Path( const Path & that );
-
+	
+	Path( std::list<unsigned> & list, const Graph * const graph, Weights & weights );
+	
 	~Path();
 
 	unsigned & operator[]( unsigned n ) const;
@@ -54,7 +57,7 @@ private:
 
 	unsigned long rating;
 
-	const Weights & weights;
+	Weights & weights;
 
 	const Graph * const graph;
 };

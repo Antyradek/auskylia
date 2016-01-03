@@ -8,8 +8,12 @@
 #ifndef MUTATION_HPP
 #define MUTATION_HPP
 
+#include <list>
+
 #include "roll.hpp"
 #include "Path.hpp"
+
+#include "debug.hpp"
 
 /**
  * \brief Abstrakcyjna klasa bazowa dla klas określających metody mutacji
@@ -19,16 +23,7 @@ class Mutation
 public:
 	Mutation( unsigned chance = 250 ) : chance(chance) {}
 
-	/**
-	 * \brief            operacja mutacji
-	 * \param[in] max    maksymalna dopuszczalan wartość
-	 * \param[in] min    minimalna dopuszczalna wartość
-	 * \param[in] value  wartość modyfikowana
-	 * \return           wartośc po mutacji
-	 */
-	virtual unsigned mutate( Path * path, unsigned position, unsigned max, unsigned min, unsigned value ) const = 0;
-	
-	virtual unsigned mutate( unsigned * path, unsigned position, unsigned max, unsigned min, unsigned value ) const = 0;
+	virtual void mutate( const Path & path, std::list<unsigned> & list, unsigned nodes ) const = 0;
 
 	/**
 	 * \brief szansa na mutację, wyrażona w setnych częściach procenta
@@ -40,62 +35,53 @@ public:
 class MutationUniform final : public Mutation
 {
 public:
-	MutationUniform( unsigned chance = 250) : Mutation( chance ) {}
+	MutationUniform( unsigned chance = 500 ) : Mutation( chance ) {}
 
-	virtual unsigned mutate( Path * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
+	virtual void mutate( const Path & path, std::list<unsigned> & list, unsigned nodes ) const
 	{
-		if( rollUniform( 1, chance ) == 1 )
-		{
-			unsigned tmp;
-			bool done;
-			
-			do
+		DBG("MutationUnifor::mutate()");
+		unsigned tmp;
+
+		for(unsigned i = 0; i < path.getLength(); ++i )
+			list.push_back(i);
+
+		for(std::list<unsigned>::iterator i = list.begin(); i != list.end(); ++i )
+			if( rollUniform( 1, 10000 ) <= chance )
 			{
-				done = true;
+				switch( rollUniform( 1, 3 ) )
+				{
+					case 1:
+						tmp = rollUniform( 1, nodes - 2 );
 
-				tmp = rollUniform( min, max );
+						if( ! isInPath( path, tmp) )
+						{
+							i = list.erase(i);
+							list.insert(i, tmp);
+						}
+						break;
+					case 2:
+						i = list.erase(i);
+						break;
+					case 3:
+						tmp = rollUniform( 1, nodes - 2);
 
-				for(unsigned i = 0; i <= position; i++)
-					if( tmp == (*path)[i] )
-					{
-						done = false;
-						//break;
-					}
+						if( ! isInPath(path, tmp) )
+						{
+							list.insert(i, tmp);
+						}
+						break;
+				};	
 			}
-			while ( ! done );
-
-			return tmp;
-		}
-
-		return value;
 	}
-	
-	virtual unsigned mutate( unsigned * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
+
+private:
+	bool isInPath( const Path & path, unsigned node ) const
 	{
-		if( rollUniform( 1, chance ) == 1 )
-		{
-			unsigned tmp;
-			bool done;
-			
-			do
-			{
-				done = true;
+		for( int j = 0; j < path.getLength(); ++j )
+			if( node == path[j] )
+				return true;
 
-				tmp = rollUniform( min, max );
-
-				for(unsigned i = 0; i <= position; i++)
-					if( tmp == path[i] )
-					{
-						done = false;
-						//break;
-					}
-			}
-			while ( ! done );
-
-			return tmp;
-		}
-
-		return value;
+		return false;
 	}
 
 };
@@ -103,63 +89,6 @@ public:
 class MutationBinomial final : public Mutation
 {
 public:
-	MutationBinomial( unsigned chance = 250 ) : Mutation( chance ) {}
-
-	virtual unsigned mutate( Path * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
-	{
-		if( rollUniform( 1, chance ) == 1 )
-		{
-			unsigned tmp;
-			bool done;
-			
-			do
-			{
-				done = true;
-
-				tmp = rollBinomial( value, min, max );
-
-				for(unsigned i = 0; i <= position; i++)
-					if( tmp == (*path)[i] )
-					{
-						done = false;
-						//break;
-					}
-			}
-			while ( ! done );
-
-			return tmp;
-		}
-
-		return value;
-	}
-
-	virtual unsigned mutate( unsigned * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
-	{
-		if( rollUniform( 1, chance ) == 1 )
-		{
-			unsigned tmp;
-			bool done;
-			
-			do
-			{
-				done = true;
-
-				tmp = rollBinomial( value, min, max );
-
-				for(unsigned i = 0; i <= position; i++)
-					if( tmp == path[i] )
-					{
-						done = false;
-						//break;
-					}
-			}
-			while ( ! done );
-
-			return tmp;
-		}
-
-		return value;
-	}
 
 };
 

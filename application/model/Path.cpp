@@ -15,7 +15,7 @@
 
 #include "debug.hpp"
 
-Path::Path( const Graph * const graph, const Weights & weights ) : rating(0), graph(graph), weights(weights)
+Path::Path( const Graph * const graph, Weights & weights ) : rating(0), graph(graph), weights(weights)
 {
 	DBG("Path() new");
 
@@ -50,7 +50,7 @@ Path::Path(
 	unsigned end1, 
 	unsigned start2, 
 	const Graph * const graph, 
-	const Weights & weights ) 
+	Weights & weights ) 
 	: rating(0), graph(graph), weights(weights)
 {
 	DBG("Path() from others");
@@ -99,8 +99,22 @@ Path::Path(
 	delete [] good;
 
 	DBG_DO(	print() );
+}
+
+Path::Path( std::list<unsigned> & list, const Graph * const graph, Weights & weights ) : graph(graph), weights(weights)
+{
+	length = list.size();
+
+	path = new unsigned [length];
+
+	for( int i = 0; i < length; ++i )
+	{
+		path[i] = list.front();
+		list.pop_front();
+	}
+
 	rate();
-	DBG_DO(	print() );
+	DBG_DO( print() );
 }
 
 Path::Path( const Path & that ) : graph(that.graph), weights(that.weights), length(that.length), rating(that.rating)
