@@ -44,7 +44,7 @@ public:
 
 	virtual unsigned mutate( Path * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
 	{
-	/*	if( rollUniform( 1, chance ) == 1 )
+		if( rollUniform( 1, chance ) == 1 )
 		{
 			unsigned tmp;
 			bool done;
@@ -55,7 +55,7 @@ public:
 
 				tmp = rollUniform( min, max );
 
-				for(int i = 0; i <= position; i++)
+				for(unsigned i = 0; i <= position; i++)
 					if( tmp == (*path)[i] )
 					{
 						done = false;
@@ -65,14 +65,14 @@ public:
 			while ( ! done );
 
 			return tmp;
-		}*/
+		}
 
 		return value;
 	}
 	
 	virtual unsigned mutate( unsigned * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
 	{
-	/*	if( rollUniform( 1, chance ) == 1 )
+		if( rollUniform( 1, chance ) == 1 )
 		{
 			unsigned tmp;
 			bool done;
@@ -83,7 +83,7 @@ public:
 
 				tmp = rollUniform( min, max );
 
-				for(int i = 0; i <= position; i++)
+				for(unsigned i = 0; i <= position; i++)
 					if( tmp == path[i] )
 					{
 						done = false;
@@ -93,7 +93,7 @@ public:
 			while ( ! done );
 
 			return tmp;
-		}*/
+		}
 
 		return value;
 	}
@@ -118,7 +118,7 @@ public:
 
 				tmp = rollBinomial( value, min, max );
 
-				for(int i = 0; i <= position; i++)
+				for(unsigned i = 0; i <= position; i++)
 					if( tmp == (*path)[i] )
 					{
 						done = false;
@@ -146,7 +146,7 @@ public:
 
 				tmp = rollBinomial( value, min, max );
 
-				for(int i = 0; i <= position; i++)
+				for(unsigned i = 0; i <= position; i++)
 					if( tmp == path[i] )
 					{
 						done = false;

@@ -33,8 +33,6 @@ public:
 	 *                   jeśli size nie dzieli się na 4, jest dopełniany do najbliższej czwórki
 	 */
 	Population( 
-		const unsigned start, 
-		const unsigned end, 
 		const Graph * const graph, 
 		Mutation * mutation, 
 		Strategy * strategy, 
@@ -79,10 +77,6 @@ private:
 	Weights weights;
 
 	const unsigned size;
-
-	const unsigned start;
-
-	const unsigned end;
 
 	Mutation * mutation;
 

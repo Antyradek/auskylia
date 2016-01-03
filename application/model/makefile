@@ -22,5 +22,6 @@ test: test.o $(OBJS)
 
 clean:
 	rm -f *.o
+	rm -f test
 
 .PHONY: all clean

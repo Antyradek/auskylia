@@ -35,7 +35,7 @@ public:
 	 * \param[in] nodes  liczba węzłów
 	 * \return           wskaźnik do wygenerowanego grafu
 	 */
-	Graph * generateGraph( unsigned nodes ) const;
+	Graph * generateGraph( const unsigned nodes, const GraphGenerator * const generator ) const;
 
 	/*
 	 * \brief            Wczytuje graf z pamięci.
@@ -59,18 +59,18 @@ public:
 	void saveGraph( const std::string & file, Graph * graph = nullptr ) const;
 
 	/**
-	 * \brief              Ustawia parametry trasy do wiliczenia.
+	 * \brief              Ustawia wagi parametrów trasy.
 	 * \param[in]  weights Tablica wag przypisanych parametrom trasy
-	 * \param[in[  start   Numer wierzchołka początkowego
-	 * \param[in]  end     Numer wierzchołka końcowego
 	 */
-	void setTargetPath( const std::array<unsigned short, (unsigned)Parameters::Count> & weights, unsigned start, unsigned end );
+	void setWeights( const std::array<unsigned, (unsigned)Parameters::Count> & weights );
 
 	/**
-	 * \brief           Tworzy populację o zadanym rozmiarze.
-	 * \param[in] size  rozmiar populacji (liczba parzysta; jeśli jest nieparzysta, model używa size + 1)
+	 * \brief               Tworzy populację o zadanym rozmiarze.
+	 * \param[in] size      rozmiar populacji (liczba parzysta; jeśli jest nieparzysta, model używa size + 1)
+	 * \param[in] strategy  wskaźnik na strategię krzyżowania
+	 * \param[in] mutation  wskaźnik na mutację
 	 */
-	void createPopulation( unsigned size );
+	void createPopulation( unsigned size, Strategy * strategy, Mutation * mutation );
 
 	/**
 	 * \brief              Krzyżuje osobniki.
@@ -83,13 +83,13 @@ public:
 	 * \brief               Ustawia strategię krzyżowania populacji.
 	 * \param[in] strategy  wskaźnik na strategię krzyżowania
 	 */
-	void setStrategy( const Strategy * strategy );
+	void setStrategy( Strategy * strategy );
 
 	/**
 	 * \brief               Ustawia sposób działania mutacji.
 	 * \param[in] mutation  wskaźnik na mutację
 	 */
-	void setMutation( const Mutation * mutation );
+	void setMutation( Mutation * mutation );
 
 	/**
 	 * \brief  Zwraca wskaźnik do populacji.
@@ -97,26 +97,22 @@ public:
 	 */
 	Population * getPopulation();
 
-    /** \brief Zadanie główne modelu.
-     * Jeszcze nie wiem, czy ta metoda będzie potrzebna.
-     * \return void
-     */
+	/** \brief Zadanie główne modelu.
+	* Jeszcze nie wiem, czy ta metoda będzie potrzebna.
+	* \return void
+	*/
 	void doMainJob();
 
-    /** \brief Ustawia wskaźnik na kolejkę kontrolera.
-     * \param q BlockingQueue<Event*>*
-     * \return void
-     */
+	/** \brief Ustawia wskaźnik na kolejkę kontrolera.
+	* \param q BlockingQueue<Event*>*
+	* \return void
+	*/
 	void setControllerBlockingQueue(BlockingQueue<Event*>* q);
 
 private:
 	Graph * graph;
 
 	Population * population;
-
-	Strategy * strategy;
-
-	Mutation * mutation;
 
 	BlockingQueue<Event*>* controllerBlockingQueue;/**< na tą kolejkę wrzucamy zgłoszenia do kontrolera */
 

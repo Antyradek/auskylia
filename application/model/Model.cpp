@@ -11,14 +11,14 @@
 
 /**< \todo przydały by się jakieś wyjątki do modelu */
 
-Graph * Model::generateGraph( unsigned nodes ) const
+Graph * Model::generateGraph( unsigned nodes, const GraphGenerator * const generator ) const
 {
-	return nullptr;
+	return new Graph( nodes, generator );
 }
 
 void Model::useGraph( Graph * const graph )
 {
-
+	this->graph = graph;
 }
 
 void Model::useGraph( const std::string & file )
@@ -31,41 +31,47 @@ void Model::saveGraph( const std::string & file, Graph * graph ) const
 
 }
 
-void Model::setTargetPath( const std::array<unsigned short, (unsigned)Parameters::Count> & weights, unsigned start, unsigned end )
+void Model::setWeights( const std::array<unsigned, (unsigned)Parameters::Count> & weights )
 {
-
+	if( population != nullptr )
+		population->setWeights(weights);
 }
 
-void Model::createPopulation( unsigned size )
+void Model::createPopulation( unsigned size, Strategy * strategy, Mutation * mutation )
 {
-
+	if( graph != nullptr )
+		population = new Population( graph, mutation, strategy, size );
 }
 
 void Model::evolve( unsigned times )
 {
-
+	if( population != nullptr )
+		for( unsigned i = 0; i < times; ++i )
+			population->evolve();	
 }
 
-void setStrategy( const Strategy * strategy )
+void Model::setStrategy( Strategy * strategy )
 {
+	if( population != nullptr )
+		population->setStrategy( strategy );
 }
 
-void setMutation( const Mutation * mutation )
+void Model::setMutation( Mutation * mutation )
 {
+	if( population != nullptr )
+		population->setMutation( mutation );
 }
 
 Population * Model::getPopulation()
 {
-	return nullptr;
+	return population;
 }
 
-Model::Model() :graph(nullptr),
-				population(nullptr),
-				strategy(nullptr),
-				mutation(nullptr),
-				controllerBlockingQueue(nullptr),
-				modelBlockingQueue(nullptr),
-				shutDown(false)
+Model::Model() : graph(nullptr),
+		 population(nullptr),
+		 controllerBlockingQueue(nullptr),
+		 modelBlockingQueue(nullptr),
+		 shutDown(false)
 {
 	modelBlockingQueue=new BlockingQueue<Command*>;
 }

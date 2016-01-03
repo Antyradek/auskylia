@@ -22,13 +22,11 @@ struct pathPtrCompr
 };
 
 Population::Population( 
-		const unsigned start, 
-		const unsigned end, 
 		const Graph * const graph, 
 		Mutation * mutation, 
 		Strategy * strategy, 
 		const unsigned size )
-	: size(size), start(start), end(end), strategy(strategy), mutation(mutation), graph(graph), nodes( graph->getNodes() )
+	: size(size), strategy(strategy), mutation(mutation), graph(graph), nodes( graph->getNodes() )
 {
 	DBG("Population()");
 
