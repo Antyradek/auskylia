@@ -9,6 +9,7 @@
 #define MUTATION_HPP
 
 #include "roll.hpp"
+#include "Path.hpp"
 
 /**
  * \brief Abstrakcyjna klasa bazowa dla klas określających metody mutacji
@@ -25,7 +26,9 @@ public:
 	 * \param[in] value  wartość modyfikowana
 	 * \return           wartośc po mutacji
 	 */
-	virtual unsigned mutate( unsigned start, unsigned end, unsigned max, unsigned min, unsigned value ) const = 0;
+	virtual unsigned mutate( Path * path, unsigned position, unsigned max, unsigned min, unsigned value ) const = 0;
+	
+	virtual unsigned mutate( unsigned * path, unsigned position, unsigned max, unsigned min, unsigned value ) const = 0;
 
 	/**
 	 * \brief szansa na mutację, wyrażona w setnych częściach procenta
@@ -39,23 +42,62 @@ class MutationUniform final : public Mutation
 public:
 	MutationUniform( unsigned chance = 250) : Mutation( chance ) {}
 
-	virtual unsigned mutate( unsigned start, unsigned end, unsigned max, unsigned min, unsigned value ) const
+	virtual unsigned mutate( Path * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
 	{
-		if( rollUniform( 1, chance ) == 1 )
+	/*	if( rollUniform( 1, chance ) == 1 )
 		{
 			unsigned tmp;
+			bool done;
 			
 			do
 			{
+				done = true;
+
 				tmp = rollUniform( min, max );
+
+				for(int i = 0; i <= position; i++)
+					if( tmp == (*path)[i] )
+					{
+						done = false;
+						//break;
+					}
 			}
-			while( tmp == start || tmp == end );
+			while ( ! done );
 
 			return tmp;
-		}
+		}*/
 
 		return value;
 	}
+	
+	virtual unsigned mutate( unsigned * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
+	{
+	/*	if( rollUniform( 1, chance ) == 1 )
+		{
+			unsigned tmp;
+			bool done;
+			
+			do
+			{
+				done = true;
+
+				tmp = rollUniform( min, max );
+
+				for(int i = 0; i <= position; i++)
+					if( tmp == path[i] )
+					{
+						done = false;
+						//break;
+					}
+			}
+			while ( ! done );
+
+			return tmp;
+		}*/
+
+		return value;
+	}
+
 };
 
 class MutationBinomial final : public Mutation
@@ -63,23 +105,62 @@ class MutationBinomial final : public Mutation
 public:
 	MutationBinomial( unsigned chance = 250 ) : Mutation( chance ) {}
 
-	virtual unsigned mutate( unsigned start, unsigned end, unsigned max, unsigned min, unsigned value ) const
+	virtual unsigned mutate( Path * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
 	{
 		if( rollUniform( 1, chance ) == 1 )
 		{
 			unsigned tmp;
+			bool done;
 			
 			do
 			{
+				done = true;
+
 				tmp = rollBinomial( value, min, max );
+
+				for(int i = 0; i <= position; i++)
+					if( tmp == (*path)[i] )
+					{
+						done = false;
+						//break;
+					}
 			}
-			while( tmp == start || tmp == end );
+			while ( ! done );
 
 			return tmp;
 		}
 
 		return value;
 	}
+
+	virtual unsigned mutate( unsigned * path, unsigned position, unsigned max, unsigned min, unsigned value ) const
+	{
+		if( rollUniform( 1, chance ) == 1 )
+		{
+			unsigned tmp;
+			bool done;
+			
+			do
+			{
+				done = true;
+
+				tmp = rollBinomial( value, min, max );
+
+				for(int i = 0; i <= position; i++)
+					if( tmp == path[i] )
+					{
+						done = false;
+						//break;
+					}
+			}
+			while ( ! done );
+
+			return tmp;
+		}
+
+		return value;
+	}
+
 };
 
 #endif // MUTATION_HPP

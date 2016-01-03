@@ -6,6 +6,8 @@
  *  \brief  Definicja klasy Graph.
  */
 
+#include <iostream>
+
 #include "Graph.hpp"
 
 #include "debug.hpp"
@@ -14,60 +16,46 @@ Graph::Graph( const std::string & file )
 {
 }
 
-Graph::Graph( const unsigned nodes, const GraphGenerator * generator ) : nodes(nodes)
+Graph::Graph( const unsigned nodesNumber, const GraphGenerator * generator ) : nodesNumber(nodesNumber)
 {
-	DBG("Graph( " << nodes << " )");
+	matrix = Matrix (nodesNumber, std::vector< std::array< unsigned, (unsigned)Parameters::Count > > (nodesNumber) );
 
-	generator->generate( nodes, adjacencyMatrix );
+	DBG("Graph( " << nodesNumber << " )");
+	
+	nodes = std::vector<Node> (nodesNumber);
 
-	ratingMatrix = std::vector< std::vector< unsigned > > (nodes, std::vector< unsigned > (nodes) );
+	generator->generate( nodes, matrix );
 }
 
 Graph::~Graph()
 {
 }
 
-void Graph::rate( const std::array<unsigned short, (unsigned)Parameters::Count> & weights )
-{
-	for ( unsigned i = 0; i < nodes; ++i)
-	{
-		for ( unsigned j = 0; j < i; ++j )
-		{
-		 	for ( unsigned k = 0; k < (unsigned)Parameters::Count; ++k ) 
-			{
-				ratingMatrix[ i ][ j ] += adjacencyMatrix[ i ][ j ][ k ] * weights[ k ];
-				ratingMatrix[ j ][ i ] = ratingMatrix[ i ][ j ];
-			}	
-		}
-	}
-
-}
-
 unsigned Graph::getNodes() const
 {
-	return nodes;
+	return nodes.size();
 }
 
-unsigned Graph::getRating( const unsigned first, const unsigned second ) const
+unsigned Graph::getParam( unsigned n, unsigned m, Parameters param ) const
 {
-	return ratingMatrix[ first ][ second ];
+	return matrix[ n ][ m ][ (unsigned)param ];
 }
 
-#include <iostream>
-
-void Graph::print()
+void Graph::print() const
 {
-	for ( unsigned i = 0; i < nodes; ++i)
+	DBG("Graph::print");
+
+	for ( unsigned i = 0; i < nodesNumber; ++i)
 	{
 		std::cout << i << ": ";
 
-		for ( unsigned j = i+1; j < nodes; ++j )
+		for ( unsigned j = i+1; j < nodesNumber; ++j )
 		{
 			std::cout << j << "[ ";
 
 		 	for ( unsigned k = 0; k < (unsigned)Parameters::Count; ++k ) 
 			{
-				std::cout << adjacencyMatrix[ i ][ j ][ k ] << " ";
+				std::cout << matrix[ i ][ j ][ k ] << " ";
 			}	
 			std::cout << "]  ";
 		}
@@ -76,17 +64,14 @@ void Graph::print()
 	}
 }
 
-
-void Graph::printRates()
+void Graph::printNodes() const
 {
-	for ( unsigned i = 0; i < nodes; ++i)
+	DBG("Graph::printNodes()");
+
+	for( unsigned i = 0; i<nodesNumber; ++i )
 	{
-		std::cout << i << ": ";
-
-		for ( unsigned j = i+1; j < nodes; ++j )
-			std::cout << j << "[ " << ratingMatrix[ i ][ j ] << " ] ";
-
+		std::cout << "[" << i << "]: ";
+		nodes[i].print();
 		std::cout << std::endl;
 	}
-
 }

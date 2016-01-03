@@ -32,10 +32,13 @@ Population::Population(
 {
 	DBG("Population()");
 
+	for(unsigned i : weights)
+		i = (unsigned)Limits::WEIGHTS_MID;
+
 	paths = std::vector<Path*> (size);
 
 	for( unsigned i = 0; i < size; i++)
-		paths[i] = new Path( start, end, nodes, graph );
+		paths[i] = new Path( graph, weights );
 
 	std::sort( paths.begin(), paths.end(), pathPtrCompr() );
 }
@@ -70,127 +73,20 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 	DBG_DO( in1->print() );
 	DBG_DO( in2->print() );
 
-	unsigned len1 = in1 -> getLength();
-	unsigned len2 = in2 -> getLength();
-	
-	unsigned length;
-
-
-	if( len1 == len2 )
+	if( in1 -> getLength() < 2 || in2 -> getLength() < 2)
 	{
-		length = len1;
-
-		out1 = new Path(length, graph);
-		out2 = new Path(length, graph);
-
-		bool choice;
-		
-		(*out1)[0] = start;
-		(*out2)[0] = start;
-
-		(*out1)[length - 1] = end;
-		(*out2)[length - 1] = end;
-		
-		for( int i = 1; i < length - 1; ++i )
-		{
-			choice = rollBinary();
-			
-			if(choice)
-			{
-				(*out1)[i] = mutation->mutate( start, end, nodes - 1, 0, (*in1)[i] );
-				(*out2)[i] = mutation->mutate( start, end, nodes - 1, 0, (*in2)[i] );	
-			}	
-			else
-			{
-				(*out1)[i] = mutation->mutate( start, end, nodes - 1, 0, (*in2)[i] );
-				(*out2)[i] = mutation->mutate( start, end, nodes - 1, 0, (*in1)[i] );	
-			}
-		}
-
-		out1 -> rate();
-		out2 -> rate();
+		out1 = new Path(*in1);
+		out2 = new Path(*in2);
 	}
 
 	else
 	{
-		unsigned difference;
-		Path * shorter;
-		Path * longer;
+		unsigned cut1 = rollUniform( 0, in1 -> getLength() - 2 );
+		unsigned cut2 = rollUniform( 0, in2 -> getLength() - 2 );
 
-		if( len1 > len2 )
-		{
-			length = len1;
-			difference = length - len2;
-			longer = in1;
-			shorter = in2;
-		}
-		else
-		{
-			length = len2;
-			difference = length - len1;
-			longer = in2;
-			shorter = in1;
-		}
-
-
-		unsigned newIn[length];
-
-		for(unsigned i = 0; i < length; ++i)
-			newIn[i] = 0;
-
-		unsigned n;
-
-		for(unsigned i = 0; i < difference; ++i)
-		{
-			n = rollUniform(1, length - 2);
-
-			if( newIn[ n ] == NULL_NODE )
-				--i;
-			else
-				newIn[ n ] = NULL_NODE;
-		}
-
-		for( unsigned i = 0, j = 0; i < length; ++i, ++j )
-		{
-			if( newIn[ i ] == NULL_NODE )
-				--j;
-			else
-				newIn[ i ] = (*shorter)[ j ];
-		}
-
-
-		unsigned rawOut1 [length];
-		unsigned rawOut2 [length];
-
-		bool choice;
-
-		rawOut1[0] = start;
-		rawOut2[0] = start;
-
-		rawOut1[length - 1] = end;
-		rawOut2[length - 1] = end;
-
-		for( int i = 1; i < length-1; ++i )
-			{
-				choice = rollBinary();
-				
-				if(choice)
-				{
-					rawOut1[i] = mutation->mutate( start, end, nodes - 1, 0, newIn[i] );
-					rawOut2[i] = mutation->mutate( start, end, nodes - 1, 0, (*longer)[i] );	
-				}	
-				else
-				{
-					rawOut1[i] = mutation->mutate( start, end, nodes - 1, 0, (*longer)[i] );
-					rawOut2[i] = mutation->mutate( start, end, nodes - 1, 0, newIn[i] );	
-				}
-			}
-		
-		out1 = new Path(rawOut1, length, graph);
-		out2 = new Path(rawOut2, length, graph);
-
+		out1 = new Path( *in1, *in2, cut1, cut2 + 1, graph, weights );
+		out2 = new Path( *in2, *in1, cut2, cut1 + 1, graph, weights );
 	}
-
 }
 
 Path * Population::getPath( unsigned n ) const
@@ -206,6 +102,13 @@ void Population::setStrategy( Strategy * strategy )
 void Population::setMutation( Mutation * mutation )
 {
 	this->mutation = mutation;
+}
+
+void Population::setWeights( std::array<unsigned, (unsigned)Parameters::Count> arr )
+{
+	unsigned size = arr.size();
+	for(unsigned i = 0; i < size; ++i )
+		i = arr[i];
 }
 
 void Population::print()

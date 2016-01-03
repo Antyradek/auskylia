@@ -11,6 +11,7 @@
 #include <limits>
 
 #include "Graph.hpp"
+#include "types.hpp"
 
 const unsigned NULL_NODE = std::numeric_limits<int>::max();
 
@@ -20,11 +21,11 @@ const unsigned NULL_NODE = std::numeric_limits<int>::max();
 class Path
 {
 public:
-	Path( unsigned start, unsigned end, unsigned maxLength, const Graph * const graph );
+	Path( const Graph * const graph, const Weights & weights );
 
-	Path( unsigned * nodes, unsigned length, const Graph * const graph );
+	Path( const Path & first, const Path & second, unsigned end1, unsigned start2, const Graph * const graph, const Weights & weights );
 
-	Path( unsigned length, const Graph * const graph );
+	Path( const Path & that );
 
 	~Path();
 
@@ -38,6 +39,13 @@ public:
 
 	void rate();
 
+	inline void rateEdge(
+		unsigned one,
+		unsigned two,
+		std::array<unsigned, (unsigned)Parameters::Count> & param,
+		std::array<unsigned, (unsigned)Parameters::Count> & tmpParam);
+
+
 	void print() const;
 
 private:
@@ -45,6 +53,8 @@ private:
 	unsigned length;
 
 	unsigned long rating;
+
+	const Weights & weights;
 
 	const Graph * const graph;
 };

@@ -6,119 +6,108 @@
  *  \brief  Definicja klasy GraphGenerator.
  */
 
+#include <cmath>
+
 #include "parameters.hpp"
 #include "roll.hpp"
 #include "GraphGenerator.hpp"
 
 #include "debug.hpp"
 
-void UniformIntervals::generate( const unsigned nodes, AdjacencyMatrix & matrix ) const
-{
-	DBG("generate 0");
-	unsigned intervalStart;
-	unsigned intervalSize;
 
-	matrix = AdjacencyMatrix(nodes, std::vector<std::array< unsigned, (unsigned)Parameters::Count > >(nodes));
+unsigned isqrt(unsigned long value)  
+{  
+	unsigned result = static_cast<unsigned>(sqrt(static_cast<float>(value)));
 
-	DBG("generate 1");
-
-
-	for( unsigned i = 0; i < nodes; i++ )
-		for( unsigned j = 0; j < i; j++ )
-		{
-			if( i == j )
-				continue;
-
-			intervalStart = rollUniform( INTERVALS_START_MIN, INTERVALS_START_MAX );
-			intervalSize = rollUniform( INTERVALS_SIZE_MIN, INTERVALS_SIZE_MAX );
-			
-			for( unsigned k = 0; k < (unsigned)Parameters::Count; k++ )
-			{
-				matrix[ i ][ j ][ k ] = rollUniform( intervalStart, intervalStart + intervalSize );
-				matrix[ j ][ i ][ k ] = matrix[ i ][ j ][ k ];
-			}
-		}
-
+	do
+		++result;
+	while (result * result <= value);
 	
-	DBG("generate 2");
+	do
+		--result;
+	while (result * result > value);
+	
+	return result;  
+} 
+
+void GeneratorUniform::generate( std::vector<Node> & nodes, Matrix & matrix ) const
+{
+	DBG("GeneratorUniform::generate()");
+
+	unsigned nodesNumber = nodes.size();
+
+	rollPoints( nodes );
+
+	unsigned short speed;
+	unsigned short safety;
+	unsigned short comfort;
+	unsigned distance;
+
+	for( unsigned i = 0; i < nodesNumber; ++i )
+		for( unsigned j = 0; j < i; ++j )
+		{
+			speed = rollUniform( (unsigned)Limits::SPEED_MIN, (unsigned)Limits::SPEED_MAX );
+
+			distance = calcDistance( nodes[i], nodes[j] );
+
+			matrix[ i ][ j ][ (unsigned)Parameters::TIME ] = distance / speed;
+
+			safety = ( nodes[i].getSafety() + nodes[j].getSafety() ) >> 1;
+			matrix[ i ][ j ][ (unsigned)Parameters::SAFETY ] = safety;
+
+			comfort = rollUniform( (unsigned)Limits::COMFORT_MIN, (unsigned)Limits::COMFORT_MAX );
+
+			matrix[ i ][ j ][ (unsigned)Parameters::COMFORT ] = comfort;
+
+			matrix[ i ][ j ][ (unsigned)Parameters::COST ] = distance * comfort * speed;
+
+			for( unsigned k = 0; k < (unsigned)Parameters::Count; ++k )
+				matrix[ j ][ i ][ k ] = matrix[ i ][ j ][ k ];
+		}
 }
 
-void OtherGenerator::generate( const unsigned nodes, AdjacencyMatrix & matrix ) const
+void GeneratorUniform::rollPoints( std::vector<Node> & nodes ) const
 {
-	unsigned startValue;
-	unsigned multiplier;
-	unsigned increase;
+	unsigned nodesNumber = nodes.size();
 
-	matrix = AdjacencyMatrix(nodes, std::vector<std::array< unsigned, (unsigned)Parameters::Count > >(nodes));
+	rollEndPoints( nodes );
 
+	for(unsigned i = 1; i < nodesNumber - 1; ++i)
+	{
+		nodes[i].roll();
 
-	for( unsigned i = 0; i < nodes; i++ )
-		for( unsigned j = 0; j < i; j++ )
+		for(unsigned j = 0; j < i; ++j)
 		{
-			if( i == j )
-				continue;
-
-			multiplier = rollUniform( MULTIPLIER_MIN, MULTIPLIER_MAX );
-			increase = rollUniform( INCREASE_MIN, INCREASE_MAX );
-			
-			for( unsigned k = 0; k < (unsigned)Parameters::Count; k++ )
+			if( nodes[i].getX() == nodes[j].getX() && nodes[i].getY() == nodes[j].getY() )
 			{
-				matrix[ i ][ j ][ k ] = rollUniform( START_MIN, START_MAX );
-				
-				matrix[ i ][ j ][ k ] += increase;
-				matrix[ i ][ j ][ k ] *= multiplier;
-
-				matrix[ j ][ i ][ k ] = matrix[ i ][ j ][ k ];
+				--i;
+				break;
 			}
-		}
-}
 
-void SmartGenerator::generate( const unsigned nodes, AdjacencyMatrix & matrix ) const
+			if( nodes[i].getX() == nodes[nodesNumber - 1].getX() && nodes[i].getY() == nodes[ nodesNumber ].getY() )
+				--i;
+		}	
+	}
+}	
+
+void GeneratorUniform::rollEndPoints( std::vector<Node> & nodes ) const
 {
-	matrix = AdjacencyMatrix(nodes, std::vector<std::array< unsigned, (unsigned)Parameters::Count > >(nodes));
+	nodes[0] = Node( 0, 0 );
+	nodes[ nodes.size() - 1 ] = Node( (unsigned)Limits::MAP_SIZE, (unsigned)Limits::MAP_SIZE );
+}
+unsigned GeneratorUniform::calcDistance( const Node & first, const Node & second ) const
+{
+	unsigned x1 = first.getX();
+	unsigned x2 = second.getX();
 
-	unsigned security;
-	unsigned comfort;
-	unsigned time;
-	unsigned cost;
-	unsigned tmp;
+	unsigned y1 = first.getY();
+	unsigned y2 = second.getY();
 
-	for( unsigned i = 0; i < nodes; i++ )
-		for( unsigned j = 0; j < i; j++ )
-		{
-			if( i == j )
-				continue;
-			
-			time = rollUniform( VALUE_MIN, VALUE_MAX );
-			comfort = rollUniform( VALUE_MIN, VALUE_MAX );
-			
-			matrix[ i ][ j ][ (unsigned)Parameters::TIME ] = time;
-			matrix[ i ][ j ][ (unsigned)Parameters::COMFORT ] = comfort;
-			
-			security = rollUniform( VALUE_MIN, VALUE_MAX );
-			tmp = (VALUE_MAX - comfort) / 5;
+	unsigned long x = (x1 > x2 ? x1 - x2 : x2 - x1);
+	unsigned long y = (y1 > y2 ? y1 - y2 : y2 - y1);
 
-			if( security - VALUE_MIN > tmp )
-				security -= tmp;
-			else
-				security = VALUE_MIN;
+	x *= x;
+	y *= y;
 
-			tmp = (VALUE_MAX - comfort) / 10;
-
-			if( tmp > 40)
-				cost = rollUniform( tmp - 30, tmp + 30 );
-			else
-				cost = rollUniform( 10, tmp + 30 );
-
-			cost *= (time / 100);
-
-			
-			matrix[ i ][ j ][ (unsigned)Parameters::TIME ] = time;
-			matrix[ i ][ j ][ (unsigned)Parameters::COMFORT ] = comfort;
-			matrix[ i ][ j ][ (unsigned)Parameters::SECURITY ] = security;
-			matrix[ i ][ j ][ (unsigned)Parameters::COST ] = cost;
-
-			for( unsigned k = 0; k < (unsigned)Parameters::Count; k++ )
-				matrix[ j ][ i ][ k ] = matrix[ i ][ j ][ k ];
-		}
+	return isqrt( x + y );
 }

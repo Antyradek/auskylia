@@ -14,6 +14,8 @@
 #include "Mutation.hpp"
 #include "strategy.hpp"
 #include "Path.hpp"
+#include "types.hpp"
+
 
 /**
  * \brief Klasa reprezentująca populację.
@@ -64,6 +66,8 @@ public:
 
 	void setMutation( Mutation * mutation );
 
+	void setWeights( Weights arr );
+
 	/**
 	 * \brief  Wypisuje populację.
 	 */
@@ -71,6 +75,8 @@ public:
 
 private:
 	std::vector<Path *> paths;
+
+	Weights weights;
 
 	const unsigned size;
 

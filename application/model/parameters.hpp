@@ -1,11 +1,6 @@
 #ifndef PARAMETERS_HPP
 #define PARAMETERS_HPP
 
-
-// proszę bez skrępowania dodawać/usuwać/modyfikować 
-// dla modelu liczy się tylko liczba parametrów, nie ma on tak naprawdę pojęcia co konkretnie liczy
-// lista jest po to, by wiedzieć, co kontroler przekazuje do modelu
-
 /**
  * \brief  Lista parametrów trasy 
  */
@@ -14,13 +9,36 @@ enum class Parameters
 	// nazwa        // indeks tablicy 
 	COST,           // 0
 	TIME,           // 1
-	SECURITY,       // 2
+	SAFETY,         // 2
 	COMFORT,        // 3
 
 	// liczba parametrów (rozmiar tablicy)
-	Count           // 4 (proszę pamiętać o tym, jak kompilator numeruje wartości;
+	Count,          // 4 (proszę pamiętać o tym, jak kompilator numeruje wartości;
 	                //    jeśli ostatni parametr ma inną wartość niż indeks,
 	                //    trzeba podać liczbę wprost)
+};
+
+enum class Limits
+{
+	NODES_MAX      = 10000,
+
+	MAP_SIZE       = 10000,
+
+	COMFORT_MIN    = 1,
+	COMFORT_MAX    = 10,
+	COMFORT_RANGE  = COMFORT_MAX - COMFORT_MIN,
+
+	SAFETY_MIN     = 1,
+	SAFETY_MAX     = 10,
+	SAFETY_RANGE   = SAFETY_MAX - SAFETY_MIN,
+
+	SPEED_MIN      = 1,
+	SPEED_MAX      = 10,
+	SPEED_RANGE    = SPEED_MAX - SPEED_MIN,
+
+	WEIGHTS_MIN    = 50,
+	WEIGHTS_MAX    = 150,
+	WEIGHTS_MID    = (WEIGHTS_MIN + WEIGHTS_MAX)>>1,
 };
 
 #endif // PARAMETERS_HPP

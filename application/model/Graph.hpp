@@ -12,7 +12,9 @@
 #include <string>
 #include <array>
 
+#include "Node.hpp"
 #include "GraphGenerator.hpp"
+#include "parameters.hpp"
 
 /**
  * \brief klasa reprezentująca graf
@@ -26,22 +28,20 @@ public:
 
 	~Graph();
 
-	void rate( const std::array<unsigned short, (unsigned)Parameters::Count> & weights );
-
-	unsigned getRating( const unsigned first, const unsigned second ) const;
-
 	unsigned getNodes() const;
 
-	void print();
+	unsigned getParam( unsigned n, unsigned m, Parameters param ) const;
 
-	void printRates();
+	void print() const;
+
+	void printNodes() const;
 
 private:
-	unsigned nodes;
+	unsigned nodesNumber;
 
-	AdjacencyMatrix adjacencyMatrix;
-	
-	RatingMatrix ratingMatrix;
+	Matrix matrix;
+
+	std::vector<Node> nodes;
 };
 
 #endif // GRAPH_HPP
