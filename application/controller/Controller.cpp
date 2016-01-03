@@ -6,6 +6,7 @@
 
 #include "Controller.hpp"
 #include "Message.hpp"
+#include "Command.hpp"
 #include <thread>
 #include <exception>
 #include <string>
@@ -168,7 +169,7 @@ void Controller::start()
 					str="<data><response>progress</response><progress>0</progress></data>";
 					viewServer->viewServerBlockingQueue->push_back(str);
 					/**< \todo uruchomić zadanie w modelu */
-					//model
+					model->modelBlockingQueue->push_back(new Command(CommandType::START));
 				}
 				else if(msg->messageType==MessageType::STATUS)
 				{

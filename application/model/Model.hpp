@@ -98,7 +98,8 @@ public:
 	Population * getPopulation();
 
 	/** \brief Zadanie główne modelu.
-	* Jeszcze nie wiem, czy ta metoda będzie potrzebna.
+	* Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem
+	* przez dwie kolejki blokujące: controllerBlockingQueue i modelBlockingQueue.
 	* \return void
 	*/
 	void doMainJob();
@@ -110,6 +111,8 @@ public:
 	void setControllerBlockingQueue(BlockingQueue<Event*>* q);
 
 private:
+	friend class Controller;/**< \todo być może ładniej rozwiazać problemy */
+
 	Graph * graph;
 
 	Population * population;

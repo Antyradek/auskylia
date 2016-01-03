@@ -6,18 +6,21 @@
 
 #pragma once
 
-enum CommandType
+namespace CommandType
 {
-	START,
-	STOP,
-	STATUS
-};
+	enum CommandType
+	{
+		START,
+		STOP,
+		STATUS
+	};
+}
 
 /** \brief Klasa polecenia do modelu
  */
 class Command
 {
 public:
-	Command(CommandType t);
-	CommandType commandType;
+	Command(CommandType::CommandType t);
+	CommandType::CommandType commandType;
 };
