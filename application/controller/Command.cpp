@@ -5,8 +5,10 @@
  */
 
 #include "Command.hpp"
+#include <iostream>
 
 //using namespace CommandType;
+using namespace std;
 
 Command::Command(CommandType::CommandType t) : commandType(t)
 {
