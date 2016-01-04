@@ -24,6 +24,7 @@
 #include "../controller/BlockingQueue.hpp"
 #include "../controller/Command.hpp"
 
+
 /**
  * \brief Na razie pusta/zaślepkowa klasa Modelu
  */
@@ -110,6 +111,12 @@ public:
 	* \return void
 	*/
 	void setControllerBlockingQueue(BlockingQueue<Event*>* q);
+
+    /** \brief Metoda kończąca pracę głównego wątka modelu.
+     * Ustawia shutDown.
+     * \return void
+     */
+	void triggerShutDown();
 
 private:
 	friend class Controller;/**< \todo być może ładniej rozwiazać problemy */

@@ -9,6 +9,13 @@
 
 #include "Model.hpp"
 
+#include <mutex>
+#include <iostream>
+
+extern std::mutex coutMutex;
+
+using namespace std;
+
 /**< \todo przydały by się jakieś wyjątki do modelu */
 
 Graph * Model::generateGraph( unsigned nodes, const GraphGenerator * const generator ) const
@@ -145,6 +152,26 @@ void Model::setControllerBlockingQueue(BlockingQueue<Event*>* q)
 {
 	controllerBlockingQueue=q;
 }
+
+void Model::triggerShutDown()
+{
+	#ifdef _DEBUG
+	coutMutex.lock();
+	cout<<"Model::triggerShutDown()"<<endl;
+	coutMutex.unlock();
+	#endif // _DEBUG
+	shutDown=true;
+	modelBlockingQueue->push_back(new Command(CommandType::STOP));/**< primo odblokowuje kolejkę, sekundo daje szansę na porawne zakończenie algorytmu */
+}
+
+
+
+
+
+
+
+
+
 
 
 

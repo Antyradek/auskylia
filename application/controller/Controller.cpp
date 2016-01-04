@@ -108,14 +108,31 @@ void Controller::start()
 				cout<<"Zamykanie serwera Auskylia..."<<endl;
 				coutMutex.unlock();
 				viewServer->triggerShutDown();
-				//viewServerThread.join();
+				model->triggerShutDown();
 				modelMainThread.join();/**< \todo model powinien przyjmować polecenie zamknięcia */
+				//viewServerThread.join();
+				coutMutex.lock();
 				cout<<"Oczekuję na zamknięcie ViewServer: ";
+				coutMutex.unlock();
 				cout.flush();
 				for(int i=10;i>=0;i--)
 				{
 					cout<<i<<", ";
 					cout.flush();
+					if(viewServer->isClosed())
+					{
+						coutMutex.lock();
+						cout<<"viewServer is closed"<<endl;
+						coutMutex.unlock();
+						if(viewServerThread.joinable())
+						{
+							viewServerThread.join();
+							coutMutex.lock();
+							cout<<"viewServerThread joined"<<endl;
+							coutMutex.unlock();
+							break;
+						}
+					}
 					c.wait_for(timerLock,chrono::seconds(1));
 				}
 				break;
@@ -156,7 +173,7 @@ void Controller::start()
 					delete[] buf;
 					buf=nullptr;
 					viewServer->viewServerBlockingQueue->push_back(str);
-					#ifdef _DEBUG
+					#ifdef _DEBUG2
 					coutMutex.lock();
 					cout<<"lista lotnisk: "<<endl;
 					cout<<str<<endl;
@@ -226,6 +243,11 @@ void Controller::setup()
 void Controller::triggerShutDown()
 {
 	shutDown=true;
+	#ifdef _DEBUG
+	coutMutex.lock();
+	cout<<"Controller::triggerShutDown()"<<endl;
+	coutMutex.unlock();
+	#endif // _DEBUG
 	if(controllerBlockingQueue==nullptr)
 	{
 		throw ControllerException("Controller::triggerShutDown() controllerBlockingQueue==nullptr");

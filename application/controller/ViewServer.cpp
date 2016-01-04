@@ -21,6 +21,8 @@
 #include <mutex>
 extern std::mutex coutMutex;
 
+using namespace std;
+
 /** \brief Klasa opakowująca exception dla ViewServer
  */
 struct ViewServerException : std::exception
@@ -48,7 +50,8 @@ ViewServer::ViewServer(int pNo) :
 	viewServerBlockingQueue(nullptr),
 	portNo(pNo),
 	controllerBlockingQueue(nullptr),
-	shutDown(false)
+	shutDown(false),
+	closed(false)
 {
 	viewServerBlockingQueue=new BlockingQueue<std::string>;
 }
@@ -78,6 +81,7 @@ void ViewServer::listenAndRespond()
 	}
 
 	shutDown=false;
+	closed=false;
 
 	struct sockaddr_in sa;
     int SocketFD = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -181,7 +185,7 @@ void ViewServer::listenAndRespond()
 			mime = "text";
 
 			//jakieś dziwne rzeczy się działy z poniższym if'em
-			if(true/*msg.size()==0*/)//z jakiegoś powodu zdażają się puste połączenia
+			if(true/*msg.size()==0*/ && !shutDown)//z jakiegoś powodu zdażają się puste połączenia
 			{
 				Message* message=nullptr;
 				message=xmlParser(msg);
@@ -209,7 +213,10 @@ void ViewServer::listenAndRespond()
 		#endif // _DEBUG2
 		const char* data = response.c_str();
 		int len = response.size();
-		write(ConnectFD,data,len);
+		if(!shutDown)
+		{
+			write(ConnectFD,data,len);
+		}
 
 		if (-1 == shutdown(ConnectFD, SHUT_RDWR))
 		{
@@ -228,7 +235,14 @@ void ViewServer::listenAndRespond()
 	}
 
     close(SocketFD);
-
+    #ifdef _DEBUG
+	coutMutex.lock();
+	std::cout<<"Gniazdo zamknięte\n";
+	coutMutex.unlock();
+	#endif // _DEBUG
+	closedMutex.lock();
+	closed=true;
+	closedMutex.unlock();
 }
 
 void ViewServer::setControllerBlockingQueue(BlockingQueue<Event*>* q)
@@ -239,6 +253,7 @@ void ViewServer::setControllerBlockingQueue(BlockingQueue<Event*>* q)
 void ViewServer::triggerShutDown()
 {
 	shutDown=true;
+	viewServerBlockingQueue->push_back(string("shutdown"));
 	/**< \todo rozwiązać problem z blokującym accept przy zamykaniu */
 	#ifdef _DEBUG
 	coutMutex.lock();
@@ -322,3 +337,48 @@ std::string ViewServer::openFile(const std::string& filename)
     reqFile.close();
     return ss.str();
 }
+
+bool ViewServer::isClosed()
+{
+	#ifdef _DEBUG
+	coutMutex.lock();
+	cout <<"ViewServer::isClosed()"<<endl;
+	coutMutex.unlock();
+	#endif // _DEBUG
+	closedMutex.lock();
+	bool b=closed;
+	#ifdef _DEBUG
+	coutMutex.lock();
+	cout <<"closed: "<<closed<<endl;
+	coutMutex.unlock();
+	#endif // _DEBUG
+	closedMutex.unlock();
+	return b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

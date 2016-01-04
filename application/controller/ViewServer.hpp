@@ -11,6 +11,7 @@
 #include <sstream>
 #include <vector>
 #include <utility>
+#include <mutex>
 #include "BlockingQueue.hpp"
 #include "Event.hpp"
 
@@ -28,21 +29,24 @@ public:
 	void setControllerBlockingQueue(BlockingQueue<Event*>* q);
 	void triggerShutDown();
 	BlockingQueue<std::string>* viewServerBlockingQueue;/**< kolejka z odpowiedziami do wysłania */
+	bool isClosed();
 private:
 	int portNo;
 	/** \todo ustalić najwygodniejszy sposób na uzyskiwanie odpowiedzi z kontrolera
-	 * i modelu. może to będzie condition z jakimś timeoutem, czy co
-	 */
-	 BlockingQueue<Event*>* controllerBlockingQueue;
-	 bool shutDown;
-	 /** \brief Czy podane zapytanie jest zapytaniem serwera, czy zapytaniem o stronę internetową.
-	  * \return Strona podana w nagłówku
-	  */
-	 std::string getPageRequest(const std::string& message);
-	 /** \brief Zwraca żądaną stronę internetową, jeśli jest dozwolona, lub pustkę, jeśli nie jest, oraz typ zasobu do umieszczenia w nagłówku.
-	  */
-	 std::string getPage(std::string resource, std::string& type);
-	 /** \brief Otwiera i zwraca zawartość pliku. Bez żadnej kontroli
-	 */
-	 std::string openFile(const std::string& filename);
+	* i modelu. może to będzie condition z jakimś timeoutem, czy co
+	*/
+	BlockingQueue<Event*>* controllerBlockingQueue;
+	bool shutDown;
+	/** \brief Czy podane zapytanie jest zapytaniem serwera, czy zapytaniem o stronę internetową.
+	* \return Strona podana w nagłówku
+	*/
+	std::string getPageRequest(const std::string& message);
+	/** \brief Zwraca żądaną stronę internetową, jeśli jest dozwolona, lub pustkę, jeśli nie jest, oraz typ zasobu do umieszczenia w nagłówku.
+	*/
+	std::string getPage(std::string resource, std::string& type);
+	/** \brief Otwiera i zwraca zawartość pliku. Bez żadnej kontroli
+	*/
+	std::string openFile(const std::string& filename);
+	bool closed;
+	std::mutex closedMutex;
 };
