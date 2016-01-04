@@ -38,6 +38,11 @@ body
     margin: 0px;
 }
 
+#universe
+{
+    position: relative;
+}
+
 .citySelect
 {
     width: 100%;
@@ -158,4 +163,14 @@ body
 {
     from {transform: rotate(0deg);}
     to {transform: rotate(720deg);}
+}
+
+#progressBar
+{
+    width: 100%;
+}
+
+#progressWindow
+{
+    display: none;
 }

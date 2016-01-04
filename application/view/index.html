@@ -8,45 +8,50 @@
         <script src="js/main.js"></script>
     </head>
     <body>
-        <img id="logo" src="img/logo.svg" width="512px" height="256px" />
-        <div id="waitWindow">
-            <img id="hourglass" src="img/hourglass.svg" width="512" height="512" />
-        </div>
-        <div id="errorWindow">
-            <p id="errorTitle">
-            </p>
-            <p id="errorText">
-            </p>
-            <input type="button" id="errorClose" value="Dobra"/>
-        </div>
-        <div id="mainWindow" >
-            <p id="instruction">
-                Aby rozpocząć, wybierz miasto początowe i końcowe, oraz parametry.
-            </p>
-            <form id="mainForm">
-                <fieldset class="inputFieldset">
-                    <legend>Cele Podróży</legend>
-                    Miasto początkowe:<br/>
-                    <select id="startCity" class="citySelect"></select>
-                    Miasto końcowe:<br/>
-                    <select id="endCity" class="citySelect"></select>
-                </fieldset>
-                <fieldset class="inputFieldset">
-                    <legend>Parametry</legend>
-                    <p>
-                        Ustaw współczynnik każdego parametru, jak bardzo powinien być brany pod uwagę.
-                    </p>
-                    Cena:<br/>
-                    <input type="range" id="priceRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
-                    Bezpieczeństwo:<br/>
-                    <input type="range" id="safetyRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
-                    Wygoda:<br/>
-                    <input type="range" id="comfortRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
-                    Czas:<br/>
-                    <input type="range" id="timeRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
-                </fieldset>
-                <input type="submit" id="submitForm" value="Policz trasę" />
-            </form>
+        <div id="universe">
+            <img id="logo" src="img/logo.svg" width="512px" height="256px" />
+            <div id="mainWindow" >
+                <p id="instruction">
+                    Aby rozpocząć, wybierz miasto początowe i końcowe, oraz parametry.
+                </p>
+                <form id="mainForm">
+                    <fieldset class="inputFieldset">
+                        <legend>Cele Podróży</legend>
+                        Miasto początkowe:<br/>
+                        <select id="startCity" class="citySelect"></select>
+                        Miasto końcowe:<br/>
+                        <select id="endCity" class="citySelect"></select>
+                    </fieldset>
+                    <fieldset class="inputFieldset">
+                        <legend>Parametry</legend>
+                        <p>
+                            Ustaw współczynnik każdego parametru, jak bardzo powinien być brany pod uwagę.
+                        </p>
+                        Cena:<br/>
+                        <input type="range" id="priceRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
+                        Bezpieczeństwo:<br/>
+                        <input type="range" id="safetyRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
+                        Wygoda:<br/>
+                        <input type="range" id="comfortRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
+                        Czas:<br/>
+                        <input type="range" id="timeRange" class="parameterSelect" max="100" min="0" step="1" defaultValue="50" />
+                    </fieldset>
+                    <input type="submit" id="submitForm" value="Policz trasę" />
+                </form>
+                <div id="progressWindow">
+                    <progress id="progressBar" value="0" max="100"></progress>
+                </div>
+            </div>
+            <div id="waitWindow">
+                <img id="hourglass" src="img/hourglass.svg" width="512" height="512" />
+            </div>
+            <div id="errorWindow">
+                <p id="errorTitle">
+                </p>
+                <p id="errorText">
+                </p>
+                <input type="button" id="errorClose" value="Dobra"/>
+            </div>
         </div>
     </body>
 </html>

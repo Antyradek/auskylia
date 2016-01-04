@@ -3,9 +3,6 @@ var url = "server";
 ///Punkt startowy
 $(document).ready(function()
 {
-    //załaduj lotniska
-    loadAirports();
-
     //event wysłania formularza
     $("#mainForm").submit(function(event)
     {
@@ -18,14 +15,30 @@ $(document).ready(function()
     {
         $("#errorWindow").slideUp();
     });
+
+    //załaduj lotniska
+    loadAirports();
 });
 
 ///ładuje listę lotnisk
 function loadAirports()
 {
-    setHourglass(true);
-    sendData("<data><command>list</command></data>", "Nie udało się pobrać listy lotnisk");
-    setHourglass(false);
+    var lock = setHourglass(true);
+    lock.done(function()
+    {
+        sendData("<data><command>list</command></data>")
+        .done(function(data)
+        {
+            parseResult(data);
+            setHourglass(false);
+        })
+        .fail(function()
+        {
+            showError("Błąd wysyłania","Nie można pobrać listy lotnisk");
+            setHourglass(false);
+        });
+    });
+
 }
 
 ///aktualiazcja wyboru miast
@@ -40,16 +53,17 @@ function updateCitySelections($xml)
     });
 }
 
+
 ///pokazuje, lub ukrywa klepsydrę
 function setHourglass(setOn)
 {
     if(setOn)
     {
-        $("#waitWindow").slideDown();
+        return $("#waitWindow").slideDown().promise();
     }
     else
     {
-        $("#waitWindow").slideUp();
+        return $("#waitWindow").slideUp().promise();
     }
 }
 
@@ -67,11 +81,20 @@ function parseResult(data)
         case "failture":
             showServerError($data);
             break;
+        case "progress":
+            updateProgress($data);
+            break;
         //...
         default:
             //TODO informacja o błędnej komendzie
             alert("Błędna komenda: " + $command.html());
     }
+}
+
+function updateProgress($xml)
+{
+    var prog = $xml.find("progress").html();
+    $("#progressBar").val(prog);
 }
 
 ///pobierz dane z formularza i wyślij
@@ -87,6 +110,12 @@ function calculate()
     var xml = "<data><command>calculate</command><start>" + start + "</start><end>" + end + "</end><price>" + price + "</price><safety>" + safety + "</safety><comfort>" + comfort + "</comfort><time>" + time + "</time></data>";
     sendData(xml, "Nie udało się wysłać formularza.");
     setHourglass(false);
+    //ustaw timeout sprawdzania stanu
+    $("#progressWindow").slideDown();
+    setInterval(function()
+    {
+        sendData("<data><command>status</command></data>", "Nie udało się uzyskać stanu obliczeń.");
+    }, 2000);
 }
 
 ///wywal oczojebny błąd na ekran
@@ -98,13 +127,14 @@ function showError(title, text)
 }
 
 ///wysyła rządanie i przetwarza wynik, lub pokazuje błąd
-function sendData(data, errorText)
+function sendData(data)
 {
-    $.ajax({
+    return $.ajax({
         type: "POST",
         url: url,
         data: data
-    })
+    });
+    /*
     .done(function(resp)
     {
         alert("Odebrano: \"" + resp + "\"");
@@ -113,7 +143,7 @@ function sendData(data, errorText)
     .fail(function()
     {
         showError("Błąd wysyłania",errorText);
-    });
+    });*/
 }
 
 //pokazuje błąd serwera
