@@ -11,6 +11,8 @@
 #include <mutex>
 extern std::mutex coutMutex;
 
+using namespace std;
+
 /** \brief Klasa opakowująca exception dla XMLParser
  */
 struct XMLParserException : std::exception
@@ -73,7 +75,7 @@ Message* XMLParser::operator()(std::string xml)
 	if(i==string::npos)
 	{
 		coutMutex.lock();
-		cout<<"i==string::npos"<<endl;
+		cout<<"data i==string::npos"<<endl;
 		coutMutex.unlock();
 		m->msg="";
 		return m;
@@ -165,6 +167,76 @@ Message* XMLParser::operator()(std::string xml)
 			return m;
 		}
 	}
+	else
+	{
+		string response("<response>");
+		string responseEnd("</response>");
+		i=d.find(response);
+		if(i!=string::npos)
+		{
+			j=d.find(responseEnd);
+			if(j==string::npos)
+			{
+				throw XMLParserException("responseEnd j==string::npos");
+			}
+			string c=d.substr(i,j-i);
+			if(c.find("list")!=string::npos)
+			{
+				m->messageType=MessageType::LIST;
+				m->msg=c;
+				throw XMLParserException("Czemu próbujesz parsować XML'a z odpowiedzią do widoku na wiadomość z widoku? Być może miałeś na myśli inną wersję przeciążonego XMLParser::operator() ?");
+				return m;
+			}
+		}
+	}
 	m->msg=d;/**< \todo tak na pewno nie będzie */
 	return m;
+}
+
+Command* XMLParser::operator()(std::string xml,Command* c)
+{
+	#ifdef _DEBUG
+	coutMutex.lock();
+	cout<<"XMLParser::operator()(std::string xml,Command* c) xml: "<<xml<<endl;
+	coutMutex.unlock();
+	#endif // _DEBUG
+
+	Command* m=new Command(CommandType::START);
+
+	if(xml.size()==0)
+	{
+		coutMutex.lock();
+		cout<<"xml.size()==0"<<endl;
+		coutMutex.unlock();
+		//m->msg="";
+		return m;
+	}
+
+	unsigned int i,j,k,l;
+	string data("<data>");
+	string dataEnd("</data>");
+	i=xml.find(data);
+	if(i==string::npos)
+	{
+		coutMutex.lock();
+		cout<<"data i==string::npos"<<endl;
+		coutMutex.unlock();
+		//m->msg="";
+		return m;
+		//throw XMLParserException("i==string::npos");/**< \todo odrzucać wiadomości z niepasującą składnią bez zabijania serwera */
+	}
+	j=xml.find(dataEnd);
+	if(j==string::npos)
+	{
+		throw XMLParserException("j==string::npos");
+	}
+	/**< \todo co, jeśli będzie więcej sekcji data? */
+	string d=xml.substr(i,j-i);//sekcja data
+	string command("<command>");
+	string commandEnd("</command>");
+	i=d.find(command);
+	if(i!=string::npos)
+	{
+		throw XMLParserException("Probujesz użyć złej wersji parsera, ta wersja przetważa XML do poleceń dla modelu, a nie na wiadomości do widoku.");
+	}
 }
