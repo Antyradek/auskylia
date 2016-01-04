@@ -1,4 +1,6 @@
 var url = "server";
+var isWorking = false;
+var progressInterval;
 
 ///Punkt startowy
 $(document).ready(function()
@@ -16,6 +18,11 @@ $(document).ready(function()
         $("#errorWindow").slideUp();
     });
 
+    $("#stopButton").click(function()
+    {
+        stopCalc();
+    });
+
     //załaduj lotniska
     loadAirports();
 });
@@ -23,22 +30,7 @@ $(document).ready(function()
 ///ładuje listę lotnisk
 function loadAirports()
 {
-    var lock = setHourglass(true);
-    lock.done(function()
-    {
-        sendData("<data><command>list</command></data>")
-        .done(function(data)
-        {
-            parseResult(data);
-            setHourglass(false);
-        })
-        .fail(function()
-        {
-            showError("Błąd wysyłania","Nie można pobrać listy lotnisk");
-            setHourglass(false);
-        });
-    });
-
+    sendData("<data><command>list</command></data>", "Nie można pobrać listy lotnisk");
 }
 
 ///aktualiazcja wyboru miast
@@ -70,7 +62,16 @@ function setHourglass(setOn)
 ///wczytaj początek rezultatu i wykonaj odpowiednią dla niego akcję
 function parseResult(data)
 {
-    var $xml = $($.parseXML(data));
+    try
+    {
+        var $xml = $($.parseXML(data));
+    }
+    catch(e)
+    {
+        showError("Błąd odczytu XML", e.message);
+        setHourglass(false);
+        return;
+    }
     var $data = $xml.find("data");
     var $command = $data.find("response");
     switch($command.html())
@@ -86,21 +87,47 @@ function parseResult(data)
             break;
         //...
         default:
-            //TODO informacja o błędnej komendzie
-            alert("Błędna komenda: " + $command.html());
+            showError("Błędna komenda", $command.html());
     }
 }
 
+///aktualizacja stanu wykonywania obliczeń
 function updateProgress($xml)
 {
-    var prog = $xml.find("progress").html();
-    $("#progressBar").val(prog);
+    if(isWorking)
+    {
+        var prog = $xml.find("progress").html();
+        $("#progressBar").val(prog);
+    }
+    else
+    {
+        isWorking = true;
+        $("#progressWindow").slideDown();
+        $("#submitForm").slideUp();
+        setHourglass(true);
+        progressInterval = setInterval(function()
+        {
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: "<data><command>status</command></data>"
+            })
+            .done(function(resp)
+            {
+                parseResult(resp);
+            })
+            .fail(function()
+            {
+                showError("Błąd wysyłania", "Błąd sprawdzania stanu obliczeń");
+            });
+        }, 2000);
+    }
+
 }
 
 ///pobierz dane z formularza i wyślij
 function calculate()
 {
-    setHourglass(true);
     var start = $("#startCity").val();
     var end = $("#endCity").val();
     var price = $("#priceRange").val();
@@ -108,14 +135,7 @@ function calculate()
     var comfort = $("#comfortRange").val();
     var time = $("#timeRange").val();
     var xml = "<data><command>calculate</command><start>" + start + "</start><end>" + end + "</end><price>" + price + "</price><safety>" + safety + "</safety><comfort>" + comfort + "</comfort><time>" + time + "</time></data>";
-    sendData(xml, "Nie udało się wysłać formularza.");
-    setHourglass(false);
-    //ustaw timeout sprawdzania stanu
-    $("#progressWindow").slideDown();
-    setInterval(function()
-    {
-        sendData("<data><command>status</command></data>", "Nie udało się uzyskać stanu obliczeń.");
-    }, 2000);
+    sendData(xml, "Nie udało się wysłać formularza z danymi do obliczeń");
 }
 
 ///wywal oczojebny błąd na ekran
@@ -127,27 +147,43 @@ function showError(title, text)
 }
 
 ///wysyła rządanie i przetwarza wynik, lub pokazuje błąd
-function sendData(data)
+function sendData(data, error)
 {
-    return $.ajax({
-        type: "POST",
-        url: url,
-        data: data
+    setHourglass(true)
+    .done(function()
+    {
+        return $.ajax({
+            type: "POST",
+            url: url,
+            data: data
+        })
+        .done(function(resp)
+        {
+            parseResult(resp);
+            setHourglass(false);
+        })
+        .fail(function()
+        {
+            showError("Błąd wysyłania",error);
+            setHourglass(false);
+        });
     });
-    /*
-    .done(function(resp)
-    {
-        alert("Odebrano: \"" + resp + "\"");
-        parseResult(resp);
-    })
-    .fail(function()
-    {
-        showError("Błąd wysyłania",errorText);
-    });*/
+
 }
 
 //pokazuje błąd serwera
 function showServerError($xml)
 {
+    isWorking = false;
+    clearInterval(progressInterval);
+    $("#progressWindow").slideUp();
+    $("#submitForm").slideDown();
+    setHourglass(false);
     showError("Błąd serwera" ,$xml.find("cause").html());
+}
+
+//zatrzymaj obliczenia
+function stopCalc()
+{
+    sendData("<data><command>stop</command></data>", "Nie można zaktualizować stanu obliczeń");
 }

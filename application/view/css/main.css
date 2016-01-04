@@ -59,7 +59,7 @@ body
     background-color: #fc6f71;
 }
 
-.inputFieldset
+fieldset
 {
     border-radius: 10px;
     border: solid 5px red;
@@ -85,6 +85,23 @@ body
 {
     background-color: cyan;
 }
+
+#stopButton
+{
+    width: 100%;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    font-family: pixel;
+    font-size: 100%;
+    transition: background-color 0.5s;
+}
+
+#stopButton:hover
+{
+    background-color: red;
+}
+
 
 #waitWindow
 {
@@ -116,6 +133,7 @@ body
 
 #errorWindow
 {
+    overflow: hidden;
     display: none;
     width: 512px;
     height: 512px;
