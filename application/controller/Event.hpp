@@ -8,6 +8,7 @@
 
 #include <mutex>
 #include <iostream>
+#include <string>
 
 extern std::mutex coutMutex;
 
@@ -19,6 +20,13 @@ enum EventType
     SHUT_DOWN,
     MESSAGE_FROM_VIEW_SERVER,
     MESSAGE_FROM_MODEL
+};
+
+struct ModelStatus
+{
+	int status=0;
+	bool result=false;
+	std::string str;
 };
 
 /** \brief Klasa reprezentująca zdarzenie.

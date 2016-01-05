@@ -7,6 +7,7 @@
 #include "Controller.hpp"
 #include "Message.hpp"
 #include "Command.hpp"
+#include "Event.hpp"
 #include <thread>
 #include <exception>
 #include <string>
@@ -15,6 +16,7 @@
 #include <chrono>
 #include <fstream>
 #include <limits>
+#include <cstring>
 
 extern std::mutex coutMutex;
 
@@ -84,6 +86,7 @@ void Controller::start()
 	char* buf=nullptr;
 	int status;
 	ostringstream ss;
+	ModelStatus* modelStatus=nullptr;
 	/**< \todo nadrzędna pętla do wielokrotnego uruchamiania obliczeń */
 	while(!shutDown)
 	{
@@ -166,13 +169,15 @@ void Controller::start()
 					coutMutex.unlock();
 					#endif // _DEBUG
 					buf=new char[len+1];
+					memset(buf,0,len+1);
 					f.seekg(0,f.beg);
 					f.readsome(buf,len);
 					f.close();
+					str.clear();
 					str=string(buf);
+					viewServer->viewServerBlockingQueue->push_back(str);
 					delete[] buf;
 					buf=nullptr;
-					viewServer->viewServerBlockingQueue->push_back(str);
 					#ifdef _DEBUG2
 					coutMutex.lock();
 					cout<<"lista lotnisk: "<<endl;
@@ -183,7 +188,8 @@ void Controller::start()
 				}
 				else if(msg->messageType==MessageType::CALCULATE)
 				{
-					str="<data><response>progress</response><progress>0</progress></data>";
+					str.clear();
+					str="<data><response>progress</response><progress>0</progress></data>\0";
 					viewServer->viewServerBlockingQueue->push_back(str);
 					/**< \todo uruchomić zadanie w modelu */
 					Command* c=new Command(CommandType::START);
@@ -193,19 +199,34 @@ void Controller::start()
 				else if(msg->messageType==MessageType::STATUS)
 				{
 					status=0;
-					/**< \todo sprawdzić postępy w modelu */
-					#ifdef __CYGWIN__
-					ss << status;
-					str = ss.str();
-					#else
-					str="<data><response>progress</response><progress>"+to_string(status)+"</progress></data>";
-					#endif // __CYGWIN__
+					if(modelStatus!=nullptr)
+					{
+						//zwracamy najnowszy znany status modelu
+						status=modelStatus->status;
+					}
+					str.clear();
+					if(status==100 && modelStatus!=nullptr && modelStatus->result==true)
+					{
+						/**< \todo zwracać sensowny wynik z modelu, a nie pastę */
+						str="<data><response>success</response><airports><airport><iata>SYD</iata></airport><airport><iata>WAW</iata></airport><airport><iata>GDA</iata></airport></airports></data>\0";
+					}
+					else
+					{
+						#ifdef __CYGWIN__
+						ss << status;
+						string str2 = ss.str();
+						str="<data><response>progress</response><progress>"+str2+"</progress></data>\0";
+						#else
+						str="<data><response>progress</response><progress>"+to_string(status)+"</progress></data>\0";
+						#endif // __CYGWIN__
+					}
 					/**< \todo możliwe są jeszcze odpowiedzi o zakończeniu lub porażce */
 					viewServer->viewServerBlockingQueue->push_back(str);
 				}
 				else if(msg->messageType==MessageType::STOP)
 				{
-					str="<data><response>failture</response><cause>Przerwano obliczenia.</cause></data>";
+					str.clear();
+					str="<data><response>failture</response><cause>Przerwano obliczenia.</cause></data>\0";
 					viewServer->viewServerBlockingQueue->push_back(str);
 					/**< \todo w modelu przerwać obliczenia */
 				}
@@ -214,6 +235,16 @@ void Controller::start()
 				coutMutex.lock();
 				cout<<"Wiadomość z modelu: "<<endl;
 				coutMutex.unlock();
+				if(e->data!=nullptr)
+				{
+					//interesuje nas tylko najnowszy status modelu
+					if(modelStatus!=nullptr)
+					{
+						delete modelStatus;
+						modelStatus=nullptr;
+					}
+					modelStatus=(ModelStatus*)e->data;
+				}
 				break;
 			default:
 				coutMutex.lock();

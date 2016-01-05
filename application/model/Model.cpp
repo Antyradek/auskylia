@@ -11,6 +11,8 @@
 
 #include <mutex>
 #include <iostream>
+#include <thread>
+#include <chrono>
 
 extern std::mutex coutMutex;
 
@@ -112,6 +114,8 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model)
 
 void Model::doMainJob()
 {
+	int status=0;
+	ModelStatus* modelStatus=nullptr;
 	if(controllerBlockingQueue==nullptr)
 	{
 		throw "tu powinien być odpowiedni wyjątek";/**< \todo rzucić odpowiedni wyjątek, jak już powstanie */
@@ -127,22 +131,41 @@ void Model::doMainJob()
 		if(c->commandType==CommandType::START)
 		{
 			/**< \todo wziąć dane z polecenia i uruchomić algorytm */
+			status=0;
+			modelStatus=new ModelStatus;
+			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 			modelTest(10,10,this);
+			for(int i=10;i<100;i+=10)
+			{
+				this_thread::sleep_for (chrono::seconds(1));
+				status=i;
+				modelStatus=new ModelStatus;
+				modelStatus->status=status;
+				controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
+			}
+			status=100;
 			//można opcjonalnie zwrócić, że działa
-			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL));
+			modelStatus=new ModelStatus;
+			modelStatus->status=status;
+			modelStatus->result=true;
+			/**< \todo zwrócić wynik algorytmu */
+			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 		}
 		else if(c->commandType==CommandType::STOP)
 		{
 			/**< \todo zatrzymać algorytm */
 			//też opcjonalne zgłoszenie, że zatrzymaliśmy
-			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL));
+			modelStatus=new ModelStatus;
+			modelStatus->status=status;
+			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 		}
 		else if(c->commandType==CommandType::STATUS)
 		{
 			/**< \todo zwrócić stan wykonania algorytmu */
 			//ważne zgłoszenie o stanie wykonania
-			/**< \todo wymyślić wygodny sposób zwracania stanu */
-			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL));
+			modelStatus=new ModelStatus;
+			modelStatus->status=status;
+			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 		}
 		delete c;
 	}
