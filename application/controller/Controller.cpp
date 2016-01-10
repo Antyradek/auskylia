@@ -208,7 +208,7 @@ void Controller::start()
 					if(status==100 && modelStatus!=nullptr && modelStatus->result==true)
 					{
 						/**< \todo zwracać sensowny wynik z modelu, a nie pastę */
-						str="<data><response>success</response><airports><airport><iata>SYD</iata></airport><airport><iata>WAW</iata></airport><airport><iata>GDA</iata></airport></airports></data>\0";
+						str="<data><response>success</response><airports><airport><iata>SYD</iata></airport><airport><iata>WAW</iata></airport><airport><iata>GDN</iata></airport></airports></data>\0";
 					}
 					else
 					{

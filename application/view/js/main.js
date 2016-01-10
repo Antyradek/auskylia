@@ -1,6 +1,7 @@
 var url = "server";
 var isWorking = false;
 var progressInterval;
+var airportsMap = {};
 
 ///Punkt startowy
 $(document).ready(function()
@@ -42,6 +43,7 @@ function updateCitySelections($xml)
         var iata = $(this).find("iata").html();
         var text = "<option value='" + iata + "'>" + name + " (" + iata + ")" + "</option>";
         $(".citySelect").append(text);
+        airportsMap[iata] = name;
     });
 }
 
@@ -84,6 +86,9 @@ function parseResult(data)
             break;
         case "progress":
             updateProgress($data);
+            break;
+        case "success":
+            showSolution($data);
             break;
         //...
         default:
@@ -128,6 +133,7 @@ function updateProgress($xml)
 ///pobierz dane z formularza i wyślij
 function calculate()
 {
+    $("#solutionWindow").slideUp();
     var start = $("#startCity").val();
     var end = $("#endCity").val();
     var price = $("#priceRange").val();
@@ -174,16 +180,38 @@ function sendData(data, error)
 //pokazuje błąd serwera
 function showServerError($xml)
 {
+    stopRefresh();
+    setHourglass(false);
+    showError("Błąd serwera" ,$xml.find("cause").html());
+}
+
+//zatrzymaj odświeżanie statusu
+function stopRefresh()
+{
     isWorking = false;
     clearInterval(progressInterval);
     $("#progressWindow").slideUp();
     $("#submitForm").slideDown();
-    setHourglass(false);
-    showError("Błąd serwera" ,$xml.find("cause").html());
 }
 
 //zatrzymaj obliczenia
 function stopCalc()
 {
     sendData("<data><command>stop</command></data>", "Nie można zaktualizować stanu obliczeń");
+}
+
+//pokaż wynik
+function showSolution($xml)
+{
+    stopRefresh();
+    //alert($xml.find("airports").html());
+    $xml.find("airports").find("airport").each(function(index)
+    {
+        var iata = $(this).find("iata").html();
+        var name = airportsMap[iata];
+        var inner = $("#solution").html();
+        inner += "<div><p>" + name + "(" + iata + ")</p></div>";
+        $("#solution").html(inner);
+    });
+    $("#solutionWindow").slideDown();
 }

@@ -192,3 +192,8 @@ fieldset
 {
     display: none;
 }
+
+#solutionWindow
+{
+    display: none;
+}
