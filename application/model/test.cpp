@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <chrono>
 
 #include "Model.hpp"
 
@@ -179,20 +180,31 @@ void populationTest( unsigned gSize, unsigned pSize )
 
 void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 {
+	using namespace std::chrono;
+
 	std::cout << std::endl << "Starting model test:" << std::endl;
 
 	Model m;
 	StrategyClosest s;
 	MutationUniform mut;
 	GeneratorUniform gen;
+
 	Weights w1 = { 1.0, 1.0, 1.0, 1.0};
 	Weights w2 = { 0.1, 0.1, 2.0, 0.1};
 
+	auto gen_start = steady_clock::now();
+
 	Graph * g = m.generateGraph( gSize, &gen );
 
+	auto gen_stop = steady_clock::now();
+	
 	m.useGraph(g);
 
+	auto pop_start = steady_clock::now();
+
 	m.createPopulation( pSize, &s, &mut );
+
+	auto pop_stop = steady_clock::now();
 
 	std::cout << std::endl << "Wagi 1.0, 1.0, 1.0, 1.0, 1.0" << std::endl;
 	
@@ -200,17 +212,22 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 
 	m.getPopulation()->print();
 
-	m.evolve( iter );
-
-	m.getPopulation()->print();
-
-	std::cout << std::endl << "Wagi 0.1, 2.0, 0.1, 2.0, 0.1" << std::endl;
-
-	m.setWeights( w2 );
+	auto ev_start = steady_clock::now();
 
 	m.evolve( iter );
 
+	auto ev_stop = steady_clock::now();
+
 	m.getPopulation()->print();
+
+	std::cout << std::endl;
+	std::cout << "Wierzchołki:                      " << gSize                                                      <<std::endl;
+	std::cout << "Populacja:                        " << pSize                                                      <<std::endl;
+	std::cout << "Iteracje:                         " << iter                                                       <<std::endl;
+	std::cout << "Czas generowania grafu [ms]:      " << duration<double, std::milli>(gen_stop - gen_start).count() <<std::endl;
+	std::cout << "Czas generowania populacji [ms]:  " << duration<double, std::milli>(pop_stop - pop_start).count() <<std::endl;
+	std::cout << "Czas ewolucji [ms]:               " << duration<double, std::milli>(ev_stop  - ev_start ).count() <<std::endl;
+	std::cout << std::endl;
 }
 
 int main(int argc, char ** argv)
@@ -243,7 +260,7 @@ int main(int argc, char ** argv)
 		std::cout << "Za mało argumentów; podaj liczbę wierzcholków, rozmiar populacji i liczbę ewolucji." << std::endl;
 	}
 
-        std::cout << "It doesn't do much project-related yet, but it can spawn dragons:" << std::endl << std::endl << dragon << std::endl;
+        std::cout << "It does quite a lot project-related now and it still can spawn dragons!" << std::endl << std::endl << dragon << std::endl;
 
 
         return 0;
