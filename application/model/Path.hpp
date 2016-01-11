@@ -35,6 +35,8 @@ public:
 	unsigned & operator[]( unsigned n ) const;
 
 	bool operator<(const Path & that) const;
+
+	bool operator==(const Path & that) const;
 	
 	unsigned getLength() const;
 

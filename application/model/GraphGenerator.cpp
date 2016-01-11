@@ -38,6 +38,7 @@ void GeneratorUniform::generate( std::vector<Node> & nodes, Matrix & matrix ) co
 	unsigned short speed;
 	unsigned short safety;
 	unsigned short comfort;
+	unsigned short cost;
 	unsigned distance;
 
 	for( unsigned i = 0; i < nodesNumber; ++i )
@@ -56,7 +57,9 @@ void GeneratorUniform::generate( std::vector<Node> & nodes, Matrix & matrix ) co
 
 			matrix[ i ][ j ][ (unsigned)Parameters::COMFORT ] = comfort;
 
-			matrix[ i ][ j ][ (unsigned)Parameters::COST ] = distance * comfort * speed;
+			cost = ( ( comfort + speed ) >> 1 ) + rollUniform(0, 2) - 1;
+
+			matrix[ i ][ j ][ (unsigned)Parameters::COST ] = distance * cost;
 
 			for( unsigned k = 0; k < (unsigned)Parameters::Count; ++k )
 				matrix[ j ][ i ][ k ] = matrix[ i ][ j ][ k ];

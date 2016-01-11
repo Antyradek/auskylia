@@ -102,6 +102,8 @@ Path::Path(
 	delete [] good;
 
 	DBG_DO(	print() );
+
+	rate();
 }
 
 Path::Path( std::list<unsigned> & list, const Graph * const graph, Weights & weights ) : graph(graph), weights(weights)
@@ -145,6 +147,21 @@ unsigned & Path::operator[]( unsigned n ) const
 bool Path::operator<( const Path & that ) const
 {
 	return rating < that.getRating();
+}
+
+bool Path::operator==( const Path & that ) const
+{
+	if( this->length != that.length )
+		return false;
+
+	if( this->rating != that.rating )
+		return false;
+
+	for( unsigned i = 0; i < length; ++i )
+		if( this->path[i] != that.path[i] )
+			return false;
+
+	return true;
 }
 
 unsigned Path::getLength() const
@@ -200,7 +217,7 @@ void Path::rate()
 
 	DBG("d " << distance << " s " << speed << " c " << com << " $ " << cost << " sa " << saf );
 
-	rating = ( distance * speed * com - cost ) * saf;
+	rating = speed + com + saf - (double)cost/distance;
 
 }
 

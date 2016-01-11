@@ -55,8 +55,6 @@ void Population::evolve()
 
 	for(int i = 0; i < half>>1; ++i)
 	{
-		delete paths[half + 2*i];
-		delete paths[half + 2*i + 1];
 		newPaths( out1[i], out2[i], paths[half + 2*i], paths[half + 2*i + 1] );
 	}
 
@@ -71,14 +69,28 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 	DBG_DO( in1->print() );
 	DBG_DO( in2->print() );
 
-	if( in1 -> getLength() < 2 || in2 -> getLength() < 2)
+	if( in1 -> getLength() < 3 || in2 -> getLength() < 3)
 	{
-		out1 = new Path( graph, weights );
-		out2 = new Path( graph, weights );
+		do
+		{
+			delete out1;
+			out1 = new Path( graph, weights );
+		}
+		while( isInPopulation( out1 ) );
+
+		do
+		{
+			delete out2;
+			out2 = new Path( graph, weights );
+		}
+		while( isInPopulation(out2) );
 	}
 
 	else
 	{
+		delete out1;
+		delete out2;
+
 		unsigned cut1 = rollUniform( 0, in1 -> getLength() - 2 );
 		unsigned cut2 = rollUniform( 0, in2 -> getLength() - 2 );
 
@@ -92,8 +104,29 @@ void Population::newPaths ( Path * in1, Path * in2, Path * & out1, Path * & out2
 		mutation->mutate( tmp2, list2, nodes );
 		
 		out1 = new Path( list1, graph, weights );
+		while( isInPopulation( out1 ) )
+		{
+			delete out1;
+			out1 = new Path( graph, weights );
+		}
+
 		out2 = new Path( list2, graph, weights );
+		while( isInPopulation( out2 ) )
+		{
+			delete out2;
+			out2 = new Path( graph, weights );
+		}
 	}
+}
+
+bool Population::isInPopulation( Path * path ) const
+{
+	unsigned i = 0;
+	while( paths[i] != path )
+		if( *paths[i++] == *path )
+			return true;
+
+	return false;
 }
 
 Path * Population::getPath( unsigned n ) const

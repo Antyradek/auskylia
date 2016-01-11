@@ -85,6 +85,8 @@ private:
 	const Graph * const graph;
 
 	const unsigned nodes;
+
+	bool isInPopulation( Path * path ) const;
 };
 
 #endif // POPULATION_HPP

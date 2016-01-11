@@ -186,7 +186,7 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 	MutationUniform mut;
 	GeneratorUniform gen;
 	Weights w1 = { 1.0, 1.0, 1.0, 1.0};
-	Weights w2 = { 0.1, 2.0, 0.1, 0.1};
+	Weights w2 = { 0.1, 0.1, 2.0, 0.1};
 
 	Graph * g = m.generateGraph( gSize, &gen );
 
@@ -194,6 +194,8 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 
 	m.createPopulation( pSize, &s, &mut );
 
+	std::cout << std::endl << "Wagi 1.0, 1.0, 1.0, 1.0, 1.0" << std::endl;
+	
 	m.setWeights( w1 );
 
 	m.getPopulation()->print();
@@ -201,6 +203,8 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 	m.evolve( iter );
 
 	m.getPopulation()->print();
+
+	std::cout << std::endl << "Wagi 0.1, 2.0, 0.1, 2.0, 0.1" << std::endl;
 
 	m.setWeights( w2 );
 
