@@ -147,7 +147,7 @@ void pathTest( unsigned size)
 
 	Graph graph1 = Graph( GRAPH_SIZE, new GeneratorUniform() );
 	
-	Weights w = { 1.0, 1.0, 1.0, 1.0};
+	Weights w = { 50, 50, 50, 50};
 
 	Path p = Path( &graph1, w );
 
@@ -167,7 +167,7 @@ void populationTest( unsigned gSize, unsigned pSize )
 	MutationUniform mut;
 
 	Population pop( &graph, &mut, &str, pSize);
-	Weights w = { 1.0, 1.0, 1.0, 1.0};
+	Weights w = { 50, 50, 50, 50};
 	pop.setWeights( w );
 
 	pop.print();
@@ -189,8 +189,8 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 	MutationUniform mut;
 	GeneratorUniform gen;
 
-	Weights w1 = { 1.0, 1.0, 1.0, 1.0};
-	Weights w2 = { 0.1, 0.1, 2.0, 0.1};
+	Weights w1 = { 50, 50, 50, 50};
+	Weights w2 = { 1, 1, 100, 1};
 
 	auto gen_start = steady_clock::now();
 
