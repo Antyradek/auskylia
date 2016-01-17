@@ -26,6 +26,7 @@ $(document).ready(function()
 
     //załaduj lotniska
     loadAirports();
+
 });
 
 ///ładuje listę lotnisk
@@ -210,7 +211,7 @@ function showSolution($xml)
         var iata = $(this).find("iata").html();
         var name = airportsMap[iata];
         var inner = $("#solution").html();
-        inner += "<div><p>" + name + "(" + iata + ")</p></div>";
+        inner += "<p class='solutionAirport'>" + name + "(" + iata + ")</p>";
         $("#solution").html(inner);
     });
     $("#solutionWindow").slideDown();
