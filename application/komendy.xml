@@ -20,20 +20,14 @@ Zapytanie:
         <airport>
             <name>Sydney</name>
             <iata>SYD</iata>
-            <north>-33.87</north>
-            <east>151.2</east>
         </airport>
         <airport>
             <name>Warszawa</name>
             <iata>WAW</iata>
-            <north>52.26</north>
-            <east>21.02</east>
         </airport>
         <airport>
             <name>Gdańsk</name>
-            <iata>GDA</iata>
-            <north>54.36</north>
-            <east>18.64</east>
+            <iata>GDN</iata>
         </airport>
 		<!-- itd.. -->
     </airports>
