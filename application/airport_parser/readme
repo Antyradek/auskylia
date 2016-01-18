@@ -1,0 +1,24 @@
+Plik airports. Nazwy mają zamienione spacje na podkreślniki, więc mogą być wczytane bez problemu. Można użyć
+funkcji replace z <algotithm>, aby przywrócić do ludzkiej formy
+- Miasto (zamiast spacji '_')
+- Kraj (zamiast spacji '_')
+- IATA
+- Szerokość geograficzna (N-S)
+- Długość Geograficzna (W-E)
+
+Plik routes
+- IATA początku
+- IATA końca
+- Cena przelotu (odległość z modyfikacją normalną)
+- Bezpieczeństwo (rozkład normalny (0,1))
+- Komfort (rozkład nromalny (0,1))
+- Odległość w metrach (prawdziwa, obliczona ze współrzędnych geograficznych)
+
+Aby skompilować
+g++ parse.cpp --std=c++11
+Potem przekierować do pliku
+
+Dane pochodzą z 
+http://openflights.org/data.html
+Pliki mają zamienione spacje na podkreślniki i przecinki na spacje, żeby łatwo było wczytywać strumieniem
+XML do widoku można bardzo łatwo wygenerować programowo
