@@ -120,6 +120,8 @@ Model::Model() : graph(nullptr),
 	m->getPopulation()->print();
 }*/
 
+int v1=50,v2=50,v3=50,v4=50;
+
 void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 {
 	using namespace std::chrono;
@@ -131,7 +133,7 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 	MutationUniform mut;
 	GeneratorUniform gen;
 
-	Weights w1 = { 50, 50, 50, 50};
+	Weights w1 = { v1, v2, v3, v4};
 	Weights w2 = { 1, 1, 100, 1};
 
 	auto gen_start = steady_clock::now();
@@ -148,7 +150,7 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 
 	auto pop_stop = steady_clock::now();
 
-	std::cout << std::endl << "Wagi 1.0, 1.0, 1.0, 1.0, 1.0" << std::endl;
+	std::cout << std::endl << "Wagi "<<v1<<", "<<v2<<", "<<v3<<", "<<v4<< std::endl;
 
 	m->setWeights( w1 );
 
@@ -198,6 +200,10 @@ void Model::doMainJob()
 			unsigned gSize=100;
 			unsigned pSize=100;
 			unsigned iter=10000;
+			v1=strtol(c->price.c_str(),0,10);
+			v2=strtol(c->safety.c_str(),0,10);
+			v3=strtol(c->comfort.c_str(),0,10);
+			v4=strtol(c->price.c_str(),0,10);
 			thread modelTestThread(modelTest,gSize,pSize,this,iter);
 			//modelTest(10,10,this,1000);
 			while(evolutionStep+1<iter)
