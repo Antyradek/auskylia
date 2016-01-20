@@ -211,7 +211,7 @@ Model::Model() : graph(nullptr),
 	modelBlockingQueue=new BlockingQueue<Command*>;
 }
 
-unsigned short v1=50,v2=50,v3=50,v4=50;
+unsigned short v[(unsigned)Parameters::Count] = { 50, 50, 50, 50};
 
 void modelRun( unsigned gSize, unsigned pSize, Model* model, unsigned iter, std::string start, std::string end )
 {
@@ -224,7 +224,13 @@ void modelRun( unsigned gSize, unsigned pSize, Model* model, unsigned iter, std:
 	MutationUniform mut;
 	GeneratorUniform gen;
 
-	Weights w1 = { v1, v2, v3, v4};
+	Weights w1 = 
+	{
+		v[0],
+		v[1],
+		v[2],
+		v[3]
+	};
 
 	auto gen_start = steady_clock::now();
 
@@ -242,7 +248,7 @@ void modelRun( unsigned gSize, unsigned pSize, Model* model, unsigned iter, std:
 
 	auto pop_stop = steady_clock::now();
 
-	std::cout << std::endl << "Wagi "<<v1<<", "<<v2<<", "<<v3<<", "<<v4<< std::endl;
+	std::cout << std::endl << "Wagi "<< v[0] <<", "<< v[1] <<", "<< v[2] <<", "<< v[3] << std::endl;
 
 	m->setWeights( w1 );
 
@@ -318,10 +324,10 @@ void Model::doMainJob()
 			unsigned gSize=3464;
 			unsigned pSize=100;
 			unsigned iter=100;//000;
-			v1=strtol(c->price.c_str(),0,10);
-			v2=strtol(c->safety.c_str(),0,10);
-			v3=strtol(c->comfort.c_str(),0,10);
-			v4=strtol(c->time.c_str(),0,10);
+			v[ (unsigned)Parameters::COST ]    =strtol(c->price.c_str(),0,10);
+			v[ (unsigned)Parameters::SAFETY ]  =strtol(c->safety.c_str(),0,10);
+			v[ (unsigned)Parameters::COMFORT ] =strtol(c->comfort.c_str(),0,10);
+			v[ (unsigned)Parameters::TIME ]    =strtol(c->time.c_str(),0,10);
 			std::string start = c->start;
 		        std::string end = c->end;	
 			thread modelRunThread(modelRun,gSize,pSize,this,iter,start,end);
