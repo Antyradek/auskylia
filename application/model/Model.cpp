@@ -280,7 +280,7 @@ string Model::getIATAbyId(int id)
 {
 	if(airportList.empty())
 	{
-		loadIataList("iata_list");
+		loadIataList("model/iata_list");
 	}
 	if(airportList.empty())
 	{

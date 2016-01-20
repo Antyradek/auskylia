@@ -155,11 +155,7 @@ void Controller::start()
 					cout<<"msg->messageType==LIST"<<endl;
 					coutMutex.unlock();
 					#endif // _DEBUG
-					f.open("airports.xml",fstream::in | fstream::binary);
-					if(!f.is_open())
-					{
-						f.open("../../airports.xml",fstream::in | fstream::binary);
-					}
+					f.open("controller/airports.xml",fstream::in | fstream::binary);
 					if(!f.is_open())
 					{
 						cout<<"nie znaleziono pliku airports.xml"<<endl;

@@ -1,14 +1,18 @@
 CXX = g++
-CPPFLAGS= -std=c++11 -Wall -pthread
+CPPFLAGS= -std=c++11 -Wall -pthread -D_DEBUG
 LFLAGS = -lpthread
-FILES = $(wildcard controller/*.cpp) $(wildcard model/*.cpp)
+FILES_ALL = $(wildcard controller/*.cpp) $(wildcard model/*.cpp)
+FILES=$(filter-out model/test.cpp controller/BlockingQueueTests.cpp controller/BlockingQueue.cpp, $(FILES_ALL))
 EXEC = auskylia
 
--include $(FILES:%.cpp=%.d)
+all: $(EXEC)
+
+$(EXEC): CPPFLAGS+=-O3
+$(EXEC): $(FILES:%.cpp=%.o)
+	$(CXX) $(CPPFLAGS) $(LFLAGS) -MMD -MP -o $(EXEC) $^
 
 
-controllerMain: controllerMain.cpp Controller.cpp ViewServer.cpp Message.cpp XMLParser.cpp
-	g++ -std=c++11 -Wall -D_DEBUG -g -pthread -lpthread -o controllerMain controllerMain.cpp Controller.cpp ViewServer.cpp Message.cpp XMLParser.cpp
+.PHONY: clean
 
 clean:
 	rm -f $(EXEC)
@@ -16,12 +20,3 @@ clean:
 	rm -f controller/*.d
 	rm -f model/*.o
 	rm -f model/*.d
-
-Release: CPPFLAGS+=-O3
-Release: $(FILES_D:%.cpp=%.o)
-	$(CXX) $(CPPFLAGS) $(LFLAGS) -MMD -MP -o $(EXEC) $^
-
-
-all: clean
-
-.PHONY: clean

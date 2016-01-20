@@ -277,7 +277,7 @@ std::string ViewServer::getPageRequest(const std::string& message)
 std::string ViewServer::getPage(std::string resource, std::string& type)
 {
 	using namespace std;
-	std::string viewDir = "../view";
+	std::string viewDir = "view";
 
 	if(resource == "/")
 	{
