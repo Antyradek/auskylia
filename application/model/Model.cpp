@@ -46,7 +46,7 @@ void Model::saveGraph( const std::string & file, Graph * graph ) const
 
 }
 
-unsigned loadAirportList( const std::string filename )
+unsigned Model::loadAirportList( const std::string filename )
 {
 	DBG("Model::loadAirportList()");
 
@@ -57,8 +57,28 @@ unsigned loadAirportList( const std::string filename )
 	while( ! file.eof() )
 	{
 		std::getline( file, str );
-
 	}
+
+}
+
+unsigned Model::loadIataList( const std::string filename )
+{
+	DBG("Model::loadIataList( " << file << " )");
+
+	std::ifstream file ( filename );
+
+	std::string str;
+
+	unsigned count = 0;
+
+	while( ! file.eof() )
+	{
+		std::getline( file, str );
+		airportList.push_back( str );
+		++count;
+	}
+
+	return count;
 
 }
 

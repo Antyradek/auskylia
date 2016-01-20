@@ -52,6 +52,16 @@ public:
 	unsigned loadAirportList( const std::string file );
 
 	/**
+	 * \brief           Wczytuje kody IATA z listy i tworzy graf na jej podstawie.
+	 *                  Zakłada, że w danej linii jest dokładnie jeden kod IATA.
+	 *
+	 * \param[in] file  Ścieżka pliku z listą IATA
+	 *
+	 * \return          Liczba wczytanych kodów
+	 */
+	unsigned loadIataList( const std::string file );
+
+	/**
 	 * \brief              Ustawia wagi parametrów trasy.
 	 * \param[in]  weights Tablica wag przypisanych parametrom trasy
 	 */
