@@ -72,6 +72,8 @@ unsigned Model::loadIataList( const std::string filename )
 
 	unsigned count = 0;
 
+	airportList.clear();/**< trzeba wyczycić, jeśli wczytujemy jescze raz */
+
 	while( ! file.eof() )
 	{
 		std::getline( file, str );
@@ -226,9 +228,21 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 	std::cout << std::endl;
 }
 
-string getIATAbyId(int id)
+string Model::getIATAbyId(int id)
 {
-	return string("WAW");
+	if(airportList.empty())
+	{
+		loadIataList("iata_list");
+	}
+	if(airportList.empty())
+	{
+		cout<<"Lista IATA jest pusta"<<endl;
+		return string("WAW");
+	}
+	else
+	{
+		return airportList.at(id);/**< tu może walnąć wyjątkiem, jeśli id będzie większe niż lista */
+	}
 }
 
 ostringstream ss;
@@ -294,10 +308,6 @@ void Model::doMainJob()
 			unsigned l = p.getLength();
 			for( unsigned i = 0; i < l; ++i)
 			{
-				//std::cout << p[i] << std::endl;
-
-				//ss << p[i];
-				//string str2 = ss.str();
 				pom+="<airport><iata>"+getIATAbyId(p[i])+"</iata></airport>";
 			}
 			modelStatus->str="<data><response>success</response><airports><airport><iata>"+c->start+"</iata></airport>"+pom+"<airport><iata>"+c->end+"</iata></airport></airports></data>\0";
