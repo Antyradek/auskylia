@@ -103,6 +103,9 @@ void ViewServer::listenAndRespond()
     sa.sin_port = htons(portNo);
     sa.sin_addr.s_addr = htonl(INADDR_ANY);
 
+	int reuseaddr = 1;
+	setsockopt(SocketFD, SOL_SOCKET, SO_REUSEADDR, &reuseaddr, sizeof(reuseaddr));
+    
     if (-1 == bind(SocketFD,(struct sockaddr *)&sa, sizeof sa))
 	{
       perror("Połączenie nieudane");

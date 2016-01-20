@@ -140,6 +140,21 @@ Path * Population::getPath( unsigned n ) const
 	return paths[n];
 }
 
+unsigned Population::getSize() const
+{
+	return size;
+}
+
+Strategy * Population::getStrategy() const
+{
+	return strategy;
+}
+
+Mutation * Population::getMutation() const
+{
+	return mutation;
+}
+
 void Population::setStrategy( Strategy * strategy )
 {
 	this->strategy = strategy;

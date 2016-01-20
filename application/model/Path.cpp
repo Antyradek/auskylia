@@ -20,7 +20,7 @@ Path::Path( const Graph * const graph, Weights & weights ) : rating(0), graph(gr
 {
 	DBG("Path() new");
 
-	params = new unsigned[ Parameters::Count ];
+	params = new double[ Parameters::Count ];
 
 	for(unsigned i = 0; i < (unsigned)Parameters::Count; ++i)
 		params[ i ] = 0;
@@ -64,7 +64,7 @@ Path::Path(
 	DBG("Path() from others");
 	DBG("length1: " << first.getLength() << ", end1: " << end1 << ", length2: " << second.getLength() << ", start2: " << start2 );
 
-	params = new unsigned[ Parameters::Count ];
+	params = new double[ Parameters::Count ];
 
 	for(unsigned i = 0; i < (unsigned)Parameters::Count; ++i)
 		params[ i ] = 0;
@@ -118,7 +118,7 @@ Path::Path(
 
 Path::Path( std::list<unsigned> & list, const Graph * const graph, Weights & weights ) : graph(graph), weights(weights)
 {
-	params = new unsigned[ Parameters::Count ];
+	params = new double[ Parameters::Count ];
 
 	for(unsigned i = 0; i < (unsigned)Parameters::Count; ++i)
 		params[ i ] = 0;
@@ -141,7 +141,7 @@ Path::Path( const Path & that ) : graph(that.graph), weights(that.weights), leng
 {
 	DBG("Patch() copy");
 	
-	params = new unsigned[ Parameters::Count ];
+	params = new double[ Parameters::Count ];
 
 	for(unsigned i = 0; i < (unsigned)Parameters::Count; ++i)
 		params[ i ] = that.params[ i ];
@@ -229,8 +229,8 @@ void Path::rate()
 	else
 		rateEdge( 0, nodes - 1, param, tmpParam);
 
-	double saf = (double)safety / time;
-	double com = (double)comfort / time;
+	double saf = (double)safety / (double)time;
+	double com = (double)comfort / (double)time;
 	double distance = (unsigned)Limits::MAP_SIZE * 1.415;
 	double speed = distance / time;
 

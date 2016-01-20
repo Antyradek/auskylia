@@ -37,16 +37,6 @@ void Model::useGraph( Graph * const graph )
 	this->graph = graph;
 }
 
-void Model::useGraph( const std::string & file )
-{
-
-}
-
-void Model::saveGraph( const std::string & file, Graph * graph ) const
-{
-
-}
-
 unsigned Model::loadAirportList( const std::string filename )
 {
 	DBG("Model::loadAirportList()");
@@ -69,6 +59,15 @@ void Model::setEndNodes( unsigned start, unsigned end )
 
 	if(graph)
 		graph->setEndNodes( start, end );
+
+	if(population)
+	{
+		Mutation * m = population->getMutation();
+		Strategy * s = population->getStrategy();
+		unsigned size = population->getSize();
+
+		createPopulation( size, s, m );
+	}
 }
 
 unsigned Model::loadIataList( const std::string filename )
@@ -106,7 +105,12 @@ void Model::setWeights( const Weights & weights )
 void Model::createPopulation( unsigned size, Strategy * strategy, Mutation * mutation )
 {
 	if( graph != nullptr )
+	{
+		if( population )
+			delete population;
+
 		population = new Population( graph, mutation, strategy, size );
+	}
 }
 
 void Model::evolve( unsigned times )

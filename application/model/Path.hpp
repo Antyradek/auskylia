@@ -59,7 +59,7 @@ private:
 	unsigned * path;
 	unsigned length;
 
-	unsigned * params;
+	double * params;
 
 	double rating;
 

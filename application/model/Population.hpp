@@ -66,6 +66,12 @@ public:
 
 	void setMutation( Mutation * mutation );
 
+	Strategy * getStrategy() const;
+
+	Mutation * getMutation() const;
+
+	unsigned getSize() const;
+
 	void setWeights( const Weights & arr );
 
 	/**
