@@ -65,6 +65,7 @@ function setHourglass(setOn)
 ///wczytaj początek rezultatu i wykonaj odpowiednią dla niego akcję
 function parseResult(data)
 {
+	//alert("Odebrano: \n" + data);
     try
     {
         var $xml = $($.parseXML(data));
