@@ -90,6 +90,11 @@ public:
 	 */
 	Population * getPopulation();
 
+	/**
+	 * \brief   Zwraca n-tą ścieżkę
+	 * \return  n-ta najlepsza ścieżka
+	 */
+	Path getPath ( unsigned n );
 
 
 	/**

@@ -228,6 +228,8 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 	std::cout << "Czas generowania populacji [ms]:  " << duration<double, std::milli>(pop_stop - pop_start).count() <<std::endl;
 	std::cout << "Czas ewolucji [ms]:               " << duration<double, std::milli>(ev_stop  - ev_start ).count() <<std::endl;
 	std::cout << std::endl;
+
+	m.getPath(2).print();
 }
 
 int main(int argc, char ** argv)

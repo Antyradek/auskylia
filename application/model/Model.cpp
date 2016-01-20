@@ -108,6 +108,12 @@ Population * Model::getPopulation()
 	return population;
 }
 
+Path Model::getPath ( unsigned n )
+{
+	if(population)
+		return *(population->getPath(n));
+}
+
 Model::Model() : graph(nullptr),
 		 population(nullptr),
 		 controllerBlockingQueue(nullptr),
