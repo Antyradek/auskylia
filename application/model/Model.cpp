@@ -64,7 +64,7 @@ unsigned Model::loadAirportList( const std::string filename )
 
 unsigned Model::loadIataList( const std::string filename )
 {
-	DBG("Model::loadIataList( " << file << " )");
+	DBG("Model::loadIataList( " << filename << " )");
 
 	std::ifstream file ( filename );
 
