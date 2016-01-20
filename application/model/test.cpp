@@ -240,6 +240,11 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 
 	for( unsigned i = 0; i < l; ++i)
 		std::cout << p[i] << " " << v[i] << std::endl;
+
+	std::cout << p.getParam( Parameters::TIME ) << std::endl;
+	std::cout << p.getParam( Parameters::SAFETY ) << std::endl;
+	std::cout << p.getParam( Parameters::COMFORT ) << std::endl;
+	std::cout << p.getParam( Parameters::COST ) << std::endl;
 }
 
 int main(int argc, char ** argv)

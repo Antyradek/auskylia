@@ -42,6 +42,8 @@ public:
 
 	double getRating() const;
 
+	double getParam( Parameters p ) const;
+
 	void rate();
 
 	inline void rateEdge(
@@ -56,6 +58,8 @@ public:
 private:
 	unsigned * path;
 	unsigned length;
+
+	unsigned * params;
 
 	double rating;
 

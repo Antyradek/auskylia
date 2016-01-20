@@ -20,6 +20,11 @@ Path::Path( const Graph * const graph, Weights & weights ) : rating(0), graph(gr
 {
 	DBG("Path() new");
 
+	params = new unsigned[ Parameters::Count ];
+
+	for(unsigned i = 0; i < (unsigned)Parameters::Count; ++i)
+		params[ i ] = 0;
+
 	unsigned nodes = graph -> getNodes();
 
 	static unsigned nodesSqrt = isqrt( nodes );
@@ -58,6 +63,11 @@ Path::Path(
 {
 	DBG("Path() from others");
 	DBG("length1: " << first.getLength() << ", end1: " << end1 << ", length2: " << second.getLength() << ", start2: " << start2 );
+
+	params = new unsigned[ Parameters::Count ];
+
+	for(unsigned i = 0; i < (unsigned)Parameters::Count; ++i)
+		params[ i ] = 0;
 
 	unsigned len1 = end1 + 1;
 	unsigned len2 = second.getLength() - start2;
@@ -108,6 +118,11 @@ Path::Path(
 
 Path::Path( std::list<unsigned> & list, const Graph * const graph, Weights & weights ) : graph(graph), weights(weights)
 {
+	params = new unsigned[ Parameters::Count ];
+
+	for(unsigned i = 0; i < (unsigned)Parameters::Count; ++i)
+		params[ i ] = 0;
+
 	length = list.size();
 
 	path = new unsigned [length];
@@ -125,6 +140,11 @@ Path::Path( std::list<unsigned> & list, const Graph * const graph, Weights & wei
 Path::Path( const Path & that ) : graph(that.graph), weights(that.weights), length(that.length), rating(that.rating)
 {
 	DBG("Patch() copy");
+	
+	params = new unsigned[ Parameters::Count ];
+
+	for(unsigned i = 0; i < (unsigned)Parameters::Count; ++i)
+		params[ i ] = that.params[ i ];
 
 	path = new unsigned [ length ];
 
@@ -136,6 +156,7 @@ Path::~Path()
 {
 	DBG("~Path(" << this << ")");
 	delete [] path;
+	delete [] params;
 }
 
 unsigned & Path::operator[]( unsigned n ) const
@@ -174,6 +195,11 @@ double Path::getRating() const
 	return rating;
 }
 
+double Path::getParam( Parameters p ) const
+{
+	return params[ (unsigned)p ];
+}
+
 void Path::rate()
 {
 	DBG("Path::rate()");
@@ -210,6 +236,11 @@ void Path::rate()
 
 	DBG(" " << weights[0] << " " << weights[1] << " " << weights[2] << " " << weights[3]  );
 	
+	params[ (unsigned)Parameters::TIME ] = time;
+	params[ (unsigned)Parameters::COST ] = cost;
+	params[ (unsigned)Parameters::COMFORT ] = com;
+	params[ (unsigned)Parameters::SAFETY ] = saf;
+
 	speed   *= weights[ (unsigned)Parameters::TIME ];
 	cost    *= weights[ (unsigned)Parameters::COST ];
 	com     *= weights[ (unsigned)Parameters::COMFORT ];
