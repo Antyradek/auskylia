@@ -31,6 +31,7 @@ int main(int argc, char* argv[])
 		{
 			portNo=strtol(argv[1],0,10);
 		}
+		cout<<"Aplikacja dostępna na porcie: "<<portNo<<endl;
 		Controller* controller=new Controller();
 		controller->setModel(new Model());
 		controller->setViewServer(new ViewServer(portNo));

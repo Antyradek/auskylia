@@ -50,7 +50,7 @@ Message* XMLParser::operator()(std::string xml)
 {
 	using namespace std;
 
-	#ifdef _DEBUG
+	#ifdef _DEBUG2
 	coutMutex.lock();
 	cout<<"XMLParser::operator() xml: "<<xml<<endl;
 	coutMutex.unlock();
@@ -195,7 +195,7 @@ Message* XMLParser::operator()(std::string xml)
 
 Command* XMLParser::operator()(std::string xml,Command* c)
 {
-	#ifdef _DEBUG
+	#ifdef _DEBUG2
 	coutMutex.lock();
 	cout<<"XMLParser::operator()(std::string xml,Command* c) xml: "<<xml<<endl;
 	coutMutex.unlock();

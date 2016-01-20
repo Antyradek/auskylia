@@ -14,6 +14,9 @@
 #include <fstream>
 #include <thread>
 #include <chrono>
+#include <string>
+#include <cstdlib>
+#include <thread>
 
 
 extern std::mutex coutMutex;
@@ -76,7 +79,11 @@ void Model::evolve( unsigned times )
 {
 	if( population != nullptr )
 		for( unsigned i = 0; i < times; ++i )
+		{
+			evolutionStep=i;
 			population->evolve();
+		}
+	evolutionStep=times;
 }
 
 void Model::setStrategy( Strategy * strategy )
@@ -100,12 +107,13 @@ Model::Model() : graph(nullptr),
 		 population(nullptr),
 		 controllerBlockingQueue(nullptr),
 		 modelBlockingQueue(nullptr),
-		 shutDown(false)
+		 shutDown(false),
+		 evolutionStep(0)
 {
 	modelBlockingQueue=new BlockingQueue<Command*>;
 }
 
-void modelTest( unsigned gSize, unsigned pSize, Model* model)
+/*void modelTest( unsigned gSize, unsigned pSize, Model* model)
 {
 	std::cout << std::endl << "Starting model test:" << std::endl;
 
@@ -128,6 +136,60 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model)
 	m->evolve(1000);
 
 	m->getPopulation()->print();
+}*/
+
+int v1=50,v2=50,v3=50,v4=50;
+
+void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
+{
+	using namespace std::chrono;
+
+	std::cout << std::endl << "Starting model test:" << std::endl;
+
+	Model* m=model;
+	StrategyClosest s;
+	MutationUniform mut;
+	GeneratorUniform gen;
+
+	Weights w1 = { v1, v2, v3, v4};
+	Weights w2 = { 1, 1, 100, 1};
+
+	auto gen_start = steady_clock::now();
+
+	Graph * g = m->generateGraph( gSize, &gen );
+
+	auto gen_stop = steady_clock::now();
+
+	m->useGraph(g);
+
+	auto pop_start = steady_clock::now();
+
+	m->createPopulation( pSize, &s, &mut );
+
+	auto pop_stop = steady_clock::now();
+
+	std::cout << std::endl << "Wagi "<<v1<<", "<<v2<<", "<<v3<<", "<<v4<< std::endl;
+
+	m->setWeights( w1 );
+
+	m->getPopulation()->print();
+
+	auto ev_start = steady_clock::now();
+
+	m->evolve( iter );
+
+	auto ev_stop = steady_clock::now();
+
+	m->getPopulation()->print();
+
+	std::cout << std::endl;
+	std::cout << "Wierzchołki:                      " << gSize                                                      <<std::endl;
+	std::cout << "Populacja:                        " << pSize                                                      <<std::endl;
+	std::cout << "Iteracje:                         " << iter                                                       <<std::endl;
+	std::cout << "Czas generowania grafu [ms]:      " << duration<double, std::milli>(gen_stop - gen_start).count() <<std::endl;
+	std::cout << "Czas generowania populacji [ms]:  " << duration<double, std::milli>(pop_stop - pop_start).count() <<std::endl;
+	std::cout << "Czas ewolucji [ms]:               " << duration<double, std::milli>(ev_stop  - ev_start ).count() <<std::endl;
+	std::cout << std::endl;
 }
 
 void Model::doMainJob()
@@ -151,16 +213,33 @@ void Model::doMainJob()
 			/**< \todo wziąć dane z polecenia i uruchomić algorytm */
 			status=0;
 			modelStatus=new ModelStatus;
+			modelStatus->status=status;
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
-			modelTest(10,10,this);
-			for(int i=10;i<100;i+=10)
+			unsigned gSize=100;
+			unsigned pSize=100;
+			unsigned iter=10000;
+			v1=strtol(c->price.c_str(),0,10);
+			v2=strtol(c->safety.c_str(),0,10);
+			v3=strtol(c->comfort.c_str(),0,10);
+			v4=strtol(c->price.c_str(),0,10);
+			thread modelTestThread(modelTest,gSize,pSize,this,iter);
+			//modelTest(10,10,this,1000);
+			while(evolutionStep+1<iter)
 			{
 				this_thread::sleep_for (chrono::seconds(1));
-				status=i;
+				status=(int)(100.0f*(double)evolutionStep/(double)iter);
+				#ifdef _DEBUG
+				coutMutex.lock();
+				cout<<"status: "<<status<<endl;
+				cout<<"evolutionStep: "<<evolutionStep<<endl;
+				coutMutex.unlock();
+				#endif // DEBUG
 				modelStatus=new ModelStatus;
 				modelStatus->status=status;
 				controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 			}
+			modelTestThread.join();
+			cout<<endl<<"modelTestThread joined"<<endl<<endl;
 			status=100;
 			//można opcjonalnie zwrócić, że działa
 			modelStatus=new ModelStatus;

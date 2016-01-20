@@ -149,6 +149,8 @@ private:
 	BlockingQueue<Command*>* modelBlockingQueue;/**< kolejka na którą mają przychodzić polecenia z kontrolera */
 
 	bool shutDown;/**< czy nie zamykamy aplikacji */
+
+	unsigned int evolutionStep;
 };
 
 #endif // MODEL_HPP

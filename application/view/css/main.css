@@ -1,6 +1,6 @@
 body
 {
-     background: linear-gradient(to bottom right, #003466, #56b8ff);
+     background: linear-gradient(to bottom right, #003466, red);
      color: white;
      font-family: pixel;
      font-size: 150%;
@@ -55,6 +55,22 @@ body
 }
 
 .citySelect:hover
+{
+    background-color: #fc6f71;
+}
+
+.cityInput
+{
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: pixel;
+    font-size: 100%;
+    border: none;
+    transition: background-color 0.5s;
+}
+
+.cityInput:hover
 {
     background-color: #fc6f71;
 }
@@ -196,4 +212,19 @@ fieldset
 #solutionWindow
 {
     display: none;
+}
+
+#solution
+{
+    color: white;
+}
+
+div#solution p:last-child
+{
+    color: red;
+}
+
+div#solution p:first-child
+{
+    color: red;
 }
