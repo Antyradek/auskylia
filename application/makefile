@@ -1,5 +1,5 @@
 CXX = g++
-CPPFLAGS= -std=c++11 -Wall -pthread -D_DEBUG
+CPPFLAGS= -std=c++11 -Wall -pthread
 LFLAGS = -lpthread
 FILES_ALL = $(wildcard controller/*.cpp) $(wildcard model/*.cpp)
 FILES=$(filter-out model/test.cpp controller/BlockingQueueTests.cpp controller/BlockingQueue.cpp, $(FILES_ALL))

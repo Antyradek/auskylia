@@ -223,6 +223,7 @@ pip-log.txt
 *.exe
 *.stackdump
 *.depend
+auskylia
 
 */bin
 */obj
