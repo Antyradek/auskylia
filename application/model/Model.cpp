@@ -301,7 +301,7 @@ void Model::doMainJob()
 			v1=strtol(c->price.c_str(),0,10);
 			v2=strtol(c->safety.c_str(),0,10);
 			v3=strtol(c->comfort.c_str(),0,10);
-			v4=strtol(c->price.c_str(),0,10);
+			v4=strtol(c->time.c_str(),0,10);
 			thread modelTestThread(modelTest,gSize,pSize,this,iter);
 			//modelTest(10,10,this,1000);
 			while(evolutionStep+1<iter && !stopCalc)
