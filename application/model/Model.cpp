@@ -18,6 +18,7 @@
 #include <cstdlib>
 #include <thread>
 #include <fstream>
+#include <sstream>
 
 
 extern std::mutex coutMutex;
@@ -204,6 +205,8 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 	std::cout << std::endl;
 }
 
+ostringstream ss;
+
 void Model::doMainJob()
 {
 	int status=0;
@@ -260,7 +263,18 @@ void Model::doMainJob()
 			modelStatus=new ModelStatus;
 			modelStatus->status=status;
 			modelStatus->result=true;
-			modelStatus->str="<data><response>success</response><airports><airport><iata>"+c->start+"</iata></airport><airport><iata>WAW</iata></airport><airport><iata>"+c->end+"</iata></airport></airports></data>\0";
+			string pom="";
+			Path p = getPath( 0 );
+			unsigned l = p.getLength();
+			for( unsigned i = 0; i < l; ++i)
+			{
+				//std::cout << p[i] << std::endl;
+
+				ss << p[i];
+				string str2 = ss.str();
+				pom+="</airport><airport><iata>"+str2+"</iata></airport>";
+			}
+			modelStatus->str="<data><response>success</response><airports><airport><iata>"+c->start+"</iata></airport>"+pom+"<airport><iata>"+c->end+"</iata></airport></airports></data>\0";
 			/**< \todo zwrócić wynik algorytmu */
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 		}
