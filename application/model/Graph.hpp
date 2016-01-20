@@ -32,11 +32,19 @@ public:
 
 	unsigned getParam( unsigned n, unsigned m, Parameters param ) const;
 
+	void setEndNodes( unsigned start, unsigned end );
+
 	void print() const;
 
 	void printNodes() const;
 
 private:
+	void resetEndNodes();
+	
+	unsigned start;
+
+	unsigned end;
+
 	unsigned nodesNumber;
 
 	Matrix matrix;
