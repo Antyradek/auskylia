@@ -142,12 +142,31 @@ Population * Model::getPopulation()
 
 Path Model::getPath ( unsigned n )
 {
-	if(population)
-		return *(population->getPath(n));
+	DBG("Model::getPath()");
+
+	if( !population )
+		throw ("No population");
+	
+	Path p = *(population->getPath(n));
+
+	unsigned l = p.getLength();
+
+	for(unsigned i = 0; i < l; ++i)
+	{
+		if( p[i] == start )
+			p[i] = 0;
+		
+		if( p[i] == end )
+			p[i] = graph->getNodes();
+	}
+
+	return p;
+
 }
 
 std::vector<std::string> Model::getPathIata ( unsigned n )
 {
+	DBG("Model::getPathIata()");
 	if( !population )
 		throw ("No population");
 
@@ -158,7 +177,16 @@ std::vector<std::string> Model::getPathIata ( unsigned n )
 	std::vector<std::string> v ( l );
 
 	for( unsigned i = 0; i < l; ++i )
+	{
 		v[i] = airportList[ p[i] ];
+		
+		if( p[i] == start )
+			v[i] = airportList[ 0 ];
+
+		if( p[i] == end )
+			v[i] = airportList[ graph->getNodes() - 1 ];
+
+	}
 
 	return v;
 }
