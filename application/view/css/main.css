@@ -228,3 +228,14 @@ div#solution p:first-child
 {
     color: red;
 }
+
+meter
+{
+    width: 100%;
+}
+
+.solutionField
+{
+    color: cyan;
+    text-shadow: 0px 0px 10px cyan;
+}
