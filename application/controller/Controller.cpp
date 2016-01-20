@@ -142,10 +142,12 @@ void Controller::start()
 				break;
 			case MESSAGE_FROM_VIEW_SERVER:
 				msg=(Message*)e->data;
+				#ifdef _DEBUG
 				coutMutex.lock();
 				cout<<"Wiadomość z widoku: "<<msg->msg<<endl;
 				cout<<"msg->messageType: "<<msg->messageType<<endl;
 				coutMutex.unlock();
+				#endif // _DEBUG
 				if(msg->messageType==MessageType::LIST)
 				{
 					#ifdef _DEBUG
@@ -251,9 +253,11 @@ void Controller::start()
 				}
 				break;
 			case MESSAGE_FROM_MODEL:
+				#ifdef _DEBUG
 				coutMutex.lock();
 				cout<<"Wiadomość z modelu: "<<endl;
 				coutMutex.unlock();
+				#endif // _DEBUG
 				if(e->data!=nullptr)
 				{
 					//interesuje nas tylko najnowszy status modelu
