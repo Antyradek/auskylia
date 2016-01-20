@@ -326,6 +326,9 @@ void Model::doMainJob()
 		        std::string end = c->end;	
 			thread modelRunThread(modelRun,gSize,pSize,this,iter,start,end);
 			//modelTest(10,10,this,1000);
+			thread modelTestThread(modelTest,gSize,pSize,this,iter);
+>>>>>>> fe5c200c2c8ee3e0fc6cf29a643297d050391817
+			//modelTest(10,10,this,1000);
 			while(evolutionStep+1<iter && !stopCalc)
 			{
 				this_thread::sleep_for (chrono::seconds(1));
