@@ -205,6 +205,7 @@ function stopCalc()
 function showSolution($xml)
 {
     stopRefresh();
+	$("#solution").html("");
     //alert($xml.find("airports").html());
     $xml.find("airports").find("airport").each(function(index)
     {
