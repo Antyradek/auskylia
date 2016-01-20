@@ -216,12 +216,19 @@ void Controller::start()
 						cout<<endl<<"kontroler status: "<<status<<endl<<endl;
 						#endif // _DEBUG
 						#ifdef __CYGWIN__
+						ss.clear();
+						ss.str("");
 						ss << status;
 						string str2 = ss.str();
 						str="<data><response>progress</response><progress>"+str2+"</progress></data>\0";
 						#else
 						str="<data><response>progress</response><progress>"+to_string(status)+"</progress></data>\0";
 						#endif // __CYGWIN__
+						#ifdef _DEBUG
+						coutMutex.lock();
+						cout<<str<<endl;
+						coutMutex.unlock();
+						#endif // _DEBUG
 					}
 					/**< \todo możliwe są jeszcze odpowiedzi o zakończeniu lub porażce */
 					viewServer->viewServerBlockingQueue->push_back(str);
