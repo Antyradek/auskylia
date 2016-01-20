@@ -321,7 +321,7 @@ void Model::doMainJob()
 			v1=strtol(c->price.c_str(),0,10);
 			v2=strtol(c->safety.c_str(),0,10);
 			v3=strtol(c->comfort.c_str(),0,10);
-			v4=strtol(c->price.c_str(),0,10);
+			v4=strtol(c->time.c_str(),0,10);
 			std::string start = c->start;
 		        std::string end = c->end;	
 			thread modelRunThread(modelRun,gSize,pSize,this,iter,start,end);
