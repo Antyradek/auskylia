@@ -207,8 +207,8 @@ void Controller::start()
 					str.clear();
 					if(status==100 && modelStatus!=nullptr && modelStatus->result==true)
 					{
-						/**< \todo zwracać sensowny wynik z modelu, a nie pastę */
-						str="<data><response>success</response><airports><airport><iata>SYD</iata></airport><airport><iata>WAW</iata></airport><airport><iata>GDN</iata></airport></airports><price>20031</price><safety>0.98</safety><comfort>0.1</comfort><time>21233223</time></data>\0";
+						str=modelStatus->str;
+						//str="<data><response>success</response><airports><airport><iata>SYD</iata></airport><airport><iata>WAW</iata></airport><airport><iata>GDN</iata></airport></airports><price>20031</price><safety>0.98</safety><comfort>0.1</comfort><time>21233223</time></data>\0";
 					}
 					else
 					{
@@ -228,10 +228,18 @@ void Controller::start()
 				}
 				else if(msg->messageType==MessageType::STOP)
 				{
+					#ifdef _DEBUG
+					coutMutex.lock();
+					cout<<"CommandType::STOP"<<endl;
+					coutMutex.unlock();
+					#endif // _DEBUG
+					/**< \todo w modelu przerwać obliczenia */
+					Command* c=new Command(CommandType::STOP);
+					model->modelBlockingQueue->push_back(c);
+					model->stopCalc=true;
 					str.clear();
 					str="<data><response>failture</response><cause>Przerwano obliczenia.</cause></data>\0";
 					viewServer->viewServerBlockingQueue->push_back(str);
-					/**< \todo w modelu przerwać obliczenia */
 				}
 				break;
 			case MESSAGE_FROM_MODEL:

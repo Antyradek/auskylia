@@ -41,6 +41,12 @@ Population::Population(
 	std::sort( paths.begin(), paths.end(), pathPtrCompr() );
 }
 
+Population::~Population()
+{
+	for( auto p : paths )
+		delete p;
+}
+
 void Population::evolve()
 {
 	DBG("Population::evolve()");

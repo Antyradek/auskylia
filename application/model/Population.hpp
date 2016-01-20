@@ -38,6 +38,8 @@ public:
 		Strategy * strategy, 
 		const unsigned size = 100);
 
+	~Population();
+
 	/**
 	 * \brief               Jedna iteracja krzyżowania.
 	 * \paran[in] strategy  wskaźnik na strategię doboru osobników w pary

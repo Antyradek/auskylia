@@ -11,11 +11,15 @@
 
 #include <mutex>
 #include <iostream>
+#include <fstream>
 #include <thread>
 #include <chrono>
 #include <string>
 #include <cstdlib>
 #include <thread>
+#include <fstream>
+#include <sstream>
+
 
 extern std::mutex coutMutex;
 
@@ -43,6 +47,42 @@ void Model::saveGraph( const std::string & file, Graph * graph ) const
 
 }
 
+unsigned Model::loadAirportList( const std::string filename )
+{
+	DBG("Model::loadAirportList()");
+
+	std::ifstream file ( filename );
+
+	std::string str;
+
+	while( ! file.eof() )
+	{
+		std::getline( file, str );
+	}
+
+}
+
+unsigned Model::loadIataList( const std::string filename )
+{
+	DBG("Model::loadIataList( " << filename << " )");
+
+	std::ifstream file ( filename );
+
+	std::string str;
+
+	unsigned count = 0;
+
+	while( ! file.eof() )
+	{
+		std::getline( file, str );
+		airportList.push_back( str );
+		++count;
+	}
+
+	return count;
+
+}
+
 void Model::setWeights( const Weights & weights )
 {
 	DBG(" Model::setWeights() ");
@@ -60,8 +100,12 @@ void Model::createPopulation( unsigned size, Strategy * strategy, Mutation * mut
 void Model::evolve( unsigned times )
 {
 	if( population != nullptr )
-		for( unsigned i = 0; i < times; ++i )
+		for( unsigned i = 0; i < times && !shutDown && !stopCalc; ++i )
 		{
+			if(stopCalc)
+			{
+				cout<<endl<<"zatrzymywanie obliczeń"<<endl<<endl;
+			}
 			evolutionStep=i;
 			population->evolve();
 		}
@@ -85,12 +129,19 @@ Population * Model::getPopulation()
 	return population;
 }
 
+Path Model::getPath ( unsigned n )
+{
+	if(population)
+		return *(population->getPath(n));
+}
+
 Model::Model() : graph(nullptr),
 		 population(nullptr),
 		 controllerBlockingQueue(nullptr),
 		 modelBlockingQueue(nullptr),
 		 shutDown(false),
-		 evolutionStep(0)
+		 evolutionStep(0),
+		 stopCalc(false)
 {
 	modelBlockingQueue=new BlockingQueue<Command*>;
 }
@@ -119,6 +170,7 @@ Model::Model() : graph(nullptr),
 
 	m->getPopulation()->print();
 }*/
+
 
 int v1=50,v2=50,v3=50,v4=50;
 
@@ -174,6 +226,13 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 	std::cout << std::endl;
 }
 
+string getIATAbyId(int id)
+{
+	return string("WAW");
+}
+
+ostringstream ss;
+
 void Model::doMainJob()
 {
 	int status=0;
@@ -193,20 +252,22 @@ void Model::doMainJob()
 		if(c->commandType==CommandType::START)
 		{
 			/**< \todo wziąć dane z polecenia i uruchomić algorytm */
+			stopCalc=false;
 			status=0;
 			modelStatus=new ModelStatus;
 			modelStatus->status=status;
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
-			unsigned gSize=100;
+
+			unsigned gSize=3464;
 			unsigned pSize=100;
-			unsigned iter=10000;
+			unsigned iter=30;//000;
 			v1=strtol(c->price.c_str(),0,10);
 			v2=strtol(c->safety.c_str(),0,10);
 			v3=strtol(c->comfort.c_str(),0,10);
 			v4=strtol(c->price.c_str(),0,10);
 			thread modelTestThread(modelTest,gSize,pSize,this,iter);
 			//modelTest(10,10,this,1000);
-			while(evolutionStep+1<iter)
+			while(evolutionStep+1<iter && !stopCalc)
 			{
 				this_thread::sleep_for (chrono::seconds(1));
 				status=(int)(100.0f*(double)evolutionStep/(double)iter);
@@ -220,6 +281,7 @@ void Model::doMainJob()
 				modelStatus->status=status;
 				controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 			}
+			cout<<endl<<"waiting for modelTestThread join..."<<endl;
 			modelTestThread.join();
 			cout<<endl<<"modelTestThread joined"<<endl<<endl;
 			status=100;
@@ -227,12 +289,30 @@ void Model::doMainJob()
 			modelStatus=new ModelStatus;
 			modelStatus->status=status;
 			modelStatus->result=true;
+			string pom="";
+			Path p = getPath( 0 );
+			unsigned l = p.getLength();
+			for( unsigned i = 0; i < l; ++i)
+			{
+				//std::cout << p[i] << std::endl;
+
+				//ss << p[i];
+				//string str2 = ss.str();
+				pom+="<airport><iata>"+getIATAbyId(p[i])+"</iata></airport>";
+			}
+			modelStatus->str="<data><response>success</response><airports><airport><iata>"+c->start+"</iata></airport>"+pom+"<airport><iata>"+c->end+"</iata></airport></airports></data>\0";
 			/**< \todo zwrócić wynik algorytmu */
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 		}
 		else if(c->commandType==CommandType::STOP)
 		{
 			/**< \todo zatrzymać algorytm */
+			stopCalc=true;
+			cout<<"polecenie zatrzymania obliczeń"<<endl;
+			if(stopCalc)
+			{
+				cout<<"stopCalc ustawione"<<endl;
+			}
 			//też opcjonalne zgłoszenie, że zatrzymaliśmy
 			modelStatus=new ModelStatus;
 			modelStatus->status=status;
