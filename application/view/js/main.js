@@ -206,7 +206,6 @@ function showSolution($xml)
 {
     stopRefresh();
 	$("#solution").html("");
-    //alert($xml.find("airports").html());
     $xml.find("airports").find("airport").each(function(index)
     {
         var iata = $(this).find("iata").html();
@@ -215,5 +214,13 @@ function showSolution($xml)
         inner += "<p class='solutionAirport'>" + name + "(" + iata + ")</p>";
         $("#solution").html(inner);
     });
+    var price = $xml.find("price").html();
+    var safety = $xml.find("safety").html();
+    var comfort = $xml.find("comfort").html();
+    var time = $xml.find("time").html();
+    $("#solutionPrice").html(price);
+    $("#safetyMeter").val(safety);
+    $("#comfortMeter").val(comfort);
+    $("#solutionTime").html(time);
     $("#solutionWindow").slideDown();
 }

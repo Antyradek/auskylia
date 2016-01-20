@@ -207,9 +207,8 @@ void Controller::start()
 					str.clear();
 					if(status==100 && modelStatus!=nullptr && modelStatus->result==true)
 					{
-						/**< \todo zwracać sensowny wynik z modelu, a nie pastę */
 						str=modelStatus->str;
-						//str="<data><response>success</response><airports><airport><iata>SYD</iata></airport><airport><iata>WAW</iata></airport><airport><iata>GDN</iata></airport></airports></data>\0";
+						//str="<data><response>success</response><airports><airport><iata>SYD</iata></airport><airport><iata>WAW</iata></airport><airport><iata>GDN</iata></airport></airports><price>20031</price><safety>0.98</safety><comfort>0.1</comfort><time>21233223</time></data>\0";
 					}
 					else
 					{
