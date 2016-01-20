@@ -112,6 +112,7 @@ $(document).ready(function(){initNavTree('test_8cpp.html','');});
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;string&gt;</code><br/>
 <code>#include &lt;cstdlib&gt;</code><br/>
+<code>#include &lt;chrono&gt;</code><br/>
 <code>#include &quot;<a class="el" href="_model_8hpp_source.html">Model.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="debug_8hpp_source.html">debug.hpp</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
@@ -119,7 +120,7 @@ Wykres zależności załączania dla test.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="test_8cpp__incl.png" border="0" usemap="#_d_1_2_moje_01dokumenty_2_p_s_z_t_2auskylia_2application_2model_2test_8cpp" alt=""/></div>
 <map name="_d_1_2_moje_01dokumenty_2_p_s_z_t_2auskylia_2application_2model_2test_8cpp" id="_d_1_2_moje_01dokumenty_2_p_s_z_t_2auskylia_2application_2model_2test_8cpp">
-<area shape="rect" id="node5" href="_model_8hpp.html" title="Plik nagłówkowy klasy Model. " alt="" coords="492,109,575,136"/><area shape="rect" id="node22" href="debug_8hpp.html" title="debug.hpp" alt="" coords="977,333,1060,360"/><area shape="rect" id="node7" href="_graph_8hpp.html" title="Plik nagłówkowy klasy Graph. " alt="" coords="344,408,427,435"/><area shape="rect" id="node12" href="parameters_8hpp.html" title="parameters.hpp" alt="" coords="249,557,361,584"/><area shape="rect" id="node13" href="types_8hpp.html" title="types.hpp" alt="" coords="731,557,810,584"/><area shape="rect" id="node14" href="_path_8hpp.html" title="Path.hpp" alt="" coords="493,333,568,360"/><area shape="rect" id="node17" href="_population_8hpp.html" title="Plik nagłówkowy klasy Population. " alt="" coords="675,184,783,211"/><area shape="rect" id="node23" href="strategy_8hpp.html" title="Plik z definicjami startegii krzyżowania. " alt="" coords="575,259,670,285"/><area shape="rect" id="node24" href="_event_8hpp.html" title="Plik nagłówkowy klasy Event. " alt="" coords="969,184,1117,211"/><area shape="rect" id="node26" href="_blocking_queue_8hpp.html" title="plik nagłówkowy klasy kolejki blokującej " alt="" coords="1159,184,1363,211"/><area shape="rect" id="node30" href="_command_8hpp.html" title="Plik nagłówkowy klasy polecenia do modelu. " alt="" coords="43,184,218,211"/><area shape="rect" id="node8" href="_node_8hpp.html" title="Plik nagłówkowy klasy Node. " alt="" coords="385,557,463,584"/><area shape="rect" id="node9" href="_graph_generator_8hpp.html" title="Plik nagłówkowy klasy GraphGenerator. " alt="" coords="423,483,561,509"/><area shape="rect" id="node18" href="_mutation_8hpp.html" title="Mutation.hpp" alt="" coords="694,259,791,285"/><area shape="rect" id="node19" href="roll_8hpp.html" title="roll.hpp" alt="" coords="839,333,903,360"/><area shape="rect" id="node29" href="_blocking_queue_8cpp.html" title="Implementacja metod BlockingQueue. " alt="" coords="1331,259,1466,285"/><area shape="rect" id="node31" href="_message_8hpp.html" title="Plik nagłówkowy klasy wiadomości. " alt="" coords="109,333,209,360"/></map>
+<area shape="rect" id="node6" href="_model_8hpp.html" title="Plik nagłówkowy klasy Model. " alt="" coords="719,109,801,136"/><area shape="rect" id="node23" href="debug_8hpp.html" title="debug.hpp" alt="" coords="43,333,125,360"/><area shape="rect" id="node9" href="_graph_8hpp.html" title="Plik nagłówkowy klasy Graph. " alt="" coords="640,408,723,435"/><area shape="rect" id="node13" href="parameters_8hpp.html" title="parameters.hpp" alt="" coords="783,557,895,584"/><area shape="rect" id="node14" href="types_8hpp.html" title="types.hpp" alt="" coords="327,557,406,584"/><area shape="rect" id="node15" href="_path_8hpp.html" title="Path.hpp" alt="" coords="312,333,387,360"/><area shape="rect" id="node18" href="_population_8hpp.html" title="Plik nagłówkowy klasy Population. " alt="" coords="409,184,517,211"/><area shape="rect" id="node24" href="strategy_8hpp.html" title="Plik z definicjami startegii krzyżowania. " alt="" coords="526,259,621,285"/><area shape="rect" id="node25" href="_event_8hpp.html" title="Plik nagłówkowy klasy Event. " alt="" coords="1047,184,1195,211"/><area shape="rect" id="node27" href="_blocking_queue_8hpp.html" title="plik nagłówkowy klasy kolejki blokującej " alt="" coords="1219,184,1423,211"/><area shape="rect" id="node31" href="_command_8hpp.html" title="Plik nagłówkowy klasy polecenia do modelu. " alt="" coords="849,184,1023,211"/><area shape="rect" id="node10" href="_node_8hpp.html" title="Plik nagłówkowy klasy Node. " alt="" coords="681,557,759,584"/><area shape="rect" id="node11" href="_graph_generator_8hpp.html" title="Plik nagłówkowy klasy GraphGenerator. " alt="" coords="612,483,751,509"/><area shape="rect" id="node19" href="_mutation_8hpp.html" title="Mutation.hpp" alt="" coords="201,259,298,285"/><area shape="rect" id="node20" href="roll_8hpp.html" title="roll.hpp" alt="" coords="149,333,213,360"/><area shape="rect" id="node30" href="_blocking_queue_8cpp.html" title="Implementacja metod BlockingQueue. " alt="" coords="1405,259,1539,285"/><area shape="rect" id="node32" href="_message_8hpp.html" title="Plik nagłówkowy klasy wiadomości. " alt="" coords="866,333,966,360"/></map>
 </div>
 </div>
 <p><a href="test_8cpp_source.html">Idź do kodu źródłowego tego pliku.</a></p>
@@ -158,7 +159,7 @@ Zmienne</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00129">129</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00130">130</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
@@ -195,14 +196,14 @@ Oto graf wywołań dla tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00212">212</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00245">245</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
 <div class="center"><img src="test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" id="node2" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b" title="modelTest" alt="" coords="104,157,187,184"/><area shape="rect" id="node3" href="class_model.html#a02d8cb6c679e1590bdbc162e0703e1ac" title="Model::generateGraph" alt="" coords="241,5,391,32"/><area shape="rect" id="node4" href="class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0" title="Model::useGraph" alt="" coords="255,56,377,83"/><area shape="rect" id="node5" href="class_model.html#ae9a99c96ce7a6806abb6d2c8eee9507c" title="Tworzy populację o zadanym rozmiarze. " alt="" coords="235,107,397,133"/><area shape="rect" id="node6" href="class_model.html#aee469cba135c624edb85548922008e0e" title="Ustawia wagi parametrów trasy. " alt="" coords="251,157,381,184"/><area shape="rect" id="node8" href="class_model.html#ada0c9c135934f4022b8b634a4173147b" title="Zwraca wskaźnik do populacji. " alt="" coords="244,208,388,235"/><area shape="rect" id="node9" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7" title="Wypisuje populację. " alt="" coords="258,259,374,285"/><area shape="rect" id="node10" href="class_model.html#ab2ac5823a1e318bb4bdeeecb68081fbe" title="Krzyżuje osobniki. " alt="" coords="267,309,365,336"/><area shape="rect" id="node7" href="class_population.html#a782c98a7515b64d8e0f61c4a39ed436c" title="Population::setWeights" alt="" coords="445,157,603,184"/><area shape="rect" id="node11" href="class_population.html#a693bd0dd63bab14a13a7b6ed578dddd5" title="Jedna iteracja krzyżowania. [in] strategy wskaźnik na strategię doboru osobników w pary..." alt="" coords="461,309,587,336"/><area shape="rect" id="node12" href="class_population.html#af44af1623ec86b2be635b74c6aa621d1" title="Population::newPaths" alt="" coords="651,309,799,336"/><area shape="rect" id="node13" href="class_path.html#a4c9805986fd9779d526c580887b83160" title="Path::print" alt="" coords="865,259,948,285"/><area shape="rect" id="node14" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992" title="rollUniform" alt="" coords="865,309,948,336"/><area shape="rect" id="node15" href="class_mutation.html#ae52427b76450d3b3883ebd10192c43b7" title="Mutation::mutate" alt="" coords="847,360,967,387"/></map>
+<area shape="rect" id="node2" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b" title="modelTest" alt="" coords="104,5,187,32"/></map>
 </div>
 </p>
 
@@ -238,16 +239,7 @@ Oto graf wywołań dla tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00180">180</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
-
-<p><div class="dynheader">
-Oto graf wywołań dla tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="test_8cpp_ac3547ebc9934537e79ded977164fe43b_cgraph.png" border="0" usemap="#test_8cpp_ac3547ebc9934537e79ded977164fe43b_cgraph" alt=""/></div>
-<map name="test_8cpp_ac3547ebc9934537e79ded977164fe43b_cgraph" id="test_8cpp_ac3547ebc9934537e79ded977164fe43b_cgraph">
-<area shape="rect" id="node2" href="class_model.html#a02d8cb6c679e1590bdbc162e0703e1ac" title="Model::generateGraph" alt="" coords="142,5,293,32"/><area shape="rect" id="node3" href="class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0" title="Model::useGraph" alt="" coords="157,56,278,83"/><area shape="rect" id="node4" href="class_model.html#ae9a99c96ce7a6806abb6d2c8eee9507c" title="Tworzy populację o zadanym rozmiarze. " alt="" coords="136,107,299,133"/><area shape="rect" id="node5" href="class_model.html#aee469cba135c624edb85548922008e0e" title="Ustawia wagi parametrów trasy. " alt="" coords="152,157,283,184"/><area shape="rect" id="node7" href="class_model.html#ada0c9c135934f4022b8b634a4173147b" title="Zwraca wskaźnik do populacji. " alt="" coords="145,208,289,235"/><area shape="rect" id="node8" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7" title="Wypisuje populację. " alt="" coords="159,259,275,285"/><area shape="rect" id="node9" href="class_model.html#ab2ac5823a1e318bb4bdeeecb68081fbe" title="Krzyżuje osobniki. " alt="" coords="168,309,267,336"/><area shape="rect" id="node6" href="class_population.html#a782c98a7515b64d8e0f61c4a39ed436c" title="Population::setWeights" alt="" coords="347,157,504,184"/><area shape="rect" id="node10" href="class_population.html#a693bd0dd63bab14a13a7b6ed578dddd5" title="Jedna iteracja krzyżowania. [in] strategy wskaźnik na strategię doboru osobników w pary..." alt="" coords="363,309,488,336"/><area shape="rect" id="node11" href="class_population.html#af44af1623ec86b2be635b74c6aa621d1" title="Population::newPaths" alt="" coords="552,309,700,336"/><area shape="rect" id="node12" href="class_path.html#a4c9805986fd9779d526c580887b83160" title="Path::print" alt="" coords="767,259,849,285"/><area shape="rect" id="node13" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992" title="rollUniform" alt="" coords="767,309,849,336"/><area shape="rect" id="node14" href="class_mutation.html#ae52427b76450d3b3883ebd10192c43b7" title="Mutation::mutate" alt="" coords="748,360,868,387"/></map>
-</div>
-</p>
+<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00181">181</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
@@ -274,7 +266,7 @@ Oto graf wywoływań tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00141">141</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00142">142</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
@@ -311,7 +303,7 @@ Oto graf wywołań dla tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00157">157</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00158">158</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
@@ -337,7 +329,7 @@ Oto graf wywołań dla tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00030">30</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00031">31</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
@@ -379,7 +371,7 @@ Oto graf wywołań dla tej funkcji:</div>
 <div class="line"><span class="stringliteral">&quot;      ,((,-,__\\  &#39;\&quot;, __\\_/. __,&#39;    \n&quot;</span></div>
 <div class="line"><span class="stringliteral">&quot;                   &#39;\&quot;./_._._-&#39;      \n&quot;</span></div>
 </div><!-- fragment -->
-<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00009">9</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="test_8cpp_source.html#l00010">10</a> pliku <a class="el" href="test_8cpp_source.html">test.cpp</a>.</p>
 
 </div>
 </div>
@@ -389,7 +381,7 @@ Oto graf wywołań dla tej funkcji:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d94a2eaab10ab5ab1cb03e49b9b14fd1.html">model</a></li><li class="navelem"><a class="el" href="test_8cpp.html">test.cpp</a></li>
-    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:39 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:19:02 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

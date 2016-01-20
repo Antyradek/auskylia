@@ -1,5 +1,6 @@
 var _event_8hpp =
 [
+    [ "ModelStatus", "struct_model_status.html", "struct_model_status" ],
     [ "Event", "class_event.html", "class_event" ],
     [ "EventType", "_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6fa", [
       [ "Test", "_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa0c1982bd20a911687e4a2b59a1517f93", null ],

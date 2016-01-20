@@ -107,12 +107,12 @@ $(document).ready(function(){initNavTree('main_8js_source.html','');});
 </div><!--header-->
 <div class="contents">
 <a href="main_8js.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="main_8js.html#a273346471dff7030093765f4e043d101">    1</a></span>&#160;var <a class="code" href="main_8js.html#a273346471dff7030093765f4e043d101">url</a> = <span class="stringliteral">&quot;server&quot;</span>;</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;$(document).<a class="code" href="main_8js.html#a82571cea88dd49008c1617e5e7daed59">ready</a>(<span class="keyword">function</span>()</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">//załaduj lotniska</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="main_8js.html#af90b2c220cb27941f5f067630ad40b91">loadAirports</a>();</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="main_8js.html#a4d1e014b1aef9792d81601aae437b5ec">    2</a></span>&#160;var <a class="code" href="main_8js.html#a4d1e014b1aef9792d81601aae437b5ec">isWorking</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="main_8js.html#ad87ab979d82b4ba3db941d4a1141d7a7">    3</a></span>&#160;var <a class="code" href="main_8js.html#ad87ab979d82b4ba3db941d4a1141d7a7">progressInterval</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">    4</a></span>&#160;var <a class="code" href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">airportsMap</a> = {};</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;$(document).<a class="code" href="main_8js.html#abe38db594000e09ac5c621ee1ae8f448">ready</a>(<span class="keyword">function</span>()</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="comment">//event wysłania formularza</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    $(<span class="stringliteral">&quot;#mainForm&quot;</span>).submit(<span class="keyword">function</span>(event)</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
@@ -125,119 +125,228 @@ $(document).ready(function(){initNavTree('main_8js_source.html','');});
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        $(<span class="stringliteral">&quot;#errorWindow&quot;</span>).slideUp();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    });</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;});</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="main_8js.html#af90b2c220cb27941f5f067630ad40b91">   24</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#af90b2c220cb27941f5f067630ad40b91">loadAirports</a>()</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="main_8js.html#abc96b0960ec55a82553034efef1b0eed">sendData</a>(<span class="stringliteral">&quot;&lt;data&gt;&lt;command&gt;list&lt;/command&gt;&lt;/data&gt;&quot;</span>, <span class="stringliteral">&quot;Nie udało się pobrać listy lotnisk&quot;</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="main_8js.html#a5303c598d7acd0f7956f304ae22eddcf">   32</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a5303c598d7acd0f7956f304ae22eddcf">updateCitySelections</a>($xml)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    $xml.find(<span class="stringliteral">&quot;airports&quot;</span>).find(<span class="stringliteral">&quot;airport&quot;</span>).each(<span class="keyword">function</span>(index)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        var name = $(<span class="keyword">this</span>).find(<span class="stringliteral">&quot;name&quot;</span>).html();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        var iata = $(<span class="keyword">this</span>).find(<span class="stringliteral">&quot;iata&quot;</span>).html();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        var text = <span class="stringliteral">&quot;&lt;option value=&#39;&quot;</span> + iata + <span class="stringliteral">&quot;&#39;&gt;&quot;</span> + name + <span class="stringliteral">&quot; (&quot;</span> + iata + <span class="stringliteral">&quot;)&quot;</span> + <span class="stringliteral">&quot;&lt;/option&gt;&quot;</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        $(<span class="stringliteral">&quot;.citySelect&quot;</span>).append(text);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    });</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">   44</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(setOn)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>(setOn)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        $(<span class="stringliteral">&quot;#waitWindow&quot;</span>).slideDown();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        $(<span class="stringliteral">&quot;#waitWindow&quot;</span>).slideUp();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="main_8js.html#a8839033f514fd22566344670acdf9501">   57</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a8839033f514fd22566344670acdf9501">parseResult</a>(data)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    var $xml = $($.parseXML(data));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    var $data = $xml.find(<span class="stringliteral">&quot;data&quot;</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    var $command = $data.find(<span class="stringliteral">&quot;response&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">switch</span>($command.html())</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">case</span> <span class="stringliteral">&quot;list&quot;</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="main_8js.html#a5303c598d7acd0f7956f304ae22eddcf">updateCitySelections</a>($data);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">case</span> <span class="stringliteral">&quot;failture&quot;</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa">showServerError</a>($data);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">//...</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="comment">//TODO informacja o błędnej komendzie</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            alert(<span class="stringliteral">&quot;Błędna komenda: &quot;</span> + $command.html());</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="main_8js.html#a91c018067c182d093699f951f1281aae">   78</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a91c018067c182d093699f951f1281aae">calculate</a>()</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    var start = $(<span class="stringliteral">&quot;#startCity&quot;</span>).val();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    var end = $(<span class="stringliteral">&quot;#endCity&quot;</span>).val();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    var price = $(<span class="stringliteral">&quot;#priceRange&quot;</span>).val();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    var safety = $(<span class="stringliteral">&quot;#safetyRange&quot;</span>).val();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    var comfort = $(<span class="stringliteral">&quot;#comfortRange&quot;</span>).val();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    var time = $(<span class="stringliteral">&quot;#timeRange&quot;</span>).val();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    var xml = <span class="stringliteral">&quot;&lt;data&gt;&lt;command&gt;calculate&lt;/command&gt;&lt;start&gt;&quot;</span> + start + <span class="stringliteral">&quot;&lt;/start&gt;&lt;end&gt;&quot;</span> + end + <span class="stringliteral">&quot;&lt;/end&gt;&lt;price&gt;&quot;</span> + price + <span class="stringliteral">&quot;&lt;/price&gt;&lt;safety&gt;&quot;</span> + safety + <span class="stringliteral">&quot;&lt;/safety&gt;&lt;comfort&gt;&quot;</span> + comfort + <span class="stringliteral">&quot;&lt;/comfort&gt;&lt;time&gt;&quot;</span> + time + <span class="stringliteral">&quot;&lt;/time&gt;&lt;/data&gt;&quot;</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="main_8js.html#abc96b0960ec55a82553034efef1b0eed">sendData</a>(xml, <span class="stringliteral">&quot;Nie udało się wysłać formularza.&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">   93</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a>(title, text)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    $(<span class="stringliteral">&quot;#errorTitle&quot;</span>).html(title);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    $(<span class="stringliteral">&quot;#errorText&quot;</span>).html(text);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    $(<span class="stringliteral">&quot;#errorWindow&quot;</span>).slideDown();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    $(<span class="stringliteral">&quot;#stopButton&quot;</span>).click(<span class="keyword">function</span>()</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="main_8js.html#ae13a0a4c9105c0cc5a14d547a31f970a">stopCalc</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    });</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//załaduj lotniska</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="main_8js.html#af90b2c220cb27941f5f067630ad40b91">loadAirports</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;});</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="main_8js.html#af90b2c220cb27941f5f067630ad40b91">   33</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#af90b2c220cb27941f5f067630ad40b91">loadAirports</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="main_8js.html#a5ef4e5e3d92c9b05ceb048603552df6b">sendData</a>(<span class="stringliteral">&quot;&lt;data&gt;&lt;command&gt;list&lt;/command&gt;&lt;/data&gt;&quot;</span>, <span class="stringliteral">&quot;Nie można pobrać listy lotnisk&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="main_8js.html#a5303c598d7acd0f7956f304ae22eddcf">   39</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a5303c598d7acd0f7956f304ae22eddcf">updateCitySelections</a>($xml)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    $xml.find(<span class="stringliteral">&quot;airports&quot;</span>).find(<span class="stringliteral">&quot;airport&quot;</span>).each(<span class="keyword">function</span>(index)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        var name = $(<span class="keyword">this</span>).find(<span class="stringliteral">&quot;name&quot;</span>).html();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        var iata = $(<span class="keyword">this</span>).find(<span class="stringliteral">&quot;iata&quot;</span>).html();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        var text = <span class="stringliteral">&quot;&lt;option value=&#39;&quot;</span> + iata + <span class="stringliteral">&quot;&#39;&gt;&quot;</span> + name + <span class="stringliteral">&quot; (&quot;</span> + iata + <span class="stringliteral">&quot;)&quot;</span> + <span class="stringliteral">&quot;&lt;/option&gt;&quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        $(<span class="stringliteral">&quot;.citySelect&quot;</span>).append(text);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">airportsMap</a>[iata] = name;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    });</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">   53</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(setOn)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span>(setOn)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> $(<span class="stringliteral">&quot;#waitWindow&quot;</span>).slideDown().promise();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> $(<span class="stringliteral">&quot;#waitWindow&quot;</span>).slideUp().promise();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="main_8js.html#a8839033f514fd22566344670acdf9501">   66</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a8839033f514fd22566344670acdf9501">parseResult</a>(data)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        var $xml = $($.parseXML(data));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">catch</span>(e)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a>(<span class="stringliteral">&quot;Błąd odczytu XML&quot;</span>, e.message);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    var $data = $xml.find(<span class="stringliteral">&quot;data&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    var $command = $data.find(<span class="stringliteral">&quot;response&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">switch</span>($command.html())</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">case</span> <span class="stringliteral">&quot;list&quot;</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="main_8js.html#a5303c598d7acd0f7956f304ae22eddcf">updateCitySelections</a>($data);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">case</span> <span class="stringliteral">&quot;failture&quot;</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa">showServerError</a>($data);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">case</span> <span class="stringliteral">&quot;progress&quot;</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <a class="code" href="main_8js.html#ac4103803f3a6097df5c1447d97fb83b8">updateProgress</a>($data);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">case</span> <span class="stringliteral">&quot;success&quot;</span>:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <a class="code" href="main_8js.html#a15b8792506347e67d6076b0c0ca99013">showSolution</a>($data);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">//...</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <a class="code" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a>(<span class="stringliteral">&quot;Błędna komenda&quot;</span>, $command.html());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="main_8js.html#abc96b0960ec55a82553034efef1b0eed">  101</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#abc96b0960ec55a82553034efef1b0eed">sendData</a>(data, errorText)</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="main_8js.html#ac4103803f3a6097df5c1447d97fb83b8">  101</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#ac4103803f3a6097df5c1447d97fb83b8">updateProgress</a>($xml)</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    $.ajax({</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        type: <span class="stringliteral">&quot;POST&quot;</span>,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="main_8js.html#a273346471dff7030093765f4e043d101">url</a>: <a class="code" href="main_8js.html#a273346471dff7030093765f4e043d101">url</a>,</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        data: data</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    })</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    .done(<span class="keyword">function</span>(resp)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="main_8js.html#a4d1e014b1aef9792d81601aae437b5ec">isWorking</a>)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        var prog = $xml.find(<span class="stringliteral">&quot;progress&quot;</span>).html();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        $(<span class="stringliteral">&quot;#progressBar&quot;</span>).val(prog);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        alert(<span class="stringliteral">&quot;Odebrano: \&quot;&quot;</span> + resp + <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="main_8js.html#a8839033f514fd22566344670acdf9501">parseResult</a>(resp);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    })</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    .fail(<span class="keyword">function</span>()</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a>(<span class="stringliteral">&quot;Błąd wysyłania&quot;</span>,errorText);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    });</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">//pokazuje błąd serwera</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa">  120</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa">showServerError</a>($xml)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a>(<span class="stringliteral">&quot;Błąd serwera&quot;</span> ,$xml.find(<span class="stringliteral">&quot;cause&quot;</span>).html());</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
-<div class="ttc" id="main_8js_html_a5303c598d7acd0f7956f304ae22eddcf"><div class="ttname"><a href="main_8js.html#a5303c598d7acd0f7956f304ae22eddcf">updateCitySelections</a></div><div class="ttdeci">function updateCitySelections($xml)</div><div class="ttdoc">aktualiazcja wyboru miast </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00032">main.js:32</a></div></div>
-<div class="ttc" id="main_8js_html_a91c018067c182d093699f951f1281aae"><div class="ttname"><a href="main_8js.html#a91c018067c182d093699f951f1281aae">calculate</a></div><div class="ttdeci">function calculate()</div><div class="ttdoc">pobierz dane z formularza i wyślij </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00078">main.js:78</a></div></div>
-<div class="ttc" id="main_8js_html_a0678b461d3a5de91b0e615672eb7e69f"><div class="ttname"><a href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a></div><div class="ttdeci">function setHourglass(setOn)</div><div class="ttdoc">pokazuje, lub ukrywa klepsydrę </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00044">main.js:44</a></div></div>
-<div class="ttc" id="main_8js_html_abc96b0960ec55a82553034efef1b0eed"><div class="ttname"><a href="main_8js.html#abc96b0960ec55a82553034efef1b0eed">sendData</a></div><div class="ttdeci">function sendData(data, errorText)</div><div class="ttdoc">wysyła rządanie i przetwarza wynik, lub pokazuje błąd </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00101">main.js:101</a></div></div>
-<div class="ttc" id="main_8js_html_af90b2c220cb27941f5f067630ad40b91"><div class="ttname"><a href="main_8js.html#af90b2c220cb27941f5f067630ad40b91">loadAirports</a></div><div class="ttdeci">function loadAirports()</div><div class="ttdoc">ładuje listę lotnisk. </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00024">main.js:24</a></div></div>
-<div class="ttc" id="main_8js_html_aa9b13f536eaeb2a3cae864db31cabdaa"><div class="ttname"><a href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa">showServerError</a></div><div class="ttdeci">function showServerError($xml)</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00120">main.js:120</a></div></div>
-<div class="ttc" id="main_8js_html_a8839033f514fd22566344670acdf9501"><div class="ttname"><a href="main_8js.html#a8839033f514fd22566344670acdf9501">parseResult</a></div><div class="ttdeci">function parseResult(data)</div><div class="ttdoc">wczytaj początek rezultatu i wykonaj odpowiednią dla niego akcję </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00057">main.js:57</a></div></div>
-<div class="ttc" id="main_8js_html_a80815bbcc298d7e589483de22cc38853"><div class="ttname"><a href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a></div><div class="ttdeci">function showError(title, text)</div><div class="ttdoc">wywal oczojebny błąd na ekran </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00093">main.js:93</a></div></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="main_8js.html#a4d1e014b1aef9792d81601aae437b5ec">isWorking</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        $(<span class="stringliteral">&quot;#progressWindow&quot;</span>).slideDown();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        $(<span class="stringliteral">&quot;#submitForm&quot;</span>).slideUp();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="main_8js.html#ad87ab979d82b4ba3db941d4a1141d7a7">progressInterval</a> = setInterval(<span class="keyword">function</span>()</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            $.ajax({</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                type: <span class="stringliteral">&quot;POST&quot;</span>,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <a class="code" href="main_8js.html#a273346471dff7030093765f4e043d101">url</a>: <a class="code" href="main_8js.html#a273346471dff7030093765f4e043d101">url</a>,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                data: <span class="stringliteral">&quot;&lt;data&gt;&lt;command&gt;status&lt;/command&gt;&lt;/data&gt;&quot;</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            })</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            .done(<span class="keyword">function</span>(resp)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <a class="code" href="main_8js.html#a8839033f514fd22566344670acdf9501">parseResult</a>(resp);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            })</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            .fail(<span class="keyword">function</span>()</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <a class="code" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a>(<span class="stringliteral">&quot;Błąd wysyłania&quot;</span>, <span class="stringliteral">&quot;Błąd sprawdzania stanu obliczeń&quot;</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            });</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        }, 2000);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="main_8js.html#a91c018067c182d093699f951f1281aae">  135</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a91c018067c182d093699f951f1281aae">calculate</a>()</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    $(<span class="stringliteral">&quot;#solutionWindow&quot;</span>).slideUp();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    var start = $(<span class="stringliteral">&quot;#startCity&quot;</span>).val();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    var end = $(<span class="stringliteral">&quot;#endCity&quot;</span>).val();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    var price = $(<span class="stringliteral">&quot;#priceRange&quot;</span>).val();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    var safety = $(<span class="stringliteral">&quot;#safetyRange&quot;</span>).val();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    var comfort = $(<span class="stringliteral">&quot;#comfortRange&quot;</span>).val();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    var time = $(<span class="stringliteral">&quot;#timeRange&quot;</span>).val();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    var xml = <span class="stringliteral">&quot;&lt;data&gt;&lt;command&gt;calculate&lt;/command&gt;&lt;start&gt;&quot;</span> + start + <span class="stringliteral">&quot;&lt;/start&gt;&lt;end&gt;&quot;</span> + end + <span class="stringliteral">&quot;&lt;/end&gt;&lt;price&gt;&quot;</span> + price + <span class="stringliteral">&quot;&lt;/price&gt;&lt;safety&gt;&quot;</span> + safety + <span class="stringliteral">&quot;&lt;/safety&gt;&lt;comfort&gt;&quot;</span> + comfort + <span class="stringliteral">&quot;&lt;/comfort&gt;&lt;time&gt;&quot;</span> + time + <span class="stringliteral">&quot;&lt;/time&gt;&lt;/data&gt;&quot;</span>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="main_8js.html#a5ef4e5e3d92c9b05ceb048603552df6b">sendData</a>(xml, <span class="stringliteral">&quot;Nie udało się wysłać formularza z danymi do obliczeń&quot;</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">  149</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a>(title, text)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    $(<span class="stringliteral">&quot;#errorTitle&quot;</span>).html(title);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    $(<span class="stringliteral">&quot;#errorText&quot;</span>).html(text);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    $(<span class="stringliteral">&quot;#errorWindow&quot;</span>).slideDown();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="main_8js.html#a5ef4e5e3d92c9b05ceb048603552df6b">  157</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a5ef4e5e3d92c9b05ceb048603552df6b">sendData</a>(data, error)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    .done(<span class="keyword">function</span>()</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span> $.ajax({</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            type: <span class="stringliteral">&quot;POST&quot;</span>,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="main_8js.html#a273346471dff7030093765f4e043d101">url</a>: <a class="code" href="main_8js.html#a273346471dff7030093765f4e043d101">url</a>,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            data: data</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        })</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        .done(<span class="keyword">function</span>(resp)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <a class="code" href="main_8js.html#a8839033f514fd22566344670acdf9501">parseResult</a>(resp);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        })</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        .fail(<span class="keyword">function</span>()</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <a class="code" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a>(<span class="stringliteral">&quot;Błąd wysyłania&quot;</span>,error);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        });</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    });</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment">//pokazuje błąd serwera</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa">  182</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa">showServerError</a>($xml)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="main_8js.html#a40d58867149f7cd5f2e3fcf743ccdbfd">stopRefresh</a>();</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a>(<span class="stringliteral">&quot;Błąd serwera&quot;</span> ,$xml.find(<span class="stringliteral">&quot;cause&quot;</span>).html());</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">//zatrzymaj odświeżanie statusu</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="main_8js.html#a40d58867149f7cd5f2e3fcf743ccdbfd">  190</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a40d58867149f7cd5f2e3fcf743ccdbfd">stopRefresh</a>()</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="main_8js.html#a4d1e014b1aef9792d81601aae437b5ec">isWorking</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    clearInterval(<a class="code" href="main_8js.html#ad87ab979d82b4ba3db941d4a1141d7a7">progressInterval</a>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    $(<span class="stringliteral">&quot;#progressWindow&quot;</span>).slideUp();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    $(<span class="stringliteral">&quot;#submitForm&quot;</span>).slideDown();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">//zatrzymaj obliczenia</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="main_8js.html#ae13a0a4c9105c0cc5a14d547a31f970a">  199</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#ae13a0a4c9105c0cc5a14d547a31f970a">stopCalc</a>()</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;{</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="main_8js.html#a5ef4e5e3d92c9b05ceb048603552df6b">sendData</a>(<span class="stringliteral">&quot;&lt;data&gt;&lt;command&gt;stop&lt;/command&gt;&lt;/data&gt;&quot;</span>, <span class="stringliteral">&quot;Nie można zaktualizować stanu obliczeń&quot;</span>);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">//pokaż wynik</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="main_8js.html#a15b8792506347e67d6076b0c0ca99013">  205</a></span>&#160;<span class="keyword">function</span> <a class="code" href="main_8js.html#a15b8792506347e67d6076b0c0ca99013">showSolution</a>($xml)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="main_8js.html#a40d58867149f7cd5f2e3fcf743ccdbfd">stopRefresh</a>();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    $(<span class="stringliteral">&quot;#solution&quot;</span>).html(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    $xml.find(<span class="stringliteral">&quot;airports&quot;</span>).find(<span class="stringliteral">&quot;airport&quot;</span>).each(<span class="keyword">function</span>(index)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        var iata = $(<span class="keyword">this</span>).find(<span class="stringliteral">&quot;iata&quot;</span>).html();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        var name = <a class="code" href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">airportsMap</a>[iata];</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        var inner = $(<span class="stringliteral">&quot;#solution&quot;</span>).html();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        inner += <span class="stringliteral">&quot;&lt;p class=&#39;solutionAirport&#39;&gt;&quot;</span> + name + <span class="stringliteral">&quot;(&quot;</span> + iata + <span class="stringliteral">&quot;)&lt;/p&gt;&quot;</span>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        $(<span class="stringliteral">&quot;#solution&quot;</span>).html(inner);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    });</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    var price = $xml.find(<span class="stringliteral">&quot;price&quot;</span>).html();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    var safety = $xml.find(<span class="stringliteral">&quot;safety&quot;</span>).html();</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    var comfort = $xml.find(<span class="stringliteral">&quot;comfort&quot;</span>).html();</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    var time = $xml.find(<span class="stringliteral">&quot;time&quot;</span>).html();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    $(<span class="stringliteral">&quot;#solutionPrice&quot;</span>).html(price);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    $(<span class="stringliteral">&quot;#safetyMeter&quot;</span>).val(safety);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    $(<span class="stringliteral">&quot;#comfortMeter&quot;</span>).val(comfort);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    $(<span class="stringliteral">&quot;#solutionTime&quot;</span>).html(time);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    $(<span class="stringliteral">&quot;#solutionWindow&quot;</span>).slideDown();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+<div class="ttc" id="main_8js_html_a5303c598d7acd0f7956f304ae22eddcf"><div class="ttname"><a href="main_8js.html#a5303c598d7acd0f7956f304ae22eddcf">updateCitySelections</a></div><div class="ttdeci">function updateCitySelections($xml)</div><div class="ttdoc">aktualiazcja wyboru miast </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00039">main.js:39</a></div></div>
+<div class="ttc" id="main_8js_html_a91c018067c182d093699f951f1281aae"><div class="ttname"><a href="main_8js.html#a91c018067c182d093699f951f1281aae">calculate</a></div><div class="ttdeci">function calculate()</div><div class="ttdoc">pobierz dane z formularza i wyślij </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00135">main.js:135</a></div></div>
+<div class="ttc" id="main_8js_html_a15b8792506347e67d6076b0c0ca99013"><div class="ttname"><a href="main_8js.html#a15b8792506347e67d6076b0c0ca99013">showSolution</a></div><div class="ttdeci">function showSolution($xml)</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00205">main.js:205</a></div></div>
+<div class="ttc" id="main_8js_html_a0678b461d3a5de91b0e615672eb7e69f"><div class="ttname"><a href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a></div><div class="ttdeci">function setHourglass(setOn)</div><div class="ttdoc">pokazuje, lub ukrywa klepsydrę </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00053">main.js:53</a></div></div>
+<div class="ttc" id="main_8js_html_af90b2c220cb27941f5f067630ad40b91"><div class="ttname"><a href="main_8js.html#af90b2c220cb27941f5f067630ad40b91">loadAirports</a></div><div class="ttdeci">function loadAirports()</div><div class="ttdoc">ładuje listę lotnisk. </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00033">main.js:33</a></div></div>
+<div class="ttc" id="main_8js_html_a6085e1b2a212a5c07e0c1056c67c200d"><div class="ttname"><a href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">airportsMap</a></div><div class="ttdeci">var airportsMap</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00004">main.js:4</a></div></div>
+<div class="ttc" id="main_8js_html_a4d1e014b1aef9792d81601aae437b5ec"><div class="ttname"><a href="main_8js.html#a4d1e014b1aef9792d81601aae437b5ec">isWorking</a></div><div class="ttdeci">var isWorking</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00002">main.js:2</a></div></div>
+<div class="ttc" id="main_8js_html_a40d58867149f7cd5f2e3fcf743ccdbfd"><div class="ttname"><a href="main_8js.html#a40d58867149f7cd5f2e3fcf743ccdbfd">stopRefresh</a></div><div class="ttdeci">function stopRefresh()</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00190">main.js:190</a></div></div>
+<div class="ttc" id="main_8js_html_aa9b13f536eaeb2a3cae864db31cabdaa"><div class="ttname"><a href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa">showServerError</a></div><div class="ttdeci">function showServerError($xml)</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00182">main.js:182</a></div></div>
+<div class="ttc" id="main_8js_html_a5ef4e5e3d92c9b05ceb048603552df6b"><div class="ttname"><a href="main_8js.html#a5ef4e5e3d92c9b05ceb048603552df6b">sendData</a></div><div class="ttdeci">function sendData(data, error)</div><div class="ttdoc">wysyła rządanie i przetwarza wynik, lub pokazuje błąd </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00157">main.js:157</a></div></div>
+<div class="ttc" id="main_8js_html_ae13a0a4c9105c0cc5a14d547a31f970a"><div class="ttname"><a href="main_8js.html#ae13a0a4c9105c0cc5a14d547a31f970a">stopCalc</a></div><div class="ttdeci">function stopCalc()</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00199">main.js:199</a></div></div>
+<div class="ttc" id="main_8js_html_abe38db594000e09ac5c621ee1ae8f448"><div class="ttname"><a href="main_8js.html#abe38db594000e09ac5c621ee1ae8f448">ready</a></div><div class="ttdeci">document ready(function(){$(&quot;#mainForm&quot;).submit(function(event){event.preventDefault();calculate();});$(&quot;#errorClose&quot;).click(function(){$(&quot;#errorWindow&quot;).slideUp();});$(&quot;#stopButton&quot;).click(function(){stopCalc();});loadAirports();})</div><div class="ttdoc">Punkt startowy. </div></div>
+<div class="ttc" id="main_8js_html_a8839033f514fd22566344670acdf9501"><div class="ttname"><a href="main_8js.html#a8839033f514fd22566344670acdf9501">parseResult</a></div><div class="ttdeci">function parseResult(data)</div><div class="ttdoc">wczytaj początek rezultatu i wykonaj odpowiednią dla niego akcję </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00066">main.js:66</a></div></div>
+<div class="ttc" id="main_8js_html_a80815bbcc298d7e589483de22cc38853"><div class="ttname"><a href="main_8js.html#a80815bbcc298d7e589483de22cc38853">showError</a></div><div class="ttdeci">function showError(title, text)</div><div class="ttdoc">wywal oczojebny błąd na ekran </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00149">main.js:149</a></div></div>
 <div class="ttc" id="main_8js_html_a273346471dff7030093765f4e043d101"><div class="ttname"><a href="main_8js.html#a273346471dff7030093765f4e043d101">url</a></div><div class="ttdeci">var url</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00001">main.js:1</a></div></div>
-<div class="ttc" id="main_8js_html_a82571cea88dd49008c1617e5e7daed59"><div class="ttname"><a href="main_8js.html#a82571cea88dd49008c1617e5e7daed59">ready</a></div><div class="ttdeci">document ready(function(){loadAirports();$(&quot;#mainForm&quot;).submit(function(event){event.preventDefault();calculate();});$(&quot;#errorClose&quot;).click(function(){$(&quot;#errorWindow&quot;).slideUp();});})</div><div class="ttdoc">Punkt startowy. </div></div>
+<div class="ttc" id="main_8js_html_ad87ab979d82b4ba3db941d4a1141d7a7"><div class="ttname"><a href="main_8js.html#ad87ab979d82b4ba3db941d4a1141d7a7">progressInterval</a></div><div class="ttdeci">var progressInterval</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00003">main.js:3</a></div></div>
+<div class="ttc" id="main_8js_html_ac4103803f3a6097df5c1447d97fb83b8"><div class="ttname"><a href="main_8js.html#ac4103803f3a6097df5c1447d97fb83b8">updateProgress</a></div><div class="ttdeci">function updateProgress($xml)</div><div class="ttdoc">aktualizacja stanu wykonywania obliczeń </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00101">main.js:101</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d1db6988e630ede1dfdede8332973faa.html">view</a></li><li class="navelem"><a class="el" href="dir_fabceed4f3196edb1585507a98b93937.html">js</a></li><li class="navelem"><a class="el" href="main_8js.html">main.js</a></li>
-    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:38 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:18:56 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -135,6 +135,8 @@ Metody publiczne</h2></td></tr>
 <tr class="separator:a93fa4f5bde99218af1f85d52b33f6cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa83c3d6ce949e210ea8002561ef5ed13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_server.html#aa83c3d6ce949e210ea8002561ef5ed13">triggerShutDown</a> ()</td></tr>
 <tr class="separator:aa83c3d6ce949e210ea8002561ef5ed13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eddfa21db661bcd0d1c51cdd8466175"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_server.html#a7eddfa21db661bcd0d1c51cdd8466175">isClosed</a> ()</td></tr>
+<tr class="separator:a7eddfa21db661bcd0d1c51cdd8466175"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Atrybuty publiczne</h2></td></tr>
@@ -143,7 +145,7 @@ Atrybuty publiczne</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock">
-<p>Definicja w linii <a class="el" href="_view_server_8hpp_source.html#l00017">17</a> pliku <a class="el" href="_view_server_8hpp_source.html">ViewServer.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_view_server_8hpp_source.html#l00018">18</a> pliku <a class="el" href="_view_server_8hpp_source.html">ViewServer.hpp</a>.</p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
 <a class="anchor" id="ac8960d770d71cd564e470a946560df76"></a>
 <div class="memitem">
@@ -159,7 +161,7 @@ Atrybuty publiczne</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00047">47</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00049">49</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
 
 </div>
 </div>
@@ -176,11 +178,28 @@ Atrybuty publiczne</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00056">56</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00059">59</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a class="anchor" id="a7eddfa21db661bcd0d1c51cdd8466175"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ViewServer::isClosed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00341">341</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a265565e37e5051443b3f99f86f65575a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -198,15 +217,15 @@ Atrybuty publiczne</h2></td></tr>
 <p>Metoda odpowiedzialna za komunikację sieciową z widokiem. Możliwe podobieństwa do <a href="https://en.wikipedia.org/wiki/Berkeley_sockets">https://en.wikipedia.org/wiki/Berkeley_sockets</a>.</p>
 <dl class="section return"><dt>Zwraca</dt><dd>void </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Do zrobienia:</a></b></dt><dd>ujednolicić std namespace </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Do zrobienia:</a></b></dt><dd>ujednolicić std namespace </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Do zrobienia:</a></b></dt><dd>ustalić czas życia gniazda w naszej aplikacji </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">Do zrobienia:</a></b></dt><dd>ustalić czas życia gniazda w naszej aplikacji </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000017">Do zrobienia:</a></b></dt><dd>zczytać zapytanie od widoku </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Do zrobienia:</a></b></dt><dd>zczytać zapytanie od widoku </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">Do zrobienia:</a></b></dt><dd>odesłać odpowiedź z nagłówkiem HTTP </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">Do zrobienia:</a></b></dt><dd>odesłać odpowiedź z nagłówkiem HTTP </dd></dl>
 
-<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00071">71</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00074">74</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
@@ -242,7 +261,7 @@ Oto graf wywoływań tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00234">234</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00248">248</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
@@ -268,9 +287,18 @@ Oto graf wywoływań tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Do zrobienia:</a></b></dt><dd>rozwiązać problem z blokującym accept przy zamykaniu </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000017">Do zrobienia:</a></b></dt><dd>rozwiązać problem z blokującym accept przy zamykaniu </dd></dl>
 
-<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00239">239</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_view_server_8cpp_source.html#l00253">253</a> pliku <a class="el" href="_view_server_8cpp_source.html">ViewServer.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_view_server_aa83c3d6ce949e210ea8002561ef5ed13_cgraph.png" border="0" usemap="#class_view_server_aa83c3d6ce949e210ea8002561ef5ed13_cgraph" alt=""/></div>
+<map name="class_view_server_aa83c3d6ce949e210ea8002561ef5ed13_cgraph" id="class_view_server_aa83c3d6ce949e210ea8002561ef5ed13_cgraph">
+<area shape="rect" id="node2" href="class_blocking_queue.html#aba9a92a9e6a732cd720c609d7e706c47" title="Dodanie niepodzielnie elementu na koniec kolejki. " alt="" coords="243,5,424,32"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -286,7 +314,7 @@ Oto graf wywoływań tej funkcji:</div>
 </div><div class="memdoc">
 <p>kolejka z odpowiedziami do wysłania </p>
 
-<p>Definicja w linii <a class="el" href="_view_server_8hpp_source.html#l00030">30</a> pliku <a class="el" href="_view_server_8hpp_source.html">ViewServer.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_view_server_8hpp_source.html#l00031">31</a> pliku <a class="el" href="_view_server_8hpp_source.html">ViewServer.hpp</a>.</p>
 
 </div>
 </div>
@@ -300,7 +328,7 @@ Oto graf wywoływań tej funkcji:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_view_server.html">ViewServer</a></li>
-    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:40 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:19:06 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

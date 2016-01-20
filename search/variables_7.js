@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['safety',['safety',['../class_command.html#a91eec09940d65ac411091c78e2c5c6c7',1,'Command::safety()'],['../class_message.html#a8e9f85ce3883f564328f31e2c5c07b58',1,'Message::safety()']]],
-  ['start',['start',['../class_command.html#a8bdbb7931a95bd074090e9f80c11a422',1,'Command::start()'],['../class_message.html#a6b0e0e7b70c9eeabe19f416c7481ecca',1,'Message::start()']]]
+  ['price',['price',['../class_command.html#a4163c20fbb273d2e24a9b6d28d63808a',1,'Command::price()'],['../class_message.html#a4b10d7e0f0ec524768e7ae043020f48d',1,'Message::price()']]],
+  ['progressinterval',['progressInterval',['../main_8js.html#ad87ab979d82b4ba3db941d4a1141d7a7',1,'main.js']]]
 ];

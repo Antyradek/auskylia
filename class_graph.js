@@ -6,5 +6,6 @@ var class_graph =
     [ "getNodes", "class_graph.html#a7f2fcc32bdf8d9006b801a3d6375bf41", null ],
     [ "getParam", "class_graph.html#a7c309663acf0f7a6805097b11600a8e5", null ],
     [ "print", "class_graph.html#a78b4118a60b079781b37e2b456124a2f", null ],
-    [ "printNodes", "class_graph.html#ad342ffe267027720499bc75377eab674", null ]
+    [ "printNodes", "class_graph.html#ad342ffe267027720499bc75377eab674", null ],
+    [ "setEndNodes", "class_graph.html#a0d1a40186b2009098a90cc310828a1fa", null ]
 ];

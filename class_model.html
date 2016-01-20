@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('class_model.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Na razie pusta/zaślepkowa klasa Modelu.  
+<p>Klasa główna modelu odpowiadająca za komunikację z kontrolerem.  
  <a href="class_model.html#details">Więcej...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_model_8hpp_source.html">Model.hpp</a>&gt;</code></p>
@@ -124,21 +124,27 @@ Metody publiczne</h2></td></tr>
 <tr class="separator:ae3b375de5f6df4faf74a95d64748e048"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02d8cb6c679e1590bdbc162e0703e1ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_graph.html">Graph</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a02d8cb6c679e1590bdbc162e0703e1ac">generateGraph</a> (const unsigned nodes, const <a class="el" href="class_graph_generator.html">GraphGenerator</a> *const generator) const </td></tr>
 <tr class="separator:a02d8cb6c679e1590bdbc162e0703e1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac772eee5fb2c8ab258b4ca74157d80a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0">useGraph</a> (<a class="el" href="class_graph.html">Graph</a> *const graph)</td></tr>
-<tr class="separator:ac772eee5fb2c8ab258b4ca74157d80a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59481c877686bc0dad06857be1448995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a59481c877686bc0dad06857be1448995">useGraph</a> (const std::string &amp;file)</td></tr>
-<tr class="separator:a59481c877686bc0dad06857be1448995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad0895ed8c3106ae02f6e1af24c85302"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aad0895ed8c3106ae02f6e1af24c85302">saveGraph</a> (const std::string &amp;file, <a class="el" href="class_graph.html">Graph</a> *graph=nullptr) const </td></tr>
-<tr class="separator:aad0895ed8c3106ae02f6e1af24c85302"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee469cba135c624edb85548922008e0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aee469cba135c624edb85548922008e0e">setWeights</a> (const <a class="el" href="types_8hpp.html#af230a7e4b05b50c1162d7652222e091f">Weights</a> &amp;weights)</td></tr>
+<tr class="memitem:a7c7933793f2b283c91563b1bc4b6fad0"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a7c7933793f2b283c91563b1bc4b6fad0">loadAirportList</a> (const std::string file)</td></tr>
+<tr class="memdesc:a7c7933793f2b283c91563b1bc4b6fad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje kody lotnisk z listy i tworzy graf na jej podstawie. Zakłada, że w danej linii jest co najwyżej jedna fraza &lt;iata&gt;KOD&lt;/iata&gt;. Zakłada, że każda fraza &lt;iata&gt;KOD&lt;/iata&gt; znajduje się w całości w jednej linii.  <a href="#a7c7933793f2b283c91563b1bc4b6fad0">Więcej...</a><br/></td></tr>
+<tr class="separator:a7c7933793f2b283c91563b1bc4b6fad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab08860033d2d75700bb1a064fc0c2f75"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ab08860033d2d75700bb1a064fc0c2f75">loadIataList</a> (const std::string file)</td></tr>
+<tr class="memdesc:ab08860033d2d75700bb1a064fc0c2f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje kody IATA z listy i tworzy graf na jej podstawie. Zakłada, że w danej linii jest dokładnie jeden kod IATA.  <a href="#ab08860033d2d75700bb1a064fc0c2f75">Więcej...</a><br/></td></tr>
+<tr class="separator:ab08860033d2d75700bb1a064fc0c2f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee469cba135c624edb85548922008e0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aee469cba135c624edb85548922008e0e">setWeights</a> (const <a class="el" href="types_8hpp.html#a135fd1791e206016905b5b4ba1cf2747">Weights</a> &amp;weights)</td></tr>
 <tr class="memdesc:aee469cba135c624edb85548922008e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia wagi parametrów trasy.  <a href="#aee469cba135c624edb85548922008e0e">Więcej...</a><br/></td></tr>
 <tr class="separator:aee469cba135c624edb85548922008e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9a99c96ce7a6806abb6d2c8eee9507c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae9a99c96ce7a6806abb6d2c8eee9507c">createPopulation</a> (unsigned size, <a class="el" href="class_strategy.html">Strategy</a> *strategy, <a class="el" href="class_mutation.html">Mutation</a> *mutation)</td></tr>
-<tr class="memdesc:ae9a99c96ce7a6806abb6d2c8eee9507c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy populację o zadanym rozmiarze.  <a href="#ae9a99c96ce7a6806abb6d2c8eee9507c">Więcej...</a><br/></td></tr>
-<tr class="separator:ae9a99c96ce7a6806abb6d2c8eee9507c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afced0c0616a05be7143a894b077f06e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#afced0c0616a05be7143a894b077f06e5">createPopulation</a> (unsigned size, <a class="el" href="class_strategy.html">Strategy</a> *strategy=nullptr, <a class="el" href="class_mutation.html">Mutation</a> *mutation=nullptr)</td></tr>
+<tr class="memdesc:afced0c0616a05be7143a894b077f06e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tworzy populację o zadanym rozmiarze.  <a href="#afced0c0616a05be7143a894b077f06e5">Więcej...</a><br/></td></tr>
+<tr class="separator:afced0c0616a05be7143a894b077f06e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2ac5823a1e318bb4bdeeecb68081fbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ab2ac5823a1e318bb4bdeeecb68081fbe">evolve</a> (unsigned times)</td></tr>
 <tr class="memdesc:ab2ac5823a1e318bb4bdeeecb68081fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Krzyżuje osobniki.  <a href="#ab2ac5823a1e318bb4bdeeecb68081fbe">Więcej...</a><br/></td></tr>
 <tr class="separator:ab2ac5823a1e318bb4bdeeecb68081fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08cf8c94bb5429104c6f0ed37f8cc26f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a08cf8c94bb5429104c6f0ed37f8cc26f">setEndNodes</a> (unsigned start, unsigned end)</td></tr>
+<tr class="memdesc:a08cf8c94bb5429104c6f0ed37f8cc26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustala punkt końcowy i początkowy (resetuje populację)  <a href="#a08cf8c94bb5429104c6f0ed37f8cc26f">Więcej...</a><br/></td></tr>
+<tr class="separator:a08cf8c94bb5429104c6f0ed37f8cc26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bc1c9dacabbf1e9b9197ff039c2f980"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a1bc1c9dacabbf1e9b9197ff039c2f980">setEndNodes</a> (std::string start, std::string end)</td></tr>
+<tr class="memdesc:a1bc1c9dacabbf1e9b9197ff039c2f980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustala punkt końcowy i początkowy (resetuje populację)  <a href="#a1bc1c9dacabbf1e9b9197ff039c2f980">Więcej...</a><br/></td></tr>
+<tr class="separator:a1bc1c9dacabbf1e9b9197ff039c2f980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d5356b89fd3aab471a3949f0057f618"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a7d5356b89fd3aab471a3949f0057f618">setStrategy</a> (<a class="el" href="class_strategy.html">Strategy</a> *strategy)</td></tr>
 <tr class="memdesc:a7d5356b89fd3aab471a3949f0057f618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia strategię krzyżowania populacji.  <a href="#a7d5356b89fd3aab471a3949f0057f618">Więcej...</a><br/></td></tr>
 <tr class="separator:a7d5356b89fd3aab471a3949f0057f618"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -148,12 +154,30 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:ada0c9c135934f4022b8b634a4173147b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_population.html">Population</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ada0c9c135934f4022b8b634a4173147b">getPopulation</a> ()</td></tr>
 <tr class="memdesc:ada0c9c135934f4022b8b634a4173147b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca wskaźnik do populacji.  <a href="#ada0c9c135934f4022b8b634a4173147b">Więcej...</a><br/></td></tr>
 <tr class="separator:ada0c9c135934f4022b8b634a4173147b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e4098f7c1efcb5b761ebc39e5793bf6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_path.html">Path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a0e4098f7c1efcb5b761ebc39e5793bf6">getPath</a> (unsigned n)</td></tr>
+<tr class="memdesc:a0e4098f7c1efcb5b761ebc39e5793bf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca n-tą ścieżkę  <a href="#a0e4098f7c1efcb5b761ebc39e5793bf6">Więcej...</a><br/></td></tr>
+<tr class="separator:a0e4098f7c1efcb5b761ebc39e5793bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9778b8537b5c0aa5979ce03561a6632"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ab9778b8537b5c0aa5979ce03561a6632">getPathIata</a> (unsigned n)</td></tr>
+<tr class="memdesc:ab9778b8537b5c0aa5979ce03561a6632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zwraca n-tą ścieżkę jako wektor stringów IATA.  <a href="#ab9778b8537b5c0aa5979ce03561a6632">Więcej...</a><br/></td></tr>
+<tr class="separator:ab9778b8537b5c0aa5979ce03561a6632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac772eee5fb2c8ab258b4ca74157d80a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0">useGraph</a> (<a class="el" href="class_graph.html">Graph</a> *const graph)</td></tr>
+<tr class="memdesc:ac772eee5fb2c8ab258b4ca74157d80a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje graf z pamięci.  <a href="#ac772eee5fb2c8ab258b4ca74157d80a0">Więcej...</a><br/></td></tr>
+<tr class="separator:ac772eee5fb2c8ab258b4ca74157d80a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59481c877686bc0dad06857be1448995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a59481c877686bc0dad06857be1448995">useGraph</a> (const std::string &amp;file)</td></tr>
+<tr class="memdesc:a59481c877686bc0dad06857be1448995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wczytuje graf z pliku.  <a href="#a59481c877686bc0dad06857be1448995">Więcej...</a><br/></td></tr>
+<tr class="separator:a59481c877686bc0dad06857be1448995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad0895ed8c3106ae02f6e1af24c85302"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aad0895ed8c3106ae02f6e1af24c85302">saveGraph</a> (const std::string &amp;file, <a class="el" href="class_graph.html">Graph</a> *graph=nullptr) const </td></tr>
+<tr class="memdesc:aad0895ed8c3106ae02f6e1af24c85302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zapisuje graf do pliku. Uwaga! Plik zostanie nadpisany, używać ostrożnie.  <a href="#aad0895ed8c3106ae02f6e1af24c85302">Więcej...</a><br/></td></tr>
+<tr class="separator:aad0895ed8c3106ae02f6e1af24c85302"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcdee6ea56bce205fd21c30562258c9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#afcdee6ea56bce205fd21c30562258c9a">doMainJob</a> ()</td></tr>
 <tr class="memdesc:afcdee6ea56bce205fd21c30562258c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem przez dwie kolejki blokujące: controllerBlockingQueue i modelBlockingQueue.  <a href="#afcdee6ea56bce205fd21c30562258c9a">Więcej...</a><br/></td></tr>
 <tr class="separator:afcdee6ea56bce205fd21c30562258c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae02b696f5db29504783cf99f96b65274"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae02b696f5db29504783cf99f96b65274">setControllerBlockingQueue</a> (<a class="el" href="class_blocking_queue.html">BlockingQueue</a>&lt; <a class="el" href="class_event.html">Event</a> * &gt; *q)</td></tr>
 <tr class="memdesc:ae02b696f5db29504783cf99f96b65274"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ustawia wskaźnik na kolejkę kontrolera.  <a href="#ae02b696f5db29504783cf99f96b65274">Więcej...</a><br/></td></tr>
 <tr class="separator:ae02b696f5db29504783cf99f96b65274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5afe58ddcc59ce2ad5445aef3a6d27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#abd5afe58ddcc59ce2ad5445aef3a6d27">triggerShutDown</a> ()</td></tr>
+<tr class="memdesc:abd5afe58ddcc59ce2ad5445aef3a6d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metoda kończąca pracę głównego wątka modelu. Ustawia shutDown.  <a href="#abd5afe58ddcc59ce2ad5445aef3a6d27">Więcej...</a><br/></td></tr>
+<tr class="separator:abd5afe58ddcc59ce2ad5445aef3a6d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Przyjaciele</h2></td></tr>
@@ -161,9 +185,9 @@ Przyjaciele</h2></td></tr>
 <tr class="separator:ac3456fd331a58b288082abca310c7a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
-<div class="textblock"><p>Na razie pusta/zaślepkowa klasa Modelu. </p>
+<div class="textblock"><p>Klasa główna modelu odpowiadająca za komunikację z kontrolerem. </p>
 
-<p>Definicja w linii <a class="el" href="_model_8hpp_source.html#l00030">30</a> pliku <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_model_8hpp_source.html#l00032">32</a> pliku <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
 <a class="anchor" id="ae3b375de5f6df4faf74a95d64748e048"></a>
 <div class="memitem">
@@ -178,12 +202,12 @@ Przyjaciele</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00072">72</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00196">196</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
-<a class="anchor" id="ae9a99c96ce7a6806abb6d2c8eee9507c"></a>
+<a class="anchor" id="afced0c0616a05be7143a894b077f06e5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -197,13 +221,13 @@ Przyjaciele</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_strategy.html">Strategy</a> *&#160;</td>
-          <td class="paramname"><em>strategy</em>, </td>
+          <td class="paramname"><em>strategy</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_mutation.html">Mutation</a> *&#160;</td>
-          <td class="paramname"><em>mutation</em>&#160;</td>
+          <td class="paramname"><em>mutation</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -223,16 +247,7 @@ Przyjaciele</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00042">42</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
-
-<p><div class="dynheader">
-Oto graf wywoływań tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_model_ae9a99c96ce7a6806abb6d2c8eee9507c_icgraph.png" border="0" usemap="#class_model_ae9a99c96ce7a6806abb6d2c8eee9507c_icgraph" alt=""/></div>
-<map name="class_model_ae9a99c96ce7a6806abb6d2c8eee9507c_icgraph" id="class_model_ae9a99c96ce7a6806abb6d2c8eee9507c_icgraph">
-<area shape="rect" id="node2" href="_model_8cpp.html#a344598cef5e5e40c7b3c3638cc63874e" title="modelTest" alt="" coords="216,5,299,32"/><area shape="rect" id="node3" href="class_model.html#afcdee6ea56bce205fd21c30562258c9a" title="Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem prze..." alt="" coords="347,5,473,32"/><area shape="rect" id="node4" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8" title="Controller::start" alt="" coords="521,5,632,32"/><area shape="rect" id="node5" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="680,5,731,32"/></map>
-</div>
-</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00106">106</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 </div>
 </div>
@@ -252,24 +267,24 @@ Oto graf wywoływań tej funkcji:</div>
 <p>Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem przez dwie kolejki blokujące: controllerBlockingQueue i modelBlockingQueue. </p>
 <dl class="section return"><dt>Zwraca</dt><dd>void </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Do zrobienia:</a></b></dt><dd>rzucić odpowiedni wyjątek, jak już powstanie </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Do zrobienia:</a></b></dt><dd>rzucić odpowiedni wyjątek, jak już powstanie </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Do zrobienia:</a></b></dt><dd>wziąć dane z polecenia i uruchomić algorytm </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Do zrobienia:</a></b></dt><dd>wziąć dane z polecenia i uruchomić algorytm </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">Do zrobienia:</a></b></dt><dd>zatrzymać algorytm </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">Do zrobienia:</a></b></dt><dd>zwrócić wynik algorytmu </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Do zrobienia:</a></b></dt><dd>zwrócić stan wykonania algorytmu </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Do zrobienia:</a></b></dt><dd>zatrzymać algorytm </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Do zrobienia:</a></b></dt><dd>wymyślić wygodny sposób zwracania stanu </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">Do zrobienia:</a></b></dt><dd>zwrócić stan wykonania algorytmu </dd></dl>
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00106">106</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00306">306</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_model_afcdee6ea56bce205fd21c30562258c9a_cgraph.png" border="0" usemap="#class_model_afcdee6ea56bce205fd21c30562258c9a_cgraph" alt=""/></div>
 <map name="class_model_afcdee6ea56bce205fd21c30562258c9a_cgraph" id="class_model_afcdee6ea56bce205fd21c30562258c9a_cgraph">
-<area shape="rect" id="node2" href="class_blocking_queue.html#a33e18f760365430cee38721dfd0abf5e" title="Zdejmuje pierwszy element z kolejki niepodzielnie i go zwraca. " alt="" coords="201,91,340,133"/><area shape="rect" id="node3" href="_model_8cpp.html#a344598cef5e5e40c7b3c3638cc63874e" title="modelTest" alt="" coords="229,157,312,184"/><area shape="rect" id="node17" href="class_blocking_queue.html#aba9a92a9e6a732cd720c609d7e706c47" title="Dodanie niepodzielnie elementu na koniec kolejki. " alt="" coords="180,208,361,235"/><area shape="rect" id="node4" href="class_model.html#a02d8cb6c679e1590bdbc162e0703e1ac" title="Model::generateGraph" alt="" coords="415,5,566,32"/><area shape="rect" id="node5" href="class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0" title="Model::useGraph" alt="" coords="430,56,551,83"/><area shape="rect" id="node6" href="class_model.html#ae9a99c96ce7a6806abb6d2c8eee9507c" title="Tworzy populację o zadanym rozmiarze. " alt="" coords="409,107,572,133"/><area shape="rect" id="node7" href="class_model.html#aee469cba135c624edb85548922008e0e" title="Ustawia wagi parametrów trasy. " alt="" coords="425,157,556,184"/><area shape="rect" id="node9" href="class_model.html#ada0c9c135934f4022b8b634a4173147b" title="Zwraca wskaźnik do populacji. " alt="" coords="419,208,563,235"/><area shape="rect" id="node10" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7" title="Wypisuje populację. " alt="" coords="433,259,549,285"/><area shape="rect" id="node11" href="class_model.html#ab2ac5823a1e318bb4bdeeecb68081fbe" title="Krzyżuje osobniki. " alt="" coords="441,309,540,336"/><area shape="rect" id="node8" href="class_population.html#a782c98a7515b64d8e0f61c4a39ed436c" title="Population::setWeights" alt="" coords="620,157,777,184"/><area shape="rect" id="node12" href="class_population.html#a693bd0dd63bab14a13a7b6ed578dddd5" title="Jedna iteracja krzyżowania. [in] strategy wskaźnik na strategię doboru osobników w pary..." alt="" coords="636,309,761,336"/><area shape="rect" id="node13" href="class_population.html#af44af1623ec86b2be635b74c6aa621d1" title="Population::newPaths" alt="" coords="825,309,973,336"/><area shape="rect" id="node14" href="class_path.html#a4c9805986fd9779d526c580887b83160" title="Path::print" alt="" coords="1040,259,1123,285"/><area shape="rect" id="node15" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992" title="rollUniform" alt="" coords="1040,309,1123,336"/><area shape="rect" id="node16" href="class_mutation.html#ae52427b76450d3b3883ebd10192c43b7" title="Mutation::mutate" alt="" coords="1021,360,1141,387"/></map>
+<area shape="rect" id="node2" href="class_blocking_queue.html#a33e18f760365430cee38721dfd0abf5e" title="Zdejmuje pierwszy element z kolejki niepodzielnie i go zwraca. " alt="" coords="201,5,340,47"/><area shape="rect" id="node3" href="class_blocking_queue.html#aba9a92a9e6a732cd720c609d7e706c47" title="Dodanie niepodzielnie elementu na koniec kolejki. " alt="" coords="180,71,361,98"/><area shape="rect" id="node4" href="_model_8cpp.html#ae4b8cce9b5224d8cddc4332e434062c4" title="modelTest" alt="" coords="229,122,312,149"/><area shape="rect" id="node5" href="class_model.html#a0e4098f7c1efcb5b761ebc39e5793bf6" title="Zwraca n&#45;tą ścieżkę " alt="" coords="215,173,326,199"/><area shape="rect" id="node6" href="class_path.html#a5879141baeb4154e709a216aa6d50f4e" title="Path::getLength" alt="" coords="409,198,524,225"/></map>
 </div>
 </p>
 
@@ -307,23 +322,14 @@ Oto graf wywoływań tej funkcji:</div>
   </dd>
 </dl>
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00048">48</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00112">112</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_model_ab2ac5823a1e318bb4bdeeecb68081fbe_cgraph.png" border="0" usemap="#class_model_ab2ac5823a1e318bb4bdeeecb68081fbe_cgraph" alt=""/></div>
 <map name="class_model_ab2ac5823a1e318bb4bdeeecb68081fbe_cgraph" id="class_model_ab2ac5823a1e318bb4bdeeecb68081fbe_cgraph">
-<area shape="rect" id="node2" href="class_population.html#a693bd0dd63bab14a13a7b6ed578dddd5" title="Jedna iteracja krzyżowania. [in] strategy wskaźnik na strategię doboru osobników w pary..." alt="" coords="152,56,277,83"/><area shape="rect" id="node3" href="class_population.html#af44af1623ec86b2be635b74c6aa621d1" title="Population::newPaths" alt="" coords="325,56,473,83"/><area shape="rect" id="node4" href="class_path.html#a4c9805986fd9779d526c580887b83160" title="Path::print" alt="" coords="540,5,623,32"/><area shape="rect" id="node5" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992" title="rollUniform" alt="" coords="540,56,623,83"/><area shape="rect" id="node6" href="class_mutation.html#ae52427b76450d3b3883ebd10192c43b7" title="Mutation::mutate" alt="" coords="521,107,641,133"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Oto graf wywoływań tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_model_ab2ac5823a1e318bb4bdeeecb68081fbe_icgraph.png" border="0" usemap="#class_model_ab2ac5823a1e318bb4bdeeecb68081fbe_icgraph" alt=""/></div>
-<map name="class_model_ab2ac5823a1e318bb4bdeeecb68081fbe_icgraph" id="class_model_ab2ac5823a1e318bb4bdeeecb68081fbe_icgraph">
-<area shape="rect" id="node2" href="_model_8cpp.html#a344598cef5e5e40c7b3c3638cc63874e" title="modelTest" alt="" coords="152,5,235,32"/><area shape="rect" id="node3" href="class_model.html#afcdee6ea56bce205fd21c30562258c9a" title="Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem prze..." alt="" coords="283,5,409,32"/><area shape="rect" id="node4" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8" title="Controller::start" alt="" coords="457,5,568,32"/><area shape="rect" id="node5" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="616,5,667,32"/></map>
+<area shape="rect" id="node2" href="main_8js.html#ae13a0a4c9105c0cc5a14d547a31f970a" title="stopCalc" alt="" coords="152,189,225,215"/><area shape="rect" id="node3" href="main_8js.html#a5ef4e5e3d92c9b05ceb048603552df6b" title="wysyła rządanie i przetwarza wynik, lub pokazuje błąd " alt="" coords="273,189,351,215"/><area shape="rect" id="node4" href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f" title="pokazuje, lub ukrywa klepsydrę " alt="" coords="731,126,829,153"/><area shape="rect" id="node5" href="main_8js.html#a8839033f514fd22566344670acdf9501" title="wczytaj początek rezultatu i wykonaj odpowiednią dla niego akcję " alt="" coords="399,189,489,215"/><area shape="rect" id="node6" href="main_8js.html#a80815bbcc298d7e589483de22cc38853" title="wywal oczojebny błąd na ekran " alt="" coords="740,214,820,241"/><area shape="rect" id="node7" href="main_8js.html#a5303c598d7acd0f7956f304ae22eddcf" title="aktualiazcja wyboru miast " alt="" coords="537,290,683,317"/><area shape="rect" id="node8" href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa" title="showServerError" alt="" coords="552,138,668,165"/><area shape="rect" id="node10" href="main_8js.html#ac4103803f3a6097df5c1447d97fb83b8" title="aktualizacja stanu wykonywania obliczeń " alt="" coords="553,189,667,215"/><area shape="rect" id="node11" href="main_8js.html#a15b8792506347e67d6076b0c0ca99013" title="showSolution" alt="" coords="561,37,659,63"/><area shape="rect" id="node9" href="main_8js.html#a40d58867149f7cd5f2e3fcf743ccdbfd" title="stopRefresh" alt="" coords="735,50,825,77"/></map>
 </div>
 </p>
 
@@ -352,17 +358,85 @@ Oto graf wywoływań tej funkcji:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Generuje graf i zwraca do niego wskaźnik. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nodes</td><td>liczba węzłów </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>wskaźnik do wygenerowanego grafu</dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Do zrobienia:</a></b></dt><dd>przydały by się jakieś wyjątki do modelu </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Do zrobienia:</a></b></dt><dd>przydały by się jakieś wyjątki do modelu </dd></dl>
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00014">14</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00030">30</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e4098f7c1efcb5b761ebc39e5793bf6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_path.html">Path</a> Model::getPath </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwraca n-tą ścieżkę </p>
+<dl class="section return"><dt>Zwraca</dt><dd>n-ta najlepsza ścieżka </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00144">144</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_a0e4098f7c1efcb5b761ebc39e5793bf6_cgraph.png" border="0" usemap="#class_model_a0e4098f7c1efcb5b761ebc39e5793bf6_cgraph" alt=""/></div>
+<map name="class_model_a0e4098f7c1efcb5b761ebc39e5793bf6_cgraph" id="class_model_a0e4098f7c1efcb5b761ebc39e5793bf6_cgraph">
+<area shape="rect" id="node2" href="class_path.html#a5879141baeb4154e709a216aa6d50f4e" title="Path::getLength" alt="" coords="164,5,279,32"/></map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_model_a02d8cb6c679e1590bdbc162e0703e1ac_icgraph.png" border="0" usemap="#class_model_a02d8cb6c679e1590bdbc162e0703e1ac_icgraph" alt=""/></div>
-<map name="class_model_a02d8cb6c679e1590bdbc162e0703e1ac_icgraph" id="class_model_a02d8cb6c679e1590bdbc162e0703e1ac_icgraph">
-<area shape="rect" id="node2" href="_model_8cpp.html#a344598cef5e5e40c7b3c3638cc63874e" title="modelTest" alt="" coords="204,5,287,32"/><area shape="rect" id="node3" href="class_model.html#afcdee6ea56bce205fd21c30562258c9a" title="Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem prze..." alt="" coords="335,5,461,32"/><area shape="rect" id="node4" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8" title="Controller::start" alt="" coords="509,5,620,32"/><area shape="rect" id="node5" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="668,5,719,32"/></map>
+<div class="center"><img src="class_model_a0e4098f7c1efcb5b761ebc39e5793bf6_icgraph.png" border="0" usemap="#class_model_a0e4098f7c1efcb5b761ebc39e5793bf6_icgraph" alt=""/></div>
+<map name="class_model_a0e4098f7c1efcb5b761ebc39e5793bf6_icgraph" id="class_model_a0e4098f7c1efcb5b761ebc39e5793bf6_icgraph">
+<area shape="rect" id="node2" href="class_model.html#afcdee6ea56bce205fd21c30562258c9a" title="Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem prze..." alt="" coords="164,5,291,32"/><area shape="rect" id="node3" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8" title="Controller::start" alt="" coords="339,5,449,32"/><area shape="rect" id="node4" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="497,5,548,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9778b8537b5c0aa5979ce03561a6632"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; Model::getPathIata </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zwraca n-tą ścieżkę jako wektor stringów IATA. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>n-ta najlepsza ścieżka </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00168">168</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+<p><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_ab9778b8537b5c0aa5979ce03561a6632_cgraph.png" border="0" usemap="#class_model_ab9778b8537b5c0aa5979ce03561a6632_cgraph" alt=""/></div>
+<map name="class_model_ab9778b8537b5c0aa5979ce03561a6632_cgraph" id="class_model_ab9778b8537b5c0aa5979ce03561a6632_cgraph">
+<area shape="rect" id="node2" href="class_path.html#a5879141baeb4154e709a216aa6d50f4e" title="Path::getLength" alt="" coords="184,5,299,32"/></map>
 </div>
 </p>
 
@@ -384,16 +458,62 @@ Oto graf wywoływań tej funkcji:</div>
 <p>Zwraca wskaźnik do populacji. </p>
 <dl class="section return"><dt>Zwraca</dt><dd>wskaźnik do populacji </dd></dl>
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00067">67</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00139">139</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
-<p><div class="dynheader">
-Oto graf wywoływań tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_model_ada0c9c135934f4022b8b634a4173147b_icgraph.png" border="0" usemap="#class_model_ada0c9c135934f4022b8b634a4173147b_icgraph" alt=""/></div>
-<map name="class_model_ada0c9c135934f4022b8b634a4173147b_icgraph" id="class_model_ada0c9c135934f4022b8b634a4173147b_icgraph">
-<area shape="rect" id="node2" href="_model_8cpp.html#a344598cef5e5e40c7b3c3638cc63874e" title="modelTest" alt="" coords="197,5,280,32"/><area shape="rect" id="node3" href="class_model.html#afcdee6ea56bce205fd21c30562258c9a" title="Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem prze..." alt="" coords="328,5,455,32"/><area shape="rect" id="node4" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8" title="Controller::start" alt="" coords="503,5,613,32"/><area shape="rect" id="node5" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="661,5,712,32"/></map>
 </div>
-</p>
+</div>
+<a class="anchor" id="a7c7933793f2b283c91563b1bc4b6fad0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Model::loadAirportList </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wczytuje kody lotnisk z listy i tworzy graf na jej podstawie. Zakłada, że w danej linii jest co najwyżej jedna fraza &lt;iata&gt;KOD&lt;/iata&gt;. Zakłada, że każda fraza &lt;iata&gt;KOD&lt;/iata&gt; znajduje się w całości w jednej linii. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Ścieżka pliku z listą lotnisk</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Liczba wczytanych lotnisk </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00050">50</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab08860033d2d75700bb1a064fc0c2f75"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Model::loadIataList </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wczytuje kody IATA z listy i tworzy graf na jej podstawie. Zakłada, że w danej linii jest dokładnie jeden kod IATA. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Ścieżka pliku z listą IATA</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Liczba wczytanych kodów </dd></dl>
+<p>&lt; trzeba wyczycić, jeśli wczytujemy jescze raz </p>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00074">74</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 </div>
 </div>
@@ -421,7 +541,16 @@ Oto graf wywoływań tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00029">29</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Zapisuje graf do pliku. Uwaga! Plik zostanie nadpisany, używać ostrożnie. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>ściezka pliku do zapisu </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">graph</td><td>wskaźnik do grafu do zapisania, pominięcie parametru lub podanie nullptr zapisuje obecnie używany graf </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00045">45</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 </div>
 </div>
@@ -448,7 +577,7 @@ Oto graf wywoływań tej funkcji:</div>
 </dl>
 <dl class="section return"><dt>Zwraca</dt><dd>void </dd></dl>
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00144">144</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00399">399</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
@@ -458,6 +587,78 @@ Oto graf wywoływań tej funkcji:</div>
 <area shape="rect" id="node2" href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b" title="Controller::setup" alt="" coords="241,13,359,39"/><area shape="rect" id="node3" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="407,13,457,39"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="a08cf8c94bb5429104c6f0ed37f8cc26f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::setEndNodes </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustala punkt końcowy i początkowy (resetuje populację) </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>punkt początkowy </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>punkt końcowy </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00065">65</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1bc1c9dacabbf1e9b9197ff039c2f980"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::setEndNodes </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ustala punkt końcowy i początkowy (resetuje populację) </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>punkt początkowy </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>punkt końcowy </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -483,16 +684,7 @@ Oto graf wywoływań tej funkcji:</div>
   </dd>
 </dl>
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00061">61</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
-
-<p><div class="dynheader">
-Oto graf wywołań dla tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_model_ab3ab30df0fa08245098adf42410a5ea0_cgraph.png" border="0" usemap="#class_model_ab3ab30df0fa08245098adf42410a5ea0_cgraph" alt=""/></div>
-<map name="class_model_ab3ab30df0fa08245098adf42410a5ea0_cgraph" id="class_model_ab3ab30df0fa08245098adf42410a5ea0_cgraph">
-<area shape="rect" id="node2" href="class_population.html#ad8f749eaf2cb7b5d7d280a40d522d0ca" title="Population::setMutation" alt="" coords="187,5,345,32"/></map>
-</div>
-</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00133">133</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 </div>
 </div>
@@ -518,16 +710,7 @@ Oto graf wywołań dla tej funkcji:</div>
   </dd>
 </dl>
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00055">55</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
-
-<p><div class="dynheader">
-Oto graf wywołań dla tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_model_a7d5356b89fd3aab471a3949f0057f618_cgraph.png" border="0" usemap="#class_model_a7d5356b89fd3aab471a3949f0057f618_cgraph" alt=""/></div>
-<map name="class_model_a7d5356b89fd3aab471a3949f0057f618_cgraph" id="class_model_a7d5356b89fd3aab471a3949f0057f618_cgraph">
-<area shape="rect" id="node2" href="class_population.html#af71bee3c7671fe405ec2a6b3a5664d9f" title="Population::setStrategy" alt="" coords="185,5,344,32"/></map>
-</div>
-</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00127">127</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 </div>
 </div>
@@ -538,7 +721,7 @@ Oto graf wywołań dla tej funkcji:</div>
         <tr>
           <td class="memname">void Model::setWeights </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="types_8hpp.html#af230a7e4b05b50c1162d7652222e091f">Weights</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="types_8hpp.html#a135fd1791e206016905b5b4ba1cf2747">Weights</a> &amp;&#160;</td>
           <td class="paramname"><em>weights</em></td><td>)</td>
           <td></td>
         </tr>
@@ -553,23 +736,35 @@ Oto graf wywołań dla tej funkcji:</div>
   </dd>
 </dl>
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00034">34</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00098">98</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd5afe58ddcc59ce2ad5445aef3a6d27"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Model::triggerShutDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Metoda kończąca pracę głównego wątka modelu. Ustawia shutDown. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>void </dd></dl>
+<p>&lt; primo odblokowuje kolejkę, sekundo daje szansę na porawne zakończenie algorytmu </p>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00404">404</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 <p><div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_model_aee469cba135c624edb85548922008e0e_cgraph.png" border="0" usemap="#class_model_aee469cba135c624edb85548922008e0e_cgraph" alt=""/></div>
-<map name="class_model_aee469cba135c624edb85548922008e0e_cgraph" id="class_model_aee469cba135c624edb85548922008e0e_cgraph">
-<area shape="rect" id="node2" href="class_population.html#a782c98a7515b64d8e0f61c4a39ed436c" title="Population::setWeights" alt="" coords="184,5,341,32"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Oto graf wywoływań tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_model_aee469cba135c624edb85548922008e0e_icgraph.png" border="0" usemap="#class_model_aee469cba135c624edb85548922008e0e_icgraph" alt=""/></div>
-<map name="class_model_aee469cba135c624edb85548922008e0e_icgraph" id="class_model_aee469cba135c624edb85548922008e0e_icgraph">
-<area shape="rect" id="node2" href="_model_8cpp.html#a344598cef5e5e40c7b3c3638cc63874e" title="modelTest" alt="" coords="184,5,267,32"/><area shape="rect" id="node3" href="class_model.html#afcdee6ea56bce205fd21c30562258c9a" title="Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem prze..." alt="" coords="315,5,441,32"/><area shape="rect" id="node4" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8" title="Controller::start" alt="" coords="489,5,600,32"/><area shape="rect" id="node5" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="648,5,699,32"/></map>
+<div class="center"><img src="class_model_abd5afe58ddcc59ce2ad5445aef3a6d27_cgraph.png" border="0" usemap="#class_model_abd5afe58ddcc59ce2ad5445aef3a6d27_cgraph" alt=""/></div>
+<map name="class_model_abd5afe58ddcc59ce2ad5445aef3a6d27_cgraph" id="class_model_abd5afe58ddcc59ce2ad5445aef3a6d27_cgraph">
+<area shape="rect" id="node2" href="class_blocking_queue.html#aba9a92a9e6a732cd720c609d7e706c47" title="Dodanie niepodzielnie elementu na koniec kolejki. " alt="" coords="213,5,395,32"/></map>
 </div>
 </p>
 
@@ -589,16 +784,15 @@ Oto graf wywoływań tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00019">19</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Wczytuje graf z pamięci. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">graph</td><td>graf do załadowania </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p><div class="dynheader">
-Oto graf wywoływań tej funkcji:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_model_ac772eee5fb2c8ab258b4ca74157d80a0_icgraph.png" border="0" usemap="#class_model_ac772eee5fb2c8ab258b4ca74157d80a0_icgraph" alt=""/></div>
-<map name="class_model_ac772eee5fb2c8ab258b4ca74157d80a0_icgraph" id="class_model_ac772eee5fb2c8ab258b4ca74157d80a0_icgraph">
-<area shape="rect" id="node2" href="_model_8cpp.html#a344598cef5e5e40c7b3c3638cc63874e" title="modelTest" alt="" coords="175,5,257,32"/><area shape="rect" id="node3" href="class_model.html#afcdee6ea56bce205fd21c30562258c9a" title="Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem prze..." alt="" coords="305,5,432,32"/><area shape="rect" id="node4" href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8" title="Controller::start" alt="" coords="480,5,591,32"/><area shape="rect" id="node5" href="controller_main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="639,5,689,32"/></map>
-</div>
-</p>
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00035">35</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 </div>
 </div>
@@ -616,7 +810,15 @@ Oto graf wywoływań tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00024">24</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<p>Wczytuje graf z pliku. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>ściezka pliku z grafem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definicja w linii <a class="el" href="_model_8cpp_source.html#l00040">40</a> pliku <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
 
 </div>
 </div>
@@ -638,9 +840,9 @@ Oto graf wywoływań tej funkcji:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Do zrobienia:</a></b></dt><dd>być może ładniej rozwiazać problemy </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Do zrobienia:</a></b></dt><dd>być może ładniej rozwiazać problemy </dd></dl>
 
-<p>Definicja w linii <a class="el" href="_model_8hpp_source.html#l00115">115</a> pliku <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_model_8hpp_source.html#l00177">177</a> pliku <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -654,7 +856,7 @@ Oto graf wywoływań tej funkcji:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_model.html">Model</a></li>
-    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:40 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:19:04 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

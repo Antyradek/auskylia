@@ -110,32 +110,36 @@ $(document).ready(function(){initNavTree('_x_m_l_parser_8hpp_source.html','');})
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_message_8hpp.html">Message.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_x_m_l_parser.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_x_m_l_parser.html">XMLParser</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_x_m_l_parser.html#a60004d4b50ef242bbd191a494fd750f1">XMLParser</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_x_m_l_parser.html#af833ecdb0e07ead08dfda925b4af86ad">~XMLParser</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_message.html">Message</a>* <a class="code" href="class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663">operator()</a>(std::string xml);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_command_8hpp.html">Command.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_x_m_l_parser.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_x_m_l_parser.html">XMLParser</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_x_m_l_parser.html#a60004d4b50ef242bbd191a494fd750f1">XMLParser</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="class_x_m_l_parser.html#af833ecdb0e07ead08dfda925b4af86ad">~XMLParser</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_message.html">Message</a>* <a class="code" href="class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663">operator()</a>(std::string xml);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_command.html">Command</a>* <a class="code" href="class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663">operator()</a>(std::string xml,<a class="code" href="class_command.html">Command</a>* c);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="ttc" id="_message_8hpp_html"><div class="ttname"><a href="_message_8hpp.html">Message.hpp</a></div><div class="ttdoc">Plik nagłówkowy klasy wiadomości. </div></div>
-<div class="ttc" id="class_x_m_l_parser_html_aca4d9a51c17053c7bafa6c5f420ef663"><div class="ttname"><a href="class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663">XMLParser::operator()</a></div><div class="ttdeci">Message * operator()(std::string xml)</div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00047">XMLParser.cpp:47</a></div></div>
+<div class="ttc" id="class_command_html"><div class="ttname"><a href="class_command.html">Command</a></div><div class="ttdoc">Klasa polecenia do modelu. </div><div class="ttdef"><b>Definition:</b> <a href="_command_8hpp_source.html#l00023">Command.hpp:23</a></div></div>
+<div class="ttc" id="class_x_m_l_parser_html_aca4d9a51c17053c7bafa6c5f420ef663"><div class="ttname"><a href="class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663">XMLParser::operator()</a></div><div class="ttdeci">Message * operator()(std::string xml)</div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00049">XMLParser.cpp:49</a></div></div>
 <div class="ttc" id="class_message_html"><div class="ttname"><a href="class_message.html">Message</a></div><div class="ttdoc">klasa wiadomości </div><div class="ttdef"><b>Definition:</b> <a href="_message_8hpp_source.html#l00022">Message.hpp:22</a></div></div>
-<div class="ttc" id="class_x_m_l_parser_html_a60004d4b50ef242bbd191a494fd750f1"><div class="ttname"><a href="class_x_m_l_parser.html#a60004d4b50ef242bbd191a494fd750f1">XMLParser::XMLParser</a></div><div class="ttdeci">XMLParser()</div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00037">XMLParser.cpp:37</a></div></div>
-<div class="ttc" id="class_x_m_l_parser_html"><div class="ttname"><a href="class_x_m_l_parser.html">XMLParser</a></div><div class="ttdoc">Klasa parsera komunikatów XML dla auskylia. </div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8hpp_source.html#l00014">XMLParser.hpp:14</a></div></div>
-<div class="ttc" id="class_x_m_l_parser_html_af833ecdb0e07ead08dfda925b4af86ad"><div class="ttname"><a href="class_x_m_l_parser.html#af833ecdb0e07ead08dfda925b4af86ad">XMLParser::~XMLParser</a></div><div class="ttdeci">virtual ~XMLParser()</div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00042">XMLParser.cpp:42</a></div></div>
+<div class="ttc" id="_command_8hpp_html"><div class="ttname"><a href="_command_8hpp.html">Command.hpp</a></div><div class="ttdoc">Plik nagłówkowy klasy polecenia do modelu. </div></div>
+<div class="ttc" id="class_x_m_l_parser_html_a60004d4b50ef242bbd191a494fd750f1"><div class="ttname"><a href="class_x_m_l_parser.html#a60004d4b50ef242bbd191a494fd750f1">XMLParser::XMLParser</a></div><div class="ttdeci">XMLParser()</div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00039">XMLParser.cpp:39</a></div></div>
+<div class="ttc" id="class_x_m_l_parser_html"><div class="ttname"><a href="class_x_m_l_parser.html">XMLParser</a></div><div class="ttdoc">Klasa parsera komunikatów XML dla auskylia. </div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8hpp_source.html#l00015">XMLParser.hpp:15</a></div></div>
+<div class="ttc" id="class_x_m_l_parser_html_af833ecdb0e07ead08dfda925b4af86ad"><div class="ttname"><a href="class_x_m_l_parser.html#af833ecdb0e07ead08dfda925b4af86ad">XMLParser::~XMLParser</a></div><div class="ttdeci">virtual ~XMLParser()</div><div class="ttdef"><b>Definition:</b> <a href="_x_m_l_parser_8cpp_source.html#l00044">XMLParser.cpp:44</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d4705990998dc57c6886494362019069.html">controller</a></li><li class="navelem"><a class="el" href="_x_m_l_parser_8hpp.html">XMLParser.hpp</a></li>
-    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:38 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:18:54 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

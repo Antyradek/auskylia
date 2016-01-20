@@ -14,6 +14,7 @@ var hierarchy =
     ] ],
     [ "Message", "class_message.html", null ],
     [ "Model", "class_model.html", null ],
+    [ "ModelStatus", "struct_model_status.html", null ],
     [ "Mutation", "class_mutation.html", [
       [ "MutationBinomial", "class_mutation_binomial.html", null ],
       [ "MutationUniform", "class_mutation_uniform.html", null ]

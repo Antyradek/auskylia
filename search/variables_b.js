@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['value_5fmax',['VALUE_MAX',['../class_smart_generator.html#a2fb818aae4d79181f0ea43ba85f6bbf9',1,'SmartGenerator']]],
-  ['value_5fmin',['VALUE_MIN',['../class_smart_generator.html#a391f234b003e65bf76db5a26be6b803d',1,'SmartGenerator']]],
-  ['viewserverblockingqueue',['viewServerBlockingQueue',['../class_view_server.html#a4d85cb295c57a3528ed875e6afd7d5b8',1,'ViewServer']]]
+  ['time',['time',['../class_command.html#a11e679d6e22d71e17ea0ebf9c266d7e9',1,'Command::time()'],['../class_message.html#ae372af3cf12839f44346b03c54867ca0',1,'Message::time()']]],
+  ['type',['type',['../class_event.html#ac721e4f34b3b9a1ae302165412221724',1,'Event']]]
 ];

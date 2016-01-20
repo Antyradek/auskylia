@@ -125,11 +125,14 @@ Metody publiczne</h2></td></tr>
 <tr class="separator:af833ecdb0e07ead08dfda925b4af86ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca4d9a51c17053c7bafa6c5f420ef663"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_message.html">Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_m_l_parser.html#aca4d9a51c17053c7bafa6c5f420ef663">operator()</a> (std::string xml)</td></tr>
 <tr class="separator:aca4d9a51c17053c7bafa6c5f420ef663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59357dd359e39d0b041614cece3240f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_command.html">Command</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_m_l_parser.html#a59357dd359e39d0b041614cece3240f8">operator()</a> (std::string xml, <a class="el" href="class_command.html">Command</a> *c)</td></tr>
+<tr class="memdesc:a59357dd359e39d0b041614cece3240f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przetważa stringa z XML'em na polecenie, czyli najprawdopodobniej ładujemy listę miast do modelu. Wielka szkoda, że nie można przeciążyć tylko zwracanym typem. Istotny jest tylko typ drugiego argumentu, obiecuję, że nie będę go wykożystywał.  <a href="#a59357dd359e39d0b041614cece3240f8">Więcej...</a><br/></td></tr>
+<tr class="separator:a59357dd359e39d0b041614cece3240f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Klasa parsera komunikatów XML dla auskylia. </p>
 
-<p>Definicja w linii <a class="el" href="_x_m_l_parser_8hpp_source.html#l00014">14</a> pliku <a class="el" href="_x_m_l_parser_8hpp_source.html">XMLParser.hpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_x_m_l_parser_8hpp_source.html#l00015">15</a> pliku <a class="el" href="_x_m_l_parser_8hpp_source.html">XMLParser.hpp</a>.</p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
 <a class="anchor" id="a60004d4b50ef242bbd191a494fd750f1"></a>
 <div class="memitem">
@@ -145,7 +148,7 @@ Metody publiczne</h2></td></tr>
 </div><div class="memdoc">
 <p>Default constructor </p>
 
-<p>Definicja w linii <a class="el" href="_x_m_l_parser_8cpp_source.html#l00037">37</a> pliku <a class="el" href="_x_m_l_parser_8cpp_source.html">XMLParser.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_x_m_l_parser_8cpp_source.html#l00039">39</a> pliku <a class="el" href="_x_m_l_parser_8cpp_source.html">XMLParser.cpp</a>.</p>
 
 </div>
 </div>
@@ -171,7 +174,7 @@ Metody publiczne</h2></td></tr>
 </div><div class="memdoc">
 <p>Default destructor </p>
 
-<p>Definicja w linii <a class="el" href="_x_m_l_parser_8cpp_source.html#l00042">42</a> pliku <a class="el" href="_x_m_l_parser_8cpp_source.html">XMLParser.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_x_m_l_parser_8cpp_source.html#l00044">44</a> pliku <a class="el" href="_x_m_l_parser_8cpp_source.html">XMLParser.cpp</a>.</p>
 
 </div>
 </div>
@@ -190,11 +193,49 @@ Metody publiczne</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Do zrobienia:</a></b></dt><dd>zparsować XMLa do <a class="el" href="class_message.html" title="klasa wiadomości ">Message</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Do zrobienia:</a></b></dt><dd>zparsować XMLa do <a class="el" href="class_message.html" title="klasa wiadomości ">Message</a> </dd></dl>
 <p>&lt;</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">Do zrobienia:</a></b></dt><dd>tak na pewno nie będzie </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Do zrobienia:</a></b></dt><dd>tak na pewno nie będzie </dd></dl>
 
-<p>Definicja w linii <a class="el" href="_x_m_l_parser_8cpp_source.html#l00047">47</a> pliku <a class="el" href="_x_m_l_parser_8cpp_source.html">XMLParser.cpp</a>.</p>
+<p>Definicja w linii <a class="el" href="_x_m_l_parser_8cpp_source.html#l00049">49</a> pliku <a class="el" href="_x_m_l_parser_8cpp_source.html">XMLParser.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a59357dd359e39d0b041614cece3240f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_command.html">Command</a> * XMLParser::operator() </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>xml</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_command.html">Command</a> *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Przetważa stringa z XML'em na polecenie, czyli najprawdopodobniej ładujemy listę miast do modelu. Wielka szkoda, że nie można przeciążyć tylko zwracanym typem. Istotny jest tylko typ drugiego argumentu, obiecuję, że nie będę go wykożystywał. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xml</td><td>std::string </td></tr>
+    <tr><td class="paramname">c</td><td>Command* Argument potrzebny do użycia drugiej przeciążonej wersji oprtatora. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>Command* Zwracane polecenie, nie zalecam bezmyślenego wysyłania go odrazu do modelu. </dd></dl>
+
+<p>Definicja w linii <a class="el" href="_x_m_l_parser_8cpp_source.html#l00196">196</a> pliku <a class="el" href="_x_m_l_parser_8cpp_source.html">XMLParser.cpp</a>.</p>
 
 </div>
 </div>
@@ -208,7 +249,7 @@ Metody publiczne</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_x_m_l_parser.html">XMLParser</a></li>
-    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:40 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:19:06 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

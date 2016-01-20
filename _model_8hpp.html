@@ -109,9 +109,10 @@ $(document).ready(function(){initNavTree('_model_8hpp.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>Plik nagłówkowy klasy <a class="el" href="class_model.html" title="Na razie pusta/zaślepkowa klasa Modelu. ">Model</a>.  
+<p>Plik nagłówkowy klasy <a class="el" href="class_model.html" title="Klasa główna modelu odpowiadająca za komunikację z kontrolerem. ">Model</a>.  
 <a href="#details">Więcej...</a></p>
 <div class="textblock"><code>#include &lt;array&gt;</code><br/>
+<code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;string&gt;</code><br/>
 <code>#include &quot;<a class="el" href="_graph_8hpp_source.html">Graph.hpp</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="_path_8hpp_source.html">Path.hpp</a>&quot;</code><br/>
@@ -127,7 +128,7 @@ Wykres zależności załączania dla Model.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_model_8hpp__incl.png" border="0" usemap="#_d_1_2_moje_01dokumenty_2_p_s_z_t_2auskylia_2application_2model_2_model_8hpp" alt=""/></div>
 <map name="_d_1_2_moje_01dokumenty_2_p_s_z_t_2auskylia_2application_2model_2_model_8hpp" id="_d_1_2_moje_01dokumenty_2_p_s_z_t_2auskylia_2application_2model_2_model_8hpp">
-<area shape="rect" id="node4" href="_graph_8hpp.html" title="Plik nagłówkowy klasy Graph. " alt="" coords="580,333,663,360"/><area shape="rect" id="node9" href="parameters_8hpp.html" title="parameters.hpp" alt="" coords="720,483,832,509"/><area shape="rect" id="node10" href="types_8hpp.html" title="types.hpp" alt="" coords="78,483,157,509"/><area shape="rect" id="node11" href="_path_8hpp.html" title="Path.hpp" alt="" coords="497,259,572,285"/><area shape="rect" id="node14" href="_population_8hpp.html" title="Plik nagłówkowy klasy Population. " alt="" coords="411,109,519,136"/><area shape="rect" id="node20" href="strategy_8hpp.html" title="Plik z definicjami startegii krzyżowania. " alt="" coords="599,184,694,211"/><area shape="rect" id="node21" href="_event_8hpp.html" title="Plik nagłówkowy klasy Event. " alt="" coords="1071,109,1219,136"/><area shape="rect" id="node24" href="_blocking_queue_8hpp.html" title="plik nagłówkowy klasy kolejki blokującej " alt="" coords="1245,109,1449,136"/><area shape="rect" id="node28" href="_command_8hpp.html" title="Plik nagłówkowy klasy polecenia do modelu. " alt="" coords="821,109,995,136"/><area shape="rect" id="node5" href="_node_8hpp.html" title="Plik nagłówkowy klasy Node. " alt="" coords="449,483,527,509"/><area shape="rect" id="node6" href="_graph_generator_8hpp.html" title="Plik nagłówkowy klasy GraphGenerator. " alt="" coords="521,408,660,435"/><area shape="rect" id="node15" href="_mutation_8hpp.html" title="Mutation.hpp" alt="" coords="325,184,422,211"/><area shape="rect" id="node16" href="roll_8hpp.html" title="roll.hpp" alt="" coords="201,259,265,285"/><area shape="rect" id="node19" href="debug_8hpp.html" title="debug.hpp" alt="" coords="340,259,423,285"/><area shape="rect" id="node27" href="_blocking_queue_8cpp.html" title="Implementacja metod BlockingQueue. " alt="" coords="1434,184,1569,211"/><area shape="rect" id="node29" href="_message_8hpp.html" title="Plik nagłówkowy klasy wiadomości. " alt="" coords="839,259,939,285"/></map>
+<area shape="rect" id="node5" href="_graph_8hpp.html" title="Plik nagłówkowy klasy Graph. " alt="" coords="676,333,759,360"/><area shape="rect" id="node9" href="parameters_8hpp.html" title="parameters.hpp" alt="" coords="737,483,849,509"/><area shape="rect" id="node10" href="types_8hpp.html" title="types.hpp" alt="" coords="117,483,195,509"/><area shape="rect" id="node11" href="_path_8hpp.html" title="Path.hpp" alt="" coords="469,259,544,285"/><area shape="rect" id="node14" href="_population_8hpp.html" title="Plik nagłówkowy klasy Population. " alt="" coords="321,109,429,136"/><area shape="rect" id="node20" href="strategy_8hpp.html" title="Plik z definicjami startegii krzyżowania. " alt="" coords="455,184,550,211"/><area shape="rect" id="node21" href="_event_8hpp.html" title="Plik nagłówkowy klasy Event. " alt="" coords="977,109,1125,136"/><area shape="rect" id="node24" href="_blocking_queue_8hpp.html" title="plik nagłówkowy klasy kolejki blokującej " alt="" coords="1150,109,1354,136"/><area shape="rect" id="node28" href="_command_8hpp.html" title="Plik nagłówkowy klasy polecenia do modelu. " alt="" coords="778,109,953,136"/><area shape="rect" id="node6" href="_node_8hpp.html" title="Plik nagłówkowy klasy Node. " alt="" coords="636,483,713,509"/><area shape="rect" id="node7" href="_graph_generator_8hpp.html" title="Plik nagłówkowy klasy GraphGenerator. " alt="" coords="541,408,680,435"/><area shape="rect" id="node15" href="_mutation_8hpp.html" title="Mutation.hpp" alt="" coords="282,184,379,211"/><area shape="rect" id="node16" href="roll_8hpp.html" title="roll.hpp" alt="" coords="224,259,288,285"/><area shape="rect" id="node19" href="debug_8hpp.html" title="debug.hpp" alt="" coords="363,259,445,285"/><area shape="rect" id="node27" href="_blocking_queue_8cpp.html" title="Implementacja metod BlockingQueue. " alt="" coords="1186,184,1321,211"/><area shape="rect" id="node29" href="_message_8hpp.html" title="Plik nagłówkowy klasy wiadomości. " alt="" coords="795,259,895,285"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
@@ -142,13 +143,12 @@ Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten 
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Komponenty</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html">Model</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Na razie pusta/zaślepkowa klasa Modelu.  <a href="class_model.html#details">Więcej...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Klasa główna modelu odpowiadająca za komunikację z kontrolerem.  <a href="class_model.html#details">Więcej...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
-<div class="textblock"><p>Plik nagłówkowy klasy <a class="el" href="class_model.html" title="Na razie pusta/zaślepkowa klasa Modelu. ">Model</a>. </p>
+<div class="textblock"><p>Plik nagłówkowy klasy <a class="el" href="class_model.html" title="Klasa główna modelu odpowiadająca za komunikację z kontrolerem. ">Model</a>. </p>
 <dl class="section author"><dt>Autorzy</dt><dd>Tomasz Jakubczyk, Andrzej Roguski </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000029">Do zrobienia:</a></b></dt><dd>Andrzej napisze <a class="el" href="class_model.html" title="Na razie pusta/zaślepkowa klasa Modelu. ">Model</a> :D </dd></dl>
 
 <p>Definicja w pliku <a class="el" href="_model_8hpp_source.html">Model.hpp</a>.</p>
 </div></div><!-- contents -->
@@ -157,7 +157,7 @@ Komponenty</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d94a2eaab10ab5ab1cb03e49b9b14fd1.html">model</a></li><li class="navelem"><a class="el" href="_model_8hpp.html">Model.hpp</a></li>
-    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:39 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:18:59 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

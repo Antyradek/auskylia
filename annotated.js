@@ -12,6 +12,7 @@ var annotated =
     [ "GraphGenerator", "class_graph_generator.html", "class_graph_generator" ],
     [ "Message", "class_message.html", "class_message" ],
     [ "Model", "class_model.html", "class_model" ],
+    [ "ModelStatus", "struct_model_status.html", "struct_model_status" ],
     [ "Mutation", "class_mutation.html", "class_mutation" ],
     [ "MutationBinomial", "class_mutation_binomial.html", null ],
     [ "MutationUniform", "class_mutation_uniform.html", "class_mutation_uniform" ],

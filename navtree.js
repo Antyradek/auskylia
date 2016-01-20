@@ -41,7 +41,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_blocking_queue_8cpp.html",
-"main_8js.html#af90b2c220cb27941f5f067630ad40b91"
+"globals.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

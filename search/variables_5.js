@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['price',['price',['../class_command.html#a4163c20fbb273d2e24a9b6d28d63808a',1,'Command::price()'],['../class_message.html#a4b10d7e0f0ec524768e7ae043020f48d',1,'Message::price()']]]
+  ['messagetype',['messageType',['../class_message.html#a02b18700029d7f172dac32849a8cb80c',1,'Message']]],
+  ['msg',['msg',['../class_message.html#adbe98f7e813775fe7e809f1a08899733',1,'Message']]]
 ];

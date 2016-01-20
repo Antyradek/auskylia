@@ -109,281 +109,308 @@ $(document).ready(function(){initNavTree('test_8cpp_source.html','');});
 <a href="test_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_model_8hpp.html">Model.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug_8hpp.html">debug.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="test_8cpp.html#ad1377e758b631f3d29234d4b43e10142">    9</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="test_8cpp.html#ad1377e758b631f3d29234d4b43e10142">dragon</a> =</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="stringliteral">&quot;  .     _///_,                      \n&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">&quot; .      / ` &#39; &#39;&gt;                    \n&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral">&quot;   )   o&#39;  __/_&#39;&gt;                   \n&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">&quot;  (   /  _/  )_\\&#39;&gt;                  \n&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">&quot;   &#39; \&quot;__/   /_/\\_&gt;                  \n&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">&quot;       ____/_/_/_/                  \n&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">&quot;      /,---, _/ /                   \n&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">&quot;     &quot;</span><span class="stringliteral">&quot;  /_/_/_/                    \n&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">&quot;        /_(_(_(_                 \\  \n&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">&quot;       (   \\_\\_\\\\_               )\\ \n&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">&quot;        \\&#39;__\\_\\_\\_\\__            ).\\\n&quot;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">&quot;        //____|___\\__)           )_/\n&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral">&quot;        |  _  \\&#39;___&#39;_(           /&#39; \n&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="stringliteral">&quot;         \\_ (-&#39;\\&#39;___&#39;_\\      __,&#39;_&#39; \n&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="stringliteral">&quot;         __) \\  \\___(_   __/.__,&#39;  \n&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="stringliteral">&quot;      ,((,-,__\\  &#39;\&quot;, __\\_/. __,&#39;    \n&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">&quot;                   &#39;\&quot;./_._._-&#39;      \n&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_model_8hpp.html">Model.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="debug_8hpp.html">debug.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="test_8cpp.html#ad1377e758b631f3d29234d4b43e10142">   10</a></span>&#160;<span class="keyword">const</span> std::string <a class="code" href="test_8cpp.html#ad1377e758b631f3d29234d4b43e10142">dragon</a> =</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">&quot;  .     _///_,                      \n&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="stringliteral">&quot; .      / ` &#39; &#39;&gt;                    \n&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="stringliteral">&quot;   )   o&#39;  __/_&#39;&gt;                   \n&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="stringliteral">&quot;  (   /  _/  )_\\&#39;&gt;                  \n&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="stringliteral">&quot;   &#39; \&quot;__/   /_/\\_&gt;                  \n&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="stringliteral">&quot;       ____/_/_/_/                  \n&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="stringliteral">&quot;      /,---, _/ /                   \n&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="stringliteral">&quot;     &quot;</span><span class="stringliteral">&quot;  /_/_/_/                    \n&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="stringliteral">&quot;        /_(_(_(_                 \\  \n&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="stringliteral">&quot;       (   \\_\\_\\\\_               )\\ \n&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="stringliteral">&quot;        \\&#39;__\\_\\_\\_\\__            ).\\\n&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="stringliteral">&quot;        //____|___\\__)           )_/\n&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="stringliteral">&quot;        |  _  \\&#39;___&#39;_(           /&#39; \n&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="stringliteral">&quot;         \\_ (-&#39;\\&#39;___&#39;_\\      __,&#39;_&#39; \n&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="stringliteral">&quot;         __) \\  \\___(_   __/.__,&#39;  \n&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="stringliteral">&quot;      ,((,-,__\\  &#39;\&quot;, __\\_/. __,&#39;    \n&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="stringliteral">&quot;                   &#39;\&quot;./_._._-&#39;      \n&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="test_8cpp.html#a60acc67c4d4f8ee1fe42a79d7c86b881">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#a60acc67c4d4f8ee1fe42a79d7c86b881">roll_test</a>()</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> SIZE = 50;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> ROLLS_SMALL = 1500;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> ROLLS_BIG = 150000;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">unsigned</span> uniform[ SIZE ];</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">unsigned</span> binomial[ SIZE ];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">unsigned</span> binomial2[ SIZE ];</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">unsigned</span> binomial3[ SIZE ];</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        uniform[ i ] = 0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        binomial[ i ] = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        binomial2[ i ] = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        binomial3[ i ] = 0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; ROLLS_SMALL; i++ )</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        ++uniform[ <a class="code" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a>( 0, SIZE-1 ) ];</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        ++binomial[ <a class="code" href="roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d">rollBinomial</a>( SIZE/2, 0, SIZE-1 ) ];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ++binomial2[ <a class="code" href="roll_8cpp.html#aa38128fec7726ed6e040bce4a4a6ae12">rollBinomialWide</a>( SIZE/2, 0, SIZE-1 ) ];</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        ++binomial3[ <a class="code" href="roll_8cpp.html#a0c3de6605800e156e7034b0d4821fd50">rollBinomialUltraWide</a>( SIZE/2, 0, SIZE-1 ) ];</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="test_8cpp.html#a60acc67c4d4f8ee1fe42a79d7c86b881">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#a60acc67c4d4f8ee1fe42a79d7c86b881">roll_test</a>()</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> SIZE = 50;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> ROLLS_SMALL = 1500;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> ROLLS_BIG = 150000;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">unsigned</span> uniform[ SIZE ];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">unsigned</span> binomial[ SIZE ];</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">unsigned</span> binomial2[ SIZE ];</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">unsigned</span> binomial3[ SIZE ];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        uniform[ i ] = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        binomial[ i ] = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        binomial2[ i ] = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        binomial3[ i ] = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; ROLLS_SMALL; i++ )</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        ++uniform[ <a class="code" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a>( 0, SIZE-1 ) ];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ++binomial[ <a class="code" href="roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d">rollBinomial</a>( SIZE/2, 0, SIZE-1 ) ];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        ++binomial2[ <a class="code" href="roll_8cpp.html#aa38128fec7726ed6e040bce4a4a6ae12">rollBinomialWide</a>( SIZE/2, 0, SIZE-1 ) ];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        ++binomial3[ <a class="code" href="roll_8cpp.html#a0c3de6605800e156e7034b0d4821fd50">rollBinomialUltraWide</a>( SIZE/2, 0, SIZE-1 ) ];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> j = 0; j &lt; uniform[ i ]; j++ )</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            std::cout &lt;&lt; <span class="charliteral">&#39;#&#39;</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> j = 0; j &lt; binomial[ i ]; j++ )</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            std::cout &lt;&lt; <span class="charliteral">&#39;#&#39;</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> j = 0; j &lt; binomial2[ i ]; j++ )</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            std::cout &lt;&lt; <span class="charliteral">&#39;#&#39;</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> j = 0; j &lt; binomial3[ i ]; j++ )</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            std::cout &lt;&lt; <span class="charliteral">&#39;#&#39;</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        uniform[ i ] = 0;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        binomial[ i ] = 0;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        binomial2[ i ] = 0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        binomial3[ i ] = 0;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; ROLLS_BIG; i++ )</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        ++uniform[ <a class="code" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a>( 0, SIZE-1 ) ];</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        ++binomial[ <a class="code" href="roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d">rollBinomial</a>( SIZE/2, 0, SIZE-1 ) ];</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        ++binomial2[ <a class="code" href="roll_8cpp.html#aa38128fec7726ed6e040bce4a4a6ae12">rollBinomialWide</a>( SIZE/2, 0, SIZE-1 ) ];</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        ++binomial3[ <a class="code" href="roll_8cpp.html#a0c3de6605800e156e7034b0d4821fd50">rollBinomialUltraWide</a>( SIZE/2, 0, SIZE-1 ) ];</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> j = 0; j &lt; uniform[ i ]; j++ )</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            std::cout &lt;&lt; <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> j = 0; j &lt; binomial[ i ]; j++ )</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            std::cout &lt;&lt; <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> j = 0; j &lt; binomial2[ i ]; j++ )</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            std::cout &lt;&lt; <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> j = 0; j &lt; binomial3[ i ]; j++ )</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            std::cout &lt;&lt; <span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        uniform[ i ] = 0;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        binomial[ i ] = 0;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        binomial2[ i ] = 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        binomial3[ i ] = 0;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; ROLLS_BIG; i++ )</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        ++uniform[ <a class="code" href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a>( 0, SIZE-1 ) ];</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        ++binomial[ <a class="code" href="roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d">rollBinomial</a>( SIZE/2, 0, SIZE-1 ) ];</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        ++binomial2[ <a class="code" href="roll_8cpp.html#aa38128fec7726ed6e040bce4a4a6ae12">rollBinomialWide</a>( SIZE/2, 0, SIZE-1 ) ];</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        ++binomial3[ <a class="code" href="roll_8cpp.html#a0c3de6605800e156e7034b0d4821fd50">rollBinomialUltraWide</a>( SIZE/2, 0, SIZE-1 ) ];</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; uniform[ i ] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; binomial[ i ] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; binomial2[ i ] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; binomial3[ i ] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="test_8cpp.html#a0b6f193783eb6ef252ec152fafac1a4a">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#a0b6f193783eb6ef252ec152fafac1a4a">graphTest</a>( )</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Starting graph test:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> GRAPH_SIZE = 10;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="class_graph.html">Graph</a> graph1 = <a class="code" href="class_graph.html">Graph</a>( GRAPH_SIZE, <span class="keyword">new</span> <a class="code" href="class_generator_uniform.html">GeneratorUniform</a>() );</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    graph1.<a class="code" href="class_graph.html#ad342ffe267027720499bc75377eab674">printNodes</a>();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    graph1.<a class="code" href="class_graph.html#a78b4118a60b079781b37e2b456124a2f">print</a>();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="test_8cpp.html#a7f930a0c85521fab6d9e9b533a14ad57">  141</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#a7f930a0c85521fab6d9e9b533a14ad57">pathTest</a>( <span class="keywordtype">unsigned</span> size)</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Starting path test:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> GRAPH_SIZE = size;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="class_graph.html">Graph</a> graph1 = <a class="code" href="class_graph.html">Graph</a>( GRAPH_SIZE, <span class="keyword">new</span> <a class="code" href="class_generator_uniform.html">GeneratorUniform</a>() );</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <a class="code" href="types_8hpp.html#af230a7e4b05b50c1162d7652222e091f">Weights</a> w = { 1.0, 1.0, 1.0, 1.0};</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="class_path.html">Path</a> p = <a class="code" href="class_path.html">Path</a>( &amp;graph1, w );</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    p.<a class="code" href="class_path.html#a4c9805986fd9779d526c580887b83160">print</a>();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="test_8cpp.html#a65d5838f7442ae49d59d4eebbe08a9db">  157</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#a65d5838f7442ae49d59d4eebbe08a9db">populationTest</a>( <span class="keywordtype">unsigned</span> gSize, <span class="keywordtype">unsigned</span> pSize )</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Starting population test:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="class_generator_uniform.html">GeneratorUniform</a> gen;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="class_graph.html">Graph</a> graph = <a class="code" href="class_graph.html">Graph</a>( gSize, &amp;gen );</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="class_strategy_closest.html">StrategyClosest</a> str = <a class="code" href="class_strategy_closest.html">StrategyClosest</a>();</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="class_mutation_uniform.html">MutationUniform</a> mut;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="class_population.html">Population</a> pop( &amp;graph, &amp;mut, &amp;str, pSize);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="types_8hpp.html#af230a7e4b05b50c1162d7652222e091f">Weights</a> w = { 1.0, 1.0, 1.0, 1.0};</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    pop.<a class="code" href="class_population.html#a782c98a7515b64d8e0f61c4a39ed436c">setWeights</a>( w );</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    pop.<a class="code" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">print</a>();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 100; ++i)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        pop.<a class="code" href="class_population.html#a693bd0dd63bab14a13a7b6ed578dddd5">evolve</a>( );</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    pop.<a class="code" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">print</a>();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">  180</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">modelTest</a>( <span class="keywordtype">unsigned</span> gSize, <span class="keywordtype">unsigned</span> pSize, <span class="keywordtype">unsigned</span> iter )</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Starting model test:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="class_model.html">Model</a> m;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="class_strategy_closest.html">StrategyClosest</a> s;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <a class="code" href="class_mutation_uniform.html">MutationUniform</a> mut;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="class_generator_uniform.html">GeneratorUniform</a> gen;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="types_8hpp.html#af230a7e4b05b50c1162d7652222e091f">Weights</a> w1 = { 1.0, 1.0, 1.0, 1.0};</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="types_8hpp.html#af230a7e4b05b50c1162d7652222e091f">Weights</a> w2 = { 0.1, 2.0, 0.1, 0.1};</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="class_graph.html">Graph</a> * g = m.<a class="code" href="class_model.html#a02d8cb6c679e1590bdbc162e0703e1ac">generateGraph</a>( gSize, &amp;gen );</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    m.<a class="code" href="class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0">useGraph</a>(g);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; uniform[ i ] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; binomial[ i ] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; binomial2[ i ] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; SIZE; i++ )</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        std::cout &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; binomial3[ i ] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="test_8cpp.html#a0b6f193783eb6ef252ec152fafac1a4a">  130</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#a0b6f193783eb6ef252ec152fafac1a4a">graphTest</a>( )</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Starting graph test:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> GRAPH_SIZE = 10;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="class_graph.html">Graph</a> graph1 = <a class="code" href="class_graph.html">Graph</a>( GRAPH_SIZE, <span class="keyword">new</span> <a class="code" href="class_generator_uniform.html">GeneratorUniform</a>() );</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    graph1.<a class="code" href="class_graph.html#ad342ffe267027720499bc75377eab674">printNodes</a>();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    graph1.<a class="code" href="class_graph.html#a78b4118a60b079781b37e2b456124a2f">print</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="test_8cpp.html#a7f930a0c85521fab6d9e9b533a14ad57">  142</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#a7f930a0c85521fab6d9e9b533a14ad57">pathTest</a>( <span class="keywordtype">unsigned</span> size)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Starting path test:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> GRAPH_SIZE = size;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="class_graph.html">Graph</a> graph1 = <a class="code" href="class_graph.html">Graph</a>( GRAPH_SIZE, <span class="keyword">new</span> <a class="code" href="class_generator_uniform.html">GeneratorUniform</a>() );</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="types_8hpp.html#a135fd1791e206016905b5b4ba1cf2747">Weights</a> w = { 50, 50, 50, 50};</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="class_path.html">Path</a> p = <a class="code" href="class_path.html">Path</a>( &amp;graph1, w );</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    p.<a class="code" href="class_path.html#a4c9805986fd9779d526c580887b83160">print</a>();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="test_8cpp.html#a65d5838f7442ae49d59d4eebbe08a9db">  158</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#a65d5838f7442ae49d59d4eebbe08a9db">populationTest</a>( <span class="keywordtype">unsigned</span> gSize, <span class="keywordtype">unsigned</span> pSize )</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Starting population test:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="class_generator_uniform.html">GeneratorUniform</a> gen;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="class_graph.html">Graph</a> graph = <a class="code" href="class_graph.html">Graph</a>( gSize, &amp;gen );</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="class_strategy_closest.html">StrategyClosest</a> str = <a class="code" href="class_strategy_closest.html">StrategyClosest</a>();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <a class="code" href="class_mutation_uniform.html">MutationUniform</a> mut;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="class_population.html">Population</a> pop( &amp;graph, &amp;mut, &amp;str, pSize);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="types_8hpp.html#a135fd1791e206016905b5b4ba1cf2747">Weights</a> w = { 50, 50, 50, 50};</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    pop.<a class="code" href="class_population.html#a782c98a7515b64d8e0f61c4a39ed436c">setWeights</a>( w );</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    pop.<a class="code" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">print</a>();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 100; ++i)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        pop.<a class="code" href="class_population.html#a693bd0dd63bab14a13a7b6ed578dddd5">evolve</a>( );</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    pop.<a class="code" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">print</a>();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">  181</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">modelTest</a>( <span class="keywordtype">unsigned</span> gSize, <span class="keywordtype">unsigned</span> pSize, <span class="keywordtype">unsigned</span> iter )</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">using namespace </span>std::chrono;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Starting model test:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="class_model.html">Model</a> m;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="class_strategy_closest.html">StrategyClosest</a> s;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="class_mutation_uniform.html">MutationUniform</a> mut;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="class_generator_uniform.html">GeneratorUniform</a> gen;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="types_8hpp.html#a135fd1791e206016905b5b4ba1cf2747">Weights</a> w1 = { 50, 50, 50, 50};</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="types_8hpp.html#a135fd1791e206016905b5b4ba1cf2747">Weights</a> w2 = { 1, 1, 100, 1};</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    m.<a class="code" href="class_model.html#ae9a99c96ce7a6806abb6d2c8eee9507c">createPopulation</a>( pSize, &amp;s, &amp;mut );</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    m.loadIataList(<span class="stringliteral">&quot;../airports/iata_list&quot;</span>);</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    m.<a class="code" href="class_model.html#aee469cba135c624edb85548922008e0e">setWeights</a>( w1 );</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keyword">auto</span> gen_start = steady_clock::now();</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    m.<a class="code" href="class_model.html#ada0c9c135934f4022b8b634a4173147b">getPopulation</a>()-&gt;<a class="code" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">print</a>();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="class_graph.html">Graph</a> * g = m.generateGraph( gSize, &amp;gen );</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    m.<a class="code" href="class_model.html#ab2ac5823a1e318bb4bdeeecb68081fbe">evolve</a>( iter );</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    m.<a class="code" href="class_model.html#ada0c9c135934f4022b8b634a4173147b">getPopulation</a>()-&gt;<a class="code" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">print</a>();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">auto</span> gen_stop = steady_clock::now();</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    m.useGraph(g);</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    m.<a class="code" href="class_model.html#aee469cba135c624edb85548922008e0e">setWeights</a>( w2 );</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    m.setEndNodes( 3, 7 );</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    m.<a class="code" href="class_model.html#ab2ac5823a1e318bb4bdeeecb68081fbe">evolve</a>( iter );</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keyword">auto</span> pop_start = steady_clock::now();</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    m.<a class="code" href="class_model.html#ada0c9c135934f4022b8b634a4173147b">getPopulation</a>()-&gt;<a class="code" href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">print</a>();</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
-<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  212</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> NUM_ARGS = 3;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    m.createPopulation( pSize, &amp;s, &amp;mut );</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keyword">auto</span> pop_stop = steady_clock::now();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Wagi 1.0, 1.0, 1.0, 1.0, 1.0&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    m.setWeights( w1 );</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">if</span>(argc &gt; NUM_ARGS)</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordtype">unsigned</span> arg[ NUM_ARGS ];</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    m.getPopulation()-&gt;print();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keyword">auto</span> ev_start = steady_clock::now();</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i = 1; i&lt;NUM_ARGS + 1; i++)</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            arg[i-1] = std::stoi(std::string(argv[i]));</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        std::cout &lt;&lt; arg[0] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        std::cout &lt;&lt; arg[1] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        std::cout &lt;&lt; arg[2] &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="comment">// graphTest();</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        <span class="comment">// pathTest( arg[0] );</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="comment">//populationTest( arg[0], arg[1] );</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">modelTest</a>( arg[0], arg[1], arg[2] );</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Za mało argumentów; podaj liczbę wierzcholków, rozmiar populacji i liczbę ewolucji.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;It doesn&#39;t do much project-related yet, but it can spawn dragons:&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl &lt;&lt; <a class="code" href="test_8cpp.html#ad1377e758b631f3d29234d4b43e10142">dragon</a> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    m.evolve( iter );</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keyword">auto</span> ev_stop = steady_clock::now();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    m.getPopulation()-&gt;print();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Wierzchołki:                      &quot;</span> &lt;&lt; gSize                                                      &lt;&lt;std::endl;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Populacja:                        &quot;</span> &lt;&lt; pSize                                                      &lt;&lt;std::endl;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Iteracje:                         &quot;</span> &lt;&lt; iter                                                       &lt;&lt;std::endl;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Czas generowania grafu [ms]:      &quot;</span> &lt;&lt; duration&lt;double, std::milli&gt;(gen_stop - gen_start).count() &lt;&lt;std::endl;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Czas generowania populacji [ms]:  &quot;</span> &lt;&lt; duration&lt;double, std::milli&gt;(pop_stop - pop_start).count() &lt;&lt;std::endl;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Czas ewolucji [ms]:               &quot;</span> &lt;&lt; duration&lt;double, std::milli&gt;(ev_stop  - ev_start ).count() &lt;&lt;std::endl;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <a class="code" href="class_path.html">Path</a> p = <a class="code" href="class_path.html">Path</a>(m.getPath( 10 ));</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    std::vector&lt;std::string&gt; v = m.getPathIata( 10 );</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">unsigned</span> l = v.size();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">for</span>( <span class="keywordtype">unsigned</span> i = 0; i &lt; l; ++i)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        std::cout &lt;&lt; p[i] &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; v[i] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;}</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
-<div class="ttc" id="class_model_html"><div class="ttname"><a href="class_model.html">Model</a></div><div class="ttdoc">Na razie pusta/zaślepkowa klasa Modelu. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00030">Model.hpp:30</a></div></div>
-<div class="ttc" id="class_graph_html_ad342ffe267027720499bc75377eab674"><div class="ttname"><a href="class_graph.html#ad342ffe267027720499bc75377eab674">Graph::printNodes</a></div><div class="ttdeci">void printNodes() const </div><div class="ttdef"><b>Definition:</b> <a href="_graph_8cpp_source.html#l00067">Graph.cpp:67</a></div></div>
-<div class="ttc" id="class_model_html_a02d8cb6c679e1590bdbc162e0703e1ac"><div class="ttname"><a href="class_model.html#a02d8cb6c679e1590bdbc162e0703e1ac">Model::generateGraph</a></div><div class="ttdeci">Graph * generateGraph(const unsigned nodes, const GraphGenerator *const generator) const </div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00014">Model.cpp:14</a></div></div>
-<div class="ttc" id="class_model_html_ac772eee5fb2c8ab258b4ca74157d80a0"><div class="ttname"><a href="class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0">Model::useGraph</a></div><div class="ttdeci">void useGraph(Graph *const graph)</div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00019">Model.cpp:19</a></div></div>
-<div class="ttc" id="class_population_html_a782c98a7515b64d8e0f61c4a39ed436c"><div class="ttname"><a href="class_population.html#a782c98a7515b64d8e0f61c4a39ed436c">Population::setWeights</a></div><div class="ttdeci">void setWeights(const Weights &amp;arr)</div><div class="ttdef"><b>Definition:</b> <a href="_population_8cpp_source.html#l00114">Population.cpp:114</a></div></div>
-<div class="ttc" id="class_model_html_ae9a99c96ce7a6806abb6d2c8eee9507c"><div class="ttname"><a href="class_model.html#ae9a99c96ce7a6806abb6d2c8eee9507c">Model::createPopulation</a></div><div class="ttdeci">void createPopulation(unsigned size, Strategy *strategy, Mutation *mutation)</div><div class="ttdoc">Tworzy populację o zadanym rozmiarze. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00042">Model.cpp:42</a></div></div>
+<div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">  245</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;{</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> NUM_ARGS = 3;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span>(argc &gt; NUM_ARGS)</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordtype">unsigned</span> arg[ NUM_ARGS ];</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> i = 1; i&lt;NUM_ARGS + 1; i++)</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            arg[i-1] = std::stoi(std::string(argv[i]));</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        std::cout &lt;&lt; arg[0] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        std::cout &lt;&lt; arg[1] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        std::cout &lt;&lt; arg[2] &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">// graphTest();</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="comment">// pathTest( arg[0] );</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="comment">//populationTest( arg[0], arg[1] );</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">modelTest</a>( arg[0], arg[1], arg[2] );</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;Za mało argumentów; podaj liczbę wierzcholków, rozmiar populacji i liczbę ewolucji.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;It does quite a lot project-related now and it still can spawn dragons!&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl &lt;&lt; <a class="code" href="test_8cpp.html#ad1377e758b631f3d29234d4b43e10142">dragon</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
+<div class="ttc" id="class_model_html"><div class="ttname"><a href="class_model.html">Model</a></div><div class="ttdoc">Klasa główna modelu odpowiadająca za komunikację z kontrolerem. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00032">Model.hpp:32</a></div></div>
+<div class="ttc" id="class_graph_html_ad342ffe267027720499bc75377eab674"><div class="ttname"><a href="class_graph.html#ad342ffe267027720499bc75377eab674">Graph::printNodes</a></div><div class="ttdeci">void printNodes() const </div><div class="ttdef"><b>Definition:</b> <a href="_graph_8cpp_source.html#l00174">Graph.cpp:174</a></div></div>
+<div class="ttc" id="class_population_html_a782c98a7515b64d8e0f61c4a39ed436c"><div class="ttname"><a href="class_population.html#a782c98a7515b64d8e0f61c4a39ed436c">Population::setWeights</a></div><div class="ttdeci">void setWeights(const Weights &amp;arr)</div><div class="ttdef"><b>Definition:</b> <a href="_population_8cpp_source.html#l00153">Population.cpp:153</a></div></div>
 <div class="ttc" id="roll_8cpp_html_a3b7c42b91f3db84769ff77668e69b64d"><div class="ttname"><a href="roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d">rollBinomial</a></div><div class="ttdeci">unsigned rollBinomial(unsigned value, unsigned min, unsigned max)</div><div class="ttdef"><b>Definition:</b> <a href="roll_8cpp_source.html#l00061">roll.cpp:61</a></div></div>
 <div class="ttc" id="roll_8cpp_html_a0c3de6605800e156e7034b0d4821fd50"><div class="ttname"><a href="roll_8cpp.html#a0c3de6605800e156e7034b0d4821fd50">rollBinomialUltraWide</a></div><div class="ttdeci">unsigned rollBinomialUltraWide(unsigned value, unsigned min, unsigned max)</div><div class="ttdef"><b>Definition:</b> <a href="roll_8cpp_source.html#l00071">roll.cpp:71</a></div></div>
 <div class="ttc" id="class_path_html"><div class="ttname"><a href="class_path.html">Path</a></div><div class="ttdoc">Klasa reprezentujaca ścieżkę w grafie. </div><div class="ttdef"><b>Definition:</b> <a href="_path_8hpp_source.html#l00022">Path.hpp:22</a></div></div>
-<div class="ttc" id="class_path_html_a4c9805986fd9779d526c580887b83160"><div class="ttname"><a href="class_path.html#a4c9805986fd9779d526c580887b83160">Path::print</a></div><div class="ttdeci">void print() const </div><div class="ttdef"><b>Definition:</b> <a href="_path_8cpp_source.html#l00226">Path.cpp:226</a></div></div>
+<div class="ttc" id="class_path_html_a4c9805986fd9779d526c580887b83160"><div class="ttname"><a href="class_path.html#a4c9805986fd9779d526c580887b83160">Path::print</a></div><div class="ttdeci">void print() const </div><div class="ttdef"><b>Definition:</b> <a href="_path_8cpp_source.html#l00243">Path.cpp:243</a></div></div>
 <div class="ttc" id="class_generator_uniform_html"><div class="ttname"><a href="class_generator_uniform.html">GeneratorUniform</a></div><div class="ttdef"><b>Definition:</b> <a href="_graph_generator_8hpp_source.html#l00033">GraphGenerator.hpp:33</a></div></div>
 <div class="ttc" id="class_graph_html"><div class="ttname"><a href="class_graph.html">Graph</a></div><div class="ttdoc">klasa reprezentująca graf </div><div class="ttdef"><b>Definition:</b> <a href="_graph_8hpp_source.html#l00022">Graph.hpp:22</a></div></div>
-<div class="ttc" id="class_graph_html_a78b4118a60b079781b37e2b456124a2f"><div class="ttname"><a href="class_graph.html#a78b4118a60b079781b37e2b456124a2f">Graph::print</a></div><div class="ttdeci">void print() const </div><div class="ttdef"><b>Definition:</b> <a href="_graph_8cpp_source.html#l00044">Graph.cpp:44</a></div></div>
+<div class="ttc" id="class_graph_html_a78b4118a60b079781b37e2b456124a2f"><div class="ttname"><a href="class_graph.html#a78b4118a60b079781b37e2b456124a2f">Graph::print</a></div><div class="ttdeci">void print() const </div><div class="ttdef"><b>Definition:</b> <a href="_graph_8cpp_source.html#l00151">Graph.cpp:151</a></div></div>
 <div class="ttc" id="roll_8cpp_html_a1484a30fe528656139c60cb52f254992"><div class="ttname"><a href="roll_8cpp.html#a1484a30fe528656139c60cb52f254992">rollUniform</a></div><div class="ttdeci">unsigned rollUniform(unsigned min, unsigned max)</div><div class="ttdef"><b>Definition:</b> <a href="roll_8cpp_source.html#l00013">roll.cpp:13</a></div></div>
-<div class="ttc" id="class_model_html_ada0c9c135934f4022b8b634a4173147b"><div class="ttname"><a href="class_model.html#ada0c9c135934f4022b8b634a4173147b">Model::getPopulation</a></div><div class="ttdeci">Population * getPopulation()</div><div class="ttdoc">Zwraca wskaźnik do populacji. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00067">Model.cpp:67</a></div></div>
-<div class="ttc" id="test_8cpp_html_ad1377e758b631f3d29234d4b43e10142"><div class="ttname"><a href="test_8cpp.html#ad1377e758b631f3d29234d4b43e10142">dragon</a></div><div class="ttdeci">const std::string dragon</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00009">test.cpp:9</a></div></div>
+<div class="ttc" id="test_8cpp_html_ad1377e758b631f3d29234d4b43e10142"><div class="ttname"><a href="test_8cpp.html#ad1377e758b631f3d29234d4b43e10142">dragon</a></div><div class="ttdeci">const std::string dragon</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00010">test.cpp:10</a></div></div>
 <div class="ttc" id="class_mutation_uniform_html"><div class="ttname"><a href="class_mutation_uniform.html">MutationUniform</a></div><div class="ttdef"><b>Definition:</b> <a href="_mutation_8hpp_source.html#l00035">Mutation.hpp:35</a></div></div>
 <div class="ttc" id="class_population_html"><div class="ttname"><a href="class_population.html">Population</a></div><div class="ttdoc">Klasa reprezentująca populację. Populacja jest związana z konkretnym grafem oraz wierzchołkami począt...</div><div class="ttdef"><b>Definition:</b> <a href="_population_8hpp_source.html#l00024">Population.hpp:24</a></div></div>
-<div class="ttc" id="test_8cpp_html_a60acc67c4d4f8ee1fe42a79d7c86b881"><div class="ttname"><a href="test_8cpp.html#a60acc67c4d4f8ee1fe42a79d7c86b881">roll_test</a></div><div class="ttdeci">void roll_test()</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00030">test.cpp:30</a></div></div>
-<div class="ttc" id="test_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00212">test.cpp:212</a></div></div>
+<div class="ttc" id="test_8cpp_html_a60acc67c4d4f8ee1fe42a79d7c86b881"><div class="ttname"><a href="test_8cpp.html#a60acc67c4d4f8ee1fe42a79d7c86b881">roll_test</a></div><div class="ttdeci">void roll_test()</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00031">test.cpp:31</a></div></div>
+<div class="ttc" id="test_8cpp_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="test_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00245">test.cpp:245</a></div></div>
 <div class="ttc" id="_model_8hpp_html"><div class="ttname"><a href="_model_8hpp.html">Model.hpp</a></div><div class="ttdoc">Plik nagłówkowy klasy Model. </div></div>
-<div class="ttc" id="test_8cpp_html_a0b6f193783eb6ef252ec152fafac1a4a"><div class="ttname"><a href="test_8cpp.html#a0b6f193783eb6ef252ec152fafac1a4a">graphTest</a></div><div class="ttdeci">void graphTest()</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00129">test.cpp:129</a></div></div>
-<div class="ttc" id="types_8hpp_html_af230a7e4b05b50c1162d7652222e091f"><div class="ttname"><a href="types_8hpp.html#af230a7e4b05b50c1162d7652222e091f">Weights</a></div><div class="ttdeci">std::array&lt; double,(unsigned) Parameters::Count &gt; Weights</div><div class="ttdef"><b>Definition:</b> <a href="types_8hpp_source.html#l00006">types.hpp:6</a></div></div>
+<div class="ttc" id="test_8cpp_html_a0b6f193783eb6ef252ec152fafac1a4a"><div class="ttname"><a href="test_8cpp.html#a0b6f193783eb6ef252ec152fafac1a4a">graphTest</a></div><div class="ttdeci">void graphTest()</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00130">test.cpp:130</a></div></div>
+<div class="ttc" id="types_8hpp_html_a135fd1791e206016905b5b4ba1cf2747"><div class="ttname"><a href="types_8hpp.html#a135fd1791e206016905b5b4ba1cf2747">Weights</a></div><div class="ttdeci">std::array&lt; unsigned short,(unsigned) Parameters::Count &gt; Weights</div><div class="ttdef"><b>Definition:</b> <a href="types_8hpp_source.html#l00006">types.hpp:6</a></div></div>
 <div class="ttc" id="debug_8hpp_html"><div class="ttname"><a href="debug_8hpp.html">debug.hpp</a></div></div>
-<div class="ttc" id="class_population_html_a693bd0dd63bab14a13a7b6ed578dddd5"><div class="ttname"><a href="class_population.html#a693bd0dd63bab14a13a7b6ed578dddd5">Population::evolve</a></div><div class="ttdeci">void evolve()</div><div class="ttdoc">Jedna iteracja krzyżowania. [in] strategy wskaźnik na strategię doboru osobników w pary...</div><div class="ttdef"><b>Definition:</b> <a href="_population_8cpp_source.html#l00044">Population.cpp:44</a></div></div>
-<div class="ttc" id="test_8cpp_html_a65d5838f7442ae49d59d4eebbe08a9db"><div class="ttname"><a href="test_8cpp.html#a65d5838f7442ae49d59d4eebbe08a9db">populationTest</a></div><div class="ttdeci">void populationTest(unsigned gSize, unsigned pSize)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00157">test.cpp:157</a></div></div>
-<div class="ttc" id="class_model_html_aee469cba135c624edb85548922008e0e"><div class="ttname"><a href="class_model.html#aee469cba135c624edb85548922008e0e">Model::setWeights</a></div><div class="ttdeci">void setWeights(const Weights &amp;weights)</div><div class="ttdoc">Ustawia wagi parametrów trasy. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00034">Model.cpp:34</a></div></div>
-<div class="ttc" id="test_8cpp_html_ac3547ebc9934537e79ded977164fe43b"><div class="ttname"><a href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">modelTest</a></div><div class="ttdeci">void modelTest(unsigned gSize, unsigned pSize, unsigned iter)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00180">test.cpp:180</a></div></div>
-<div class="ttc" id="class_population_html_a18ce09fb2a93c0f554014f760bb4a8b7"><div class="ttname"><a href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">Population::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Wypisuje populację. </div><div class="ttdef"><b>Definition:</b> <a href="_population_8cpp_source.html#l00126">Population.cpp:126</a></div></div>
+<div class="ttc" id="class_population_html_a693bd0dd63bab14a13a7b6ed578dddd5"><div class="ttname"><a href="class_population.html#a693bd0dd63bab14a13a7b6ed578dddd5">Population::evolve</a></div><div class="ttdeci">void evolve()</div><div class="ttdoc">Jedna iteracja krzyżowania. [in] strategy wskaźnik na strategię doboru osobników w pary...</div><div class="ttdef"><b>Definition:</b> <a href="_population_8cpp_source.html#l00050">Population.cpp:50</a></div></div>
+<div class="ttc" id="test_8cpp_html_a65d5838f7442ae49d59d4eebbe08a9db"><div class="ttname"><a href="test_8cpp.html#a65d5838f7442ae49d59d4eebbe08a9db">populationTest</a></div><div class="ttdeci">void populationTest(unsigned gSize, unsigned pSize)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00158">test.cpp:158</a></div></div>
+<div class="ttc" id="test_8cpp_html_ac3547ebc9934537e79ded977164fe43b"><div class="ttname"><a href="test_8cpp.html#ac3547ebc9934537e79ded977164fe43b">modelTest</a></div><div class="ttdeci">void modelTest(unsigned gSize, unsigned pSize, unsigned iter)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00181">test.cpp:181</a></div></div>
+<div class="ttc" id="class_population_html_a18ce09fb2a93c0f554014f760bb4a8b7"><div class="ttname"><a href="class_population.html#a18ce09fb2a93c0f554014f760bb4a8b7">Population::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Wypisuje populację. </div><div class="ttdef"><b>Definition:</b> <a href="_population_8cpp_source.html#l00165">Population.cpp:165</a></div></div>
 <div class="ttc" id="roll_8cpp_html_aa38128fec7726ed6e040bce4a4a6ae12"><div class="ttname"><a href="roll_8cpp.html#aa38128fec7726ed6e040bce4a4a6ae12">rollBinomialWide</a></div><div class="ttdeci">unsigned rollBinomialWide(unsigned value, unsigned min, unsigned max)</div><div class="ttdef"><b>Definition:</b> <a href="roll_8cpp_source.html#l00066">roll.cpp:66</a></div></div>
-<div class="ttc" id="class_model_html_ab2ac5823a1e318bb4bdeeecb68081fbe"><div class="ttname"><a href="class_model.html#ab2ac5823a1e318bb4bdeeecb68081fbe">Model::evolve</a></div><div class="ttdeci">void evolve(unsigned times)</div><div class="ttdoc">Krzyżuje osobniki. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00048">Model.cpp:48</a></div></div>
-<div class="ttc" id="test_8cpp_html_a7f930a0c85521fab6d9e9b533a14ad57"><div class="ttname"><a href="test_8cpp.html#a7f930a0c85521fab6d9e9b533a14ad57">pathTest</a></div><div class="ttdeci">void pathTest(unsigned size)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00141">test.cpp:141</a></div></div>
+<div class="ttc" id="test_8cpp_html_a7f930a0c85521fab6d9e9b533a14ad57"><div class="ttname"><a href="test_8cpp.html#a7f930a0c85521fab6d9e9b533a14ad57">pathTest</a></div><div class="ttdeci">void pathTest(unsigned size)</div><div class="ttdef"><b>Definition:</b> <a href="test_8cpp_source.html#l00142">test.cpp:142</a></div></div>
 <div class="ttc" id="class_strategy_closest_html"><div class="ttname"><a href="class_strategy_closest.html">StrategyClosest</a></div><div class="ttdef"><b>Definition:</b> <a href="strategy_8hpp_source.html#l00037">strategy.hpp:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -391,7 +418,7 @@ $(document).ready(function(){initNavTree('test_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d94a2eaab10ab5ab1cb03e49b9b14fd1.html">model</a></li><li class="navelem"><a class="el" href="test_8cpp.html">test.cpp</a></li>
-    <li class="footer">Wygenerowano N, 3 sty 2016 23:49:38 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:18:55 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['calculate',['CALCULATE',['../_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013abe9fad258c7b9f786a15e3bddd7bbc4d',1,'CALCULATE():&#160;Message.hpp'],['../main_8js.html#a91c018067c182d093699f951f1281aae',1,'calculate():&#160;main.js']]],
+  ['calcdist',['calcDist',['../parse_8cpp.html#ad914ce2718743d0a68d2dd81932bf35f',1,'parse.cpp']]],
+  ['calculate',['calculate',['../main_8js.html#a91c018067c182d093699f951f1281aae',1,'calculate():&#160;main.js'],['../_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013abe9fad258c7b9f786a15e3bddd7bbc4d',1,'CALCULATE():&#160;Message.hpp']]],
   ['chance',['chance',['../class_mutation.html#a9cadaadc598e85c30263d674a809be7f',1,'Mutation']]],
   ['comfort',['comfort',['../class_command.html#ac7706e8f156598f010edf4eff4938af5',1,'Command::comfort()'],['../class_message.html#a9f1eeca07ac93ac70c74a0f18ddffbed',1,'Message::comfort()'],['../parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93ade7684649e49c31023e33974995e81f2',1,'COMFORT():&#160;parameters.hpp']]],
   ['comfort_5fmax',['COMFORT_MAX',['../parameters_8hpp.html#a26034a996a7a7f9b502e408c9da64347ab0a8c39b9d736a1885632f32b1b82137',1,'parameters.hpp']]],
@@ -18,6 +19,6 @@ var searchData=
   ['copycalculatemessagedata',['copyCalculateMessageData',['../class_command.html#a1d622225cf25ae2e9c71f9ef5e6bc8ed',1,'Command']]],
   ['cost',['COST',['../parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93aab9e914fdb40ef4b89248140f0082aa4',1,'parameters.hpp']]],
   ['count',['Count',['../parameters_8hpp.html#acaed7d3152c9c62c6c16554bdb1c4c93ae93f994f01c537c4e2f7d8528c3eb5e9',1,'parameters.hpp']]],
-  ['coutmutex',['coutMutex',['../_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../_event_8hpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../_message_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../_view_server_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp']]],
-  ['createpopulation',['createPopulation',['../class_model.html#ae9a99c96ce7a6806abb6d2c8eee9507c',1,'Model']]]
+  ['coutmutex',['coutMutex',['../_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../controller_main_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../_event_8hpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../_message_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../_view_server_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../_x_m_l_parser_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp'],['../_model_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612',1,'coutMutex():&#160;controllerMain.cpp']]],
+  ['createpopulation',['createPopulation',['../class_model.html#afced0c0616a05be7143a894b077f06e5',1,'Model']]]
 ];

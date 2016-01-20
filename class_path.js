@@ -8,6 +8,7 @@ var class_path =
     [ "getLength", "class_path.html#a5879141baeb4154e709a216aa6d50f4e", null ],
     [ "getRating", "class_path.html#adb15c977e342af030fe1e2f23d5adcc3", null ],
     [ "operator<", "class_path.html#ad88e34d4bd0371af46f1a7f0f57ab8c0", null ],
+    [ "operator==", "class_path.html#a2b7287265b9ce5e4671c79b1f94bc4cb", null ],
     [ "operator[]", "class_path.html#ada96e667fd6c89f40a779f0f422def63", null ],
     [ "print", "class_path.html#a4c9805986fd9779d526c580887b83160", null ],
     [ "rate", "class_path.html#acb54b2efe4f26f8d57d5076766d1a3cb", null ],
