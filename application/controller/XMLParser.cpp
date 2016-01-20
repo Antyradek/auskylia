@@ -147,7 +147,7 @@ Message* XMLParser::operator()(std::string xml)
 
             k=d.find("<time>");
 			if(k==string::npos) throw XMLParserException("<time>k==string::npos");
-			k+=9;
+			k+=6;
 			l=d.find("</time>");
 			if(l==string::npos) throw XMLParserException("</time>l==string::npos");
             m->time=d.substr(k,l-k);
