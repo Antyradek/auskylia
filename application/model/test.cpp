@@ -194,6 +194,8 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 
 	auto gen_start = steady_clock::now();
 
+	m.loadIataList("../airports/iata_list");
+
 	Graph * g = m.generateGraph( gSize, &gen );
 
 	auto gen_stop = steady_clock::now();
@@ -229,11 +231,11 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 	std::cout << "Czas ewolucji [ms]:               " << duration<double, std::milli>(ev_stop  - ev_start ).count() <<std::endl;
 	std::cout << std::endl;
 
-	Path p = m.getPath( 10 );
-	unsigned l = p.getLength();
+	std::vector<std::string> v = m.getPathIata( 10 );
+	unsigned l = v.size();
 
 	for( unsigned i = 0; i < l; ++i)
-		std::cout << p[i] << std::endl;
+		std::cout << v[i] << std::endl;
 }
 
 int main(int argc, char ** argv)

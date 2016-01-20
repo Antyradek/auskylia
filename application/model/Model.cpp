@@ -146,17 +146,17 @@ Path Model::getPath ( unsigned n )
 
 std::vector<std::string> Model::getPathIata ( unsigned n )
 {
-	Path p;
+	if( !population )
+		throw ("No population");
 
-	if(population)
-		p = population->getPath(n);
+	Path p = Path( *(population->getPath(n)) );
 
 	unsigned l = p.getLength();
 
 	std::vector<std::string> v ( l );
 
 	for( unsigned i = 0; i < l; ++i )
-		v = airportList[ p[i] ];
+		v[i] = airportList[ p[i] ];
 
 	return v;
 }
