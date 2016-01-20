@@ -176,6 +176,8 @@ private:
 
 	friend class Controller;/**< \todo być może ładniej rozwiazać problemy */
 
+	std::string getIATAbyId(int id);
+
 	Graph * graph;
 
 	Population * population;
