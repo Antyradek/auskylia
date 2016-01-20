@@ -11,8 +11,10 @@
 
 #include <mutex>
 #include <iostream>
+#include <fstream>
 #include <thread>
 #include <chrono>
+
 
 extern std::mutex coutMutex;
 
@@ -37,6 +39,22 @@ void Model::useGraph( const std::string & file )
 
 void Model::saveGraph( const std::string & file, Graph * graph ) const
 {
+
+}
+
+unsigned loadAirportList( const std::string filename )
+{
+	DBG("Model::loadAirportList()");
+
+	std::ifstream file ( filename );
+
+	std::string str;
+
+	while( ! file.eof() )
+	{
+		std::getline( file, str );
+
+	}
 
 }
 

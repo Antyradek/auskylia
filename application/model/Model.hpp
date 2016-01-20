@@ -1,15 +1,16 @@
 /**
- *  \file Model.hpp
- *  \authors Tomasz Jakubczyk, Andrzej Roguski
- *  \brief Plik nagłówkowy klasy Model.
+ *  \file    Model.hpp
  *
- * \todo Andrzej napisze Model :D
+ *  \authors Tomasz Jakubczyk, Andrzej Roguski
+ *
+ *  \brief   Plik nagłówkowy klasy Model.
  */
 
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
 #include <array>
+#include <vector>
 #include <string>
 
 #include "Graph.hpp"
@@ -26,39 +27,29 @@
 
 
 /**
- * \brief Na razie pusta/zaślepkowa klasa Modelu
+ * \brief Klasa główna modelu odpowiadająca za komunikację z kontrolerem
  */
 class Model
 {
 public:
 	Model();
-	/*
+	/**
 	 * \breif            Generuje graf i zwraca do niego wskaźnik.
 	 * \param[in] nodes  liczba węzłów
 	 * \return           wskaźnik do wygenerowanego grafu
 	 */
 	Graph * generateGraph( const unsigned nodes, const GraphGenerator * const generator ) const;
 
-	/*
-	 * \brief            Wczytuje graf z pamięci.
-	 * \param[in] graph  graf do załadowania
+	/**
+	 * \brief           Wczytuje kody lotnisk z listy i tworzy graf na jej podstawie.
+	 *                  Zakłada, że w danej linii jest co najwyżej jedna fraza <iata>KOD</iata>.
+	 *                  Zakłada, że każda fraza <iata>KOD</iata> znajduje się w całości w jednej linii.
+	 *
+	 * \param[in] file  Ścieżka pliku z listą lotnisk
+	 *
+	 * \return          Liczba wczytanych lotnisk
 	 */
-	void useGraph( Graph * const graph );
-
-	/*
-	 * \brief            Wczytuje graf z pliku.
-	 * \param[in] file   ściezka pliku z grafem
-	 */
-	void useGraph( const std::string & file );
-
-	/*
-	 * \brief            Zapisuje graf do pliku.
-	 *                   Uwaga! Plik zostanie nadpisany, używać ostrożnie.
-	 * \param[in] file   ściezka pliku do zapisu
-	 * \param[in] graph  wskaźnik do grafu do zapisania,
-	 *                   pominięcie parametru lub podanie nullptr zapisuje obecnie używany graf
-	 */
-	void saveGraph( const std::string & file, Graph * graph = nullptr ) const;
+	unsigned loadAirportList( const std::string file );
 
 	/**
 	 * \brief              Ustawia wagi parametrów trasy.
@@ -72,7 +63,7 @@ public:
 	 * \param[in] strategy  wskaźnik na strategię krzyżowania
 	 * \param[in] mutation  wskaźnik na mutację
 	 */
-	void createPopulation( unsigned size, Strategy * strategy, Mutation * mutation );
+	void createPopulation( unsigned size, Strategy * strategy = nullptr, Mutation * mutation = nullptr );
 
 	/**
 	 * \brief              Krzyżuje osobniki.
@@ -99,23 +90,49 @@ public:
 	 */
 	Population * getPopulation();
 
-	/** \brief Zadanie główne modelu.
-	* Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem
-	* przez dwie kolejki blokujące: controllerBlockingQueue i modelBlockingQueue.
-	* \return void
-	*/
+
+
+	/**
+	 * \brief            Wczytuje graf z pamięci.
+	 * \param[in] graph  graf do załadowania
+	 */
+	void useGraph( Graph * const graph );
+
+	/**
+	 * \brief            Wczytuje graf z pliku.
+	 * \param[in] file   ściezka pliku z grafem
+	 */
+	void useGraph( const std::string & file );
+
+	/**
+	 * \brief            Zapisuje graf do pliku.
+	 *                   Uwaga! Plik zostanie nadpisany, używać ostrożnie.
+	 * \param[in] file   ściezka pliku do zapisu
+	 * \param[in] graph  wskaźnik do grafu do zapisania,
+	 *                   pominięcie parametru lub podanie nullptr zapisuje obecnie używany graf
+	 */
+	void saveGraph( const std::string & file, Graph * graph = nullptr ) const;
+
+
+
+	/**
+	 * \brief  Zadanie główne modelu.
+	 *         Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem
+	 *         przez dwie kolejki blokujące: controllerBlockingQueue i modelBlockingQueue.
+	 * \return void
+	 */
 	void doMainJob();
 
-	/** \brief Ustawia wskaźnik na kolejkę kontrolera.
-	* \param q BlockingQueue<Event*>*
-	* \return void
-	*/
+	/** \brief    Ustawia wskaźnik na kolejkę kontrolera.
+	 *  \param q  BlockingQueue<Event*>*
+	 *  \return   void
+	 */
 	void setControllerBlockingQueue(BlockingQueue<Event*>* q);
 
-    /** \brief Metoda kończąca pracę głównego wątka modelu.
-     * Ustawia shutDown.
-     * \return void
-     */
+	/** \brief Metoda kończąca pracę głównego wątka modelu.
+	 *         Ustawia shutDown.
+	 * \return void
+	 */
 	void triggerShutDown();
 
 private:
@@ -124,6 +141,8 @@ private:
 	Graph * graph;
 
 	Population * population;
+
+	std::vector<std::string> airportList;
 
 	BlockingQueue<Event*>* controllerBlockingQueue;/**< na tą kolejkę wrzucamy zgłoszenia do kontrolera */
 
