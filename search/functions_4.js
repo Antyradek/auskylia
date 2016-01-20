@@ -7,7 +7,7 @@ var searchData=
   ['gensafety',['genSafety',['../parse_8cpp.html#a3681ca0367426301821be645d6ea8859',1,'parse.cpp']]],
   ['getlength',['getLength',['../class_path.html#a5879141baeb4154e709a216aa6d50f4e',1,'Path']]],
   ['getnodes',['getNodes',['../class_graph.html#a7f2fcc32bdf8d9006b801a3d6375bf41',1,'Graph']]],
-  ['getparam',['getParam',['../class_graph.html#a7c309663acf0f7a6805097b11600a8e5',1,'Graph']]],
+  ['getparam',['getParam',['../class_graph.html#a7c309663acf0f7a6805097b11600a8e5',1,'Graph::getParam()'],['../class_path.html#a56f19879233e6368de6cd32cec46d512',1,'Path::getParam()']]],
   ['getpath',['getPath',['../class_model.html#a0e4098f7c1efcb5b761ebc39e5793bf6',1,'Model::getPath()'],['../class_population.html#a308c2fde1698100e890efa11dff26c49',1,'Population::getPath()']]],
   ['getpathiata',['getPathIata',['../class_model.html#ab9778b8537b5c0aa5979ce03561a6632',1,'Model']]],
   ['getpopulation',['getPopulation',['../class_model.html#ada0c9c135934f4022b8b634a4173147b',1,'Model']]],

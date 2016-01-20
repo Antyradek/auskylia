@@ -6,6 +6,7 @@ var class_path =
     [ "Path", "class_path.html#ae5753cf0b44e1cbd16f3441dce600713", null ],
     [ "~Path", "class_path.html#a141da9ff89c85e0ba410b5a73864c267", null ],
     [ "getLength", "class_path.html#a5879141baeb4154e709a216aa6d50f4e", null ],
+    [ "getParam", "class_path.html#a56f19879233e6368de6cd32cec46d512", null ],
     [ "getRating", "class_path.html#adb15c977e342af030fe1e2f23d5adcc3", null ],
     [ "operator<", "class_path.html#ad88e34d4bd0371af46f1a7f0f57ab8c0", null ],
     [ "operator==", "class_path.html#a2b7287265b9ce5e4671c79b1f94bc4cb", null ],

@@ -226,174 +226,174 @@ $(document).ready(function(){initNavTree('_controller_8cpp_source.html','');});
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    }</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                    c.wait_for(timerLock,chrono::seconds(1));</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                }</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa93953cef452c4630bf22fc478ec763c7">MESSAGE_FROM_VIEW_SERVER</a>:</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                msg=(<a class="code" href="class_message.html">Message</a>*)e-&gt;<a class="code" href="class_event.html#a3e8d45074315ea934d34c914b13a844e">data</a>;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                cout&lt;&lt;<span class="stringliteral">&quot;Wiadomość z widoku: &quot;</span>&lt;&lt;msg-&gt;msg&lt;&lt;endl;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                cout&lt;&lt;<span class="stringliteral">&quot;msg-&gt;messageType: &quot;</span>&lt;&lt;msg-&gt;messageType&lt;&lt;endl;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                <span class="keywordflow">if</span>(msg-&gt;messageType==<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a25688e799536738ea469158ef15fd1c0">MessageType::LIST</a>)</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">                    #ifdef _DEBUG</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;msg-&gt;messageType==LIST&quot;</span>&lt;&lt;endl;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">                    #endif // _DEBUG</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor"></span>                    f.open(<span class="stringliteral">&quot;airports.xml&quot;</span>,fstream::in | fstream::binary);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <span class="keywordflow">if</span>(!f.is_open())</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                    {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                        f.open(<span class="stringliteral">&quot;../../airports.xml&quot;</span>,fstream::in | fstream::binary);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    <span class="keywordflow">if</span>(!f.is_open())</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                    {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                        cout&lt;&lt;<span class="stringliteral">&quot;nie znaleziono pliku airports.xml&quot;</span>&lt;&lt;endl;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    f.seekg(0,f.end);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    len=f.tellg();</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">                    #ifdef _DEBUG</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;len: &quot;</span>&lt;&lt;len&lt;&lt;endl;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">                    #endif // _DEBUG</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor"></span>                    buf=<span class="keyword">new</span> <span class="keywordtype">char</span>[len+1];</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    memset(buf,0,len+1);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    f.seekg(0,f.beg);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                    f.readsome(buf,len);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                    f.close();</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    str.clear();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    str=string(buf);</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    viewServer-&gt;viewServerBlockingQueue-&gt;push_back(str);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    <span class="keyword">delete</span>[] buf;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    buf=<span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">                    #ifdef _DEBUG2</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;lista lotnisk: &quot;</span>&lt;&lt;endl;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    cout&lt;&lt;str&lt;&lt;endl;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;lista lotnisk wrzucona na kolejkę&quot;</span>&lt;&lt;endl;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">                    #endif // _DEBUG</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor"></span>                }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(msg-&gt;messageType==<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013abe9fad258c7b9f786a15e3bddd7bbc4d">MessageType::CALCULATE</a>)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                    str.clear();</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                    str=<span class="stringliteral">&quot;&lt;data&gt;&lt;response&gt;progress&lt;/response&gt;&lt;progress&gt;0&lt;/progress&gt;&lt;/data&gt;\0&quot;</span>;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                    viewServer-&gt;viewServerBlockingQueue-&gt;push_back(str);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    <a class="code" href="class_command.html">Command</a>* c=<span class="keyword">new</span> <a class="code" href="class_command.html">Command</a>(<a class="code" href="namespace_command_type.html#a3a2a524a0b829bd7e4ae520f955e9abfae104cdfe505d47cbcb7190e213019405">CommandType::START</a>);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    c-&gt;<a class="code" href="class_command.html#a1d622225cf25ae2e9c71f9ef5e6bc8ed">copyCalculateMessageData</a>(msg);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                    model-&gt;modelBlockingQueue-&gt;push_back(c);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(msg-&gt;messageType==<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013ab15379688176677d49474245a6178d97">MessageType::STATUS</a>)</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                    status=0;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                    <span class="keywordflow">if</span>(modelStatus!=<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                    {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                        <span class="comment">//zwracamy najnowszy znany status modelu</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                        status=modelStatus-&gt;status;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    str.clear();</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    <span class="keywordflow">if</span>(status==100 &amp;&amp; modelStatus!=<span class="keyword">nullptr</span> &amp;&amp; modelStatus-&gt;result==<span class="keyword">true</span>)</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    {</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        str=modelStatus-&gt;str;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        <span class="comment">//str=&quot;&lt;data&gt;&lt;response&gt;success&lt;/response&gt;&lt;airports&gt;&lt;airport&gt;&lt;iata&gt;SYD&lt;/iata&gt;&lt;/airport&gt;&lt;airport&gt;&lt;iata&gt;WAW&lt;/iata&gt;&lt;/airport&gt;&lt;airport&gt;&lt;iata&gt;GDN&lt;/iata&gt;&lt;/airport&gt;&lt;/airports&gt;&lt;price&gt;20031&lt;/price&gt;&lt;safety&gt;0.98&lt;/safety&gt;&lt;comfort&gt;0.1&lt;/comfort&gt;&lt;time&gt;21233223&lt;/time&gt;&lt;/data&gt;\0&quot;;</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">                        #ifdef _DEBUG</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="preprocessor"></span>                        cout&lt;&lt;endl&lt;&lt;<span class="stringliteral">&quot;kontroler status: &quot;</span>&lt;&lt;status&lt;&lt;endl&lt;&lt;endl;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">                        #endif // _DEBUG</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor"></span><span class="preprocessor">                        #ifdef __CYGWIN__</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor"></span>                        <a class="code" href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a>.clear();</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                        <a class="code" href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a>.str(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        <a class="code" href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a> &lt;&lt; status;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        <span class="keywordtype">string</span> str2 = <a class="code" href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a>.str();</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                        str=<span class="stringliteral">&quot;&lt;data&gt;&lt;response&gt;progress&lt;/response&gt;&lt;progress&gt;&quot;</span>+str2+<span class="stringliteral">&quot;&lt;/progress&gt;&lt;/data&gt;\0&quot;</span>;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">                        #else</span></div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor"></span>                        str=<span class="stringliteral">&quot;&lt;data&gt;&lt;response&gt;progress&lt;/response&gt;&lt;progress&gt;&quot;</span>+to_string(status)+<span class="stringliteral">&quot;&lt;/progress&gt;&lt;/data&gt;\0&quot;</span>;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">                        #endif // __CYGWIN__</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor"></span><span class="preprocessor">                        #ifdef _DEBUG</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor"></span>                        <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                        cout&lt;&lt;str&lt;&lt;endl;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor">                        #endif // _DEBUG</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor"></span>                    }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    viewServer-&gt;viewServerBlockingQueue-&gt;push_back(str);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                }</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(msg-&gt;messageType==<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a679ee5320d66c8322e310daeb2ee99b8">MessageType::STOP</a>)</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor">                    #ifdef _DEBUG</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;CommandType::STOP&quot;</span>&lt;&lt;endl;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">                    #endif // _DEBUG</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <a class="code" href="class_command.html">Command</a>* c=<span class="keyword">new</span> <a class="code" href="class_command.html">Command</a>(<a class="code" href="namespace_command_type.html#a3a2a524a0b829bd7e4ae520f955e9abfa70e0834dc8ea3c9ee115e0ebf886b125">CommandType::STOP</a>);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                    model-&gt;modelBlockingQueue-&gt;push_back(c);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    model-&gt;stopCalc=<span class="keyword">true</span>;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    str.clear();</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    str=<span class="stringliteral">&quot;&lt;data&gt;&lt;response&gt;failture&lt;/response&gt;&lt;cause&gt;Przerwano obliczenia.&lt;/cause&gt;&lt;/data&gt;\0&quot;</span>;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    viewServer-&gt;viewServerBlockingQueue-&gt;push_back(str);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                }</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa152f1a21c136f10bfd5469b87a2531a2">MESSAGE_FROM_MODEL</a>:</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                cout&lt;&lt;<span class="stringliteral">&quot;Wiadomość z modelu: &quot;</span>&lt;&lt;endl;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                <span class="keywordflow">if</span>(e-&gt;<a class="code" href="class_event.html#a3e8d45074315ea934d34c914b13a844e">data</a>!=<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    <span class="comment">//interesuje nas tylko najnowszy status modelu</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <span class="keywordflow">if</span>(modelStatus!=<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                        <span class="keyword">delete</span> modelStatus;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        modelStatus=<span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                    modelStatus=(<a class="code" href="struct_model_status.html">ModelStatus</a>*)e-&gt;<a class="code" href="class_event.html#a3e8d45074315ea934d34c914b13a844e">data</a>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                }</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                clog&lt;&lt;<span class="stringliteral">&quot;nieznane zdarzenie&quot;</span>&lt;&lt;endl;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keyword">delete</span> e;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;</div>
-<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b">  277</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b">Controller::setup</a>()</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span>(controllerBlockingQueue!=<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="struct_controller_exception.html">ControllerException</a>(<span class="stringliteral">&quot;controllerBlockingQueue!=nullptr&quot;</span>);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    controllerBlockingQueue=<span class="keyword">new</span> <a class="code" href="class_blocking_queue.html">BlockingQueue&lt;Event*&gt;</a>;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">if</span>(viewServer==<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                exit(0);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa93953cef452c4630bf22fc478ec763c7">MESSAGE_FROM_VIEW_SERVER</a>:</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                msg=(<a class="code" href="class_message.html">Message</a>*)e-&gt;<a class="code" href="class_event.html#a3e8d45074315ea934d34c914b13a844e">data</a>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                #ifdef _DEBUG</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                cout&lt;&lt;<span class="stringliteral">&quot;Wiadomość z widoku: &quot;</span>&lt;&lt;msg-&gt;msg&lt;&lt;endl;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                cout&lt;&lt;<span class="stringliteral">&quot;msg-&gt;messageType: &quot;</span>&lt;&lt;msg-&gt;messageType&lt;&lt;endl;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">                #endif // _DEBUG</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor"></span>                <span class="keywordflow">if</span>(msg-&gt;messageType==<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a25688e799536738ea469158ef15fd1c0">MessageType::LIST</a>)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">                    #ifdef _DEBUG</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;msg-&gt;messageType==LIST&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">                    #endif // _DEBUG</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor"></span>                    f.open(<span class="stringliteral">&quot;airports.xml&quot;</span>,fstream::in | fstream::binary);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                    <span class="keywordflow">if</span>(!f.is_open())</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        f.open(<span class="stringliteral">&quot;../../airports.xml&quot;</span>,fstream::in | fstream::binary);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    }</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    <span class="keywordflow">if</span>(!f.is_open())</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                        cout&lt;&lt;<span class="stringliteral">&quot;nie znaleziono pliku airports.xml&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                    }</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                    f.seekg(0,f.end);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    len=f.tellg();</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">                    #ifdef _DEBUG</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;len: &quot;</span>&lt;&lt;len&lt;&lt;endl;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">                    #endif // _DEBUG</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor"></span>                    buf=<span class="keyword">new</span> <span class="keywordtype">char</span>[len+1];</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                    memset(buf,0,len+1);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    f.seekg(0,f.beg);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                    f.readsome(buf,len);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                    f.close();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                    str.clear();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    str=string(buf);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    viewServer-&gt;viewServerBlockingQueue-&gt;push_back(str);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                    <span class="keyword">delete</span>[] buf;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    buf=<span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">                    #ifdef _DEBUG2</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;lista lotnisk: &quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    cout&lt;&lt;str&lt;&lt;endl;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;lista lotnisk wrzucona na kolejkę&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">                    #endif // _DEBUG</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor"></span>                }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(msg-&gt;messageType==<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013abe9fad258c7b9f786a15e3bddd7bbc4d">MessageType::CALCULATE</a>)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    str.clear();</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                    str=<span class="stringliteral">&quot;&lt;data&gt;&lt;response&gt;progress&lt;/response&gt;&lt;progress&gt;0&lt;/progress&gt;&lt;/data&gt;\0&quot;</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                    viewServer-&gt;viewServerBlockingQueue-&gt;push_back(str);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    <a class="code" href="class_command.html">Command</a>* c=<span class="keyword">new</span> <a class="code" href="class_command.html">Command</a>(<a class="code" href="namespace_command_type.html#a3a2a524a0b829bd7e4ae520f955e9abfae104cdfe505d47cbcb7190e213019405">CommandType::START</a>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                    c-&gt;<a class="code" href="class_command.html#a1d622225cf25ae2e9c71f9ef5e6bc8ed">copyCalculateMessageData</a>(msg);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                    model-&gt;modelBlockingQueue-&gt;push_back(c);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(msg-&gt;messageType==<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013ab15379688176677d49474245a6178d97">MessageType::STATUS</a>)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                    status=0;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    <span class="keywordflow">if</span>(modelStatus!=<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        <span class="comment">//zwracamy najnowszy znany status modelu</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        status=modelStatus-&gt;status;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    str.clear();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="keywordflow">if</span>(status==100 &amp;&amp; modelStatus!=<span class="keyword">nullptr</span> &amp;&amp; modelStatus-&gt;result==<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        str=modelStatus-&gt;str;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                        <span class="comment">//str=&quot;&lt;data&gt;&lt;response&gt;success&lt;/response&gt;&lt;airports&gt;&lt;airport&gt;&lt;iata&gt;SYD&lt;/iata&gt;&lt;/airport&gt;&lt;airport&gt;&lt;iata&gt;WAW&lt;/iata&gt;&lt;/airport&gt;&lt;airport&gt;&lt;iata&gt;GDN&lt;/iata&gt;&lt;/airport&gt;&lt;/airports&gt;&lt;price&gt;20031&lt;/price&gt;&lt;safety&gt;0.98&lt;/safety&gt;&lt;comfort&gt;0.1&lt;/comfort&gt;&lt;time&gt;21233223&lt;/time&gt;&lt;/data&gt;\0&quot;;</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">                        #ifdef _DEBUG</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor"></span>                        cout&lt;&lt;endl&lt;&lt;<span class="stringliteral">&quot;kontroler status: &quot;</span>&lt;&lt;status&lt;&lt;endl&lt;&lt;endl;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">                        #endif // _DEBUG</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor"></span><span class="preprocessor">                        #ifdef __CYGWIN__</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor"></span>                        <a class="code" href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a>.clear();</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                        <a class="code" href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a>.str(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        <a class="code" href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a> &lt;&lt; status;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                        <span class="keywordtype">string</span> str2 = <a class="code" href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a>.str();</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                        str=<span class="stringliteral">&quot;&lt;data&gt;&lt;response&gt;progress&lt;/response&gt;&lt;progress&gt;&quot;</span>+str2+<span class="stringliteral">&quot;&lt;/progress&gt;&lt;/data&gt;\0&quot;</span>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">                        #else</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor"></span>                        str=<span class="stringliteral">&quot;&lt;data&gt;&lt;response&gt;progress&lt;/response&gt;&lt;progress&gt;&quot;</span>+to_string(status)+<span class="stringliteral">&quot;&lt;/progress&gt;&lt;/data&gt;\0&quot;</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">                        #endif // __CYGWIN__</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor"></span><span class="preprocessor">                        #ifdef _DEBUG</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="preprocessor"></span>                        <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        cout&lt;&lt;str&lt;&lt;endl;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                        <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="preprocessor">                        #endif // _DEBUG</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor"></span>                    }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                    viewServer-&gt;viewServerBlockingQueue-&gt;push_back(str);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>(msg-&gt;messageType==<a class="code" href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a679ee5320d66c8322e310daeb2ee99b8">MessageType::STOP</a>)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">                    #ifdef _DEBUG</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    cout&lt;&lt;<span class="stringliteral">&quot;CommandType::STOP&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor">                    #endif // _DEBUG</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    <a class="code" href="class_command.html">Command</a>* c=<span class="keyword">new</span> <a class="code" href="class_command.html">Command</a>(<a class="code" href="namespace_command_type.html#a3a2a524a0b829bd7e4ae520f955e9abfa70e0834dc8ea3c9ee115e0ebf886b125">CommandType::STOP</a>);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    model-&gt;modelBlockingQueue-&gt;push_back(c);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    model-&gt;stopCalc=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    str.clear();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    str=<span class="stringliteral">&quot;&lt;data&gt;&lt;response&gt;failture&lt;/response&gt;&lt;cause&gt;Przerwano obliczenia.&lt;/cause&gt;&lt;/data&gt;\0&quot;</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    viewServer-&gt;viewServerBlockingQueue-&gt;push_back(str);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa152f1a21c136f10bfd5469b87a2531a2">MESSAGE_FROM_MODEL</a>:</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">                #ifdef _DEBUG</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor"></span>                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                cout&lt;&lt;<span class="stringliteral">&quot;Wiadomość z modelu: &quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor">                #endif // _DEBUG</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor"></span>                <span class="keywordflow">if</span>(e-&gt;<a class="code" href="class_event.html#a3e8d45074315ea934d34c914b13a844e">data</a>!=<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    <span class="comment">//interesuje nas tylko najnowszy status modelu</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                    <span class="keywordflow">if</span>(modelStatus!=<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                    {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                        <span class="keyword">delete</span> modelStatus;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                        modelStatus=<span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    modelStatus=(<a class="code" href="struct_model_status.html">ModelStatus</a>*)e-&gt;<a class="code" href="class_event.html#a3e8d45074315ea934d34c914b13a844e">data</a>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                clog&lt;&lt;<span class="stringliteral">&quot;nieznane zdarzenie&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keyword">delete</span> e;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b">  282</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b">Controller::setup</a>()</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">if</span>(controllerBlockingQueue!=<span class="keyword">nullptr</span>)</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="struct_controller_exception.html">ControllerException</a>(<span class="stringliteral">&quot;viewServer==nullptr&quot;</span>);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="struct_controller_exception.html">ControllerException</a>(<span class="stringliteral">&quot;controllerBlockingQueue!=nullptr&quot;</span>);</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    viewServer-&gt;<a class="code" href="class_view_server.html#a93fa4f5bde99218af1f85d52b33f6cb6">setControllerBlockingQueue</a>(controllerBlockingQueue);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    model-&gt;<a class="code" href="class_model.html#ae02b696f5db29504783cf99f96b65274">setControllerBlockingQueue</a>(controllerBlockingQueue);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
-<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610">  292</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610">Controller::triggerShutDown</a>()</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    shutDown=<span class="keyword">true</span>;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;<span class="preprocessor">    #ifdef _DEBUG</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor"></span>    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Controller::triggerShutDown()&quot;</span>&lt;&lt;endl;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;<span class="preprocessor">    #endif // _DEBUG</span></div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">if</span>(controllerBlockingQueue==<span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="struct_controller_exception.html">ControllerException</a>(<span class="stringliteral">&quot;Controller::triggerShutDown() controllerBlockingQueue==nullptr&quot;</span>);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    }</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    controllerBlockingQueue-&gt;<a class="code" href="class_blocking_queue.html#aba9a92a9e6a732cd720c609d7e706c47">push_back</a>(<span class="keyword">new</span> <a class="code" href="class_event.html">Event</a>(<a class="code" href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa589c3ad647ceca3400a4bead6acdd94b">SHUT_DOWN</a>));</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    controllerBlockingQueue=<span class="keyword">new</span> <a class="code" href="class_blocking_queue.html">BlockingQueue&lt;Event*&gt;</a>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">if</span>(viewServer==<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="struct_controller_exception.html">ControllerException</a>(<span class="stringliteral">&quot;viewServer==nullptr&quot;</span>);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    viewServer-&gt;<a class="code" href="class_view_server.html#a93fa4f5bde99218af1f85d52b33f6cb6">setControllerBlockingQueue</a>(controllerBlockingQueue);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    model-&gt;<a class="code" href="class_model.html#ae02b696f5db29504783cf99f96b65274">setControllerBlockingQueue</a>(controllerBlockingQueue);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610">  297</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610">Controller::triggerShutDown</a>()</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;{</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    shutDown=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="preprocessor">    #ifdef _DEBUG</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="preprocessor"></span>    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.lock();</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Controller::triggerShutDown()&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a>.unlock();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="preprocessor">    #endif // _DEBUG</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor"></span>    <span class="keywordflow">if</span>(controllerBlockingQueue==<span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="struct_controller_exception.html">ControllerException</a>(<span class="stringliteral">&quot;Controller::triggerShutDown() controllerBlockingQueue==nullptr&quot;</span>);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    controllerBlockingQueue-&gt;<a class="code" href="class_blocking_queue.html#aba9a92a9e6a732cd720c609d7e706c47">push_back</a>(<span class="keyword">new</span> <a class="code" href="class_event.html">Event</a>(<a class="code" href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa589c3ad647ceca3400a4bead6acdd94b">SHUT_DOWN</a>));</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div>
@@ -439,10 +439,15 @@ $(document).ready(function(){initNavTree('_controller_8cpp_source.html','');});
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;</div>
 <div class="ttc" id="class_view_server_html_a265565e37e5051443b3f99f86f65575a"><div class="ttname"><a href="class_view_server.html#a265565e37e5051443b3f99f86f65575a">ViewServer::listenAndRespond</a></div><div class="ttdeci">void listenAndRespond()</div><div class="ttdoc">Metoda tworzy gniazdo, odbiera zapytanie i odsyła odpowiedź dane do odpowiedzi może dostawać różnie...</div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8cpp_source.html#l00074">ViewServer.cpp:74</a></div></div>
 <div class="ttc" id="_message_8hpp_html_ac6606ebe91c8ac66a2c314c79f5ab013a679ee5320d66c8322e310daeb2ee99b8"><div class="ttname"><a href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013a679ee5320d66c8322e310daeb2ee99b8">STOP</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_8hpp_source.html#l00017">Message.hpp:17</a></div></div>
-<div class="ttc" id="class_model_html_afcdee6ea56bce205fd21c30562258c9a"><div class="ttname"><a href="class_model.html#afcdee6ea56bce205fd21c30562258c9a">Model::doMainJob</a></div><div class="ttdeci">void doMainJob()</div><div class="ttdoc">Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem prze...</div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00306">Model.cpp:306</a></div></div>
-<div class="ttc" id="_model_8cpp_html_acd14ec91a54b3c0fc0da5caeec4eebaf"><div class="ttname"><a href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a></div><div class="ttdeci">ostringstream ss</div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00304">Model.cpp:304</a></div></div>
+<div class="ttc" id="class_model_html_afcdee6ea56bce205fd21c30562258c9a"><div class="ttname"><a href="class_model.html#afcdee6ea56bce205fd21c30562258c9a">Model::doMainJob</a></div><div class="ttdeci">void doMainJob()</div><div class="ttdoc">Zadanie główne modelu. Motoda zostaje uruchomiona w osobnym wątku i komunikuje się z kontrolerem prze...</div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00310">Model.cpp:310</a></div></div>
+<div class="ttc" id="_model_8cpp_html_acd14ec91a54b3c0fc0da5caeec4eebaf"><div class="ttname"><a href="_model_8cpp.html#acd14ec91a54b3c0fc0da5caeec4eebaf">ss</a></div><div class="ttdeci">ostringstream ss</div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00308">Model.cpp:308</a></div></div>
 <div class="ttc" id="_message_8hpp_html"><div class="ttname"><a href="_message_8hpp.html">Message.hpp</a></div><div class="ttdoc">Plik nagłówkowy klasy wiadomości. </div></div>
 <div class="ttc" id="namespace_command_type_html_a3a2a524a0b829bd7e4ae520f955e9abfae104cdfe505d47cbcb7190e213019405"><div class="ttname"><a href="namespace_command_type.html#a3a2a524a0b829bd7e4ae520f955e9abfae104cdfe505d47cbcb7190e213019405">CommandType::START</a></div><div class="ttdef"><b>Definition:</b> <a href="_command_8hpp_source.html#l00015">Command.hpp:15</a></div></div>
 <div class="ttc" id="class_controller_html_a8957808a8ed46bed83d2444c4fef0e22"><div class="ttname"><a href="class_controller.html#a8957808a8ed46bed83d2444c4fef0e22">Controller::setViewServer</a></div><div class="ttdeci">void setViewServer(ViewServer *v)</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00070">Controller.cpp:70</a></div></div>
@@ -458,7 +463,7 @@ $(document).ready(function(){initNavTree('_controller_8cpp_source.html','');});
 <div class="ttc" id="class_command_html_a1d622225cf25ae2e9c71f9ef5e6bc8ed"><div class="ttname"><a href="class_command.html#a1d622225cf25ae2e9c71f9ef5e6bc8ed">Command::copyCalculateMessageData</a></div><div class="ttdeci">void copyCalculateMessageData(Message *m)</div><div class="ttdef"><b>Definition:</b> <a href="_command_8cpp_source.html#l00018">Command.cpp:18</a></div></div>
 <div class="ttc" id="class_command_html"><div class="ttname"><a href="class_command.html">Command</a></div><div class="ttdoc">Klasa polecenia do modelu. </div><div class="ttdef"><b>Definition:</b> <a href="_command_8hpp_source.html#l00023">Command.hpp:23</a></div></div>
 <div class="ttc" id="_event_8hpp_html_a2628ea8d12e8b2563c32f05dc7fff6faa0c1982bd20a911687e4a2b59a1517f93"><div class="ttname"><a href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa0c1982bd20a911687e4a2b59a1517f93">Test</a></div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00019">Event.hpp:19</a></div></div>
-<div class="ttc" id="class_model_html_ae02b696f5db29504783cf99f96b65274"><div class="ttname"><a href="class_model.html#ae02b696f5db29504783cf99f96b65274">Model::setControllerBlockingQueue</a></div><div class="ttdeci">void setControllerBlockingQueue(BlockingQueue&lt; Event * &gt; *q)</div><div class="ttdoc">Ustawia wskaźnik na kolejkę kontrolera. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00399">Model.cpp:399</a></div></div>
+<div class="ttc" id="class_model_html_ae02b696f5db29504783cf99f96b65274"><div class="ttname"><a href="class_model.html#ae02b696f5db29504783cf99f96b65274">Model::setControllerBlockingQueue</a></div><div class="ttdeci">void setControllerBlockingQueue(BlockingQueue&lt; Event * &gt; *q)</div><div class="ttdoc">Ustawia wskaźnik na kolejkę kontrolera. </div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00424">Model.cpp:424</a></div></div>
 <div class="ttc" id="class_view_server_html_a93fa4f5bde99218af1f85d52b33f6cb6"><div class="ttname"><a href="class_view_server.html#a93fa4f5bde99218af1f85d52b33f6cb6">ViewServer::setControllerBlockingQueue</a></div><div class="ttdeci">void setControllerBlockingQueue(BlockingQueue&lt; Event * &gt; *q)</div><div class="ttdef"><b>Definition:</b> <a href="_view_server_8cpp_source.html#l00248">ViewServer.cpp:248</a></div></div>
 <div class="ttc" id="_event_8hpp_html"><div class="ttname"><a href="_event_8hpp.html">Event.hpp</a></div><div class="ttdoc">Plik nagłówkowy klasy Event. </div></div>
 <div class="ttc" id="class_controller_html_ad535ad74055e645b7f44b7feeb4e82a8"><div class="ttname"><a href="class_controller.html#ad535ad74055e645b7f44b7feeb4e82a8">Controller::start</a></div><div class="ttdeci">void start()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00075">Controller.cpp:75</a></div></div>
@@ -470,7 +475,7 @@ $(document).ready(function(){initNavTree('_controller_8cpp_source.html','');});
 <div class="ttc" id="_event_8hpp_html_a2628ea8d12e8b2563c32f05dc7fff6faa152f1a21c136f10bfd5469b87a2531a2"><div class="ttname"><a href="_event_8hpp.html#a2628ea8d12e8b2563c32f05dc7fff6faa152f1a21c136f10bfd5469b87a2531a2">MESSAGE_FROM_MODEL</a></div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00022">Event.hpp:22</a></div></div>
 <div class="ttc" id="class_message_html"><div class="ttname"><a href="class_message.html">Message</a></div><div class="ttdoc">klasa wiadomości </div><div class="ttdef"><b>Definition:</b> <a href="_message_8hpp_source.html#l00022">Message.hpp:22</a></div></div>
 <div class="ttc" id="struct_controller_exception_html_a0774acacdc442aeb037940a59e44c274"><div class="ttname"><a href="struct_controller_exception.html#a0774acacdc442aeb037940a59e44c274">ControllerException::ControllerException</a></div><div class="ttdeci">ControllerException(std::string s)</div><div class="ttdoc">Wygodny kostruktor wyjątku. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00035">Controller.cpp:35</a></div></div>
-<div class="ttc" id="class_controller_html_aaff2c0ac01c4d7a6b78718ac8a411c4b"><div class="ttname"><a href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b">Controller::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00277">Controller.cpp:277</a></div></div>
+<div class="ttc" id="class_controller_html_aaff2c0ac01c4d7a6b78718ac8a411c4b"><div class="ttname"><a href="class_controller.html#aaff2c0ac01c4d7a6b78718ac8a411c4b">Controller::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00282">Controller.cpp:282</a></div></div>
 <div class="ttc" id="struct_controller_exception_html"><div class="ttname"><a href="struct_controller_exception.html">ControllerException</a></div><div class="ttdoc">Klasa opakowująca exception dla Controller. </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00027">Controller.cpp:27</a></div></div>
 <div class="ttc" id="class_event_html_ac721e4f34b3b9a1ae302165412221724"><div class="ttname"><a href="class_event.html#ac721e4f34b3b9a1ae302165412221724">Event::type</a></div><div class="ttdeci">EventType type</div><div class="ttdef"><b>Definition:</b> <a href="_event_8hpp_source.html#l00071">Event.hpp:71</a></div></div>
 <div class="ttc" id="_message_8hpp_html_ac6606ebe91c8ac66a2c314c79f5ab013ab15379688176677d49474245a6178d97"><div class="ttname"><a href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013ab15379688176677d49474245a6178d97">STATUS</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_8hpp_source.html#l00016">Message.hpp:16</a></div></div>
@@ -479,14 +484,14 @@ $(document).ready(function(){initNavTree('_controller_8cpp_source.html','');});
 <div class="ttc" id="_message_8hpp_html_ac6606ebe91c8ac66a2c314c79f5ab013abe9fad258c7b9f786a15e3bddd7bbc4d"><div class="ttname"><a href="_message_8hpp.html#ac6606ebe91c8ac66a2c314c79f5ab013abe9fad258c7b9f786a15e3bddd7bbc4d">CALCULATE</a></div><div class="ttdef"><b>Definition:</b> <a href="_message_8hpp_source.html#l00015">Message.hpp:15</a></div></div>
 <div class="ttc" id="struct_controller_exception_html_a0b23d4e452b48e4a296b44cbaabe4f53"><div class="ttname"><a href="struct_controller_exception.html#a0b23d4e452b48e4a296b44cbaabe4f53">ControllerException::what</a></div><div class="ttdeci">const char * what() const noexcept</div><div class="ttdoc">przeciążona metoda wyświetla nasz komunikat </div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00042">Controller.cpp:42</a></div></div>
 <div class="ttc" id="_controller_8cpp_html_a905a79f9a43243b3e3d967dc1f52b612"><div class="ttname"><a href="_controller_8cpp.html#a905a79f9a43243b3e3d967dc1f52b612">coutMutex</a></div><div class="ttdeci">std::mutex coutMutex</div><div class="ttdef"><b>Definition:</b> <a href="controller_main_8cpp_source.html#l00016">controllerMain.cpp:16</a></div></div>
-<div class="ttc" id="class_controller_html_a516427a8bb2fc0e0f46f94c318dd1610"><div class="ttname"><a href="class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610">Controller::triggerShutDown</a></div><div class="ttdeci">void triggerShutDown()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00292">Controller.cpp:292</a></div></div>
+<div class="ttc" id="class_controller_html_a516427a8bb2fc0e0f46f94c318dd1610"><div class="ttname"><a href="class_controller.html#a516427a8bb2fc0e0f46f94c318dd1610">Controller::triggerShutDown</a></div><div class="ttdeci">void triggerShutDown()</div><div class="ttdef"><b>Definition:</b> <a href="_controller_8cpp_source.html#l00297">Controller.cpp:297</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d4705990998dc57c6886494362019069.html">controller</a></li><li class="navelem"><a class="el" href="_controller_8cpp.html">Controller.cpp</a></li>
-    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:18:53 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 19:31:17 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

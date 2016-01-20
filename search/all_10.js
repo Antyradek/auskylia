@@ -1,8 +1,25 @@
 var searchData=
 [
-  ['układ_20katalogów_20i_20plików',['Układ katalogów i plików',['../md__d_1__moje_dokumenty__p_s_z_t_auskylia_application_readme.html',1,'']]],
-  ['updatecityselections',['updateCitySelections',['../main_8js.html#a5303c598d7acd0f7956f304ae22eddcf',1,'main.js']]],
-  ['updateprogress',['updateProgress',['../main_8js.html#ac4103803f3a6097df5c1447d97fb83b8',1,'main.js']]],
-  ['url',['url',['../main_8js.html#a273346471dff7030093765f4e043d101',1,'main.js']]],
-  ['usegraph',['useGraph',['../class_model.html#ac772eee5fb2c8ab258b4ca74157d80a0',1,'Model::useGraph(Graph *const graph)'],['../class_model.html#a59481c877686bc0dad06857be1448995',1,'Model::useGraph(const std::string &amp;file)']]]
+  ['readme',['readme',['../md__d_1__moje_dokumenty__p_s_z_t_auskylia_application_model_readme.html',1,'']]],
+  ['radius',['radius',['../main_8css.html#a80c707b38d569e6a8eb9e56b8d29866c',1,'main.css']]],
+  ['rate',['rate',['../class_path.html#acb54b2efe4f26f8d57d5076766d1a3cb',1,'Path']]],
+  ['rateedge',['rateEdge',['../class_path.html#a2a3ecb5391cb80e613ba161a5f1361fa',1,'Path']]],
+  ['rc_5ffileversion',['RC_FILEVERSION',['../version_8h.html#a0e86d046ea87587e402d375c6b0927c6',1,'version.h']]],
+  ['rc_5ffileversion_5fstring',['RC_FILEVERSION_STRING',['../version_8h.html#a4763e81d3c29ec0fab79225d3ec3f1a2',1,'version.h']]],
+  ['readme_2emd',['readme.md',['../application_2readme_8md.html',1,'']]],
+  ['readme_2emd',['readme.md',['../readme_8md.html',1,'']]],
+  ['readme_2emd',['readme.md',['../application_2model_2readme_8md.html',1,'']]],
+  ['ready',['ready',['../main_8js.html#abe38db594000e09ac5c621ee1ae8f448',1,'main.js']]],
+  ['result',['result',['../struct_model_status.html#a1198080962cf0c62cb1c99b4aca96ae9',1,'ModelStatus']]],
+  ['roll',['roll',['../class_node.html#a361e82589484bf10ce7fd7e686a459ba',1,'Node']]],
+  ['roll_2ecpp',['roll.cpp',['../roll_8cpp.html',1,'']]],
+  ['roll_2ehpp',['roll.hpp',['../roll_8hpp.html',1,'']]],
+  ['roll_5ftest',['roll_test',['../test_8cpp.html#a60acc67c4d4f8ee1fe42a79d7c86b881',1,'test.cpp']]],
+  ['rollb',['rollB',['../roll_8cpp.html#a44c0776ba659dcee168940aafcd41693',1,'rollB(unsigned value, unsigned min, unsigned max, unsigned width):&#160;roll.cpp'],['../roll_8hpp.html#a44c0776ba659dcee168940aafcd41693',1,'rollB(unsigned value, unsigned min, unsigned max, unsigned width):&#160;roll.cpp']]],
+  ['rollbinary',['rollBinary',['../roll_8cpp.html#a79a6f63717eba14b291565034fca94df',1,'rollBinary():&#160;roll.cpp'],['../roll_8hpp.html#a79a6f63717eba14b291565034fca94df',1,'rollBinary():&#160;roll.cpp']]],
+  ['rollbinomial',['rollBinomial',['../roll_8cpp.html#a3b7c42b91f3db84769ff77668e69b64d',1,'rollBinomial(unsigned value, unsigned min, unsigned max):&#160;roll.cpp'],['../roll_8hpp.html#a3b7c42b91f3db84769ff77668e69b64d',1,'rollBinomial(unsigned value, unsigned min, unsigned max):&#160;roll.cpp']]],
+  ['rollbinomialultrawide',['rollBinomialUltraWide',['../roll_8cpp.html#a0c3de6605800e156e7034b0d4821fd50',1,'rollBinomialUltraWide(unsigned value, unsigned min, unsigned max):&#160;roll.cpp'],['../roll_8hpp.html#a0c3de6605800e156e7034b0d4821fd50',1,'rollBinomialUltraWide(unsigned value, unsigned min, unsigned max):&#160;roll.cpp']]],
+  ['rollbinomialwide',['rollBinomialWide',['../roll_8cpp.html#aa38128fec7726ed6e040bce4a4a6ae12',1,'rollBinomialWide(unsigned value, unsigned min, unsigned max):&#160;roll.cpp'],['../roll_8hpp.html#aa38128fec7726ed6e040bce4a4a6ae12',1,'rollBinomialWide(unsigned value, unsigned min, unsigned max):&#160;roll.cpp']]],
+  ['rolluniform',['rollUniform',['../roll_8cpp.html#a1484a30fe528656139c60cb52f254992',1,'rollUniform(unsigned min, unsigned max):&#160;roll.cpp'],['../roll_8hpp.html#a1484a30fe528656139c60cb52f254992',1,'rollUniform(unsigned min, unsigned max):&#160;roll.cpp']]],
+  ['rozpocząć',['rozpocząć',['../index_8html.html#aedcbdd34551db1432ac9ffbb58a3f70c',1,'index.html']]]
 ];

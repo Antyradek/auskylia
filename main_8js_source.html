@@ -145,11 +145,11 @@ $(document).ready(function(){initNavTree('main_8js_source.html','');});
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    $xml.find(<span class="stringliteral">&quot;airports&quot;</span>).find(<span class="stringliteral">&quot;airport&quot;</span>).each(<span class="keyword">function</span>(index)</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        var name = $(<span class="keyword">this</span>).find(<span class="stringliteral">&quot;name&quot;</span>).html();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        var <a class="code" href="main_8css.html#a9c954a0f2953bf8088bc67b8e344810a">name</a> = $(<span class="keyword">this</span>).find(<span class="stringliteral">&quot;name&quot;</span>).html();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        var iata = $(<span class="keyword">this</span>).find(<span class="stringliteral">&quot;iata&quot;</span>).html();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        var text = <span class="stringliteral">&quot;&lt;option value=&#39;&quot;</span> + iata + <span class="stringliteral">&quot;&#39;&gt;&quot;</span> + name + <span class="stringliteral">&quot; (&quot;</span> + iata + <span class="stringliteral">&quot;)&quot;</span> + <span class="stringliteral">&quot;&lt;/option&gt;&quot;</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        $(<span class="stringliteral">&quot;.citySelect&quot;</span>).append(text);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">airportsMap</a>[iata] = name;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">airportsMap</a>[iata] = <a class="code" href="main_8css.html#a9c954a0f2953bf8088bc67b8e344810a">name</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    });</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
@@ -308,7 +308,7 @@ $(document).ready(function(){initNavTree('main_8js_source.html','');});
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    $xml.find(<span class="stringliteral">&quot;airports&quot;</span>).find(<span class="stringliteral">&quot;airport&quot;</span>).each(<span class="keyword">function</span>(index)</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    {</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        var iata = $(<span class="keyword">this</span>).find(<span class="stringliteral">&quot;iata&quot;</span>).html();</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        var name = <a class="code" href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">airportsMap</a>[iata];</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        var <a class="code" href="main_8css.html#a9c954a0f2953bf8088bc67b8e344810a">name</a> = <a class="code" href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">airportsMap</a>[iata];</div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        var inner = $(<span class="stringliteral">&quot;#solution&quot;</span>).html();</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        inner += <span class="stringliteral">&quot;&lt;p class=&#39;solutionAirport&#39;&gt;&quot;</span> + name + <span class="stringliteral">&quot;(&quot;</span> + iata + <span class="stringliteral">&quot;)&lt;/p&gt;&quot;</span>;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        $(<span class="stringliteral">&quot;#solution&quot;</span>).html(inner);</div>
@@ -329,6 +329,7 @@ $(document).ready(function(){initNavTree('main_8js_source.html','');});
 <div class="ttc" id="main_8js_html_a0678b461d3a5de91b0e615672eb7e69f"><div class="ttname"><a href="main_8js.html#a0678b461d3a5de91b0e615672eb7e69f">setHourglass</a></div><div class="ttdeci">function setHourglass(setOn)</div><div class="ttdoc">pokazuje, lub ukrywa klepsydrę </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00053">main.js:53</a></div></div>
 <div class="ttc" id="main_8js_html_af90b2c220cb27941f5f067630ad40b91"><div class="ttname"><a href="main_8js.html#af90b2c220cb27941f5f067630ad40b91">loadAirports</a></div><div class="ttdeci">function loadAirports()</div><div class="ttdoc">ładuje listę lotnisk. </div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00033">main.js:33</a></div></div>
 <div class="ttc" id="main_8js_html_a6085e1b2a212a5c07e0c1056c67c200d"><div class="ttname"><a href="main_8js.html#a6085e1b2a212a5c07e0c1056c67c200d">airportsMap</a></div><div class="ttdeci">var airportsMap</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00004">main.js:4</a></div></div>
+<div class="ttc" id="main_8css_html_a9c954a0f2953bf8088bc67b8e344810a"><div class="ttname"><a href="main_8css.html#a9c954a0f2953bf8088bc67b8e344810a">name</a></div><div class="ttdeci">animation name</div><div class="ttdef"><b>Definition:</b> <a href="main_8css_source.html#l00145">main.css:145</a></div></div>
 <div class="ttc" id="main_8js_html_a4d1e014b1aef9792d81601aae437b5ec"><div class="ttname"><a href="main_8js.html#a4d1e014b1aef9792d81601aae437b5ec">isWorking</a></div><div class="ttdeci">var isWorking</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00002">main.js:2</a></div></div>
 <div class="ttc" id="main_8js_html_a40d58867149f7cd5f2e3fcf743ccdbfd"><div class="ttname"><a href="main_8js.html#a40d58867149f7cd5f2e3fcf743ccdbfd">stopRefresh</a></div><div class="ttdeci">function stopRefresh()</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00190">main.js:190</a></div></div>
 <div class="ttc" id="main_8js_html_aa9b13f536eaeb2a3cae864db31cabdaa"><div class="ttname"><a href="main_8js.html#aa9b13f536eaeb2a3cae864db31cabdaa">showServerError</a></div><div class="ttdeci">function showServerError($xml)</div><div class="ttdef"><b>Definition:</b> <a href="main_8js_source.html#l00182">main.js:182</a></div></div>
@@ -346,7 +347,7 @@ $(document).ready(function(){initNavTree('main_8js_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d75c23162a2652451dce46d2e7e8aead.html">application</a></li><li class="navelem"><a class="el" href="dir_d1db6988e630ede1dfdede8332973faa.html">view</a></li><li class="navelem"><a class="el" href="dir_fabceed4f3196edb1585507a98b93937.html">js</a></li><li class="navelem"><a class="el" href="main_8js.html">main.js</a></li>
-    <li class="footer">Wygenerowano Śr, 20 sty 2016 18:18:56 dla Auskylia programem
+    <li class="footer">Wygenerowano Śr, 20 sty 2016 19:31:21 dla Auskylia programem
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
