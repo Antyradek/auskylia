@@ -228,10 +228,18 @@ void Controller::start()
 				}
 				else if(msg->messageType==MessageType::STOP)
 				{
+					#ifdef _DEBUG
+					coutMutex.lock();
+					cout<<"CommandType::STOP"<<endl;
+					coutMutex.unlock();
+					#endif // _DEBUG
+					/**< \todo w modelu przerwać obliczenia */
+					Command* c=new Command(CommandType::STOP);
+					model->modelBlockingQueue->push_back(c);
+					model->stopCalc=true;
 					str.clear();
 					str="<data><response>failture</response><cause>Przerwano obliczenia.</cause></data>\0";
 					viewServer->viewServerBlockingQueue->push_back(str);
-					/**< \todo w modelu przerwać obliczenia */
 				}
 				break;
 			case MESSAGE_FROM_MODEL:

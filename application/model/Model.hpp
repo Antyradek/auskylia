@@ -132,6 +132,8 @@ private:
 	bool shutDown;/**< czy nie zamykamy aplikacji */
 
 	unsigned int evolutionStep;
+
+	bool stopCalc;
 };
 
 #endif // MODEL_HPP

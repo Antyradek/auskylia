@@ -16,6 +16,7 @@
 #include <string>
 #include <cstdlib>
 #include <thread>
+#include <fstream>
 
 extern std::mutex coutMutex;
 
@@ -60,8 +61,12 @@ void Model::createPopulation( unsigned size, Strategy * strategy, Mutation * mut
 void Model::evolve( unsigned times )
 {
 	if( population != nullptr )
-		for( unsigned i = 0; i < times; ++i )
+		for( unsigned i = 0; i < times && !shutDown && !stopCalc; ++i )
 		{
+			if(stopCalc)
+			{
+				cout<<endl<<"zatrzymywanie obliczeń"<<endl<<endl;
+			}
 			evolutionStep=i;
 			population->evolve();
 		}
@@ -90,7 +95,8 @@ Model::Model() : graph(nullptr),
 		 controllerBlockingQueue(nullptr),
 		 modelBlockingQueue(nullptr),
 		 shutDown(false),
-		 evolutionStep(0)
+		 evolutionStep(0),
+		 stopCalc(false)
 {
 	modelBlockingQueue=new BlockingQueue<Command*>;
 }
@@ -193,11 +199,13 @@ void Model::doMainJob()
 		if(c->commandType==CommandType::START)
 		{
 			/**< \todo wziąć dane z polecenia i uruchomić algorytm */
+			stopCalc=false;
 			status=0;
 			modelStatus=new ModelStatus;
 			modelStatus->status=status;
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
-			unsigned gSize=100;
+
+			unsigned gSize=3464;
 			unsigned pSize=100;
 			unsigned iter=10000;
 			v1=strtol(c->price.c_str(),0,10);
@@ -206,7 +214,7 @@ void Model::doMainJob()
 			v4=strtol(c->price.c_str(),0,10);
 			thread modelTestThread(modelTest,gSize,pSize,this,iter);
 			//modelTest(10,10,this,1000);
-			while(evolutionStep+1<iter)
+			while(evolutionStep+1<iter && !stopCalc)
 			{
 				this_thread::sleep_for (chrono::seconds(1));
 				status=(int)(100.0f*(double)evolutionStep/(double)iter);
@@ -220,6 +228,7 @@ void Model::doMainJob()
 				modelStatus->status=status;
 				controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 			}
+			cout<<endl<<"waiting for modelTestThread join..."<<endl;
 			modelTestThread.join();
 			cout<<endl<<"modelTestThread joined"<<endl<<endl;
 			status=100;
@@ -233,6 +242,12 @@ void Model::doMainJob()
 		else if(c->commandType==CommandType::STOP)
 		{
 			/**< \todo zatrzymać algorytm */
+			stopCalc=true;
+			cout<<"polecenie zatrzymania obliczeń"<<endl;
+			if(stopCalc)
+			{
+				cout<<"stopCalc ustawione"<<endl;
+			}
 			//też opcjonalne zgłoszenie, że zatrzymaliśmy
 			modelStatus=new ModelStatus;
 			modelStatus->status=status;
