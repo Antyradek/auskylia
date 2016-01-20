@@ -192,15 +192,17 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 	Weights w1 = { 50, 50, 50, 50};
 	Weights w2 = { 1, 1, 100, 1};
 
-	auto gen_start = steady_clock::now();
-
 	m.loadIataList("../airports/iata_list");
+
+	auto gen_start = steady_clock::now();
 
 	Graph * g = m.generateGraph( gSize, &gen );
 
 	auto gen_stop = steady_clock::now();
 	
 	m.useGraph(g);
+
+	m.setEndNodes( 3, 7 );
 
 	auto pop_start = steady_clock::now();
 
@@ -231,11 +233,13 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 	std::cout << "Czas ewolucji [ms]:               " << duration<double, std::milli>(ev_stop  - ev_start ).count() <<std::endl;
 	std::cout << std::endl;
 
+	Path p = Path(m.getPath( 10 ));
+
 	std::vector<std::string> v = m.getPathIata( 10 );
 	unsigned l = v.size();
 
 	for( unsigned i = 0; i < l; ++i)
-		std::cout << v[i] << std::endl;
+		std::cout << p[i] << " " << v[i] << std::endl;
 }
 
 int main(int argc, char ** argv)
