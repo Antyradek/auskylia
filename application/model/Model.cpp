@@ -330,7 +330,7 @@ void Model::doMainJob()
 
 			unsigned gSize=3464;
 			unsigned pSize=100;
-			unsigned iter=100;//000;
+			unsigned iter=1000;//000;
 			v1=strtol(c->price.c_str(),0,10);
 			v2=strtol(c->safety.c_str(),0,10);
 			v3=strtol(c->comfort.c_str(),0,10);
