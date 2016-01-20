@@ -30,6 +30,19 @@ cleanDebug:
 runDebug: bin/Debug/controller
 	./bin/Debug/controller 80
 
+Release: CPPFLAGS+=-O3
+Release: $(FILES_D:%.cpp=%.o)
+	$(CXX) $(CPPFLAGS) $(LFLAGS) -MMD -MP -o bin/Release/controller $^
+
+cleanRelease:
+	rm -f controllerMain
+	rm -f *.o
+	rm -f *.d
+	rm -f ../model/*.o
+	rm -f ../model/*.d
+	rm -f bin/Debug/*
+	rm -f bin/Release/*
+
 run: controllerMain
 	./controllerMain 8080
 

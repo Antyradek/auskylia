@@ -264,7 +264,9 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 
 	m->setWeights( w1 );
 
+	#ifdef _DEBUG
 	m->getPopulation()->print();
+	#endif // _DEBUG
 
 	auto ev_start = steady_clock::now();
 
@@ -272,7 +274,9 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 
 	auto ev_stop = steady_clock::now();
 
+	#ifdef _DEBUG
 	m->getPopulation()->print();
+	#endif // _DEBUG
 
 	std::cout << std::endl;
 	std::cout << "Wierzchołki:                      " << gSize                                                      <<std::endl;
@@ -328,6 +332,7 @@ void Model::doMainJob()
 			modelStatus->status=status;
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 
+			evolutionStep=0;
 			unsigned gSize=3464;
 			unsigned pSize=100;
 			unsigned iter=100;//000;
