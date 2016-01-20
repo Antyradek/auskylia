@@ -138,6 +138,7 @@ void Controller::start()
 					}
 					c.wait_for(timerLock,chrono::seconds(1));
 				}
+				exit(0);
 				break;
 			case MESSAGE_FROM_VIEW_SERVER:
 				msg=(Message*)e->data;
