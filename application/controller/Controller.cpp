@@ -212,6 +212,9 @@ void Controller::start()
 					}
 					else
 					{
+						#ifdef _DEBUG
+						cout<<endl<<"kontroler status: "<<status<<endl<<endl;
+						#endif // _DEBUG
 						#ifdef __CYGWIN__
 						ss << status;
 						string str2 = ss.str();

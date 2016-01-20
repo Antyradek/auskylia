@@ -65,6 +65,7 @@ void Model::evolve( unsigned times )
 			evolutionStep=i;
 			population->evolve();
 		}
+	evolutionStep=times;
 }
 
 void Model::setStrategy( Strategy * strategy )
@@ -192,16 +193,29 @@ void Model::doMainJob()
 			/**< \todo wziąć dane z polecenia i uruchomić algorytm */
 			status=0;
 			modelStatus=new ModelStatus;
+			modelStatus->status=status;
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
-			modelTest(10,10,this,1000);
-			for(int i=10;i<100;i+=10)
+			unsigned gSize=100;
+			unsigned pSize=100;
+			unsigned iter=10000;
+			thread modelTestThread(modelTest,gSize,pSize,this,iter);
+			//modelTest(10,10,this,1000);
+			while(evolutionStep+1<iter)
 			{
 				this_thread::sleep_for (chrono::seconds(1));
-				status=i;
+				status=(int)(100.0f*(double)evolutionStep/(double)iter);
+				#ifdef _DEBUG
+				coutMutex.lock();
+				cout<<"status: "<<status<<endl;
+				cout<<"evolutionStep: "<<evolutionStep<<endl;
+				coutMutex.unlock();
+				#endif // DEBUG
 				modelStatus=new ModelStatus;
 				modelStatus->status=status;
 				controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 			}
+			modelTestThread.join();
+			cout<<endl<<"modelTestThread joined"<<endl<<endl;
 			status=100;
 			//można opcjonalnie zwrócić, że działa
 			modelStatus=new ModelStatus;
