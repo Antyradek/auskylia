@@ -18,6 +18,7 @@
 #include <cstdlib>
 #include <thread>
 #include <fstream>
+#include <sstream>
 
 
 extern std::mutex coutMutex;
@@ -170,6 +171,7 @@ Model::Model() : graph(nullptr),
 	m->getPopulation()->print();
 }*/
 
+
 int v1=50,v2=50,v3=50,v4=50;
 
 void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
@@ -224,6 +226,13 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 	std::cout << std::endl;
 }
 
+string getIATAbyId(int id)
+{
+	return string("WAW");
+}
+
+ostringstream ss;
+
 void Model::doMainJob()
 {
 	int status=0;
@@ -251,7 +260,7 @@ void Model::doMainJob()
 
 			unsigned gSize=3464;
 			unsigned pSize=100;
-			unsigned iter=10;//000;
+			unsigned iter=30;//000;
 			v1=strtol(c->price.c_str(),0,10);
 			v2=strtol(c->safety.c_str(),0,10);
 			v3=strtol(c->comfort.c_str(),0,10);
@@ -280,7 +289,18 @@ void Model::doMainJob()
 			modelStatus=new ModelStatus;
 			modelStatus->status=status;
 			modelStatus->result=true;
-			modelStatus->str="<data><response>success</response><airports><airport><iata>"+c->start+"</iata></airport><airport><iata>WAW</iata></airport><airport><iata>"+c->end+"</iata></airport></airports></data>\0";
+			string pom="";
+			Path p = getPath( 0 );
+			unsigned l = p.getLength();
+			for( unsigned i = 0; i < l; ++i)
+			{
+				//std::cout << p[i] << std::endl;
+
+				//ss << p[i];
+				//string str2 = ss.str();
+				pom+="<airport><iata>"+getIATAbyId(p[i])+"</iata></airport>";
+			}
+			modelStatus->str="<data><response>success</response><airports><airport><iata>"+c->start+"</iata></airport>"+pom+"<airport><iata>"+c->end+"</iata></airport></airports></data>\0";
 			/**< \todo zwrócić wynik algorytmu */
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 		}
