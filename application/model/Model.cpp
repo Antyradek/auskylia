@@ -376,11 +376,11 @@ void Model::doMainJob()
 			string time=ss.str();
 			ss.clear();
 			ss.str("");
-			ss << p.getParam( Parameters::SAFETY );
+			ss << p.getParam( Parameters::SAFETY )/10.0f;
 			string safety=ss.str();
 			ss.clear();
 			ss.str("");
-			ss << p.getParam( Parameters::COMFORT );
+			ss << p.getParam( Parameters::COMFORT )/10.0f;
 			string comfort=ss.str();
 			ss.clear();
 			ss.str("");
