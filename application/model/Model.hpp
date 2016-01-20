@@ -83,6 +83,20 @@ public:
 	void evolve( unsigned times );
 
 	/**
+	 * \brief              Ustala punkt końcowy i początkowy (resetuje populację)
+	 * \param[in] start    punkt początkowy
+	 * \param[in] end      punkt końcowy
+	 */
+	void setEndNodes( unsigned start, unsigned end );
+
+	/**
+	 * \brief              Ustala punkt końcowy i początkowy (resetuje populację)
+	 * \param[in] start    punkt początkowy
+	 * \param[in] end      punkt końcowy
+	 */
+	void setEndNodes( std::string start, std::string end );
+
+	/**
 	 * \brief               Ustawia strategię krzyżowania populacji.
 	 * \param[in] strategy  wskaźnik na strategię krzyżowania
 	 */
@@ -106,7 +120,12 @@ public:
 	 */
 	Path getPath ( unsigned n );
 
-
+	/**
+	 * \brief   Zwraca n-tą ścieżkę jako wektor stringów IATA
+	 * \return  n-ta najlepsza ścieżka
+	 */
+	std::vector<std::string> getPathIata ( unsigned n );
+	
 	/**
 	 * \brief            Wczytuje graf z pamięci.
 	 * \param[in] graph  graf do załadowania
@@ -151,6 +170,10 @@ public:
 	void triggerShutDown();
 
 private:
+	unsigned start;
+
+	unsigned end;
+
 	friend class Controller;/**< \todo być może ładniej rozwiazać problemy */
 
 	Graph * graph;

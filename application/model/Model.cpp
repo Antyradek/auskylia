@@ -62,6 +62,15 @@ unsigned Model::loadAirportList( const std::string filename )
 
 }
 
+void Model::setEndNodes( unsigned start, unsigned end )
+{
+	this->start = start;
+	this->end   = end;
+
+	if(graph)
+		graph->setEndNodes( start, end );
+}
+
 unsigned Model::loadIataList( const std::string filename )
 {
 	DBG("Model::loadIataList( " << filename << " )");
@@ -134,6 +143,24 @@ Path Model::getPath ( unsigned n )
 	if(population)
 		return *(population->getPath(n));
 }
+
+std::vector<std::string> Model::getPathIata ( unsigned n )
+{
+	Path p;
+
+	if(population)
+		p = population->getPath(n);
+
+	unsigned l = p.getLength();
+
+	std::vector<std::string> v ( l );
+
+	for( unsigned i = 0; i < l; ++i )
+		v = airportList[ p[i] ];
+
+	return v;
+}
+
 
 Model::Model() : graph(nullptr),
 		 population(nullptr),
