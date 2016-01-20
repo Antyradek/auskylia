@@ -147,7 +147,7 @@ Path Model::getPath ( unsigned n )
 
 	if( !population )
 		throw ("No population");
-	
+
 	Path p = *(population->getPath(n));
 
 	unsigned l = p.getLength();
@@ -156,7 +156,7 @@ Path Model::getPath ( unsigned n )
 	{
 		if( p[i] == start )
 			p[i] = 0;
-		
+
 		if( p[i] == end )
 			p[i] = graph->getNodes();
 	}
@@ -180,7 +180,7 @@ std::vector<std::string> Model::getPathIata ( unsigned n )
 	for( unsigned i = 0; i < l; ++i )
 	{
 		v[i] = airportList[ p[i] ];
-		
+
 		if( p[i] == start )
 			v[i] = airportList[ 0 ];
 
@@ -330,7 +330,7 @@ void Model::doMainJob()
 
 			unsigned gSize=3464;
 			unsigned pSize=100;
-			unsigned iter=1000;//000;
+			unsigned iter=100;//000;
 			v1=strtol(c->price.c_str(),0,10);
 			v2=strtol(c->safety.c_str(),0,10);
 			v3=strtol(c->comfort.c_str(),0,10);
@@ -366,7 +366,27 @@ void Model::doMainJob()
 			{
 				pom+="<airport><iata>"+getIATAbyId(p[i])+"</iata></airport>";
 			}
-			modelStatus->str="<data><response>success</response><airports><airport><iata>"+c->start+"</iata></airport>"+pom+"<airport><iata>"+c->end+"</iata></airport></airports></data>\0";
+			/*std::cout << p.getParam( Parameters::TIME ) << std::endl;
+			std::cout << p.getParam( Parameters::SAFETY ) << std::endl;
+			std::cout << p.getParam( Parameters::COMFORT ) << std::endl;
+			std::cout << p.getParam( Parameters::COST ) << std::endl;*/
+			ss.clear();
+			ss.str("");
+			ss << p.getParam( Parameters::TIME );
+			string time=ss.str();
+			ss.clear();
+			ss.str("");
+			ss << p.getParam( Parameters::SAFETY );
+			string safety=ss.str();
+			ss.clear();
+			ss.str("");
+			ss << p.getParam( Parameters::COMFORT );
+			string comfort=ss.str();
+			ss.clear();
+			ss.str("");
+			ss << p.getParam( Parameters::COST );
+			string cost=ss.str();
+			modelStatus->str="<data><response>success</response><airports><airport><iata>"+c->start+"</iata></airport>"+pom+"<airport><iata>"+c->end+"</iata></airport></airports><price>"+cost+"</price><safety>"+safety+"</safety><comfort>"+comfort+"</comfort><time>"+time+"</time></data>\0";
 			/**< \todo zwrócić wynik algorytmu */
 			controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 		}
