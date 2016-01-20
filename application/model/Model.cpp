@@ -55,6 +55,24 @@ void Model::setEndNodes( unsigned start, unsigned end )
 	}
 }
 
+void Model::setEndNodes( std::string start, std::string end )
+{
+	unsigned s = 0;
+	unsigned e = graph->getNodes() - 1;
+
+	for( unsigned i = 0; i < airportList.size(); ++i )
+	{
+		if( start == airportList[i] )
+			s = i;
+
+		if( end == airportList[i] )
+			e = i;
+	}
+
+	setEndNodes( s, e);
+
+}
+
 unsigned Model::loadIataList( const std::string filename )
 {
 	DBG("Model::loadIataList( " << filename << " )");
@@ -195,11 +213,11 @@ Model::Model() : graph(nullptr),
 
 unsigned short v1=50,v2=50,v3=50,v4=50;
 
-void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
+void modelRun( unsigned gSize, unsigned pSize, Model* model, unsigned iter, std::string start, std::string end )
 {
 	using namespace std::chrono;
 
-	std::cout << std::endl << "Starting model test:" << std::endl;
+	std::cout << std::endl << "Starting model thread:" << std::endl;
 
 	Model* m=model;
 	StrategyClosest s;
@@ -215,6 +233,8 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 	auto gen_stop = steady_clock::now();
 
 	m->useGraph(g);
+
+	m->setEndNodes( start, end );
 
 	auto pop_start = steady_clock::now();
 
@@ -301,8 +321,10 @@ void Model::doMainJob()
 			v1=strtol(c->price.c_str(),0,10);
 			v2=strtol(c->safety.c_str(),0,10);
 			v3=strtol(c->comfort.c_str(),0,10);
-			v4=strtol(c->time.c_str(),0,10);
-			thread modelTestThread(modelTest,gSize,pSize,this,iter);
+			v4=strtol(c->price.c_str(),0,10);
+			std::string start = c->start;
+		        std::string end = c->end;	
+			thread modelRunThread(modelRun,gSize,pSize,this,iter,start,end);
 			//modelTest(10,10,this,1000);
 			while(evolutionStep+1<iter && !stopCalc)
 			{
@@ -318,8 +340,8 @@ void Model::doMainJob()
 				modelStatus->status=status;
 				controllerBlockingQueue->push_back(new Event(MESSAGE_FROM_MODEL,modelStatus));
 			}
-			cout<<endl<<"waiting for modelTestThread join..."<<endl;
-			modelTestThread.join();
+			cout<<endl<<"waiting for modelRunThread join..."<<endl;
+			modelRunThread.join();
 			cout<<endl<<"modelTestThread joined"<<endl<<endl;
 			status=100;
 			//można opcjonalnie zwrócić, że działa
