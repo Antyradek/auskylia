@@ -26,9 +26,21 @@ void Command::copyCalculateMessageData(Message* m)
 		start=m->start;
 		end=m->end;
 		price=m->price;
+		#ifdef _DEBUG
+		cout<<"price: "<<price<<endl;
+		#endif // _DEBUG
 		safety=m->safety;
+		#ifdef _DEBUG
+		cout<<"safety: "<<safety<<endl;
+		#endif // _DEBUG
 		comfort=m->comfort;
+		#ifdef _DEBUG
+		cout<<"comfort: "<<comfort<<endl;
+		#endif // _DEBUG
 		time=m->time;
+		#ifdef _DEBUG
+		cout<<"time: "<<time<<endl;
+		#endif // _DEBUG
 	}
 	else if(m->messageType==MessageType::LIST)
 	{
