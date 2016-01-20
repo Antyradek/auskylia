@@ -212,7 +212,7 @@ Command* XMLParser::operator()(std::string xml,Command* c)
 		return m;
 	}
 
-	unsigned int i,j,k,l;
+	unsigned int i,j;
 	string data("<data>");
 	string dataEnd("</data>");
 	i=xml.find(data);

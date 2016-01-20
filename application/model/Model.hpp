@@ -41,17 +41,6 @@ public:
 	Graph * generateGraph( const unsigned nodes, const GraphGenerator * const generator ) const;
 
 	/**
-	 * \brief           Wczytuje kody lotnisk z listy i tworzy graf na jej podstawie.
-	 *                  Zakłada, że w danej linii jest co najwyżej jedna fraza <iata>KOD</iata>.
-	 *                  Zakłada, że każda fraza <iata>KOD</iata> znajduje się w całości w jednej linii.
-	 *
-	 * \param[in] file  Ścieżka pliku z listą lotnisk
-	 *
-	 * \return          Liczba wczytanych lotnisk
-	 */
-	unsigned loadAirportList( const std::string file );
-
-	/**
 	 * \brief           Wczytuje kody IATA z listy i tworzy graf na jej podstawie.
 	 *                  Zakłada, że w danej linii jest dokładnie jeden kod IATA.
 	 *

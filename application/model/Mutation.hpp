@@ -77,7 +77,7 @@ public:
 private:
 	bool isInPath( const Path & path, unsigned node ) const
 	{
-		for( int j = 0; j < path.getLength(); ++j )
+		for( unsigned j = 0; j < path.getLength(); ++j )
 			if( node == path[j] )
 				return true;
 
@@ -86,10 +86,12 @@ private:
 
 };
 
+/*
 class MutationBinomial final : public Mutation
 {
 public:
 
 };
+*/
 
 #endif // MUTATION_HPP

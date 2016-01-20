@@ -37,21 +37,6 @@ void Model::useGraph( Graph * const graph )
 	this->graph = graph;
 }
 
-unsigned Model::loadAirportList( const std::string filename )
-{
-	DBG("Model::loadAirportList()");
-
-	std::ifstream file ( filename );
-
-	std::string str;
-
-	while( ! file.eof() )
-	{
-		std::getline( file, str );
-	}
-
-}
-
 void Model::setEndNodes( unsigned start, unsigned end )
 {
 	this->start = start;
@@ -208,33 +193,7 @@ Model::Model() : graph(nullptr),
 	modelBlockingQueue=new BlockingQueue<Command*>;
 }
 
-/*void modelTest( unsigned gSize, unsigned pSize, Model* model)
-{
-	std::cout << std::endl << "Starting model test:" << std::endl;
-
-	Model* m=model;
-	StrategyClosest s;
-	MutationUniform mut;
-	GeneratorUniform gen;
-	Weights w = { 100, 100, 100, 100};
-
-	Graph * g = m->generateGraph( gSize, &gen );
-
-	m->useGraph(g);
-
-	m->createPopulation( pSize, &s, &mut );
-
-	m->setWeights( w );
-
-	m->getPopulation()->print();
-
-	m->evolve(1000);
-
-	m->getPopulation()->print();
-}*/
-
-
-int v1=50,v2=50,v3=50,v4=50;
+unsigned short v1=50,v2=50,v3=50,v4=50;
 
 void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 {
@@ -248,7 +207,6 @@ void modelTest( unsigned gSize, unsigned pSize, Model* model, unsigned iter )
 	GeneratorUniform gen;
 
 	Weights w1 = { v1, v2, v3, v4};
-	Weights w2 = { 1, 1, 100, 1};
 
 	auto gen_start = steady_clock::now();
 

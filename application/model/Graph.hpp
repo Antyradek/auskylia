@@ -22,8 +22,6 @@
 class Graph
 {
 public:
-	Graph( const std::string & file );
-
 	Graph( const unsigned nodes, const GraphGenerator * generator );
 
 	~Graph();

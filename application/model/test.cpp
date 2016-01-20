@@ -190,7 +190,6 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 	GeneratorUniform gen;
 
 	Weights w1 = { 50, 50, 50, 50};
-	Weights w2 = { 1, 1, 100, 1};
 
 	m.loadIataList("../airports/iata_list");
 
@@ -247,7 +246,7 @@ void modelTest( unsigned gSize, unsigned pSize, unsigned iter )
 	std::cout << p.getParam( Parameters::COST ) << std::endl;
 }
 
-int main(int argc, char ** argv)
+int main( int argc, char ** argv )
 {
 
 	const unsigned NUM_ARGS = 3;

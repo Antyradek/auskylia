@@ -26,12 +26,12 @@ Population::Population(
 		Mutation * mutation, 
 		Strategy * strategy, 
 		const unsigned size )
-	: size(size), strategy(strategy), mutation(mutation), graph(graph), nodes( graph->getNodes() )
+	: size(size), mutation(mutation), strategy(strategy), graph(graph), nodes( graph->getNodes() )
 {
 	DBG("Population()");
 
-	for(unsigned i : weights)
-		i = 1.0;
+	for( unsigned i = 0; i < (unsigned)Parameters::Count; ++i )
+		weights[i] = 50;
 
 	paths = std::vector<Path*> (size);
 
@@ -59,7 +59,7 @@ void Population::evolve()
 
 	unsigned half = size>>1;
 
-	for(int i = 0; i < half>>1; ++i)
+	for( unsigned i = 0; i < half>>1; ++i)
 	{
 		newPaths( out1[i], out2[i], paths[half + 2*i], paths[half + 2*i + 1] );
 	}

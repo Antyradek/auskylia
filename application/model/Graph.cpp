@@ -12,11 +12,7 @@
 
 #include "debug.hpp"
 
-Graph::Graph( const std::string & file )
-{
-}
-
-Graph::Graph( const unsigned nodesNumber, const GraphGenerator * generator ) : nodesNumber(nodesNumber), start(0), end(nodesNumber - 1)
+Graph::Graph( const unsigned nodesNumber, const GraphGenerator * generator ) : start(0), end(nodesNumber - 1), nodesNumber(nodesNumber)
 {
 	matrix = Matrix (nodesNumber, std::vector< std::array< unsigned, (unsigned)Parameters::Count > > (nodesNumber) );
 

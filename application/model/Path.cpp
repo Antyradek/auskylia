@@ -16,7 +16,7 @@
 
 #include "debug.hpp"
 
-Path::Path( const Graph * const graph, Weights & weights ) : rating(0), graph(graph), weights(weights)
+Path::Path( const Graph * const graph, Weights & weights ) : rating(0), weights(weights), graph(graph)
 {
 	DBG("Path() new");
 
@@ -37,8 +37,8 @@ Path::Path( const Graph * const graph, Weights & weights ) : rating(0), graph(gr
 
 	std::vector<unsigned> pool (nodes - 2);
 
-	for(int i = 0; i < nodes - 2; )
-		pool[i] = ++i;
+	for( unsigned i = 0; i < nodes - 2; ++i )
+		pool[i] = i + 1;
 
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 
@@ -59,7 +59,7 @@ Path::Path(
 	unsigned start2, 
 	const Graph * const graph, 
 	Weights & weights ) 
-	: rating(0), graph(graph), weights(weights)
+	: rating(0), weights(weights), graph(graph)
 {
 	DBG("Path() from others");
 	DBG("length1: " << first.getLength() << ", end1: " << end1 << ", length2: " << second.getLength() << ", start2: " << start2 );
@@ -73,7 +73,7 @@ Path::Path(
 	unsigned len2 = second.getLength() - start2;
 
 	bool * good = new bool [len1];
-	for(int i = 0; i < len1; ++i)
+	for( unsigned i = 0; i < len1; ++i )
 		good[i] = true;
 
 	unsigned badCount = 0;
@@ -116,7 +116,7 @@ Path::Path(
 	rate();
 }
 
-Path::Path( std::list<unsigned> & list, const Graph * const graph, Weights & weights ) : graph(graph), weights(weights)
+Path::Path( std::list<unsigned> & list, const Graph * const graph, Weights & weights ) : weights(weights), graph(graph)
 {
 	params = new double[ Parameters::Count ];
 
@@ -127,7 +127,7 @@ Path::Path( std::list<unsigned> & list, const Graph * const graph, Weights & wei
 
 	path = new unsigned [length];
 
-	for( int i = 0; i < length; ++i )
+	for( unsigned i = 0; i < length; ++i )
 	{
 		path[i] = list.front();
 		list.pop_front();
@@ -137,7 +137,7 @@ Path::Path( std::list<unsigned> & list, const Graph * const graph, Weights & wei
 	DBG_DO( print() );
 }
 
-Path::Path( const Path & that ) : graph(that.graph), weights(that.weights), length(that.length), rating(that.rating)
+Path::Path( const Path & that ) : length(that.length), rating(that.rating), weights(that.weights), graph(that.graph)
 {
 	DBG("Patch() copy");
 	
@@ -148,7 +148,7 @@ Path::Path( const Path & that ) : graph(that.graph), weights(that.weights), leng
 
 	path = new unsigned [ length ];
 
-	for(int i = 0; i < length; ++i)
+	for( unsigned i = 0; i < length; ++i)
 		path[i] = that.path[i];
 }
 
@@ -205,29 +205,24 @@ void Path::rate()
 	DBG("Path::rate()");
 
 	std::array<unsigned long, (unsigned)Parameters::Count> param = {0, 0, 0, 0};
-	std::array<unsigned long, (unsigned)Parameters::Count> tmpParam;
 
 	unsigned long & cost    = param[ (unsigned)Parameters::COST ];
 	unsigned long & safety  = param[ (unsigned)Parameters::SAFETY ];
 	unsigned long & comfort = param[ (unsigned)Parameters::COMFORT ];
 	unsigned long & time    = param[ (unsigned)Parameters::TIME ];
 
-	unsigned long & tmpTime    = tmpParam[ (unsigned)Parameters::TIME ];
-	unsigned long & tmpSafety  = tmpParam[ (unsigned)Parameters::SAFETY ];
-	unsigned long & tmpComfort = tmpParam[ (unsigned)Parameters::COMFORT ];
-
 	unsigned nodes = graph->getNodes();
 
 	if( length > 0 )
 	{
 		for( unsigned i = 0; i < length - 1; ++i )
-			rateEdge( path[i], path[i+1], param, tmpParam);
+			rateEdge( path[i], path[i+1], param );
 		
-		rateEdge( 0, path[0], param, tmpParam);
-		rateEdge( path[ length - 1 ], nodes - 1, param, tmpParam);
+		rateEdge( 0, path[0], param );
+		rateEdge( path[ length - 1 ], nodes - 1, param );
 	}
 	else
-		rateEdge( 0, nodes - 1, param, tmpParam);
+		rateEdge( 0, nodes - 1, param );
 
 	double saf = (double)safety / (double)time;
 	double com = (double)comfort / (double)time;
@@ -255,18 +250,17 @@ void Path::rate()
 inline void Path::rateEdge(
 		unsigned one,
 		unsigned two,
-		std::array<unsigned long, (unsigned)Parameters::Count> & param,
-		std::array<unsigned long, (unsigned)Parameters::Count> & tmpParam)
+		std::array<unsigned long, (unsigned)Parameters::Count> & param)
 {
-	param[ (unsigned)Parameters::COST ] += graph->getParam( one, two, Parameters::COST );
+	std::array<unsigned long, (unsigned)Parameters::Count> tmpParam;
 	
-	tmpParam[ (unsigned)Parameters::TIME ] = graph->getParam( one, two, Parameters::TIME );
-	param[ (unsigned)Parameters::TIME ] += tmpParam[ (unsigned)Parameters::TIME ];
+	tmpParam[ (unsigned)Parameters::TIME ]     = graph->getParam( one, two, Parameters::TIME );
+	tmpParam [ (unsigned)Parameters::SAFETY ]  = graph->getParam( one, two, Parameters::SAFETY );
+	tmpParam [ (unsigned)Parameters::COMFORT ] = graph->getParam( one, two, Parameters::COMFORT );
 	
-	tmpParam [ (unsigned)Parameters::SAFETY ]= graph->getParam( one, two, Parameters::SAFETY );
-	param[ (unsigned)Parameters::SAFETY ] += tmpParam[ (unsigned)Parameters::TIME ] * tmpParam[ (unsigned)Parameters::SAFETY ];
-
-	tmpParam [ (unsigned)Parameters::COMFORT ]= graph->getParam( one, two, Parameters::COMFORT );
+	param[ (unsigned)Parameters::COST ]    += graph->getParam( one, two, Parameters::COST );
+	param[ (unsigned)Parameters::TIME ]    += tmpParam[ (unsigned)Parameters::TIME ];
+	param[ (unsigned)Parameters::SAFETY ]  += tmpParam[ (unsigned)Parameters::TIME ] * tmpParam[ (unsigned)Parameters::SAFETY ];
 	param[ (unsigned)Parameters::COMFORT ] += tmpParam[ (unsigned)Parameters::TIME ] * tmpParam[ (unsigned)Parameters::COMFORT ];	
 
 }
@@ -277,7 +271,7 @@ void Path::print() const
 
 	std::cout << "   ";
 
-	for( int i = 0; i < length; i++)
+	for( unsigned i = 0; i < length; i++)
 		std::cout << " "<< path[ i ];
 
 	std::cout << std::endl;

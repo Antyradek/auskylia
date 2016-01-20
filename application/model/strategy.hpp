@@ -22,6 +22,16 @@ public:
 	virtual void match( const std::vector<Path *> & in, std::vector<Path *> & out1, std::vector<Path *> & out2, const unsigned size ) const = 0;
 };
 
+class StrategyClosest : public Strategy
+{
+public:
+	virtual void match( const std::vector<Path *> & in, std::vector<Path *> & out1, std::vector<Path *> & out2, const unsigned size) const;
+};
+
+
+// + TU SPOCZYWAJĄ MARTWE IDEE +
+
+/*
 class StrategyRandUniform : public Strategy
 {
 public:
@@ -33,11 +43,7 @@ class StrategyRandBinomial : public Strategy
 public:
 	virtual void match( const std::vector<Path *> & in, std::vector<Path *> & out1, std::vector<Path *> & out2, const unsigned size) const {};
 };
+*/
 
-class StrategyClosest : public Strategy
-{
-public:
-	virtual void match( const std::vector<Path *> & in, std::vector<Path *> & out1, std::vector<Path *> & out2, const unsigned size) const ;
-};
 
 #endif // STRATEGY_HPP
