@@ -220,7 +220,8 @@ pip-log.txt
 
 *.o
 *.d
-*.exe
+#w celu umożliwienia odpalania na windowsie bez kompilatora
+#*.exe
 *.stackdump
 *.depend
 
