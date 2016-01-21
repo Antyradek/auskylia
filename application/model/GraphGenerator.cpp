@@ -25,7 +25,24 @@ unsigned isqrt(unsigned long value)
 	while (result * result > value);
 	
 	return result;  
-} 
+}
+
+unsigned calcDistance( const Node & first, const Node & second )
+{
+	unsigned x1 = first.getX();
+	unsigned x2 = second.getX();
+
+	unsigned y1 = first.getY();
+	unsigned y2 = second.getY();
+
+	unsigned long x = (x1 > x2 ? x1 - x2 : x2 - x1);
+	unsigned long y = (y1 > y2 ? y1 - y2 : y2 - y1);
+
+	x *= x;
+	y *= y;
+
+	return isqrt( x + y );
+}
 
 void GeneratorUniform::generate( std::vector<Node> & nodes, Matrix & matrix ) const
 {
@@ -95,19 +112,4 @@ void GeneratorUniform::rollEndPoints( std::vector<Node> & nodes ) const
 	nodes[0] = Node( 0, 0 );
 	nodes[ nodes.size() - 1 ] = Node( (unsigned)Limits::MAP_SIZE, (unsigned)Limits::MAP_SIZE );
 }
-unsigned GeneratorUniform::calcDistance( const Node & first, const Node & second ) const
-{
-	unsigned x1 = first.getX();
-	unsigned x2 = second.getX();
 
-	unsigned y1 = first.getY();
-	unsigned y2 = second.getY();
-
-	unsigned long x = (x1 > x2 ? x1 - x2 : x2 - x1);
-	unsigned long y = (y1 > y2 ? y1 - y2 : y2 - y1);
-
-	x *= x;
-	y *= y;
-
-	return isqrt( x + y );
-}

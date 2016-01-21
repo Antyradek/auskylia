@@ -20,6 +20,8 @@
 
 unsigned isqrt(unsigned long value); 
 
+unsigned calcDistance( const Node & first, const Node & second );
+
 /**
  * \brief Abstrakcyjna Klasa bazowa klas generujących grafy
  */
@@ -37,7 +39,6 @@ public:
 
 private:
 	void rollPoints( std::vector<Node> & nodes ) const;
-	unsigned calcDistance( const Node & first, const Node & second ) const;
 	void rollEndPoints( std::vector<Node> & nodes ) const;
 };
 
