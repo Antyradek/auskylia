@@ -212,7 +212,7 @@ function showSolution($xml)
         var iata = $(this).find("iata").html();
         var name = airportsMap[iata];
         var inner = $("#solution").html();
-        inner += "<p class='solutionAirport'>" + name + "(" + iata + ")</p>";
+        inner += "<p class='solutionAirport'>" + name + " (" + iata + ")</p>";
         $("#solution").html(inner);
     });
     var price = $xml.find("price").html();
