@@ -294,6 +294,7 @@ std::string ViewServer::getPage(std::string resource, std::string& type)
 	whitelist.push_back(PagePair("img/hourglass.svg", "image/svg+xml"));
 	whitelist.push_back(PagePair("img/logo.svg", "image/svg+xml"));
 	whitelist.push_back(PagePair("js/main.js", "text/javascript"));
+	whitelist.push_back(PagePair("js/jquery.js", "text/javascript"));
 
 	bool allowed = false;
 	string mime = "";
