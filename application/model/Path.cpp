@@ -226,7 +226,8 @@ void Path::rate()
 
 	double saf = (double)safety / (double)time;
 	double com = (double)comfort / (double)time;
-	double distance = (unsigned)Limits::MAP_SIZE * 1.415;
+
+	double distance = calcDistance( graph->getNodeStart(), graph->getNodeEnd() );
 	double speed = distance / time;
 
 	DBG(" " << weights[0] << " " << weights[1] << " " << weights[2] << " " << weights[3]  );

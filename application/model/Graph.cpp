@@ -32,6 +32,16 @@ unsigned Graph::getNodes() const
 	return nodes.size();
 }
 
+const Node & Graph::getNodeStart() const
+{
+	return nodes[start];
+}
+
+const Node & Graph::getNodeEnd() const
+{
+	return nodes[end];
+}
+
 unsigned Graph::getParam( unsigned n, unsigned m, Parameters param ) const
 {
 	return matrix[ n ][ m ][ (unsigned)param ];

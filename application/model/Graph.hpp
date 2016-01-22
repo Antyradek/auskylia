@@ -28,6 +28,10 @@ public:
 
 	unsigned getNodes() const;
 
+	const Node & getNodeStart() const;
+
+	const Node & getNodeEnd() const;
+
 	unsigned getParam( unsigned n, unsigned m, Parameters param ) const;
 
 	void setEndNodes( unsigned start, unsigned end );
